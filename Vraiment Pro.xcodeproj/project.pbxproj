@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F883DD0E1DF4713E00C8071B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883DD0D1DF4713E00C8071B /* AppDelegate.swift */; };
+		F883DD101DF4713E00C8071B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883DD0F1DF4713E00C8071B /* ViewController.swift */; };
+		F883DD131DF4713E00C8071B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F883DD111DF4713E00C8071B /* Main.storyboard */; };
+		F883DD161DF4713E00C8071B /* Vraiment_Pro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F883DD141DF4713E00C8071B /* Vraiment_Pro.xcdatamodeld */; };
+		F883DD181DF4713E00C8071B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F883DD171DF4713E00C8071B /* Assets.xcassets */; };
+		F883DD1B1DF4713E00C8071B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F883DD191DF4713E00C8071B /* LaunchScreen.storyboard */; };
+		F883DD261DF4713E00C8071B /* Vraiment_ProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883DD251DF4713E00C8071B /* Vraiment_ProTests.swift */; };
+		F883DD311DF4713E00C8071B /* Vraiment_ProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883DD301DF4713E00C8071B /* Vraiment_ProUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F883DD221DF4713E00C8071B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F883DD021DF4713C00C8071B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F883DD091DF4713C00C8071B;
+			remoteInfo = "Vraiment Pro";
+		};
+		F883DD2D1DF4713E00C8071B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F883DD021DF4713C00C8071B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F883DD091DF4713C00C8071B;
+			remoteInfo = "Vraiment Pro";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F883DD0A1DF4713D00C8071B /* Vraiment Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vraiment Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F883DD0D1DF4713E00C8071B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F883DD0F1DF4713E00C8071B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F883DD121DF4713E00C8071B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F883DD151DF4713E00C8071B /* Vraiment_Pro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vraiment_Pro.xcdatamodel; sourceTree = "<group>"; };
+		F883DD171DF4713E00C8071B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F883DD1A1DF4713E00C8071B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F883DD1C1DF4713E00C8071B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F883DD211DF4713E00C8071B /* Vraiment ProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vraiment ProTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F883DD251DF4713E00C8071B /* Vraiment_ProTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vraiment_ProTests.swift; sourceTree = "<group>"; };
+		F883DD271DF4713E00C8071B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F883DD2C1DF4713E00C8071B /* Vraiment ProUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vraiment ProUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F883DD301DF4713E00C8071B /* Vraiment_ProUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vraiment_ProUITests.swift; sourceTree = "<group>"; };
+		F883DD321DF4713E00C8071B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F883DD071DF4713C00C8071B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F883DD1E1DF4713E00C8071B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F883DD291DF4713E00C8071B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F883DD011DF4713C00C8071B = {
+			isa = PBXGroup;
+			children = (
+				F883DD0C1DF4713D00C8071B /* Vraiment Pro */,
+				F883DD241DF4713E00C8071B /* Vraiment ProTests */,
+				F883DD2F1DF4713E00C8071B /* Vraiment ProUITests */,
+				F883DD0B1DF4713D00C8071B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F883DD0B1DF4713D00C8071B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F883DD0A1DF4713D00C8071B /* Vraiment Pro.app */,
+				F883DD211DF4713E00C8071B /* Vraiment ProTests.xctest */,
+				F883DD2C1DF4713E00C8071B /* Vraiment ProUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F883DD0C1DF4713D00C8071B /* Vraiment Pro */ = {
+			isa = PBXGroup;
+			children = (
+				F883DD0D1DF4713E00C8071B /* AppDelegate.swift */,
+				F883DD0F1DF4713E00C8071B /* ViewController.swift */,
+				F883DD111DF4713E00C8071B /* Main.storyboard */,
+				F883DD171DF4713E00C8071B /* Assets.xcassets */,
+				F883DD191DF4713E00C8071B /* LaunchScreen.storyboard */,
+				F883DD1C1DF4713E00C8071B /* Info.plist */,
+				F883DD141DF4713E00C8071B /* Vraiment_Pro.xcdatamodeld */,
+			);
+			path = "Vraiment Pro";
+			sourceTree = "<group>";
+		};
+		F883DD241DF4713E00C8071B /* Vraiment ProTests */ = {
+			isa = PBXGroup;
+			children = (
+				F883DD251DF4713E00C8071B /* Vraiment_ProTests.swift */,
+				F883DD271DF4713E00C8071B /* Info.plist */,
+			);
+			path = "Vraiment ProTests";
+			sourceTree = "<group>";
+		};
+		F883DD2F1DF4713E00C8071B /* Vraiment ProUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F883DD301DF4713E00C8071B /* Vraiment_ProUITests.swift */,
+				F883DD321DF4713E00C8071B /* Info.plist */,
+			);
+			path = "Vraiment ProUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F883DD091DF4713C00C8071B /* Vraiment Pro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F883DD351DF4713E00C8071B /* Build configuration list for PBXNativeTarget "Vraiment Pro" */;
+			buildPhases = (
+				F883DD061DF4713C00C8071B /* Sources */,
+				F883DD071DF4713C00C8071B /* Frameworks */,
+				F883DD081DF4713C00C8071B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Vraiment Pro";
+			productName = "Vraiment Pro";
+			productReference = F883DD0A1DF4713D00C8071B /* Vraiment Pro.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F883DD201DF4713E00C8071B /* Vraiment ProTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F883DD381DF4713E00C8071B /* Build configuration list for PBXNativeTarget "Vraiment ProTests" */;
+			buildPhases = (
+				F883DD1D1DF4713E00C8071B /* Sources */,
+				F883DD1E1DF4713E00C8071B /* Frameworks */,
+				F883DD1F1DF4713E00C8071B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F883DD231DF4713E00C8071B /* PBXTargetDependency */,
+			);
+			name = "Vraiment ProTests";
+			productName = "Vraiment ProTests";
+			productReference = F883DD211DF4713E00C8071B /* Vraiment ProTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F883DD2B1DF4713E00C8071B /* Vraiment ProUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F883DD3B1DF4713E00C8071B /* Build configuration list for PBXNativeTarget "Vraiment ProUITests" */;
+			buildPhases = (
+				F883DD281DF4713E00C8071B /* Sources */,
+				F883DD291DF4713E00C8071B /* Frameworks */,
+				F883DD2A1DF4713E00C8071B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F883DD2E1DF4713E00C8071B /* PBXTargetDependency */,
+			);
+			name = "Vraiment ProUITests";
+			productName = "Vraiment ProUITests";
+			productReference = F883DD2C1DF4713E00C8071B /* Vraiment ProUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F883DD021DF4713C00C8071B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Sparks MG";
+				TargetAttributes = {
+					F883DD091DF4713C00C8071B = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8587PB8PJ7;
+						ProvisioningStyle = Automatic;
+					};
+					F883DD201DF4713E00C8071B = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8587PB8PJ7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F883DD091DF4713C00C8071B;
+					};
+					F883DD2B1DF4713E00C8071B = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8587PB8PJ7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F883DD091DF4713C00C8071B;
+					};
+				};
+			};
+			buildConfigurationList = F883DD051DF4713C00C8071B /* Build configuration list for PBXProject "Vraiment Pro" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F883DD011DF4713C00C8071B;
+			productRefGroup = F883DD0B1DF4713D00C8071B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F883DD091DF4713C00C8071B /* Vraiment Pro */,
+				F883DD201DF4713E00C8071B /* Vraiment ProTests */,
+				F883DD2B1DF4713E00C8071B /* Vraiment ProUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F883DD081DF4713C00C8071B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F883DD1B1DF4713E00C8071B /* LaunchScreen.storyboard in Resources */,
+				F883DD181DF4713E00C8071B /* Assets.xcassets in Resources */,
+				F883DD131DF4713E00C8071B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F883DD1F1DF4713E00C8071B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F883DD2A1DF4713E00C8071B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F883DD061DF4713C00C8071B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F883DD101DF4713E00C8071B /* ViewController.swift in Sources */,
+				F883DD161DF4713E00C8071B /* Vraiment_Pro.xcdatamodeld in Sources */,
+				F883DD0E1DF4713E00C8071B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F883DD1D1DF4713E00C8071B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F883DD261DF4713E00C8071B /* Vraiment_ProTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F883DD281DF4713E00C8071B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F883DD311DF4713E00C8071B /* Vraiment_ProUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F883DD231DF4713E00C8071B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F883DD091DF4713C00C8071B /* Vraiment Pro */;
+			targetProxy = F883DD221DF4713E00C8071B /* PBXContainerItemProxy */;
+		};
+		F883DD2E1DF4713E00C8071B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F883DD091DF4713C00C8071B /* Vraiment Pro */;
+			targetProxy = F883DD2D1DF4713E00C8071B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F883DD111DF4713E00C8071B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F883DD121DF4713E00C8071B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F883DD191DF4713E00C8071B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F883DD1A1DF4713E00C8071B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F883DD331DF4713E00C8071B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F883DD341DF4713E00C8071B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F883DD361DF4713E00C8071B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8587PB8PJ7;
+				INFOPLIST_FILE = "Vraiment Pro/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mg.sparks.Vraiment-Pro";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F883DD371DF4713E00C8071B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8587PB8PJ7;
+				INFOPLIST_FILE = "Vraiment Pro/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mg.sparks.Vraiment-Pro";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F883DD391DF4713E00C8071B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8587PB8PJ7;
+				INFOPLIST_FILE = "Vraiment ProTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mg.sparks.Vraiment-ProTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vraiment Pro.app/Vraiment Pro";
+			};
+			name = Debug;
+		};
+		F883DD3A1DF4713E00C8071B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8587PB8PJ7;
+				INFOPLIST_FILE = "Vraiment ProTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mg.sparks.Vraiment-ProTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vraiment Pro.app/Vraiment Pro";
+			};
+			name = Release;
+		};
+		F883DD3C1DF4713E00C8071B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 8587PB8PJ7;
+				INFOPLIST_FILE = "Vraiment ProUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mg.sparks.Vraiment-ProUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Vraiment Pro";
+			};
+			name = Debug;
+		};
+		F883DD3D1DF4713E00C8071B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 8587PB8PJ7;
+				INFOPLIST_FILE = "Vraiment ProUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mg.sparks.Vraiment-ProUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Vraiment Pro";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F883DD051DF4713C00C8071B /* Build configuration list for PBXProject "Vraiment Pro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F883DD331DF4713E00C8071B /* Debug */,
+				F883DD341DF4713E00C8071B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F883DD351DF4713E00C8071B /* Build configuration list for PBXNativeTarget "Vraiment Pro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F883DD361DF4713E00C8071B /* Debug */,
+				F883DD371DF4713E00C8071B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F883DD381DF4713E00C8071B /* Build configuration list for PBXNativeTarget "Vraiment ProTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F883DD391DF4713E00C8071B /* Debug */,
+				F883DD3A1DF4713E00C8071B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F883DD3B1DF4713E00C8071B /* Build configuration list for PBXNativeTarget "Vraiment ProUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F883DD3C1DF4713E00C8071B /* Debug */,
+				F883DD3D1DF4713E00C8071B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F883DD141DF4713E00C8071B /* Vraiment_Pro.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F883DD151DF4713E00C8071B /* Vraiment_Pro.xcdatamodel */,
+			);
+			currentVersion = F883DD151DF4713E00C8071B /* Vraiment_Pro.xcdatamodel */;
+			path = Vraiment_Pro.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F883DD021DF4713C00C8071B /* Project object */;
+}
