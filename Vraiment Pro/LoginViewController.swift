@@ -1,5 +1,5 @@
 //
-//  DocsViewController.swift
+//  LoginViewController.swift
 //  Vraiment Pro
 //
 //  Created by Andry Henintsoa Razafindramanana on 05/12/2016.
@@ -8,8 +8,12 @@
 
 import UIKit
 
-class DocsViewController: UIViewController {
-
+class LoginViewController: UIViewController {
+    
+// IBOutlet des deux champs
+    @IBOutlet weak var emailLabel: UITextField!
+    @IBOutlet weak var pwdLabel: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,10 +25,17 @@ class DocsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func closeController(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
+// Quand le bouton "Se connecter" est cliqué
+    @IBAction func connect(_ sender: AnyObject) {
+        print("Connect")
     }
 
+// Quand le bouton "Mot de passe oublié" est cliqué
+    @IBAction func forgottenPwd(_ sender: AnyObject) {
+        print("Forgotten Password")
+    }
+
+    
     /*
     // MARK: - Navigation
 
