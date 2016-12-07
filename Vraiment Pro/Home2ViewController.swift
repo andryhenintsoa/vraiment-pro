@@ -1,45 +1,47 @@
 //
-//  DocsViewController.swift
+//  Home2ViewController.swift
 //  Vraiment Pro
 //
-//  Created by Andry Henintsoa Razafindramanana on 05/12/2016.
+//  Created by Andry Henintsoa Razafindramanana on 06/12/2016.
 //  Copyright © 2016 Sparks MG. All rights reserved.
 //
 
 import UIKit
 
-class DocsViewController: UIViewController {
+class Home2ViewController: UIViewController {
     
     @IBOutlet weak var menuCollectionView: UICollectionView!
-
-    var menu : [Dictionary<String,String>] = []
     
+    var menu : [Dictionary<String,String>] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        menuCollectionView.dataSource = self
+        menuCollectionView.delegate = self
+
         createButtonsInfo()
         menuCollectionView.reloadData()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    // Poser les informations de chaque menu
+// Poser les informations de chaque menu
     func createButtonsInfo(){
-        menu.append(["name":"Publier une photo","picture":"ic_camera_party_mode.png",
-                     "id":"1"])
-        menu.append(["name":"Publier Avant / Après","picture":"ic_image_filter.png",
-                     "id":"2"])
-        menu.append(["name":"Publier un document","picture":"ic_file_document.png",
-                     "id":"3"])
+        menu.append(["name":"Avis","picture":"ic_avis.png",
+                                  "id":"1"])
+        menu.append(["name":"Profil","picture":"ic_account.png",
+                                  "id":"2"])
+        menu.append(["name":"Messages","picture":"ic_messages.png",
+                                  "id":"3"])
+        menu.append(["name":"Photos & Documents","picture":"ic_camera.png",
+                                  "id":"4"])
     }
     
-    @IBAction func closeController(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
-    }
-
+    
     /*
     // MARK: - Navigation
 
@@ -53,34 +55,34 @@ class DocsViewController: UIViewController {
 }
 
 // MARK: - UICollectionViewDataSource
-extension DocsViewController : UICollectionViewDataSource{
+extension Home2ViewController : UICollectionViewDataSource{
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return menu.count
     }
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "docsMenuItem", for: indexPath) as! DocsCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuItem", for: indexPath) as! MenuCollectionViewCell
         let data = menu[indexPath.item]
         
-        cell.label.text = data["name"]!
         cell.image.image = UIImage(named: data["picture"]!)
+        cell.titre.text = data["name"]!
         
-        cell.layer.borderWidth = 0.5
-        cell.layer.borderColor = UIColor(red: 103, green: 181, blue: 45, alpha: 1).cgColor
-        //cell.layer.cornerRadius = 5
+        //cell.layer.borderWidth = 0.5
+        //cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.cornerRadius = 5
         
         return cell
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension DocsViewController : UICollectionViewDelegateFlowLayout{
+extension Home2ViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let picWidth = (self.view.frame.size.width - 40)
-        return CGSize(width: picWidth, height: 55)
+        let picWidth = (self.view.frame.size.width - 60) / 2.0
+        return CGSize(width: picWidth, height: picWidth)
     }
 }
 
 // MARK: - UICollectionViewDelegate
-extension DocsViewController : UICollectionViewDelegate{
+extension Home2ViewController : UICollectionViewDelegate{
     
 }
