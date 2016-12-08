@@ -11,6 +11,7 @@
 		F84169FE1DF6B4EE00664870 /* AdviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84169FD1DF6B4ED00664870 /* AdviceViewController.swift */; };
 		F8416A011DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8416A001DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift */; };
 		F8416A041DF6BF5000664870 /* DocsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8416A031DF6BF5000664870 /* DocsCollectionViewCell.swift */; };
+		F85231421DF7D7B20046DDDB /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85231411DF7D7B20046DDDB /* PaddingLabel.swift */; };
 		F86A7FD61DF734B100019DC1 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A7FD51DF734B000019DC1 /* MessagesViewController.swift */; };
 		F86A7FD81DF734D800019DC1 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A7FD71DF734D800019DC1 /* MessagesTableViewCell.swift */; };
 		F8748A951DF55DB200A0AFBA /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A861DF55DB200A0AFBA /* Raleway-Bold.ttf */; };
@@ -27,6 +28,9 @@
 		F8748AA11DF55DB200A0AFBA /* Teko-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A921DF55DB200A0AFBA /* Teko-Medium.ttf */; };
 		F8748AA21DF55DB200A0AFBA /* Teko-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A931DF55DB200A0AFBA /* Teko-Regular.ttf */; };
 		F8748AA31DF55DB200A0AFBA /* Teko-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A941DF55DB200A0AFBA /* Teko-SemiBold.ttf */; };
+		F87792EE1DF92C360052E888 /* AdviceRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87792ED1DF92C360052E888 /* AdviceRequestViewController.swift */; };
+		F87792F01DF92C560052E888 /* AdviceSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87792EF1DF92C560052E888 /* AdviceSummaryViewController.swift */; };
+		F87792F71DF92CB30052E888 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87792F61DF92CB30052E888 /* ProfileViewController.swift */; };
 		F881E7471DF69B37000F7ED7 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881E7461DF69B37000F7ED7 /* MenuCollectionViewCell.swift */; };
 		F883DD0E1DF4713E00C8071B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883DD0D1DF4713E00C8071B /* AppDelegate.swift */; };
 		F883DD131DF4713E00C8071B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F883DD111DF4713E00C8071B /* Main.storyboard */; };
@@ -38,6 +42,7 @@
 		F8EB757A1DF5CC3E00B19804 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB75791DF5CC3E00B19804 /* HomeViewController.swift */; };
 		F8EB757C1DF5F68300B19804 /* DocsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB757B1DF5F68300B19804 /* DocsViewController.swift */; };
 		F8EB757E1DF5FB7E00B19804 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB757D1DF5FB7E00B19804 /* LoginViewController.swift */; };
+		F8EC73321DF8807E007A1280 /* AdvicePrestationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC73311DF8807E007A1280 /* AdvicePrestationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +67,7 @@
 		F84169FD1DF6B4ED00664870 /* AdviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceViewController.swift; sourceTree = "<group>"; };
 		F8416A001DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8416A031DF6BF5000664870 /* DocsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F85231411DF7D7B20046DDDB /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		F86A7FD51DF734B000019DC1 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		F86A7FD71DF734D800019DC1 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		F8748A861DF55DB200A0AFBA /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
@@ -78,6 +84,9 @@
 		F8748A921DF55DB200A0AFBA /* Teko-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Medium.ttf"; sourceTree = "<group>"; };
 		F8748A931DF55DB200A0AFBA /* Teko-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Regular.ttf"; sourceTree = "<group>"; };
 		F8748A941DF55DB200A0AFBA /* Teko-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-SemiBold.ttf"; sourceTree = "<group>"; };
+		F87792ED1DF92C360052E888 /* AdviceRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceRequestViewController.swift; sourceTree = "<group>"; };
+		F87792EF1DF92C560052E888 /* AdviceSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceSummaryViewController.swift; sourceTree = "<group>"; };
+		F87792F61DF92CB30052E888 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F881E7461DF69B37000F7ED7 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		F883DD0A1DF4713D00C8071B /* Vraiment Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vraiment Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F883DD0D1DF4713E00C8071B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +104,7 @@
 		F8EB75791DF5CC3E00B19804 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F8EB757B1DF5F68300B19804 /* DocsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocsViewController.swift; sourceTree = "<group>"; };
 		F8EB757D1DF5FB7E00B19804 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F8EC73311DF8807E007A1280 /* AdvicePrestationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvicePrestationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,12 +135,12 @@
 		F84169FF1DF6B98200664870 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F84169FD1DF6B4ED00664870 /* AdviceViewController.swift */,
-				F81E515A1DF696EC004F1BE4 /* Home2ViewController.swift */,
-				F8EB757B1DF5F68300B19804 /* DocsViewController.swift */,
-				F86A7FD51DF734B000019DC1 /* MessagesViewController.swift */,
-				F8EB75791DF5CC3E00B19804 /* HomeViewController.swift */,
-				F8EB757D1DF5FB7E00B19804 /* LoginViewController.swift */,
+				F87792F81DF92CBF0052E888 /* Profile */,
+				F87792F21DF92C760052E888 /* Home */,
+				F87792F11DF92C660052E888 /* Advice */,
+				F87792F31DF92C860052E888 /* Docs */,
+				F87792F41DF92C920052E888 /* Messages */,
+				F87792F51DF92C990052E888 /* Login */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -139,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				F881E7461DF69B37000F7ED7 /* MenuCollectionViewCell.swift */,
+				F85231411DF7D7B20046DDDB /* PaddingLabel.swift */,
 				F86A7FD71DF734D800019DC1 /* MessagesTableViewCell.swift */,
 				F8416A001DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift */,
 				F8416A031DF6BF5000664870 /* DocsCollectionViewCell.swift */,
@@ -166,6 +177,58 @@
 			);
 			name = Ressources;
 			path = ../../../../Datas/VraimentPro/fonts;
+			sourceTree = "<group>";
+		};
+		F87792F11DF92C660052E888 /* Advice */ = {
+			isa = PBXGroup;
+			children = (
+				F84169FD1DF6B4ED00664870 /* AdviceViewController.swift */,
+				F8EC73311DF8807E007A1280 /* AdvicePrestationViewController.swift */,
+				F87792ED1DF92C360052E888 /* AdviceRequestViewController.swift */,
+				F87792EF1DF92C560052E888 /* AdviceSummaryViewController.swift */,
+			);
+			name = Advice;
+			sourceTree = "<group>";
+		};
+		F87792F21DF92C760052E888 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F81E515A1DF696EC004F1BE4 /* Home2ViewController.swift */,
+				F8EB75791DF5CC3E00B19804 /* HomeViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		F87792F31DF92C860052E888 /* Docs */ = {
+			isa = PBXGroup;
+			children = (
+				F8EB757B1DF5F68300B19804 /* DocsViewController.swift */,
+			);
+			name = Docs;
+			sourceTree = "<group>";
+		};
+		F87792F41DF92C920052E888 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				F86A7FD51DF734B000019DC1 /* MessagesViewController.swift */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		F87792F51DF92C990052E888 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F8EB757D1DF5FB7E00B19804 /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		F87792F81DF92CBF0052E888 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F87792F61DF92CB30052E888 /* ProfileViewController.swift */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		F883DD011DF4713C00C8071B = {
@@ -376,15 +439,20 @@
 				F8416A011DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift in Sources */,
 				F86A7FD81DF734D800019DC1 /* MessagesTableViewCell.swift in Sources */,
 				F84169FE1DF6B4EE00664870 /* AdviceViewController.swift in Sources */,
+				F87792EE1DF92C360052E888 /* AdviceRequestViewController.swift in Sources */,
 				F81E515B1DF696EC004F1BE4 /* Home2ViewController.swift in Sources */,
 				F881E7471DF69B37000F7ED7 /* MenuCollectionViewCell.swift in Sources */,
+				F8EC73321DF8807E007A1280 /* AdvicePrestationViewController.swift in Sources */,
+				F87792F71DF92CB30052E888 /* ProfileViewController.swift in Sources */,
 				F8EB757E1DF5FB7E00B19804 /* LoginViewController.swift in Sources */,
 				F8416A041DF6BF5000664870 /* DocsCollectionViewCell.swift in Sources */,
 				F8EB757C1DF5F68300B19804 /* DocsViewController.swift in Sources */,
 				F883DD161DF4713E00C8071B /* Vraiment_Pro.xcdatamodeld in Sources */,
 				F883DD0E1DF4713E00C8071B /* AppDelegate.swift in Sources */,
+				F85231421DF7D7B20046DDDB /* PaddingLabel.swift in Sources */,
 				F86A7FD61DF734B100019DC1 /* MessagesViewController.swift in Sources */,
 				F8EB757A1DF5CC3E00B19804 /* HomeViewController.swift in Sources */,
+				F87792F01DF92C560052E888 /* AdviceSummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

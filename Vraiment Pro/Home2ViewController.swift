@@ -13,6 +13,8 @@ class Home2ViewController: UIViewController {
     @IBOutlet weak var menuCollectionView: UICollectionView!
     
     var menu : [Dictionary<String,String>] = []
+    var adviceNumber:Int = 0
+    var messagesNumber:Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,8 @@ class Home2ViewController: UIViewController {
         menuCollectionView.delegate = self
 
         createButtonsInfo()
+        adviceNumber = 3
+        messagesNumber = 0
         menuCollectionView.reloadData()
     }
 
@@ -62,6 +66,26 @@ extension Home2ViewController : UICollectionViewDataSource{
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuItem", for: indexPath) as! MenuCollectionViewCell
         let data = menu[indexPath.item]
+        
+        if(indexPath.row == 0){
+            if adviceNumber != 0{
+                cell.notification.text = String(adviceNumber)
+                
+            }else{
+                cell.notification.alpha = 0
+            }
+        }
+        else if(indexPath.row == 2){
+            if messagesNumber != 0{
+                cell.notification.text = String(messagesNumber)
+            }else{
+                cell.notification.alpha = 0
+            }
+        }
+        else{
+            cell.notification.alpha = 0
+        }
+        //cell.notification.sizeToFit()
         
         cell.image.image = UIImage(named: data["picture"]!)
         cell.titre.text = data["name"]!

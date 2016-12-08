@@ -38,7 +38,9 @@ class MessagesViewController: UIViewController {
                      "id":"3"])
     }
 
-    
+    @IBAction func closeController(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

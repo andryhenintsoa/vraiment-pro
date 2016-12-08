@@ -11,4 +11,5 @@ import UIKit
 class MenuCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titre: UILabel!
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var notification: UILabel!
 }
