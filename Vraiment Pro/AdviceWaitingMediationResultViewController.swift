@@ -1,19 +1,26 @@
 //
-//  AdviceRequestViewController.swift
+//  AdviceWaitingMediationResultViewController.swift
 //  Vraiment Pro
 //
-//  Created by Andry Henintsoa Razafindramanana on 08/12/2016.
+//  Created by Andry Henintsoa Razafindramanana on 09/12/2016.
 //  Copyright © 2016 Sparks MG. All rights reserved.
 //
 
 import UIKit
 
-class AdviceRequestViewController: UIViewController {
+class AdviceWaitingMediationResultViewController: UIViewController {
 
+    @IBOutlet weak var resultLabel : UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        resultLabel.sizeToFit()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.closeNavController), userInfo: nil, repeats: false)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,16 +29,14 @@ class AdviceRequestViewController: UIViewController {
     }
     
     @IBAction func closeController(_ sender: AnyObject) {
-        let _ = navigationController?.popViewController(animated: true)
+        _ = navigationController?.popViewController(animated: true)
     }
+    
+    func closeNavController() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
-    @IBAction func selectClient(_ sender: AnyObject) {
-        performSegue(withIdentifier: "toClientChoose", sender: nil)
-        if let textField = sender as? UITextField{
-            textField.resignFirstResponder()
-        }
-        
-    }
     /*
     // MARK: - Navigation
 

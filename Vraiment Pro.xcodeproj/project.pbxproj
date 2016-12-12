@@ -11,6 +11,13 @@
 		F84169FE1DF6B4EE00664870 /* AdviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84169FD1DF6B4ED00664870 /* AdviceViewController.swift */; };
 		F8416A011DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8416A001DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift */; };
 		F8416A041DF6BF5000664870 /* DocsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8416A031DF6BF5000664870 /* DocsCollectionViewCell.swift */; };
+		F84360801DFDA88200D3C9AC /* MessagesClientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F843607F1DFDA88100D3C9AC /* MessagesClientDetailViewController.swift */; };
+		F84360821DFDA8C900D3C9AC /* MessagesVPDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84360811DFDA8C900D3C9AC /* MessagesVPDetailViewController.swift */; };
+		F84360841DFDAD7900D3C9AC /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84360831DFDAD7900D3C9AC /* SidebarViewController.swift */; };
+		F84360861DFDB39900D3C9AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84360851DFDB39900D3C9AC /* MainViewController.swift */; };
+		F84360881DFDC76000D3C9AC /* PasswordForgottenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84360871DFDC75F00D3C9AC /* PasswordForgottenViewController.swift */; };
+		F843608B1DFDDCC400D3C9AC /* ParametersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F843608A1DFDDCC400D3C9AC /* ParametersViewController.swift */; };
+		F843608D1DFDDD0800D3C9AC /* ParametersChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F843608C1DFDDD0800D3C9AC /* ParametersChangeViewController.swift */; };
 		F85231421DF7D7B20046DDDB /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85231411DF7D7B20046DDDB /* PaddingLabel.swift */; };
 		F86A7FD61DF734B100019DC1 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A7FD51DF734B000019DC1 /* MessagesViewController.swift */; };
 		F86A7FD81DF734D800019DC1 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A7FD71DF734D800019DC1 /* MessagesTableViewCell.swift */; };
@@ -39,6 +46,20 @@
 		F883DD1B1DF4713E00C8071B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F883DD191DF4713E00C8071B /* LaunchScreen.storyboard */; };
 		F883DD261DF4713E00C8071B /* Vraiment_ProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883DD251DF4713E00C8071B /* Vraiment_ProTests.swift */; };
 		F883DD311DF4713E00C8071B /* Vraiment_ProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883DD301DF4713E00C8071B /* Vraiment_ProUITests.swift */; };
+		F89210941DFD730900703CE1 /* ProfilePartnerAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89210931DFD730800703CE1 /* ProfilePartnerAddViewController.swift */; };
+		F89210961DFD737E00703CE1 /* ProfilePartnerAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89210951DFD737E00703CE1 /* ProfilePartnerAddTableViewCell.swift */; };
+		F892109B1DFD84CC00703CE1 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F892109A1DFD84CC00703CE1 /* DLRadioButton.m */; };
+		F8AD0C0B1DFBD52B004729B2 /* ChooseClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AD0C0A1DFBD52A004729B2 /* ChooseClientViewController.swift */; };
+		F8B411471DFB26C6008AE9D3 /* AdviceWaitingMediationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B411461DFB26C5008AE9D3 /* AdviceWaitingMediationDetailViewController.swift */; };
+		F8B411491DFB273D008AE9D3 /* AdviceWaitingMediationAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B411481DFB273D008AE9D3 /* AdviceWaitingMediationAnswerViewController.swift */; };
+		F8B4114B1DFB2EE6008AE9D3 /* AdviceWaitingMediationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4114A1DFB2EE6008AE9D3 /* AdviceWaitingMediationResultViewController.swift */; };
+		F8B4114D1DFB34E5008AE9D3 /* AdviceRequestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4114C1DFB34E4008AE9D3 /* AdviceRequestResultViewController.swift */; };
+		F8D137171DFA82A3000B995E /* AdviceWaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D137161DFA82A3000B995E /* AdviceWaitingViewController.swift */; };
+		F8D137191DFA8906000B995E /* AdviceWaitingBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D137181DFA8906000B995E /* AdviceWaitingBillViewController.swift */; };
+		F8D1371B1DFA895B000B995E /* AdviceWaitingMediationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1371A1DFA895B000B995E /* AdviceWaitingMediationViewController.swift */; };
+		F8D1371E1DFA8DAC000B995E /* AdviceWaitingBillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1371D1DFA8DAC000B995E /* AdviceWaitingBillTableViewCell.swift */; };
+		F8D137201DFA8DC4000B995E /* AdviceWaitingMediationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1371F1DFA8DC4000B995E /* AdviceWaitingMediationTableViewCell.swift */; };
+		F8D137221DFA9A67000B995E /* CosmosDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D137211DFA9A67000B995E /* CosmosDistrib.swift */; };
 		F8EB757A1DF5CC3E00B19804 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB75791DF5CC3E00B19804 /* HomeViewController.swift */; };
 		F8EB757C1DF5F68300B19804 /* DocsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB757B1DF5F68300B19804 /* DocsViewController.swift */; };
 		F8EB757E1DF5FB7E00B19804 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB757D1DF5FB7E00B19804 /* LoginViewController.swift */; };
@@ -67,6 +88,13 @@
 		F84169FD1DF6B4ED00664870 /* AdviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceViewController.swift; sourceTree = "<group>"; };
 		F8416A001DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8416A031DF6BF5000664870 /* DocsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F843607F1DFDA88100D3C9AC /* MessagesClientDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesClientDetailViewController.swift; sourceTree = "<group>"; };
+		F84360811DFDA8C900D3C9AC /* MessagesVPDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesVPDetailViewController.swift; sourceTree = "<group>"; };
+		F84360831DFDAD7900D3C9AC /* SidebarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
+		F84360851DFDB39900D3C9AC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F84360871DFDC75F00D3C9AC /* PasswordForgottenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordForgottenViewController.swift; sourceTree = "<group>"; };
+		F843608A1DFDDCC400D3C9AC /* ParametersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametersViewController.swift; sourceTree = "<group>"; };
+		F843608C1DFDDD0800D3C9AC /* ParametersChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametersChangeViewController.swift; sourceTree = "<group>"; };
 		F85231411DF7D7B20046DDDB /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		F86A7FD51DF734B000019DC1 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		F86A7FD71DF734D800019DC1 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
@@ -101,6 +129,22 @@
 		F883DD2C1DF4713E00C8071B /* Vraiment ProUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vraiment ProUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F883DD301DF4713E00C8071B /* Vraiment_ProUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vraiment_ProUITests.swift; sourceTree = "<group>"; };
 		F883DD321DF4713E00C8071B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F89210931DFD730800703CE1 /* ProfilePartnerAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePartnerAddViewController.swift; sourceTree = "<group>"; };
+		F89210951DFD737E00703CE1 /* ProfilePartnerAddTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePartnerAddTableViewCell.swift; sourceTree = "<group>"; };
+		F89210981DFD84A800703CE1 /* DLRadioButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
+		F89210991DFD84CC00703CE1 /* Vraiment Pro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vraiment Pro-Bridging-Header.h"; sourceTree = "<group>"; };
+		F892109A1DFD84CC00703CE1 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
+		F8AD0C0A1DFBD52A004729B2 /* ChooseClientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseClientViewController.swift; sourceTree = "<group>"; };
+		F8B411461DFB26C5008AE9D3 /* AdviceWaitingMediationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingMediationDetailViewController.swift; sourceTree = "<group>"; };
+		F8B411481DFB273D008AE9D3 /* AdviceWaitingMediationAnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingMediationAnswerViewController.swift; sourceTree = "<group>"; };
+		F8B4114A1DFB2EE6008AE9D3 /* AdviceWaitingMediationResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingMediationResultViewController.swift; sourceTree = "<group>"; };
+		F8B4114C1DFB34E4008AE9D3 /* AdviceRequestResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceRequestResultViewController.swift; sourceTree = "<group>"; };
+		F8D137161DFA82A3000B995E /* AdviceWaitingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingViewController.swift; sourceTree = "<group>"; };
+		F8D137181DFA8906000B995E /* AdviceWaitingBillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingBillViewController.swift; sourceTree = "<group>"; };
+		F8D1371A1DFA895B000B995E /* AdviceWaitingMediationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingMediationViewController.swift; sourceTree = "<group>"; };
+		F8D1371D1DFA8DAC000B995E /* AdviceWaitingBillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingBillTableViewCell.swift; sourceTree = "<group>"; };
+		F8D1371F1DFA8DC4000B995E /* AdviceWaitingMediationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingMediationTableViewCell.swift; sourceTree = "<group>"; };
+		F8D137211DFA9A67000B995E /* CosmosDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosDistrib.swift; sourceTree = "<group>"; };
 		F8EB75791DF5CC3E00B19804 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F8EB757B1DF5F68300B19804 /* DocsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocsViewController.swift; sourceTree = "<group>"; };
 		F8EB757D1DF5FB7E00B19804 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +179,8 @@
 		F84169FF1DF6B98200664870 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F84360891DFDDCA400D3C9AC /* Parameters */,
+				F8AD0C0C1DFBD58E004729B2 /* Core */,
 				F87792F81DF92CBF0052E888 /* Profile */,
 				F87792F21DF92C760052E888 /* Home */,
 				F87792F11DF92C660052E888 /* Advice */,
@@ -148,13 +194,23 @@
 		F8416A021DF6BE7100664870 /* Custom views */ = {
 			isa = PBXGroup;
 			children = (
-				F881E7461DF69B37000F7ED7 /* MenuCollectionViewCell.swift */,
+				F8D1371C1DFA8D7C000B995E /* Custom cells */,
 				F85231411DF7D7B20046DDDB /* PaddingLabel.swift */,
-				F86A7FD71DF734D800019DC1 /* MessagesTableViewCell.swift */,
-				F8416A001DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift */,
-				F8416A031DF6BF5000664870 /* DocsCollectionViewCell.swift */,
+				F8D137211DFA9A67000B995E /* CosmosDistrib.swift */,
+				F89210981DFD84A800703CE1 /* DLRadioButton.h */,
+				F892109A1DFD84CC00703CE1 /* DLRadioButton.m */,
+				F89210991DFD84CC00703CE1 /* Vraiment Pro-Bridging-Header.h */,
 			);
 			name = "Custom views";
+			sourceTree = "<group>";
+		};
+		F84360891DFDDCA400D3C9AC /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				F843608A1DFDDCC400D3C9AC /* ParametersViewController.swift */,
+				F843608C1DFDDD0800D3C9AC /* ParametersChangeViewController.swift */,
+			);
+			name = Parameters;
 			sourceTree = "<group>";
 		};
 		F8748A851DF55DB200A0AFBA /* Ressources */ = {
@@ -184,8 +240,15 @@
 			children = (
 				F84169FD1DF6B4ED00664870 /* AdviceViewController.swift */,
 				F8EC73311DF8807E007A1280 /* AdvicePrestationViewController.swift */,
+				F8B4114C1DFB34E4008AE9D3 /* AdviceRequestResultViewController.swift */,
 				F87792ED1DF92C360052E888 /* AdviceRequestViewController.swift */,
 				F87792EF1DF92C560052E888 /* AdviceSummaryViewController.swift */,
+				F8D137161DFA82A3000B995E /* AdviceWaitingViewController.swift */,
+				F8D137181DFA8906000B995E /* AdviceWaitingBillViewController.swift */,
+				F8D1371A1DFA895B000B995E /* AdviceWaitingMediationViewController.swift */,
+				F8B4114A1DFB2EE6008AE9D3 /* AdviceWaitingMediationResultViewController.swift */,
+				F8B411461DFB26C5008AE9D3 /* AdviceWaitingMediationDetailViewController.swift */,
+				F8B411481DFB273D008AE9D3 /* AdviceWaitingMediationAnswerViewController.swift */,
 			);
 			name = Advice;
 			sourceTree = "<group>";
@@ -211,6 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				F86A7FD51DF734B000019DC1 /* MessagesViewController.swift */,
+				F843607F1DFDA88100D3C9AC /* MessagesClientDetailViewController.swift */,
+				F84360811DFDA8C900D3C9AC /* MessagesVPDetailViewController.swift */,
 			);
 			name = Messages;
 			sourceTree = "<group>";
@@ -227,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				F87792F61DF92CB30052E888 /* ProfileViewController.swift */,
+				F89210931DFD730800703CE1 /* ProfilePartnerAddViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -283,6 +349,31 @@
 				F883DD321DF4713E00C8071B /* Info.plist */,
 			);
 			path = "Vraiment ProUITests";
+			sourceTree = "<group>";
+		};
+		F8AD0C0C1DFBD58E004729B2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F8AD0C0A1DFBD52A004729B2 /* ChooseClientViewController.swift */,
+				F84360831DFDAD7900D3C9AC /* SidebarViewController.swift */,
+				F84360851DFDB39900D3C9AC /* MainViewController.swift */,
+				F84360871DFDC75F00D3C9AC /* PasswordForgottenViewController.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		F8D1371C1DFA8D7C000B995E /* Custom cells */ = {
+			isa = PBXGroup;
+			children = (
+				F881E7461DF69B37000F7ED7 /* MenuCollectionViewCell.swift */,
+				F86A7FD71DF734D800019DC1 /* MessagesTableViewCell.swift */,
+				F8416A001DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift */,
+				F8416A031DF6BF5000664870 /* DocsCollectionViewCell.swift */,
+				F8D1371D1DFA8DAC000B995E /* AdviceWaitingBillTableViewCell.swift */,
+				F8D1371F1DFA8DC4000B995E /* AdviceWaitingMediationTableViewCell.swift */,
+				F89210951DFD737E00703CE1 /* ProfilePartnerAddTableViewCell.swift */,
+			);
+			name = "Custom cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +445,7 @@
 					F883DD091DF4713C00C8071B = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 8587PB8PJ7;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					F883DD201DF4713E00C8071B = {
@@ -437,15 +529,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8416A011DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift in Sources */,
+				F89210961DFD737E00703CE1 /* ProfilePartnerAddTableViewCell.swift in Sources */,
+				F8D1371B1DFA895B000B995E /* AdviceWaitingMediationViewController.swift in Sources */,
+				F8B4114D1DFB34E5008AE9D3 /* AdviceRequestResultViewController.swift in Sources */,
 				F86A7FD81DF734D800019DC1 /* MessagesTableViewCell.swift in Sources */,
+				F892109B1DFD84CC00703CE1 /* DLRadioButton.m in Sources */,
 				F84169FE1DF6B4EE00664870 /* AdviceViewController.swift in Sources */,
+				F843608B1DFDDCC400D3C9AC /* ParametersViewController.swift in Sources */,
 				F87792EE1DF92C360052E888 /* AdviceRequestViewController.swift in Sources */,
+				F8D137171DFA82A3000B995E /* AdviceWaitingViewController.swift in Sources */,
+				F84360841DFDAD7900D3C9AC /* SidebarViewController.swift in Sources */,
 				F81E515B1DF696EC004F1BE4 /* Home2ViewController.swift in Sources */,
+				F84360821DFDA8C900D3C9AC /* MessagesVPDetailViewController.swift in Sources */,
 				F881E7471DF69B37000F7ED7 /* MenuCollectionViewCell.swift in Sources */,
+				F8D1371E1DFA8DAC000B995E /* AdviceWaitingBillTableViewCell.swift in Sources */,
+				F84360881DFDC76000D3C9AC /* PasswordForgottenViewController.swift in Sources */,
+				F843608D1DFDDD0800D3C9AC /* ParametersChangeViewController.swift in Sources */,
+				F84360861DFDB39900D3C9AC /* MainViewController.swift in Sources */,
+				F84360801DFDA88200D3C9AC /* MessagesClientDetailViewController.swift in Sources */,
 				F8EC73321DF8807E007A1280 /* AdvicePrestationViewController.swift in Sources */,
+				F8D137191DFA8906000B995E /* AdviceWaitingBillViewController.swift in Sources */,
+				F8AD0C0B1DFBD52B004729B2 /* ChooseClientViewController.swift in Sources */,
+				F8B411491DFB273D008AE9D3 /* AdviceWaitingMediationAnswerViewController.swift in Sources */,
 				F87792F71DF92CB30052E888 /* ProfileViewController.swift in Sources */,
 				F8EB757E1DF5FB7E00B19804 /* LoginViewController.swift in Sources */,
+				F89210941DFD730900703CE1 /* ProfilePartnerAddViewController.swift in Sources */,
 				F8416A041DF6BF5000664870 /* DocsCollectionViewCell.swift in Sources */,
+				F8B411471DFB26C6008AE9D3 /* AdviceWaitingMediationDetailViewController.swift in Sources */,
+				F8D137221DFA9A67000B995E /* CosmosDistrib.swift in Sources */,
+				F8D137201DFA8DC4000B995E /* AdviceWaitingMediationTableViewCell.swift in Sources */,
+				F8B4114B1DFB2EE6008AE9D3 /* AdviceWaitingMediationResultViewController.swift in Sources */,
 				F8EB757C1DF5F68300B19804 /* DocsViewController.swift in Sources */,
 				F883DD161DF4713E00C8071B /* Vraiment_Pro.xcdatamodeld in Sources */,
 				F883DD0E1DF4713E00C8071B /* AppDelegate.swift in Sources */,
@@ -604,12 +717,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8587PB8PJ7;
 				INFOPLIST_FILE = "Vraiment Pro/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mg.sparks.Vraiment-Pro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Vraiment Pro/Vraiment Pro-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -618,12 +734,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8587PB8PJ7;
 				INFOPLIST_FILE = "Vraiment Pro/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mg.sparks.Vraiment-Pro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Vraiment Pro/Vraiment Pro-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

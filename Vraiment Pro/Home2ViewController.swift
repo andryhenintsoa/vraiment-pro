@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Home2ViewController: UIViewController {
+class Home2ViewController: MainViewController {
     
     @IBOutlet weak var menuCollectionView: UICollectionView!
     
@@ -23,14 +23,18 @@ class Home2ViewController: UIViewController {
         menuCollectionView.delegate = self
 
         createButtonsInfo()
-        adviceNumber = 3
-        messagesNumber = 0
+        adviceNumber = 38
+        messagesNumber = 12
         menuCollectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func toogleSidebar(_ sender: AnyObject) {
+        self.displaySidebar()
     }
     
 // Poser les informations de chaque menu
@@ -46,15 +50,20 @@ class Home2ViewController: UIViewController {
     }
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toDetail2" {
+            let cell = sender as! UICollectionViewCell
+            let indexPath = self.menuCollectionView.indexPath(for: cell)
+            let destinationController = segue.destination as! UITabBarController
+            destinationController.selectedIndex = (indexPath?.row)!
+            //self.present(destinationController, animated: true, completion:nil)
+        }
     }
-    */
+    
 
 }
 
@@ -68,22 +77,29 @@ extension Home2ViewController : UICollectionViewDataSource{
         let data = menu[indexPath.item]
         
         if(indexPath.row == 0){
+            print("adviceNumber : \(adviceNumber)")
             if adviceNumber != 0{
+                print(1)
                 cell.notification.text = String(adviceNumber)
                 
             }else{
-                cell.notification.alpha = 0
+                print(2)
+                cell.displayNotification(false)
             }
         }
         else if(indexPath.row == 2){
+            print("messagesNumber : \(messagesNumber)")
             if messagesNumber != 0{
+                print(1)
                 cell.notification.text = String(messagesNumber)
             }else{
-                cell.notification.alpha = 0
+                print(2)
+                cell.displayNotification(false)
             }
         }
         else{
-            cell.notification.alpha = 0
+            print(5)
+            cell.displayNotification(false)
         }
         //cell.notification.sizeToFit()
         

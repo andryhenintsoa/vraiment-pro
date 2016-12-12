@@ -1,14 +1,14 @@
 //
-//  AdviceRequestViewController.swift
+//  MessagesClientDetailViewController.swift
 //  Vraiment Pro
 //
-//  Created by Andry Henintsoa Razafindramanana on 08/12/2016.
+//  Created by Andry Henintsoa Razafindramanana on 11/12/2016.
 //  Copyright © 2016 Sparks MG. All rights reserved.
 //
 
 import UIKit
 
-class AdviceRequestViewController: UIViewController {
+class MessagesClientDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +24,8 @@ class AdviceRequestViewController: UIViewController {
     @IBAction func closeController(_ sender: AnyObject) {
         let _ = navigationController?.popViewController(animated: true)
     }
+    
 
-    @IBAction func selectClient(_ sender: AnyObject) {
-        performSegue(withIdentifier: "toClientChoose", sender: nil)
-        if let textField = sender as? UITextField{
-            textField.resignFirstResponder()
-        }
-        
-    }
     /*
     // MARK: - Navigation
 

@@ -12,4 +12,9 @@ class MenuCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titre: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var notification: UILabel!
+    @IBOutlet weak var notificationContainer: UIView!
+    
+    func displayNotification(_ status:Bool=true){
+        notificationContainer.alpha = (status) ? 1 : 0
+    }
 }

@@ -1,44 +1,41 @@
 //
-//  AdviceViewController.swift
+//  AdviceWaitingViewController.swift
 //  Vraiment Pro
 //
-//  Created by Andry Henintsoa Razafindramanana on 06/12/2016.
+//  Created by Andry Henintsoa Razafindramanana on 09/12/2016.
 //  Copyright © 2016 Sparks MG. All rights reserved.
 //
 
 import UIKit
 
-class AdviceViewController: UIViewController {
+class AdviceWaitingViewController: UIViewController {
     
     @IBOutlet weak var menuCollectionView: UICollectionView!
-    
-    var menu : [Dictionary<String,String>] = []
 
+    var menu : [Dictionary<String,String>] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         createButtonsInfo()
         menuCollectionView.reloadData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-// Poser les informations de chaque menu
+    // Poser les informations de chaque menu
     func createButtonsInfo(){
-        menu.append(["name":"Envoyer une demande d'avis",
+        menu.append(["name":"Avis en attente de facture",
                      "id":"1"])
-        menu.append(["name":"Avis en attente",
+        menu.append(["name":"Avis en attente de médiation",
                      "id":"2"])
-        menu.append(["name":"Demandes d'avis envoyées",
-                     "id":"3"])
-
     }
     
     @IBAction func closeController(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
+        let _ = navigationController?.popViewController(animated: true)
     }
 
     /*
@@ -54,7 +51,7 @@ class AdviceViewController: UIViewController {
 }
 
 // MARK: - UICollectionViewDataSource
-extension AdviceViewController : UICollectionViewDataSource{
+extension AdviceWaitingViewController : UICollectionViewDataSource{
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return menu.count
     }
@@ -64,7 +61,7 @@ extension AdviceViewController : UICollectionViewDataSource{
         
         cell.label.text = data["name"]!
         
-        cell.layer.borderWidth = 0.5
+        cell.layer.borderWidth = 5
         cell.layer.borderColor = UIColor(red: 103, green: 181, blue: 45, alpha: 1).cgColor
         //cell.layer.cornerRadius = 5
         
@@ -73,7 +70,7 @@ extension AdviceViewController : UICollectionViewDataSource{
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension AdviceViewController : UICollectionViewDelegateFlowLayout{
+extension AdviceWaitingViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let picWidth = (self.view.frame.size.width - 40)
         return CGSize(width: picWidth, height: 55)
@@ -81,15 +78,14 @@ extension AdviceViewController : UICollectionViewDelegateFlowLayout{
 }
 
 // MARK: - UICollectionViewDelegate
-extension AdviceViewController : UICollectionViewDelegate{
+extension AdviceWaitingViewController : UICollectionViewDelegate{
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         if(indexPath.row == 0){
-            performSegue(withIdentifier: "toAdviceRequest", sender: nil)
+            performSegue(withIdentifier: "toAdviceWaitingBill", sender: nil)
         }
         else if(indexPath.row == 1){
-            performSegue(withIdentifier: "toAdviceWaiting", sender: nil)
+            performSegue(withIdentifier: "toAdviceWaitingMediation", sender: nil)
         }
     }
-
+    
 }
-

@@ -26,7 +26,7 @@ class AdvicePrestationViewController: UIViewController {
     }
     
     @IBAction func closeController(_ sender: AnyObject) {
-        navigationController?.popViewController(animated: true)
+        let _ = navigationController?.popViewController(animated: true)
     }
 
     /*
@@ -62,6 +62,8 @@ extension AdvicePrestationViewController : UIPickerViewDelegate{
             
             monthLabel.backgroundColor = UIColor.clear
             monthLabel.text = mois[row]
+            monthLabel.textAlignment = NSTextAlignment.center
+            monthLabel.font = UIFont(name: "Raleway", size: 17)
             return monthLabel
         }
         else{
@@ -69,6 +71,8 @@ extension AdvicePrestationViewController : UIPickerViewDelegate{
             
             yearLabel.backgroundColor = UIColor.clear
             yearLabel.text = annee[row]
+            yearLabel.textAlignment = NSTextAlignment.center
+            yearLabel.font = UIFont(name: "Raleway", size: 17)
             return yearLabel
         }
     }

@@ -67,7 +67,7 @@ extension MessagesViewController : UITableViewDataSource{
         cell.contentLabel.sizeToFit()
         
         cell.contentView.layer.borderWidth = 1
-        cell.contentView.layer.borderColor = UIColor(red: 103, green: 181, blue: 45, alpha: 1).cgColor
+        cell.contentView.layer.borderColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1).cgColor
         
         return cell
     }
