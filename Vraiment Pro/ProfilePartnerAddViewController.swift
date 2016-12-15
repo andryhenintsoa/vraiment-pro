@@ -17,6 +17,7 @@ class ProfilePartnerAddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        partnerTableView.delegate = self
         createData()
         partnerTableView.reloadData()
     }
@@ -73,5 +74,16 @@ extension ProfilePartnerAddViewController : UITableViewDataSource{
         cell.contentView.layer.borderColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1).cgColor
         
         return cell
+    }
+}
+
+extension ProfilePartnerAddViewController : UITableViewDelegate{
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        
+        let cell = tableView.cellForRow(at: indexPath) as! ProfilePartnerAddTableViewCell
+    
+        cell.checkBox.isSelected = !(cell.checkBox.isSelected)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

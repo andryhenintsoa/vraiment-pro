@@ -8,8 +8,16 @@
 
 import UIKit
 
+enum messagesType:Int {
+    case client = 0
+    case vp = 1
+}
+
 class MessagesViewController: UIViewController {
     @IBOutlet weak var messagesTableView: UITableView!
+    
+    @IBOutlet weak var messagesClientButton: UIButton!
+    @IBOutlet weak var messagesVPButton: UIButton!
     
     var messages : [Dictionary<String,String>] = []
 
@@ -40,6 +48,35 @@ class MessagesViewController: UIViewController {
 
     @IBAction func closeController(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func chooseMessageType(_ sender: UIButton) {
+        if(sender == messagesClientButton){
+            setActive(sender, otherButton: messagesVPButton)
+        }
+        else if(sender == messagesVPButton){
+            setActive(sender, otherButton: messagesClientButton)
+        }
+        else{
+            
+        }
+    }
+    
+    func chooseMessageType(index: Int) {
+        if(index == messagesType.client.rawValue){
+            setActive(messagesClientButton, otherButton: messagesVPButton)
+        }
+        else if(index == messagesType.vp.rawValue){
+            setActive(messagesVPButton, otherButton: messagesClientButton)
+        }
+    }
+    
+    func setActive(_ button: UIButton, otherButton: UIButton? = nil){
+        button.backgroundColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1)
+        button.setTitleColor(UIColor.white, for: .normal)
+        
+        otherButton?.backgroundColor = UIColor.white
+        otherButton?.setTitleColor(UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1), for: .normal)
     }
 
     /*

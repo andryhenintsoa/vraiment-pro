@@ -77,28 +77,21 @@ extension Home2ViewController : UICollectionViewDataSource{
         let data = menu[indexPath.item]
         
         if(indexPath.row == 0){
-            print("adviceNumber : \(adviceNumber)")
             if adviceNumber != 0{
-                print(1)
                 cell.notification.text = String(adviceNumber)
                 
             }else{
-                print(2)
                 cell.displayNotification(false)
             }
         }
         else if(indexPath.row == 2){
-            print("messagesNumber : \(messagesNumber)")
             if messagesNumber != 0{
-                print(1)
                 cell.notification.text = String(messagesNumber)
             }else{
-                print(2)
                 cell.displayNotification(false)
             }
         }
         else{
-            print(5)
             cell.displayNotification(false)
         }
         //cell.notification.sizeToFit()

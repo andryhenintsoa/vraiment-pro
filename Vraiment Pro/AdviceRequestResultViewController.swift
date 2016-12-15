@@ -16,6 +16,11 @@ class AdviceRequestResultViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        let _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.closeNavController), userInfo: nil, repeats: false)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -23,6 +28,10 @@ class AdviceRequestResultViewController: UIViewController {
     
     @IBAction func closeController(_ sender: AnyObject) {
         _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func closeNavController(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
 
     /*

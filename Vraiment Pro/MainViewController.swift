@@ -11,6 +11,8 @@ import UIKit
 class MainViewController: UIViewController {
     
     var leftViewController: SidebarViewController?
+    
+    var activityIndicator = UIActivityIndicatorView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,7 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+// MARK: - Functions for the sidebar
     func displaySidebar(_ position:CGFloat = 0) {
         addSidebarViewController()
         animateSidebarXPosition(position)
@@ -46,6 +49,42 @@ class MainViewController: UIViewController {
             }, completion: completion)
     }
 
+// MARK: - Functions for the loading spinner
+    func spinnerLoad(_ loading:Bool = true) {
+        if(loading){
+            activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0,y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
+            activityIndicator.center = self.view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+            activityIndicator.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        
+            view.addSubview(activityIndicator)
+        
+            activityIndicator.startAnimating()
+        }
+        else{
+            activityIndicator.stopAnimating()
+        }
+    }
+    
+    func spinnerHide(){
+        spinnerLoad(false)
+    }
+    
+// MARK: - Functions taking the result of webservices
+    func reloadData(){
+        
+    }
+    
+// MARK: - Functions for alerting users
+    func alertUser(title:String?, message:String?) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

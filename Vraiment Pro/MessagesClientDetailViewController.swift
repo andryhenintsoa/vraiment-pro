@@ -9,6 +9,9 @@
 import UIKit
 
 class MessagesClientDetailViewController: UIViewController {
+    
+    @IBOutlet weak var messagesClientButton: UIButton!
+    @IBOutlet weak var messagesVPButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,20 @@ class MessagesClientDetailViewController: UIViewController {
         let _ = navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func displayMessagesList(_ sender: UIButton) {
+        let n = self.navigationController?.viewControllers.count
+        let previousVC = self.navigationController?.viewControllers[n!-2] as! MessagesViewController
+        if(sender == messagesClientButton){
+            previousVC.chooseMessageType(index: 0)
+        }
+        else if(sender == messagesVPButton){
+            previousVC.chooseMessageType(index: 1)
+        }
+        else{
+            
+        }
+        closeController(sender)
+    }
 
     /*
     // MARK: - Navigation

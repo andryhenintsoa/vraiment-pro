@@ -10,7 +10,12 @@ import UIKit
 
 class AdvicePrestationViewController: UIViewController {
     @IBOutlet weak var datePicker: UIPickerView!
+    @IBOutlet weak var natureLabel: UITextField!
 
+    var selectedClient: [String:String]!
+    var sendingType:SendingType!
+    var joiningBillOption:JoiningBillOption?
+    
     let mois = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Décembre"]
     let annee = ["2016","2015","2014"]
     
@@ -29,15 +34,41 @@ class AdvicePrestationViewController: UIViewController {
         let _ = navigationController?.popViewController(animated: true)
     }
 
-    /*
-    // MARK: - Navigation
+    @IBAction func closeKeyboard(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func goToSummary(_ sender: UIButton) {
+        if(sender.currentTitle == "Plus tard"){
+            print("Plus tard")
+            joiningBillOption = .later
+            performSegue(withIdentifier: "toSummary", sender: sender)
+        }
+        else if(sender.currentTitle == "Maintenant"){
+            print("Maintenant")
+            joiningBillOption = .now
+            performSegue(withIdentifier: "toSummary", sender: sender)
+        }
 
+    }
+    
+    // MARK: - Navigation
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toSummary" {
+            let destination = segue.destination as? AdviceSummaryViewController
+            destination?.selectedClient = self.selectedClient
+            destination?.sendingType = self.sendingType
+            destination?.joiningBillOption = self.joiningBillOption
+            
+            let mMois = mois[datePicker.selectedRow(inComponent: 0)]
+            let mAnnee = annee[datePicker.selectedRow(inComponent: 1)]
+            
+            destination?.prestationDate = "\(mMois) \(mAnnee)"
+            destination?.prestationNature = natureLabel.text
+        }
     }
-    */
 
 }
 

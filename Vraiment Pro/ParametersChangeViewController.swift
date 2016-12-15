@@ -22,7 +22,8 @@ class ParametersChangeViewController: UIViewController {
     }
     
     @IBAction func closeController(_ sender: AnyObject) {
-        //self.dismiss(animated: true, completion: nil)
+        print("Close")
+        self.dismiss(animated: false, completion: nil)
     }
 
     /*

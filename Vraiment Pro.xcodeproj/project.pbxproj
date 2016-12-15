@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F804B2B41E012508007C82BA /* CustomEnumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F804B2B31E012507007C82BA /* CustomEnumerations.swift */; };
 		F81E515B1DF696EC004F1BE4 /* Home2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81E515A1DF696EC004F1BE4 /* Home2ViewController.swift */; };
 		F84169FE1DF6B4EE00664870 /* AdviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84169FD1DF6B4ED00664870 /* AdviceViewController.swift */; };
 		F8416A011DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8416A001DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift */; };
@@ -21,20 +22,6 @@
 		F85231421DF7D7B20046DDDB /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85231411DF7D7B20046DDDB /* PaddingLabel.swift */; };
 		F86A7FD61DF734B100019DC1 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A7FD51DF734B000019DC1 /* MessagesViewController.swift */; };
 		F86A7FD81DF734D800019DC1 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A7FD71DF734D800019DC1 /* MessagesTableViewCell.swift */; };
-		F8748A951DF55DB200A0AFBA /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A861DF55DB200A0AFBA /* Raleway-Bold.ttf */; };
-		F8748A961DF55DB200A0AFBA /* Raleway-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A871DF55DB200A0AFBA /* Raleway-ExtraBold.ttf */; };
-		F8748A971DF55DB200A0AFBA /* Raleway-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A881DF55DB200A0AFBA /* Raleway-ExtraLight.ttf */; };
-		F8748A981DF55DB200A0AFBA /* Raleway-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A891DF55DB200A0AFBA /* Raleway-Heavy.ttf */; };
-		F8748A991DF55DB200A0AFBA /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A8A1DF55DB200A0AFBA /* Raleway-Light.ttf */; };
-		F8748A9A1DF55DB200A0AFBA /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A8B1DF55DB200A0AFBA /* Raleway-Medium.ttf */; };
-		F8748A9B1DF55DB200A0AFBA /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A8C1DF55DB200A0AFBA /* Raleway-Regular.ttf */; };
-		F8748A9C1DF55DB200A0AFBA /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A8D1DF55DB200A0AFBA /* Raleway-SemiBold.ttf */; };
-		F8748A9D1DF55DB200A0AFBA /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A8E1DF55DB200A0AFBA /* Raleway-Thin.ttf */; };
-		F8748A9F1DF55DB200A0AFBA /* Teko-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A901DF55DB200A0AFBA /* Teko-Bold.ttf */; };
-		F8748AA01DF55DB200A0AFBA /* Teko-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A911DF55DB200A0AFBA /* Teko-Light.ttf */; };
-		F8748AA11DF55DB200A0AFBA /* Teko-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A921DF55DB200A0AFBA /* Teko-Medium.ttf */; };
-		F8748AA21DF55DB200A0AFBA /* Teko-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A931DF55DB200A0AFBA /* Teko-Regular.ttf */; };
-		F8748AA31DF55DB200A0AFBA /* Teko-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8748A941DF55DB200A0AFBA /* Teko-SemiBold.ttf */; };
 		F87792EE1DF92C360052E888 /* AdviceRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87792ED1DF92C360052E888 /* AdviceRequestViewController.swift */; };
 		F87792F01DF92C560052E888 /* AdviceSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87792EF1DF92C560052E888 /* AdviceSummaryViewController.swift */; };
 		F87792F71DF92CB30052E888 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87792F61DF92CB30052E888 /* ProfileViewController.swift */; };
@@ -49,6 +36,20 @@
 		F89210941DFD730900703CE1 /* ProfilePartnerAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89210931DFD730800703CE1 /* ProfilePartnerAddViewController.swift */; };
 		F89210961DFD737E00703CE1 /* ProfilePartnerAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89210951DFD737E00703CE1 /* ProfilePartnerAddTableViewCell.swift */; };
 		F892109B1DFD84CC00703CE1 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F892109A1DFD84CC00703CE1 /* DLRadioButton.m */; };
+		F8A6DF821DFFEB96009DAFE7 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF741DFFEB96009DAFE7 /* Raleway-Bold.ttf */; };
+		F8A6DF831DFFEB96009DAFE7 /* Raleway-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF751DFFEB96009DAFE7 /* Raleway-ExtraBold.ttf */; };
+		F8A6DF841DFFEB96009DAFE7 /* Raleway-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF761DFFEB96009DAFE7 /* Raleway-ExtraLight.ttf */; };
+		F8A6DF851DFFEB96009DAFE7 /* Raleway-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF771DFFEB96009DAFE7 /* Raleway-Heavy.ttf */; };
+		F8A6DF861DFFEB96009DAFE7 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF781DFFEB96009DAFE7 /* Raleway-Light.ttf */; };
+		F8A6DF871DFFEB96009DAFE7 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF791DFFEB96009DAFE7 /* Raleway-Medium.ttf */; };
+		F8A6DF881DFFEB96009DAFE7 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF7A1DFFEB96009DAFE7 /* Raleway-Regular.ttf */; };
+		F8A6DF891DFFEB96009DAFE7 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF7B1DFFEB96009DAFE7 /* Raleway-SemiBold.ttf */; };
+		F8A6DF8A1DFFEB96009DAFE7 /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF7C1DFFEB96009DAFE7 /* Raleway-Thin.ttf */; };
+		F8A6DF8B1DFFEB96009DAFE7 /* Teko-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF7D1DFFEB96009DAFE7 /* Teko-Bold.ttf */; };
+		F8A6DF8C1DFFEB96009DAFE7 /* Teko-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF7E1DFFEB96009DAFE7 /* Teko-Light.ttf */; };
+		F8A6DF8D1DFFEB96009DAFE7 /* Teko-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF7F1DFFEB96009DAFE7 /* Teko-Medium.ttf */; };
+		F8A6DF8E1DFFEB96009DAFE7 /* Teko-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF801DFFEB96009DAFE7 /* Teko-Regular.ttf */; };
+		F8A6DF8F1DFFEB97009DAFE7 /* Teko-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF811DFFEB96009DAFE7 /* Teko-SemiBold.ttf */; };
 		F8AD0C0B1DFBD52B004729B2 /* ChooseClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AD0C0A1DFBD52A004729B2 /* ChooseClientViewController.swift */; };
 		F8B411471DFB26C6008AE9D3 /* AdviceWaitingMediationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B411461DFB26C5008AE9D3 /* AdviceWaitingMediationDetailViewController.swift */; };
 		F8B411491DFB273D008AE9D3 /* AdviceWaitingMediationAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B411481DFB273D008AE9D3 /* AdviceWaitingMediationAnswerViewController.swift */; };
@@ -84,6 +85,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F804B2B31E012507007C82BA /* CustomEnumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomEnumerations.swift; sourceTree = "<group>"; };
 		F81E515A1DF696EC004F1BE4 /* Home2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home2ViewController.swift; sourceTree = "<group>"; };
 		F84169FD1DF6B4ED00664870 /* AdviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceViewController.swift; sourceTree = "<group>"; };
 		F8416A001DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceMenuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -98,20 +100,6 @@
 		F85231411DF7D7B20046DDDB /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		F86A7FD51DF734B000019DC1 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		F86A7FD71DF734D800019DC1 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
-		F8748A861DF55DB200A0AFBA /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
-		F8748A871DF55DB200A0AFBA /* Raleway-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraBold.ttf"; sourceTree = "<group>"; };
-		F8748A881DF55DB200A0AFBA /* Raleway-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraLight.ttf"; sourceTree = "<group>"; };
-		F8748A891DF55DB200A0AFBA /* Raleway-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Heavy.ttf"; sourceTree = "<group>"; };
-		F8748A8A1DF55DB200A0AFBA /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
-		F8748A8B1DF55DB200A0AFBA /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
-		F8748A8C1DF55DB200A0AFBA /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
-		F8748A8D1DF55DB200A0AFBA /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
-		F8748A8E1DF55DB200A0AFBA /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
-		F8748A901DF55DB200A0AFBA /* Teko-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Bold.ttf"; sourceTree = "<group>"; };
-		F8748A911DF55DB200A0AFBA /* Teko-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Light.ttf"; sourceTree = "<group>"; };
-		F8748A921DF55DB200A0AFBA /* Teko-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Medium.ttf"; sourceTree = "<group>"; };
-		F8748A931DF55DB200A0AFBA /* Teko-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Regular.ttf"; sourceTree = "<group>"; };
-		F8748A941DF55DB200A0AFBA /* Teko-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-SemiBold.ttf"; sourceTree = "<group>"; };
 		F87792ED1DF92C360052E888 /* AdviceRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceRequestViewController.swift; sourceTree = "<group>"; };
 		F87792EF1DF92C560052E888 /* AdviceSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceSummaryViewController.swift; sourceTree = "<group>"; };
 		F87792F61DF92CB30052E888 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +122,20 @@
 		F89210981DFD84A800703CE1 /* DLRadioButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
 		F89210991DFD84CC00703CE1 /* Vraiment Pro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vraiment Pro-Bridging-Header.h"; sourceTree = "<group>"; };
 		F892109A1DFD84CC00703CE1 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
+		F8A6DF741DFFEB96009DAFE7 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		F8A6DF751DFFEB96009DAFE7 /* Raleway-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraBold.ttf"; sourceTree = "<group>"; };
+		F8A6DF761DFFEB96009DAFE7 /* Raleway-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraLight.ttf"; sourceTree = "<group>"; };
+		F8A6DF771DFFEB96009DAFE7 /* Raleway-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Heavy.ttf"; sourceTree = "<group>"; };
+		F8A6DF781DFFEB96009DAFE7 /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
+		F8A6DF791DFFEB96009DAFE7 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		F8A6DF7A1DFFEB96009DAFE7 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		F8A6DF7B1DFFEB96009DAFE7 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		F8A6DF7C1DFFEB96009DAFE7 /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
+		F8A6DF7D1DFFEB96009DAFE7 /* Teko-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Bold.ttf"; sourceTree = "<group>"; };
+		F8A6DF7E1DFFEB96009DAFE7 /* Teko-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Light.ttf"; sourceTree = "<group>"; };
+		F8A6DF7F1DFFEB96009DAFE7 /* Teko-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Medium.ttf"; sourceTree = "<group>"; };
+		F8A6DF801DFFEB96009DAFE7 /* Teko-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Regular.ttf"; sourceTree = "<group>"; };
+		F8A6DF811DFFEB96009DAFE7 /* Teko-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-SemiBold.ttf"; sourceTree = "<group>"; };
 		F8AD0C0A1DFBD52A004729B2 /* ChooseClientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseClientViewController.swift; sourceTree = "<group>"; };
 		F8B411461DFB26C5008AE9D3 /* AdviceWaitingMediationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingMediationDetailViewController.swift; sourceTree = "<group>"; };
 		F8B411481DFB273D008AE9D3 /* AdviceWaitingMediationAnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingMediationAnswerViewController.swift; sourceTree = "<group>"; };
@@ -211,28 +213,6 @@
 				F843608C1DFDDD0800D3C9AC /* ParametersChangeViewController.swift */,
 			);
 			name = Parameters;
-			sourceTree = "<group>";
-		};
-		F8748A851DF55DB200A0AFBA /* Ressources */ = {
-			isa = PBXGroup;
-			children = (
-				F8748A861DF55DB200A0AFBA /* Raleway-Bold.ttf */,
-				F8748A871DF55DB200A0AFBA /* Raleway-ExtraBold.ttf */,
-				F8748A881DF55DB200A0AFBA /* Raleway-ExtraLight.ttf */,
-				F8748A891DF55DB200A0AFBA /* Raleway-Heavy.ttf */,
-				F8748A8A1DF55DB200A0AFBA /* Raleway-Light.ttf */,
-				F8748A8B1DF55DB200A0AFBA /* Raleway-Medium.ttf */,
-				F8748A8C1DF55DB200A0AFBA /* Raleway-Regular.ttf */,
-				F8748A8D1DF55DB200A0AFBA /* Raleway-SemiBold.ttf */,
-				F8748A8E1DF55DB200A0AFBA /* Raleway-Thin.ttf */,
-				F8748A901DF55DB200A0AFBA /* Teko-Bold.ttf */,
-				F8748A911DF55DB200A0AFBA /* Teko-Light.ttf */,
-				F8748A921DF55DB200A0AFBA /* Teko-Medium.ttf */,
-				F8748A931DF55DB200A0AFBA /* Teko-Regular.ttf */,
-				F8748A941DF55DB200A0AFBA /* Teko-SemiBold.ttf */,
-			);
-			name = Ressources;
-			path = ../../../../Datas/VraimentPro/fonts;
 			sourceTree = "<group>";
 		};
 		F87792F11DF92C660052E888 /* Advice */ = {
@@ -323,11 +303,12 @@
 				F883DD0D1DF4713E00C8071B /* AppDelegate.swift */,
 				F883DD171DF4713E00C8071B /* Assets.xcassets */,
 				F883DD111DF4713E00C8071B /* Main.storyboard */,
+				F804B2B31E012507007C82BA /* CustomEnumerations.swift */,
 				F84169FF1DF6B98200664870 /* Controllers */,
 				F8416A021DF6BE7100664870 /* Custom views */,
 				F883DD191DF4713E00C8071B /* LaunchScreen.storyboard */,
+				F8A6DF731DFFEB96009DAFE7 /* Fonts */,
 				F883DD1C1DF4713E00C8071B /* Info.plist */,
-				F8748A851DF55DB200A0AFBA /* Ressources */,
 				F883DD141DF4713E00C8071B /* Vraiment_Pro.xcdatamodeld */,
 			);
 			path = "Vraiment Pro";
@@ -349,6 +330,28 @@
 				F883DD321DF4713E00C8071B /* Info.plist */,
 			);
 			path = "Vraiment ProUITests";
+			sourceTree = "<group>";
+		};
+		F8A6DF731DFFEB96009DAFE7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F8A6DF741DFFEB96009DAFE7 /* Raleway-Bold.ttf */,
+				F8A6DF751DFFEB96009DAFE7 /* Raleway-ExtraBold.ttf */,
+				F8A6DF761DFFEB96009DAFE7 /* Raleway-ExtraLight.ttf */,
+				F8A6DF771DFFEB96009DAFE7 /* Raleway-Heavy.ttf */,
+				F8A6DF781DFFEB96009DAFE7 /* Raleway-Light.ttf */,
+				F8A6DF791DFFEB96009DAFE7 /* Raleway-Medium.ttf */,
+				F8A6DF7A1DFFEB96009DAFE7 /* Raleway-Regular.ttf */,
+				F8A6DF7B1DFFEB96009DAFE7 /* Raleway-SemiBold.ttf */,
+				F8A6DF7C1DFFEB96009DAFE7 /* Raleway-Thin.ttf */,
+				F8A6DF7D1DFFEB96009DAFE7 /* Teko-Bold.ttf */,
+				F8A6DF7E1DFFEB96009DAFE7 /* Teko-Light.ttf */,
+				F8A6DF7F1DFFEB96009DAFE7 /* Teko-Medium.ttf */,
+				F8A6DF801DFFEB96009DAFE7 /* Teko-Regular.ttf */,
+				F8A6DF811DFFEB96009DAFE7 /* Teko-SemiBold.ttf */,
+			);
+			name = Fonts;
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		F8AD0C0C1DFBD58E004729B2 /* Core */ = {
@@ -444,9 +447,9 @@
 				TargetAttributes = {
 					F883DD091DF4713C00C8071B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 8587PB8PJ7;
+						DevelopmentTeam = 97PT6SLS2S;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					F883DD201DF4713E00C8071B = {
 						CreatedOnToolsVersion = 8.0;
@@ -487,23 +490,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A6DF8F1DFFEB97009DAFE7 /* Teko-SemiBold.ttf in Resources */,
+				F8A6DF8C1DFFEB96009DAFE7 /* Teko-Light.ttf in Resources */,
 				F883DD1B1DF4713E00C8071B /* LaunchScreen.storyboard in Resources */,
-				F8748AA31DF55DB200A0AFBA /* Teko-SemiBold.ttf in Resources */,
-				F8748A9B1DF55DB200A0AFBA /* Raleway-Regular.ttf in Resources */,
-				F8748A981DF55DB200A0AFBA /* Raleway-Heavy.ttf in Resources */,
-				F8748AA01DF55DB200A0AFBA /* Teko-Light.ttf in Resources */,
-				F8748A961DF55DB200A0AFBA /* Raleway-ExtraBold.ttf in Resources */,
-				F8748A971DF55DB200A0AFBA /* Raleway-ExtraLight.ttf in Resources */,
-				F8748A9F1DF55DB200A0AFBA /* Teko-Bold.ttf in Resources */,
-				F8748A9A1DF55DB200A0AFBA /* Raleway-Medium.ttf in Resources */,
+				F8A6DF8D1DFFEB96009DAFE7 /* Teko-Medium.ttf in Resources */,
+				F8A6DF8B1DFFEB96009DAFE7 /* Teko-Bold.ttf in Resources */,
+				F8A6DF881DFFEB96009DAFE7 /* Raleway-Regular.ttf in Resources */,
+				F8A6DF851DFFEB96009DAFE7 /* Raleway-Heavy.ttf in Resources */,
+				F8A6DF831DFFEB96009DAFE7 /* Raleway-ExtraBold.ttf in Resources */,
+				F8A6DF841DFFEB96009DAFE7 /* Raleway-ExtraLight.ttf in Resources */,
+				F8A6DF871DFFEB96009DAFE7 /* Raleway-Medium.ttf in Resources */,
 				F883DD181DF4713E00C8071B /* Assets.xcassets in Resources */,
 				F883DD131DF4713E00C8071B /* Main.storyboard in Resources */,
-				F8748AA21DF55DB200A0AFBA /* Teko-Regular.ttf in Resources */,
-				F8748A951DF55DB200A0AFBA /* Raleway-Bold.ttf in Resources */,
-				F8748AA11DF55DB200A0AFBA /* Teko-Medium.ttf in Resources */,
-				F8748A9D1DF55DB200A0AFBA /* Raleway-Thin.ttf in Resources */,
-				F8748A991DF55DB200A0AFBA /* Raleway-Light.ttf in Resources */,
-				F8748A9C1DF55DB200A0AFBA /* Raleway-SemiBold.ttf in Resources */,
+				F8A6DF821DFFEB96009DAFE7 /* Raleway-Bold.ttf in Resources */,
+				F8A6DF8A1DFFEB96009DAFE7 /* Raleway-Thin.ttf in Resources */,
+				F8A6DF861DFFEB96009DAFE7 /* Raleway-Light.ttf in Resources */,
+				F8A6DF8E1DFFEB96009DAFE7 /* Teko-Regular.ttf in Resources */,
+				F8A6DF891DFFEB96009DAFE7 /* Raleway-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +541,7 @@
 				F843608B1DFDDCC400D3C9AC /* ParametersViewController.swift in Sources */,
 				F87792EE1DF92C360052E888 /* AdviceRequestViewController.swift in Sources */,
 				F8D137171DFA82A3000B995E /* AdviceWaitingViewController.swift in Sources */,
+				F804B2B41E012508007C82BA /* CustomEnumerations.swift in Sources */,
 				F84360841DFDAD7900D3C9AC /* SidebarViewController.swift in Sources */,
 				F81E515B1DF696EC004F1BE4 /* Home2ViewController.swift in Sources */,
 				F84360821DFDA8C900D3C9AC /* MessagesVPDetailViewController.swift in Sources */,
@@ -718,12 +722,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 8587PB8PJ7;
+				DEVELOPMENT_TEAM = 97PT6SLS2S;
 				INFOPLIST_FILE = "Vraiment Pro/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "mg.sparks.Vraiment-Pro";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app.Vraiment-Pro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1be86a2c-1ded-4822-a422-6cbe996d3ce8";
+				PROVISIONING_PROFILE_SPECIFIER = "Vraiment Pro Dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vraiment Pro/Vraiment Pro-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -735,12 +741,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 8587PB8PJ7;
+				DEVELOPMENT_TEAM = 97PT6SLS2S;
 				INFOPLIST_FILE = "Vraiment Pro/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "mg.sparks.Vraiment-Pro";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app.Vraiment-Pro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1be86a2c-1ded-4822-a422-6cbe996d3ce8";
+				PROVISIONING_PROFILE_SPECIFIER = "Vraiment Pro Dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vraiment Pro/Vraiment Pro-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

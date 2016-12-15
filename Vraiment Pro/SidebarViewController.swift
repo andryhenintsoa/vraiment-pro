@@ -67,6 +67,9 @@ extension SidebarViewController: UITableViewDelegate{
         if(indexPath.row == 0){
             performSegue(withIdentifier: "toChangeParameters", sender: nil)
         }
+        else if(indexPath.row == 1){
+            UIApplication.shared.openURL(URL(string: "http://www.stackoverflow.com")!)
+        }
         tableView.deselectRow(at: indexPath, animated: false)
     }
 }

@@ -9,11 +9,40 @@
 import UIKit
 
 class AdviceSummaryViewController: UIViewController {
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var mailLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var prestationLabel: UILabel!
+    @IBOutlet weak var fileLabel: UILabel!
+    @IBOutlet weak var fileIcon: UIImageView!
 
+    var selectedClient: [String:String]!
+    var prestationDate: String!
+    var prestationNature: String!
+    var sendingType: SendingType!
+    var joiningBillOption: JoiningBillOption!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        nameLabel.text = selectedClient["name"]
+        if sendingType == .mail {
+            mailLabel.text = selectedClient["mail"]
+        } else {
+            mailLabel.text = selectedClient["phone"]
+        }
+        dateLabel.text = prestationDate
+        prestationLabel.text = prestationNature
+        
+        if joiningBillOption == .now {
+            fileLabel.text = "File.jpg"
+        } else {
+            fileLabel.text = "Plus tard"
+            fileLabel.textColor = UIColor.red
+            fileIcon.image = UIImage(named: "ic_warning")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,7 +51,7 @@ class AdviceSummaryViewController: UIViewController {
     }
     
     @IBAction func closeController(_ sender: AnyObject) {
-        navigationController?.popViewController(animated: true)
+        _ = navigationController?.popViewController(animated: true)
     }
 
     /*

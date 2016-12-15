@@ -9,11 +9,16 @@
 import UIKit
 
 class AdviceWaitingMediationDetailViewController: UIViewController {
+    @IBOutlet weak var rating: CosmosView!
+    @IBOutlet weak var message: UITextView!
+    
+    var selectedAdviceMediation:[String:String]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.rating.rating = Double(selectedAdviceMediation["rating"]!)!
+        self.message.text = selectedAdviceMediation["message"]
+        
     }
 
     override func didReceiveMemoryWarning() {
