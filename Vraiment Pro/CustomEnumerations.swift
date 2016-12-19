@@ -17,3 +17,8 @@ enum JoiningBillOption:String {
     case now
     case later
 }
+
+enum SendingProfileType:String{
+    case selfProfile = "Mon profil"
+    case partnersProfile = "Profil(s) de partenaire"
+}

@@ -28,6 +28,7 @@ class MessagesViewController: UIViewController {
         messagesTableView.rowHeight = UITableViewAutomaticDimension
         
         createMessages()
+        messagesTableView.delegate = self
         messagesTableView.reloadData()
     }
 
@@ -38,11 +39,11 @@ class MessagesViewController: UIViewController {
     
 // Poser les informations de chaque menu
     func createMessages(){
-        messages.append(["name":"Publier une photo","statut":"0",
+        messages.append(["name":"Bfperifni f hejr vf","content":"Publier une photo","statut":"0",
                      "id":"1"])
-        messages.append(["name":"Publier Avant / Après, roufr aar g zrg zeronfv. Odpvke g ngjnz tng fd,fgn zjtg jzht aevb dbdf hab gare. ahebjbhrf qbr fnq b rfha zr","statut":"0",
+        messages.append(["name":"Lvngi anvef", "content":"Publier Avant / Après, roufr aar g zrg zeronfv. Odpvke g ngjnz tng fd,fgn zjtg jzht aevb dbdf hab gare. ahebjbhrf qbr fnq b rfha zr","statut":"0",
                      "id":"2"])
-        messages.append(["name":"Publier un document","statut":"1",
+        messages.append(["name":"Pfdk aern vdf", "content":"Publier un document","statut":"1",
                      "id":"3"])
     }
 
@@ -79,15 +80,16 @@ class MessagesViewController: UIViewController {
         otherButton?.setTitleColor(UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1), for: .normal)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toMessageClientDetail" {
+            let destination = segue.destination as? MessagesClientDetailViewController
+            
+            let data = messages[(messagesTableView.indexPathForSelectedRow?.row)!]
+            print(data)
+            destination?.message = data
+            
+        }
     }
-    */
 
 }
 
@@ -100,12 +102,26 @@ extension MessagesViewController : UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "messagesItem", for: indexPath) as! MessagesTableViewCell
         let data = messages[indexPath.item]
         
-        cell.contentLabel.text = data["name"]!
+        cell.nameLabel.text = data["name"]!
+        
+        cell.contentLabel.text = data["content"]!
         cell.contentLabel.sizeToFit()
+        
+        if(data["statut"]=="1"){
+            cell.nameLabel.font = UIFont(name: "Raleway-Medium", size: 17)
+            cell.dateLabel.font = UIFont(name: "Raleway-Medium", size: 13)
+            cell.contentLabel.font = UIFont(name: "Raleway-Medium", size: 13)
+        }
         
         cell.contentView.layer.borderWidth = 1
         cell.contentView.layer.borderColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1).cgColor
         
         return cell
+    }
+}
+
+extension MessagesViewController : UITableViewDelegate{
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

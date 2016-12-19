@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdviceWaitingBillViewController: UIViewController {
+class AdviceWaitingBillViewController: ImagePickerViewController {
 
     @IBOutlet weak var waitingTableView: UITableView!
     
@@ -18,6 +18,7 @@ class AdviceWaitingBillViewController: UIViewController {
         super.viewDidLoad()
         
         createData()
+        waitingTableView.delegate = self
         waitingTableView.reloadData()
     }
     
@@ -40,15 +41,16 @@ class AdviceWaitingBillViewController: UIViewController {
         _ = navigationController?.popViewController(animated: true)
     }
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        if segue.identifier == "toResult"{
+            let destination = segue.destination as? ResultViewController
+            destination?.textToDisplay = "La facture a été bien envoyé"
+        }
      }
-     */
     
 }
 
@@ -68,5 +70,12 @@ extension AdviceWaitingBillViewController : UITableViewDataSource{
         cell.contentView.layer.borderColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1).cgColor
         
         return cell
+    }
+}
+
+extension AdviceWaitingBillViewController : UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        self.segueNextName = "toResult"
+        chooseTakingPictureMode()
     }
 }

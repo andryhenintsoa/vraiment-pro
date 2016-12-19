@@ -32,6 +32,7 @@ class AdviceRequestViewController: MainViewController {
     }
 
     @IBAction func selectClient(_ sender: AnyObject) {
+        closeKeyboards(nil)
         performSegue(withIdentifier: "toClientChoose", sender: nil)
         if let textField = sender as? UITextField{
             textField.resignFirstResponder()
@@ -39,20 +40,43 @@ class AdviceRequestViewController: MainViewController {
     }
     
     @IBAction func choosePrestation(_ sender: UIButton) {
+        closeKeyboards(nil)
         if selectedClient == nil {
             self.alertUser(title: "Erreur", message: "Vous devez selectionner un utilisateur")
         } else {
             if(sender.currentTitle == "SMS"){
                 print("SMS")
-                sendingType = .sms
-                performSegue(withIdentifier: "toPrestation", sender: sender)
+                if phoneLabel.text == ""{
+                    self.alertUser(title: "Erreur", message: "Vous devez poser le numéro du client")
+                }
+                else{
+                    sendingType = .sms
+                    self.selectedClient?["phone"] = phoneLabel.text
+                    performSegue(withIdentifier: "toPrestation", sender: sender)
+                }
             }
             else if(sender.currentTitle == "Mail"){
                 print("Mail")
-                sendingType = .mail
-                performSegue(withIdentifier: "toPrestation", sender: sender)
+                if mailLabel.text == ""{
+                    self.alertUser(title: "Erreur", message: "Vous devez poser l'adresse email du client")
+                }
+                else{
+                    sendingType = .mail
+                    self.selectedClient?["mail"] = mailLabel.text
+                    performSegue(withIdentifier: "toPrestation", sender: sender)
+                }
             }
         }
+    }
+    
+    @IBAction func endEditing(_ sender: Any) {
+        closeKeyboards(nil)
+    }
+    
+    @IBAction func closeKeyboards(_ sender: UIButton?) {
+        nameLabel.resignFirstResponder()
+        phoneLabel.resignFirstResponder()
+        mailLabel.resignFirstResponder()
     }
     
     // MARK: - Navigation
@@ -64,6 +88,11 @@ class AdviceRequestViewController: MainViewController {
             destination?.selectedClient = self.selectedClient
             destination?.sendingType = self.sendingType
         }
+        else if segue.identifier == "toChooseClient" {
+            let destination = segue.destination as? ChooseClientViewController
+            destination?.textToDisplay = self.nameLabel.text!
+        }
+        
     }
  
 

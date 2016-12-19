@@ -12,11 +12,19 @@ class MessagesClientDetailViewController: UIViewController {
     
     @IBOutlet weak var messagesClientButton: UIButton!
     @IBOutlet weak var messagesVPButton: UIButton!
+    @IBOutlet weak var messageContent: UITextView!
+    @IBOutlet weak var senderName: UILabel!
+    @IBOutlet weak var senderPhone: UILabel!
+    @IBOutlet weak var senderMail: UILabel!
+    
+    var message: [String:String]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        senderName.text = message["name"]
+        messageContent.text = message["content"]
+        
     }
 
     override func didReceiveMemoryWarning() {

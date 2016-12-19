@@ -12,6 +12,8 @@ class MessagesVPDetailViewController: UIViewController {
     
     @IBOutlet weak var messagesClientButton: UIButton!
     @IBOutlet weak var messagesVPButton: UIButton!
+    @IBOutlet weak var messageContent: UITextView!
+    @IBOutlet weak var messageType: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

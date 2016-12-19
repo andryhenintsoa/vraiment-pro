@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdviceWaitingMediationDetailViewController: UIViewController {
+class AdviceWaitingMediationDetailViewController: MainViewController {
     @IBOutlet weak var rating: CosmosView!
     @IBOutlet weak var message: UITextView!
     
@@ -30,14 +30,26 @@ class AdviceWaitingMediationDetailViewController: UIViewController {
         _ = navigationController?.popViewController(animated: true)
     }
 
-    /*
+    @IBAction func notAnswerWaitingMediation(_ sender: Any) {
+        alertConfirmUser(title: "Ne pas répondre", message: "Etes-vous sûr de ne pas vouloir répondre?") { (action) in
+            var data:[String:String] = [:]
+            data = self.selectedAdviceMediation
+            data["notAnswer"] = "yes"
+            print(data)
+            self.closeController(sender as AnyObject)
+        }
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toWaitingMediationAnswer"{
+            
+            let destination = segue.destination as? AdviceWaitingMediationAnswerViewController
+            
+            destination?.selectedAdviceMediation = self.selectedAdviceMediation
+        }
+        
     }
-    */
 
 }

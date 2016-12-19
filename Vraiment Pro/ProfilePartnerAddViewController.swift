@@ -41,6 +41,25 @@ class ProfilePartnerAddViewController: UIViewController {
         _ = navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func choosePartners(_ sender: AnyObject) {
+        let n = self.navigationController?.viewControllers.count
+        let previousVC = self.navigationController?.viewControllers[n!-2] as! ProfileViewController
+        var selectedPartners: [[String:String]] = []
+        
+        for cellItem in partnerTableView.visibleCells {
+            let cell = cellItem as! ProfilePartnerAddTableViewCell
+            
+            if cell.checkBox.isSelected{
+                selectedPartners.append(partnerData[(partnerTableView.indexPath(for: cell)?.row)!])
+            }
+        }
+        previousVC.selectedPartners = selectedPartners
+        
+        print(previousVC.selectedPartners)
+        
+        closeController(sender)
+    }
+    
     /*
      // MARK: - Navigation
      

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F804B2B41E012508007C82BA /* CustomEnumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F804B2B31E012507007C82BA /* CustomEnumerations.swift */; };
 		F81E515B1DF696EC004F1BE4 /* Home2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81E515A1DF696EC004F1BE4 /* Home2ViewController.swift */; };
+		F827257D1E070DA100F4B0EC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F827257C1E070DA000F4B0EC /* ResultViewController.swift */; };
 		F84169FE1DF6B4EE00664870 /* AdviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84169FD1DF6B4ED00664870 /* AdviceViewController.swift */; };
 		F8416A011DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8416A001DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift */; };
 		F8416A041DF6BF5000664870 /* DocsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8416A031DF6BF5000664870 /* DocsCollectionViewCell.swift */; };
@@ -61,6 +62,7 @@
 		F8D1371E1DFA8DAC000B995E /* AdviceWaitingBillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1371D1DFA8DAC000B995E /* AdviceWaitingBillTableViewCell.swift */; };
 		F8D137201DFA8DC4000B995E /* AdviceWaitingMediationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1371F1DFA8DC4000B995E /* AdviceWaitingMediationTableViewCell.swift */; };
 		F8D137221DFA9A67000B995E /* CosmosDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D137211DFA9A67000B995E /* CosmosDistrib.swift */; };
+		F8E19D9F1E05B28200CBA399 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E19D9E1E05B28200CBA399 /* ImagePickerViewController.swift */; };
 		F8EB757A1DF5CC3E00B19804 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB75791DF5CC3E00B19804 /* HomeViewController.swift */; };
 		F8EB757C1DF5F68300B19804 /* DocsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB757B1DF5F68300B19804 /* DocsViewController.swift */; };
 		F8EB757E1DF5FB7E00B19804 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB757D1DF5FB7E00B19804 /* LoginViewController.swift */; };
@@ -87,6 +89,7 @@
 /* Begin PBXFileReference section */
 		F804B2B31E012507007C82BA /* CustomEnumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomEnumerations.swift; sourceTree = "<group>"; };
 		F81E515A1DF696EC004F1BE4 /* Home2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home2ViewController.swift; sourceTree = "<group>"; };
+		F827257C1E070DA000F4B0EC /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		F84169FD1DF6B4ED00664870 /* AdviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceViewController.swift; sourceTree = "<group>"; };
 		F8416A001DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8416A031DF6BF5000664870 /* DocsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -141,12 +144,15 @@
 		F8B411481DFB273D008AE9D3 /* AdviceWaitingMediationAnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingMediationAnswerViewController.swift; sourceTree = "<group>"; };
 		F8B4114A1DFB2EE6008AE9D3 /* AdviceWaitingMediationResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingMediationResultViewController.swift; sourceTree = "<group>"; };
 		F8B4114C1DFB34E4008AE9D3 /* AdviceRequestResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceRequestResultViewController.swift; sourceTree = "<group>"; };
+		F8C7EEB21E0307AA0015F830 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		F8C7EEB31E0307AA0015F830 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F8D137161DFA82A3000B995E /* AdviceWaitingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingViewController.swift; sourceTree = "<group>"; };
 		F8D137181DFA8906000B995E /* AdviceWaitingBillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingBillViewController.swift; sourceTree = "<group>"; };
 		F8D1371A1DFA895B000B995E /* AdviceWaitingMediationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingMediationViewController.swift; sourceTree = "<group>"; };
 		F8D1371D1DFA8DAC000B995E /* AdviceWaitingBillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingBillTableViewCell.swift; sourceTree = "<group>"; };
 		F8D1371F1DFA8DC4000B995E /* AdviceWaitingMediationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingMediationTableViewCell.swift; sourceTree = "<group>"; };
 		F8D137211DFA9A67000B995E /* CosmosDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosDistrib.swift; sourceTree = "<group>"; };
+		F8E19D9E1E05B28200CBA399 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		F8EB75791DF5CC3E00B19804 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F8EB757B1DF5F68300B19804 /* DocsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocsViewController.swift; sourceTree = "<group>"; };
 		F8EB757D1DF5FB7E00B19804 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -359,7 +365,9 @@
 			children = (
 				F8AD0C0A1DFBD52A004729B2 /* ChooseClientViewController.swift */,
 				F84360831DFDAD7900D3C9AC /* SidebarViewController.swift */,
+				F827257C1E070DA000F4B0EC /* ResultViewController.swift */,
 				F84360851DFDB39900D3C9AC /* MainViewController.swift */,
+				F8E19D9E1E05B28200CBA399 /* ImagePickerViewController.swift */,
 				F84360871DFDC75F00D3C9AC /* PasswordForgottenViewController.swift */,
 			);
 			name = Core;
@@ -442,7 +450,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Sparks MG";
 				TargetAttributes = {
 					F883DD091DF4713C00C8071B = {
@@ -533,6 +541,7 @@
 			files = (
 				F8416A011DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift in Sources */,
 				F89210961DFD737E00703CE1 /* ProfilePartnerAddTableViewCell.swift in Sources */,
+				F827257D1E070DA100F4B0EC /* ResultViewController.swift in Sources */,
 				F8D1371B1DFA895B000B995E /* AdviceWaitingMediationViewController.swift in Sources */,
 				F8B4114D1DFB34E5008AE9D3 /* AdviceRequestResultViewController.swift in Sources */,
 				F86A7FD81DF734D800019DC1 /* MessagesTableViewCell.swift in Sources */,
@@ -545,6 +554,7 @@
 				F84360841DFDAD7900D3C9AC /* SidebarViewController.swift in Sources */,
 				F81E515B1DF696EC004F1BE4 /* Home2ViewController.swift in Sources */,
 				F84360821DFDA8C900D3C9AC /* MessagesVPDetailViewController.swift in Sources */,
+				F8E19D9F1E05B28200CBA399 /* ImagePickerViewController.swift in Sources */,
 				F881E7471DF69B37000F7ED7 /* MenuCollectionViewCell.swift in Sources */,
 				F8D1371E1DFA8DAC000B995E /* AdviceWaitingBillTableViewCell.swift in Sources */,
 				F84360881DFDC76000D3C9AC /* PasswordForgottenViewController.swift in Sources */,
@@ -609,6 +619,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F883DD121DF4713E00C8071B /* Base */,
+				F8C7EEB21E0307AA0015F830 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -617,6 +628,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F883DD1A1DF4713E00C8071B /* Base */,
+				F8C7EEB31E0307AA0015F830 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -628,6 +640,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -642,6 +655,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -664,7 +678,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -678,6 +692,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -692,6 +707,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -708,7 +724,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -722,13 +738,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 97PT6SLS2S;
 				INFOPLIST_FILE = "Vraiment Pro/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.app.Vraiment-Pro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1be86a2c-1ded-4822-a422-6cbe996d3ce8";
+				PROVISIONING_PROFILE = "cfbaa4e5-1aa7-4b62-8960-117607816162";
 				PROVISIONING_PROFILE_SPECIFIER = "Vraiment Pro Dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vraiment Pro/Vraiment Pro-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -741,13 +758,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 97PT6SLS2S;
 				INFOPLIST_FILE = "Vraiment Pro/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.app.Vraiment-Pro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1be86a2c-1ded-4822-a422-6cbe996d3ce8";
+				PROVISIONING_PROFILE = "cfbaa4e5-1aa7-4b62-8960-117607816162";
 				PROVISIONING_PROFILE_SPECIFIER = "Vraiment Pro Dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vraiment Pro/Vraiment Pro-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

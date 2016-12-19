@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdvicePrestationViewController: UIViewController {
+class AdvicePrestationViewController: ImagePickerViewController {
     @IBOutlet weak var datePicker: UIPickerView!
     @IBOutlet weak var natureLabel: UITextField!
 
@@ -34,22 +34,29 @@ class AdvicePrestationViewController: UIViewController {
         let _ = navigationController?.popViewController(animated: true)
     }
 
-    @IBAction func closeKeyboard(_ sender: UITextField) {
-        sender.resignFirstResponder()
+    @IBAction func closeKeyboard(_ sender: UITextField?) {
+        natureLabel.resignFirstResponder()
     }
     
     @IBAction func goToSummary(_ sender: UIButton) {
-        if(sender.currentTitle == "Plus tard"){
-            print("Plus tard")
-            joiningBillOption = .later
-            performSegue(withIdentifier: "toSummary", sender: sender)
+        closeKeyboard(nil)
+        
+        if natureLabel.text == "" {
+            self.alertUser(title: "Erreur", message: "Vous devez préciser la nature de la prestation")
+        } else {
+            if(sender.currentTitle == "Plus tard"){
+                print("Plus tard")
+                joiningBillOption = .later
+                performSegue(withIdentifier: "toSummary", sender: sender)
+            }
+            else if(sender.currentTitle == "Maintenant"){
+                print("Maintenant")
+                joiningBillOption = .now
+                
+                self.segueNextName = "toSummary"
+                chooseTakingPictureMode()
+            }
         }
-        else if(sender.currentTitle == "Maintenant"){
-            print("Maintenant")
-            joiningBillOption = .now
-            performSegue(withIdentifier: "toSummary", sender: sender)
-        }
-
     }
     
     // MARK: - Navigation
@@ -67,6 +74,10 @@ class AdvicePrestationViewController: UIViewController {
             
             destination?.prestationDate = "\(mMois) \(mAnnee)"
             destination?.prestationNature = natureLabel.text
+            
+            if(imageToSend != nil){
+                destination?.imageToSend = self.imageToSend
+            }
         }
     }
 

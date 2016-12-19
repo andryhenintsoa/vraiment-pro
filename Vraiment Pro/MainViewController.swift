@@ -85,6 +85,16 @@ class MainViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func alertConfirmUser(title:String?, message:String?, completion: ((UIAlertAction) -> Void)?) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: completion))
+        
+        alertController.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -96,6 +106,8 @@ class MainViewController: UIViewController {
     */
 
 }
+
+
 
 private extension UIStoryboard {
     class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: Bundle.main) }

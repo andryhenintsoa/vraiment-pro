@@ -22,22 +22,42 @@ class AdviceSummaryViewController: UIViewController {
     var prestationNature: String!
     var sendingType: SendingType!
     var joiningBillOption: JoiningBillOption!
+    var imageToSend:UIImage?
+    var imageName:String = ""
+    
+    var data:[String:String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+// Name
         nameLabel.text = selectedClient["name"]
+        data["name"] = selectedClient["name"]
+        
+// Sending Type
+        data["sendingType"] = sendingType.rawValue
         if sendingType == .mail {
             mailLabel.text = selectedClient["mail"]
+            data["mail"] = selectedClient["mail"]
         } else {
             mailLabel.text = selectedClient["phone"]
+            data["phone"] = selectedClient["phone"]
         }
+// Prestation date
         dateLabel.text = prestationDate
-        prestationLabel.text = prestationNature
+        data["date"] = prestationDate
         
+// Prestation nature
+        prestationLabel.text = prestationNature
+        data["prestation"] = prestationNature
+        
+// Joining Bill
         if joiningBillOption == .now {
-            fileLabel.text = "File.jpg"
+            data["withFile"] = "yes"
+            imageName = "\(prestationNature!)-\(prestationDate!).jpg"
+            fileLabel.text = imageName
+            data["fileName"] = imageName
         } else {
+            data["withFile"] = "no"
             fileLabel.text = "Plus tard"
             fileLabel.textColor = UIColor.red
             fileIcon.image = UIImage(named: "ic_warning")
@@ -54,14 +74,17 @@ class AdviceSummaryViewController: UIViewController {
         _ = navigationController?.popViewController(animated: true)
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toSendringAdviceRequest"{
+            
+            print(data)
+            
+        }
     }
-    */
+    
 
 }

@@ -1,0 +1,300 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0aM-90-sGf"; */
+"0aM-90-sGf.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Nom du Client"; ObjectID = "0gl-Q7-qTE"; */
+"0gl-Q7-qTE.placeholder" = "Nom du Client";
+
+/* Class = "UIButton"; normalTitle = "Mon profil"; ObjectID = "0kH-fF-gtR"; */
+"0kH-fF-gtR.normalTitle" = "Mon profil";
+
+/* Class = "UIButton"; normalTitle = "Envoyer"; ObjectID = "1Td-37-flY"; */
+"1Td-37-flY.normalTitle" = "Envoyer";
+
+/* Class = "UILabel"; text = "Envoyer"; ObjectID = "1pE-g3-e9G"; */
+"1pE-g3-e9G.text" = "Envoyer";
+
+/* Class = "UILabel"; text = "Content"; ObjectID = "3Dt-gO-Ivr"; */
+"3Dt-gO-Ivr.text" = "Content";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "3bf-n2-Ecj"; */
+"3bf-n2-Ecj.title" = " ";
+
+/* Class = "UILabel"; text = "Content"; ObjectID = "3mb-v7-JMS"; */
+"3mb-v7-JMS.text" = "Content";
+
+/* Class = "UILabel"; text = "Avis"; ObjectID = "4Na-Mc-roc"; */
+"4Na-Mc-roc.text" = "Avis";
+
+/* Class = "UIButton"; normalTitle = "SMS"; ObjectID = "4hG-hk-PZq"; */
+"4hG-hk-PZq.normalTitle" = "SMS";
+
+/* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "7F9-ol-DuN"; */
+"7F9-ol-DuN.placeholder" = "E-mail";
+
+/* Class = "UITextField"; placeholder = "Adresse e-mail"; ObjectID = "7It-e5-cvC"; */
+"7It-e5-cvC.placeholder" = "Adresse e-mail";
+
+/* Class = "UILabel"; text = "Ou"; ObjectID = "8Eq-DV-xqN"; */
+"8Eq-DV-xqN.text" = "Ou";
+
+/* Class = "UILabel"; text = "garnier@gmail.com"; ObjectID = "97z-H5-YS0"; */
+"97z-H5-YS0.text" = "garnier@gmail.com";
+
+/* Class = "UILabel"; text = "Veuillez saisir votre adresse email"; ObjectID = "9dI-1j-uUq"; */
+"9dI-1j-uUq.text" = "Veuillez saisir votre adresse email";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "9kE-db-w4a"; */
+"9kE-db-w4a.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Répondre à cet avis"; ObjectID = "A86-Sf-0yz"; */
+"A86-Sf-0yz.normalTitle" = "Répondre à cet avis";
+
+/* Class = "UILabel"; text = "andryhenintsoa@outlook.com"; ObjectID = "Bbm-TL-z2D"; */
+"Bbm-TL-z2D.text" = "andryhenintsoa@outlook.com";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Cif-m5-9Xt"; */
+"Cif-m5-9Xt.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Modifier mon mot de passe"; ObjectID = "DdC-Oi-rUx"; */
+"DdC-Oi-rUx.normalTitle" = "Modifier mon mot de passe";
+
+/* Class = "UILabel"; text = "Prestation"; ObjectID = "EQT-Ca-STB"; */
+"EQT-Ca-STB.text" = "Prestation";
+
+/* Class = "UILabel"; text = "31/12/2016"; ObjectID = "EgE-8Y-XdI"; */
+"EgE-8Y-XdI.text" = "31/12/2016";
+
+/* Class = "UIButton"; normalTitle = "Envoyer ma demande"; ObjectID = "Eqo-QB-iUc"; */
+"Eqo-QB-iUc.normalTitle" = "Envoyer ma demande";
+
+/* Class = "UIButton"; normalTitle = "Envoyer"; ObjectID = "F1e-5L-5k3"; */
+"F1e-5L-5k3.normalTitle" = "Envoyer";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "FLy-at-xJj"; */
+"FLy-at-xJj.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Nom du Client"; ObjectID = "FSw-nv-4IB"; */
+"FSw-nv-4IB.placeholder" = "Nom du Client";
+
+/* Class = "UITabBarItem"; title = "Photos et Documents"; ObjectID = "GkN-Fv-PCG"; */
+"GkN-Fv-PCG.title" = "Photos et Documents";
+
+/* Class = "UILabel"; text = "Mr Garnier"; ObjectID = "H0u-85-jGW"; */
+"H0u-85-jGW.text" = "Mr Garnier";
+
+/* Class = "UILabel"; text = "Nom User"; ObjectID = "HL8-Dd-kwd"; */
+"HL8-Dd-kwd.text" = "Nom User";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "Ixg-jK-Uk2"; */
+"Ixg-jK-Uk2.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UIButton"; normalTitle = "Info VraimentPro"; ObjectID = "J8O-0h-aaH"; */
+"J8O-0h-aaH.normalTitle" = "Info VraimentPro";
+
+/* Class = "UIButton"; normalTitle = "Mail"; ObjectID = "JBF-qW-VmD"; */
+"JBF-qW-VmD.normalTitle" = "Mail";
+
+/* Class = "UILabel"; text = "Fonction"; ObjectID = "JNb-I6-Wxq"; */
+"JNb-I6-Wxq.text" = "Fonction";
+
+/* Class = "UILabel"; text = "File.jpg"; ObjectID = "JVG-Sv-YFB"; */
+"JVG-Sv-YFB.text" = "File.jpg";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "JqW-o7-aJd"; */
+"JqW-o7-aJd.title" = " ";
+
+/* Class = "UIButton"; normalTitle = "Plus tard"; ObjectID = "Jtn-KY-yKZ"; */
+"Jtn-KY-yKZ.normalTitle" = "Plus tard";
+
+/* Class = "UILabel"; text = ">"; ObjectID = "K5a-GI-ukD"; */
+"K5a-GI-ukD.text" = ">";
+
+/* Class = "UILabel"; text = "06 12 34 56 78"; ObjectID = "K76-1P-hmA"; */
+"K76-1P-hmA.text" = "06 12 34 56 78";
+
+/* Class = "UILabel"; text = "Razafindramanana Andry"; ObjectID = "KBk-M0-Uaf"; */
+"KBk-M0-Uaf.text" = "Razafindramanana Andry";
+
+/* Class = "UILabel"; text = "Adresse"; ObjectID = "KMi-Yn-zPp"; */
+"KMi-Yn-zPp.text" = "Adresse";
+
+/* Class = "UITabBarItem"; title = "Messages"; ObjectID = "Kn1-rS-PgX"; */
+"Kn1-rS-PgX.title" = "Messages";
+
+/* Class = "UILabel"; text = "Votre demande d'avis a bien été envoyé"; ObjectID = "N2k-by-lHL"; */
+"N2k-by-lHL.text" = "Votre demande d'avis a bien été envoyé";
+
+/* Class = "UIButton"; normalTitle = "Envoyer"; ObjectID = "NFz-9e-J7E"; */
+"NFz-9e-J7E.normalTitle" = "Envoyer";
+
+/* Class = "UILabel"; text = "31/12/2016"; ObjectID = "NQh-Wa-xtD"; */
+"NQh-Wa-xtD.text" = "31/12/2016";
+
+/* Class = "UITextField"; placeholder = "Nouveau mot de passe"; ObjectID = "NXd-jH-TaB"; */
+"NXd-jH-TaB.placeholder" = "Nouveau mot de passe";
+
+/* Class = "UIButton"; normalTitle = "Ne pas répondre"; ObjectID = "NZD-7X-FpL"; */
+"NZD-7X-FpL.normalTitle" = "Ne pas répondre";
+
+/* Class = "UITextField"; placeholder = "N° de portable"; ObjectID = "NuH-CF-P3U"; */
+"NuH-CF-P3U.placeholder" = "N° de portable";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PYh-1I-Ksl"; */
+"PYh-1I-Ksl.text" = "Label";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "RWS-uc-XrR"; */
+"RWS-uc-XrR.text" = "Title";
+
+/* Class = "UITabBarItem"; title = "Avis"; ObjectID = "Rcl-ZD-UQ2"; */
+"Rcl-ZD-UQ2.title" = "Avis";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "SLr-bP-Xc7"; */
+"SLr-bP-Xc7.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Ok"; ObjectID = "TFT-R9-rge"; */
+"TFT-R9-rge.normalTitle" = "Ok";
+
+/* Class = "UILabel"; text = "garnier@gmail.com"; ObjectID = "TrY-mg-JEO"; */
+"TrY-mg-JEO.text" = "garnier@gmail.com";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Tsh-vz-rbM"; */
+"Tsh-vz-rbM.text" = "Title";
+
+/* Class = "UILabel"; text = "Envoyer"; ObjectID = "UtG-u1-tJ9"; */
+"UtG-u1-tJ9.text" = "Envoyer";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VZy-IW-HxV"; */
+"VZy-IW-HxV.text" = "Label";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "VhU-7Q-R7C"; */
+"VhU-7Q-R7C.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Envoyer une demande d'avis"; ObjectID = "WJV-gN-tFP"; */
+"WJV-gN-tFP.text" = "Envoyer une demande d'avis";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "WK4-nh-U5X"; */
+"WK4-nh-U5X.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UIButton"; normalTitle = "Contact Client"; ObjectID = "WY2-Lg-wgW"; */
+"WY2-Lg-wgW.normalTitle" = "Contact Client";
+
+/* Class = "UILabel"; text = "Votre réponse a bien été envoyé"; ObjectID = "WZV-kq-dAb"; */
+"WZV-kq-dAb.text" = "Votre réponse a bien été envoyé";
+
+/* Class = "UIButton"; normalTitle = "Contact Client"; ObjectID = "WZg-hH-8Eb"; */
+"WZg-hH-8Eb.normalTitle" = "Contact Client";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "Ymh-Ds-4hq"; */
+"Ymh-Ds-4hq.text" = "Detail";
+
+/* Class = "UILabel"; text = "Adresse"; ObjectID = "Z2W-A9-RU7"; */
+"Z2W-A9-RU7.text" = "Adresse";
+
+/* Class = "UILabel"; text = "06 12 34 56 78"; ObjectID = "aZX-bL-rEh"; */
+"aZX-bL-rEh.text" = "06 12 34 56 78";
+
+/* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "ayJ-2v-dqH"; */
+"ayJ-2v-dqH.placeholder" = "E-mail";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "b4J-dI-VAU"; */
+"b4J-dI-VAU.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Mot de passe oublié ?"; ObjectID = "c8c-E1-X67"; */
+"c8c-E1-X67.normalTitle" = "Mot de passe oublié ?";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "crC-gi-Bia"; */
+"crC-gi-Bia.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Profil"; ObjectID = "cyg-Ui-ROS"; */
+"cyg-Ui-ROS.title" = "Profil";
+
+/* Class = "UIButton"; normalTitle = "Profil partenaire"; ObjectID = "dLA-XE-Fev"; */
+"dLA-XE-Fev.normalTitle" = "Profil partenaire";
+
+/* Class = "UITextField"; placeholder = "Nom du Client"; ObjectID = "dMC-oe-uKb"; */
+"dMC-oe-uKb.placeholder" = "Nom du Client";
+
+/* Class = "UILabel"; text = "Assurance"; ObjectID = "dtP-TX-ZyB"; */
+"dtP-TX-ZyB.text" = "Assurance";
+
+/* Class = "UILabel"; text = "Joindre la facture"; ObjectID = "eCg-JS-moh"; */
+"eCg-JS-moh.text" = "Joindre la facture";
+
+/* Class = "UILabel"; text = "Nom de partenaire"; ObjectID = "eTK-gd-vTk"; */
+"eTK-gd-vTk.text" = "Nom de partenaire";
+
+/* Class = "UIButton"; normalTitle = "SMS"; ObjectID = "eff-Rh-Paf"; */
+"eff-Rh-Paf.normalTitle" = "SMS";
+
+/* Class = "UILabel"; text = "Content"; ObjectID = "fV6-3o-SLb"; */
+"fV6-3o-SLb.text" = "Content";
+
+/* Class = "UITextField"; placeholder = "Confirmer le nouveau mot de passe"; ObjectID = "gCj-wa-n2Z"; */
+"gCj-wa-n2Z.placeholder" = "Confirmer le nouveau mot de passe";
+
+/* Class = "UITextField"; placeholder = "Ex : Pose de lavabo"; ObjectID = "gJT-Vr-bhh"; */
+"gJT-Vr-bhh.placeholder" = "Ex : Pose de lavabo";
+
+/* Class = "UIButton"; normalTitle = "Profil partenaire"; ObjectID = "gX2-rQ-Mbe"; */
+"gX2-rQ-Mbe.normalTitle" = "Profil partenaire";
+
+/* Class = "UIButton"; normalTitle = "Mail"; ObjectID = "gsD-QH-cEC"; */
+"gsD-QH-cEC.normalTitle" = "Mail";
+
+/* Class = "UIButton"; normalTitle = "Se connecter"; ObjectID = "hZd-in-VoG"; */
+"hZd-in-VoG.normalTitle" = "Se connecter";
+
+/* Class = "UILabel"; text = "Nom User"; ObjectID = "lOm-eQ-d8V"; */
+"lOm-eQ-d8V.text" = "Nom User";
+
+/* Class = "UILabel"; text = "31/12/2016"; ObjectID = "m0h-Je-V7S"; */
+"m0h-Je-V7S.text" = "31/12/2016";
+
+/* Class = "UILabel"; text = "06 12 34 56 78"; ObjectID = "mTB-rX-m2e"; */
+"mTB-rX-m2e.text" = "06 12 34 56 78";
+
+/* Class = "UIButton"; normalTitle = "Contact Client"; ObjectID = "oCh-oR-gDA"; */
+"oCh-oR-gDA.normalTitle" = "Contact Client";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "pP8-0W-Wp8"; */
+"pP8-0W-Wp8.title" = " ";
+
+/* Class = "UIButton"; normalTitle = "Mon profil"; ObjectID = "qYW-3Q-M2J"; */
+"qYW-3Q-M2J.normalTitle" = "Mon profil";
+
+/* Class = "UILabel"; text = "Date de la prestation"; ObjectID = "rhs-ih-qxC"; */
+"rhs-ih-qxC.text" = "Date de la prestation";
+
+/* Class = "UILabel"; text = "Ou"; ObjectID = "ryX-Lh-f6P"; */
+"ryX-Lh-f6P.text" = "Ou";
+
+/* Class = "UITextField"; placeholder = "Mot de passe"; ObjectID = "rzk-OH-2P7"; */
+"rzk-OH-2P7.placeholder" = "Mot de passe";
+
+/* Class = "UIButton"; normalTitle = "Annuler"; ObjectID = "szb-Kt-dct"; */
+"szb-Kt-dct.normalTitle" = "Annuler";
+
+/* Class = "UITextField"; placeholder = "N° de portable"; ObjectID = "tkN-8r-Y8b"; */
+"tkN-8r-Y8b.placeholder" = "N° de portable";
+
+/* Class = "UIButton"; normalTitle = "Info VraimentPro"; ObjectID = "v5b-av-iQ2"; */
+"v5b-av-iQ2.normalTitle" = "Info VraimentPro";
+
+/* Class = "UITextField"; placeholder = "Ancien mot de passe"; ObjectID = "vsm-RK-RWE"; */
+"vsm-RK-RWE.placeholder" = "Ancien mot de passe";
+
+/* Class = "UILabel"; text = "garnier@gmail.com"; ObjectID = "vuh-Kl-IYV"; */
+"vuh-Kl-IYV.text" = "garnier@gmail.com";
+
+/* Class = "UIButton"; normalTitle = "Info VraimentPro"; ObjectID = "wgR-hw-xDo"; */
+"wgR-hw-xDo.normalTitle" = "Info VraimentPro";
+
+/* Class = "UILabel"; text = "Nature de la prestation"; ObjectID = "y4i-pl-z5H"; */
+"y4i-pl-z5H.text" = "Nature de la prestation";
+
+/* Class = "UIButton"; normalTitle = "Maintenant"; ObjectID = "yX0-yt-3eg"; */
+"yX0-yt-3eg.normalTitle" = "Maintenant";
+
+/* Class = "UILabel"; text = "Décembre 2016"; ObjectID = "zug-03-kga"; */
+"zug-03-kga.text" = "Décembre 2016";
