@@ -2607,8 +2607,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8g0-Ze-a3T">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
+                                        <rect key="frame" x="0.0" y="149.66666666666663" width="414" height="324"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="324" id="zgU-g6-QKj"/>
+                                        </constraints>
                                         <view key="tableHeaderView" contentMode="scaleToFill" id="rFK-kR-QYa">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2694,10 +2697,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69697131850000005" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="8g0-Ze-a3T" secondAttribute="bottom" id="QSf-OZ-dLm"/>
-                                    <constraint firstItem="8g0-Ze-a3T" firstAttribute="top" secondItem="9we-0m-TxR" secondAttribute="top" id="SsT-XG-shc"/>
                                     <constraint firstItem="8g0-Ze-a3T" firstAttribute="leading" secondItem="9we-0m-TxR" secondAttribute="leading" id="fax-xh-zUi"/>
                                     <constraint firstAttribute="trailing" secondItem="8g0-Ze-a3T" secondAttribute="trailing" id="qSL-ve-gwu"/>
+                                    <constraint firstItem="8g0-Ze-a3T" firstAttribute="centerY" secondItem="9we-0m-TxR" secondAttribute="centerY" id="zcc-5T-DGi"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2753,8 +2755,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0UE-P9-QQS">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
+                                        <rect key="frame" x="0.0" y="149.66666666666663" width="414" height="324"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="324" id="l07-dZ-AdI"/>
+                                        </constraints>
                                         <view key="tableHeaderView" contentMode="scaleToFill" id="Aiq-To-qed">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2830,9 +2835,8 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69697131850000005" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="0UE-P9-QQS" secondAttribute="trailing" id="NgG-Hz-jlE"/>
-                                    <constraint firstItem="0UE-P9-QQS" firstAttribute="top" secondItem="xKk-zZ-8e3" secondAttribute="top" id="cj9-fl-duI"/>
+                                    <constraint firstItem="0UE-P9-QQS" firstAttribute="centerY" secondItem="xKk-zZ-8e3" secondAttribute="centerY" id="NqW-7P-tqx"/>
                                     <constraint firstItem="0UE-P9-QQS" firstAttribute="leading" secondItem="xKk-zZ-8e3" secondAttribute="leading" id="hFx-sz-bdp"/>
-                                    <constraint firstAttribute="bottom" secondItem="0UE-P9-QQS" secondAttribute="bottom" id="uNf-en-1aC"/>
                                 </constraints>
                             </view>
                         </subviews>
