@@ -20,6 +20,8 @@ class Webservice{
     
 // MARK : Upload image with POST
     class func imageUpload(_ url: String, controller: MainViewController, imageToSend : UIImage){
+        
+        controller.spinnerLoad()
 
         print("Uploading WS")
         print("url: \(url)")
@@ -54,6 +56,9 @@ class Webservice{
         let session =  URLSession(configuration: .default) //URLSession.shared
         
         let task = session.dataTask(with: request) { (data, response, error) -> Void in
+            
+            controller.spinnerLoad(false)
+            
             if error != nil {
                 print("error=\(error)")
                 return
@@ -118,6 +123,8 @@ class Webservice{
 // MARK : Method GET
 
     class func load(_ url: String, controller: MainViewController) {
+        controller.spinnerLoad()
+        
         print("Loading WS")
         print("url: \(url)")
         
@@ -135,7 +142,7 @@ class Webservice{
         let task = session.dataTask(with: urlRequest) {
             (data, response, error) -> Void in
             
-//            controller.spinnerLoad(false)
+            controller.spinnerLoad(false)
             
             var normalConnection = false
             
