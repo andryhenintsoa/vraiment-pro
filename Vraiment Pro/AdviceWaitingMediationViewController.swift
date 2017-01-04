@@ -105,13 +105,21 @@ extension AdviceWaitingMediationViewController : UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "waitingItem", for: indexPath) as! AdviceWaitingMediationTableViewCell
         var data = waitingData[indexPath.item]
         
-        cell.nameLabel.text = (data["prenom"] as! String) + " " + (data["nom"] as! String)
+//        cell.nameLabel.text = (data["prenom"] as! String) + " " + (data["nom"] as! String)
+        cell.nameLabel.text = (data["client_nom"] as! String)
         
         cell.contentLabel.text = data["nature_prest"] as? String
         data["date"] = (data["mois_prest"]! as? String)! + "/" + (data["annee_prest"]! as? String)!
         cell.dateLabel.text = data["date"]! as? String
         
-        cell.ratingElement.rating = Double(data["note"] as! Int)
+        if let note = data["note"] as? Int{
+            cell.ratingElement.rating = Double(note)
+        }
+        else{
+            cell.ratingElement.rating = 0
+        }
+        
+        
         
         cell.contentView.layer.borderWidth = 1
         cell.contentView.layer.borderColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1).cgColor
