@@ -17,12 +17,22 @@ class AdvicePrestationViewController: ImagePickerViewController {
     var joiningBillOption:JoiningBillOption?
     
     let mois = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Décembre"]
-    let annee = ["2016","2015","2014"]
+    let annee = ["2017","2016","2015","2014"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        natureLabel.attributedPlaceholder = NSAttributedString(string: "Ex : Pose de lavabo", attributes: [NSFontAttributeName: natureLabel.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1) ])
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let month = calendar.component(.month, from: date)
+        let year = calendar.component(.year, from: date)
+        
+        print("Current date : \(month) \(year)")
+        
+        datePicker.selectRow(month-1, inComponent: 0, animated:true)
+        datePicker.selectRow(annee.index(of: "\(year)")!, inComponent: 1, animated:true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +42,10 @@ class AdvicePrestationViewController: ImagePickerViewController {
     
     @IBAction func closeController(_ sender: AnyObject) {
         let _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func toogleSidebar(_ sender: AnyObject) {
+        self.displaySidebar()
     }
 
     @IBAction func closeKeyboard(_ sender: UITextField?) {
@@ -71,6 +85,10 @@ class AdvicePrestationViewController: ImagePickerViewController {
             
             let mMois = mois[datePicker.selectedRow(inComponent: 0)]
             let mAnnee = annee[datePicker.selectedRow(inComponent: 1)]
+            
+            
+            destination?.prestationMonth = "\(datePicker.selectedRow(inComponent: 0)+1)"
+            destination?.prestationYear = "\(mAnnee)"
             
             destination?.prestationDate = "\(mMois) \(mAnnee)"
             destination?.prestationNature = natureLabel.text

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdviceWaitingViewController: UIViewController {
+class AdviceWaitingViewController: MainViewController {
     
     @IBOutlet weak var menuCollectionView: UICollectionView!
 
@@ -29,13 +29,17 @@ class AdviceWaitingViewController: UIViewController {
     // Poser les informations de chaque menu
     func createButtonsInfo(){
         menu.append(["name":"Avis en attente de facture",
-                     "id":"1"])
+                     "id":"1","notif":"0"])
         menu.append(["name":"Avis en attente de médiation",
-                     "id":"2"])
+                     "id":"2","notif":"5"])
     }
     
     @IBAction func closeController(_ sender: AnyObject) {
         let _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func toogleSidebar(_ sender: AnyObject) {
+        self.displaySidebar()
     }
 
     /*
@@ -61,8 +65,17 @@ extension AdviceWaitingViewController : UICollectionViewDataSource{
         
         cell.label.text = data["name"]!
         
-        cell.layer.borderWidth = 5
-        cell.layer.borderColor = UIColor(red: 103, green: 181, blue: 45, alpha: 1).cgColor
+        let notif = Int(data["notif"]!)
+        
+        if notif == 0{
+            cell.displayNotification(false)
+        }
+        else{
+            cell.notification.text = data["notif"]!
+        }
+        
+//        cell.layer.borderWidth = 5
+//        cell.layer.borderColor = UIColor(red: 103, green: 181, blue: 45, alpha: 1).cgColor
         //cell.layer.cornerRadius = 5
         
         return cell

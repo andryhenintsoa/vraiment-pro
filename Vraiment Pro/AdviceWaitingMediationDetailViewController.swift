@@ -12,12 +12,12 @@ class AdviceWaitingMediationDetailViewController: MainViewController {
     @IBOutlet weak var rating: CosmosView!
     @IBOutlet weak var message: UITextView!
     
-    var selectedAdviceMediation:[String:String]!
+    var selectedAdviceMediation:[String:Any]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.rating.rating = Double(selectedAdviceMediation["rating"]!)!
-        self.message.text = selectedAdviceMediation["message"]
+        self.rating.rating = Double(selectedAdviceMediation["note"] as! Int)
+        self.message.text = selectedAdviceMediation["commentaire"] as! String
         
     }
 
@@ -29,14 +29,19 @@ class AdviceWaitingMediationDetailViewController: MainViewController {
     @IBAction func closeController(_ sender: AnyObject) {
         _ = navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func toogleSidebar(_ sender: AnyObject) {
+        self.displaySidebar()
+    }
 
     @IBAction func notAnswerWaitingMediation(_ sender: Any) {
         alertConfirmUser(title: "Ne pas répondre", message: "Etes-vous sûr de ne pas vouloir répondre?") { (action) in
-            var data:[String:String] = [:]
+            var data:[String:Any] = [:]
             data = self.selectedAdviceMediation
             data["notAnswer"] = "yes"
             print(data)
-            self.closeController(sender as AnyObject)
+            //self.closeController(sender as AnyObject)
+            self.performSegue(withIdentifier: "notAnswerAdvice", sender: self)
         }
     }
     // MARK: - Navigation
@@ -50,6 +55,12 @@ class AdviceWaitingMediationDetailViewController: MainViewController {
             destination?.selectedAdviceMediation = self.selectedAdviceMediation
         }
         
+        else if segue.identifier == "notAnswerAdvice"{
+            
+            let destination = segue.destination as? ResultViewController
+            
+            destination?.textToDisplay = "Cet aves sera publié sur votre profil\n" + "vous n'avez pour l'instant\n souhaité y répondre"
+        }
     }
 
 }

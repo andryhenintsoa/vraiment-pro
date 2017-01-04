@@ -15,11 +15,17 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>1.0.6</string>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>7</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Donner accès à votre appareil photo</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Donner accès à votre liste de contacts</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Donner accès à votre gallerie</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Raleway-Bold.ttf</string>
@@ -31,6 +37,11 @@
 		<string>Raleway-Regular.ttf</string>
 		<string>Raleway-SemiBold.ttf</string>
 		<string>Raleway-Thin.ttf</string>
+		<string>Raleway-BoldItalic.ttf</string>
+		<string>Raleway-Italic.ttf</string>
+		<string>Raleway-LightItalic.ttf</string>
+		<string>Raleway-MediumItalic.ttf</string>
+		<string>Raleway-SemiBoldItalic.ttf</string>
 		<string>Teko-Bold.ttf</string>
 		<string>Teko-Light.ttf</string>
 		<string>Teko-Medium.ttf</string>
@@ -60,9 +71,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Donner accès à votre gallerie</string>
-	<key>NSContactsUsageDescription</key>
-	<string>Donner accès à votre liste de contacts</string>
 </dict>
 </plist>

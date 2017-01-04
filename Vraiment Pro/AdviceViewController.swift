@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdviceViewController: UIViewController {
+class AdviceViewController: MainViewController {
     
     @IBOutlet weak var menuCollectionView: UICollectionView!
     
@@ -29,16 +29,20 @@ class AdviceViewController: UIViewController {
 // Poser les informations de chaque menu
     func createButtonsInfo(){
         menu.append(["name":"Envoyer une demande d'avis",
-                     "id":"1"])
+                     "id":"1","notif":"0"])
         menu.append(["name":"Avis en attente",
-                     "id":"2"])
+                     "id":"2","notif":"8"])
         menu.append(["name":"Demandes d'avis envoyées",
-                     "id":"3"])
+                     "id":"3","notif":"12"])
 
     }
     
     @IBAction func closeController(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func toogleSidebar(_ sender: AnyObject) {
+        self.displaySidebar()
     }
 
     /*
@@ -64,8 +68,17 @@ extension AdviceViewController : UICollectionViewDataSource{
         
         cell.label.text = data["name"]!
         
-        cell.layer.borderWidth = 0.5
-        cell.layer.borderColor = UIColor(red: 103, green: 181, blue: 45, alpha: 1).cgColor
+        let notif = Int(data["notif"]!)
+        
+        if notif == 0{
+            cell.displayNotification(false)
+        }
+        else{
+            cell.notification.text = data["notif"]!
+        }
+        
+//        cell.layer.borderWidth = 0.5
+//        cell.layer.borderColor = UIColor(red: 103, green: 181, blue: 45, alpha: 1).cgColor
         //cell.layer.cornerRadius = 5
         
         return cell

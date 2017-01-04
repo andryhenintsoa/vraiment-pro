@@ -10,5 +10,10 @@ import UIKit
 
 class AdviceMenuCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var notification: UILabel!
+    @IBOutlet weak var notificationContainer: UIView!
     
+    func displayNotification(_ status:Bool=true){
+        notificationContainer.alpha = (status) ? 1 : 0
+    }
 }

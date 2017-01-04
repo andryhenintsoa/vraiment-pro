@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     var leftViewController: SidebarViewController?
     
     var activityIndicator = UIActivityIndicatorView()
+//    var activityIndicator = CustomActivityIndicator(text: "Chargement")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +27,18 @@ class MainViewController: UIViewController {
     }
     
 // MARK: - Functions for the sidebar
-    func displaySidebar(_ position:CGFloat = 0) {
+    func displaySidebar(_ position:CGFloat = 0, close:Bool = false) {
+        
+        if leftViewController != nil{
+            animateSidebarXPosition(self.view.frame.width)
+            leftViewController?.closeSideBar(nil)
+            leftViewController = nil
+            return
+        }
+        
         addSidebarViewController()
         animateSidebarXPosition(position)
+        
     }
     
     func addSidebarViewController() {
@@ -36,6 +46,9 @@ class MainViewController: UIViewController {
             leftViewController = UIStoryboard.sidebarViewController()
             
             view.addSubview(leftViewController!.view!)
+            
+//            leftViewController!.view.frame = CGRect(x: self.view.bounds.width, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+            
             leftViewController!.view.frame.origin.x = self.view.bounds.width
             
             addChildViewController(leftViewController!)
@@ -63,24 +76,32 @@ class MainViewController: UIViewController {
             activityIndicator.startAnimating()
         }
         else{
+            print("Spinner stop")
+            activityIndicator.isHidden = true
+            activityIndicator.removeFromSuperview()
             activityIndicator.stopAnimating()
+            self.view.reloadInputViews()
         }
+        
+//        if(loading){
+//            self.view.addSubview(activityIndicator)
+//            self.activityIndicator.show()
+//        }
+//        else{
+//            self.activityIndicator.hide()
+//        }
     }
     
     func spinnerHide(){
         spinnerLoad(false)
     }
-    
-// MARK: - Functions taking the result of webservices
-    func reloadData(){
-        
-    }
+
     
 // MARK: - Functions for alerting users
-    func alertUser(title:String?, message:String?) {
+    func alertUser(title:String?, message:String?, completion: ((UIAlertAction) -> Void)? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         
-        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: completion))
         
         self.present(alertController, animated: true, completion: nil)
     }
@@ -93,6 +114,14 @@ class MainViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+// MARK : Functions taking the result of webservices
+    func reloadMyView(_ wsData:Any? = nil) {
+    }
+    
+    func reloadMyViewWithError() {
+        alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
     }
     
     /*

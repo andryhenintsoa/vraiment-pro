@@ -8,18 +8,17 @@
 
 import UIKit
 
-class ProfilePartnerAddViewController: UIViewController {
+class ProfilePartnerAddViewController: MainViewController {
     
     @IBOutlet weak var partnerTableView: UITableView!
 
-    var partnerData : [Dictionary<String,String>] = []
+    var partnerData : [Dictionary<String,Any>] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         partnerTableView.delegate = self
-        createData()
-        partnerTableView.reloadData()
+        Webservice.partners(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,11 +28,11 @@ class ProfilePartnerAddViewController: UIViewController {
     
     // Poser les informations de chaque menu
     func createData(){
-        partnerData.append(["name":"Test 1","statut":"0",
+        partnerData.append(["nom":"Test 1","prenom":"0",
                             "id":"1"])
-        partnerData.append(["name":"Test 2","statut":"0",
+        partnerData.append(["nom":"Test 2","prenom":"0",
                             "id":"2"])
-        partnerData.append(["name":"Test 3","statut":"1",
+        partnerData.append(["nom":"Test 3","prenom":"1",
                             "id":"3"])
     }
     
@@ -41,10 +40,14 @@ class ProfilePartnerAddViewController: UIViewController {
         _ = navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func toogleSidebar(_ sender: AnyObject) {
+        self.displaySidebar()
+    }
+    
     @IBAction func choosePartners(_ sender: AnyObject) {
         let n = self.navigationController?.viewControllers.count
         let previousVC = self.navigationController?.viewControllers[n!-2] as! ProfileViewController
-        var selectedPartners: [[String:String]] = []
+        var selectedPartners: [[String:Any]] = []
         
         for cellItem in partnerTableView.visibleCells {
             let cell = cellItem as! ProfilePartnerAddTableViewCell
@@ -58,6 +61,34 @@ class ProfilePartnerAddViewController: UIViewController {
         print(previousVC.selectedPartners)
         
         closeController(sender)
+    }
+    
+    // MARK: - Get result of WS
+    override func reloadMyView(_ wsData:Any? = nil) {
+        //spinnerLoad(false)
+        
+        var normalConnection = false
+        
+        if let data = wsData as? [String:Any]{
+            
+            partnerData = data["data"] as! [[String:Any]]
+            
+            let partnersCount = CGFloat(partnerData.count)
+            
+            if partnersCount <= 4{
+                let headerHeight = (partnerTableView.frame.size.height - ( partnerTableView.rowHeight * partnersCount )) / 2
+                
+                partnerTableView.contentInset = UIEdgeInsetsMake(headerHeight, 0, -headerHeight, 0)
+            }
+            
+            partnerTableView.reloadData()
+            
+            normalConnection = true
+        }
+        
+        if(!normalConnection){
+            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
+        }
     }
     
     /*
@@ -81,7 +112,18 @@ extension ProfilePartnerAddViewController : UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "partnerItem", for: indexPath) as! ProfilePartnerAddTableViewCell
         let data = partnerData[indexPath.item]
         
-        cell.name.text = data["name"]!
+        var nameToDisplay = ""
+        if let firstName = data["prenom"] as? String{
+            nameToDisplay += firstName
+        }
+        if let surName = data["nom"] as? String{
+            if nameToDisplay != ""{
+                nameToDisplay += " "
+            }
+            nameToDisplay += surName
+        }
+        
+        cell.name.text = nameToDisplay
         
         let rate = (Double(arc4random()) / 0xFFFFFFFF) * 5
         cell.rate.rating = rate

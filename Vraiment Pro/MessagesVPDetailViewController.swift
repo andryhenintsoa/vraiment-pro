@@ -8,15 +8,33 @@
 
 import UIKit
 
-class MessagesVPDetailViewController: UIViewController {
+class MessagesVPDetailViewController: MainViewController {
     
     @IBOutlet weak var messagesClientButton: UIButton!
     @IBOutlet weak var messagesVPButton: UIButton!
-    @IBOutlet weak var messageContent: UITextView!
+    @IBOutlet weak var messageContent: UILabel!
     @IBOutlet weak var messageType: UILabel!
+    
+    @IBOutlet weak var notificationMessagesClient: UILabel!
+    @IBOutlet weak var notificationMessagesClientContainer: UIView!
+    
+    @IBOutlet weak var notificationMessagesVP: UILabel!
+    @IBOutlet weak var notificationMessagesVPContainer: UIView!
+    
+    var message:MessageInfo!
+    
+    var notificationMessagesClientNumber = 0
+    var notificationMessagesVPNumber = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        messageType.text = message.title
+        messageContent.text = message.content
+        
+        messageContent.sizeToFit()
+        
+        reloadNotifications()
 
         // Do any additional setup after loading the view.
     }
@@ -26,8 +44,36 @@ class MessagesVPDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func reloadNotifications(){
+        setNumberOfNotification(notificationMessagesVPNumber, messageType: .vp)
+        setNumberOfNotification(notificationMessagesClientNumber, messageType: .client)
+    }
+    
+    func setNumberOfNotification(_ number:Int, messageType:MessagesType){
+        if messageType == .client{
+            if number == 0 {
+                notificationMessagesClientContainer.alpha = 0
+                return
+            }
+            notificationMessagesClientContainer.alpha = 1
+            notificationMessagesClient.text = "\(number)"
+        }
+        else{
+            if number == 0 {
+                notificationMessagesVPContainer.alpha = 0
+                return
+            }
+            notificationMessagesClientContainer.alpha = 1
+            notificationMessagesVP.text = "\(number)"
+        }
+    }
+    
     @IBAction func closeController(_ sender: AnyObject) {
         let _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func toogleSidebar(_ sender: AnyObject) {
+        self.displaySidebar()
     }
     
     @IBAction func displayMessagesList(_ sender: UIButton) {

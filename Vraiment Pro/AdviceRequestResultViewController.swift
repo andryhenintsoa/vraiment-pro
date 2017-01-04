@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdviceRequestResultViewController: UIViewController {
+class AdviceRequestResultViewController: MainViewController {
 
     @IBOutlet weak var resultLabel : UILabel!
     
@@ -28,6 +28,10 @@ class AdviceRequestResultViewController: UIViewController {
     
     @IBAction func closeController(_ sender: AnyObject) {
         _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func toogleSidebar(_ sender: AnyObject) {
+        self.displaySidebar()
     }
     
     @IBAction func closeNavController(_ sender: AnyObject) {

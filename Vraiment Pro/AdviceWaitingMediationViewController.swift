@@ -8,17 +8,18 @@
 
 import UIKit
 
-class AdviceWaitingMediationViewController: UIViewController {
+class AdviceWaitingMediationViewController: MainViewController {
     
     @IBOutlet weak var waitingTableView: UITableView!
     
-    var waitingData : [Dictionary<String,String>] = []
+    var waitingData : [Dictionary<String,Any>] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createData()
-        waitingTableView.reloadData()
+//        createData()
+//        waitingTableView.reloadData()
+        Webservice.adviceWaitingMediation(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,6 +39,45 @@ class AdviceWaitingMediationViewController: UIViewController {
     
     @IBAction func closeController(_ sender: AnyObject) {
         _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func toogleSidebar(_ sender: AnyObject) {
+        self.displaySidebar()
+    }
+    
+    override func reloadMyView(_ wsData:Any? = nil) {
+        //spinnerLoad(false)
+        
+        var normalConnection = false
+        
+        if let data = wsData as? [String:Any]{
+            
+            let status = data["status"] as! Bool
+            
+            if !status{
+                alertUser(title: "Pas de données", message: nil)
+                normalConnection = true
+                return
+            }
+            
+            waitingData = data["data"] as! [[String:Any]]
+            
+            let dataCount = CGFloat(waitingData.count)
+            
+            if dataCount <= 4{
+                let headerHeight = (waitingTableView.frame.size.height - ( waitingTableView.rowHeight * dataCount )) / 2
+                
+                waitingTableView.contentInset = UIEdgeInsetsMake(headerHeight, 0, -headerHeight, 0)
+            }
+            
+            waitingTableView.reloadData()
+            
+            normalConnection = true
+        }
+        
+        if(!normalConnection){
+            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
+        }
     }
     
     // MARK: - Navigation
@@ -63,14 +103,15 @@ extension AdviceWaitingMediationViewController : UITableViewDataSource{
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "waitingItem", for: indexPath) as! AdviceWaitingMediationTableViewCell
-        let data = waitingData[indexPath.item]
+        var data = waitingData[indexPath.item]
         
-        cell.nameLabel.text = data["name"]!
+        cell.nameLabel.text = (data["prenom"] as! String) + " " + (data["nom"] as! String)
         
-        cell.contentLabel.text = data["message"]!
-        cell.contentLabel.sizeToFit()
+        cell.contentLabel.text = data["nature_prest"] as? String
+        data["date"] = (data["mois_prest"]! as? String)! + "/" + (data["annee_prest"]! as? String)!
+        cell.dateLabel.text = data["date"]! as? String
         
-        cell.ratingElement.rating = Double(data["rating"]!)!
+        cell.ratingElement.rating = Double(data["note"] as! Int)
         
         cell.contentView.layer.borderWidth = 1
         cell.contentView.layer.borderColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1).cgColor

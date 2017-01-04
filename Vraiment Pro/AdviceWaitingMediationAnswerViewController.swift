@@ -12,12 +12,13 @@ class AdviceWaitingMediationAnswerViewController: MainViewController {
     
     @IBOutlet weak var answerTextView: UITextView!
     
-    var selectedAdviceMediation:[String:String]!
-    var data : [String:String] = [:]
+    var selectedAdviceMediation:[String:Any]!
+    var data : [String:Any] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         data = selectedAdviceMediation
+        answerTextView.becomeFirstResponder()
         // Do any additional setup after loading the view.
     }
 
@@ -30,24 +31,51 @@ class AdviceWaitingMediationAnswerViewController: MainViewController {
         _ = navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func toogleSidebar(_ sender: AnyObject) {
+        self.displaySidebar()
+    }
+    
     @IBAction func send(_ sender: Any) {
         if answerTextView.text == "" {
-            self.alertUser(title: "Erreur", message: "Vous n'avez encore rien écrit")
+            self.alertUser(title: "Erreur", message: "Vous n'avez rien répondu")
         } else {
             data["answerText"] = answerTextView.text
-            performSegue(withIdentifier: "toResultAnswerWaitingMediation", sender: sender)
+            print(data)
+            Webservice.adviceMediationAnswer(self, data: data)
+            //performSegue(withIdentifier: "toResultAnswerWaitingMediation", sender: sender)
         }
         
     }
     
-
+    // MARK: - Get result of WS
+    override func reloadMyView(_ wsData:Any? = nil) {
+        //spinnerLoad(false)
+        
+        var normalConnection = false
+        
+        if let data = wsData as? [String:Any]{
+            if let dataStatus = data["status"] as? Bool{
+                if dataStatus{
+                    performSegue(withIdentifier: "toResultAnswerWaitingMediation", sender: self)
+                }
+                else{
+                    alertUser(title: "Erreur", message: "Echec de l'envoi")
+                }
+                normalConnection = true
+            }
+        }
+        
+        if(!normalConnection){
+            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
+        }
+    }
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toResultAnswerWaitingMediation"{
-            print(data)
+            
         }
     }
     

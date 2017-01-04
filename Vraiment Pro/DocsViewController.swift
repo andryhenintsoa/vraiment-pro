@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DocsViewController: UIViewController {
+class DocsViewController: ImagePickerViewController {
     
     @IBOutlet weak var menuCollectionView: UICollectionView!
 
@@ -38,6 +38,10 @@ class DocsViewController: UIViewController {
     
     @IBAction func closeController(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func toogleSidebar(_ sender: AnyObject) {
+        self.displaySidebar()
     }
 
     /*
@@ -82,5 +86,17 @@ extension DocsViewController : UICollectionViewDelegateFlowLayout{
 
 // MARK: - UICollectionViewDelegate
 extension DocsViewController : UICollectionViewDelegate{
-    
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        if indexPath.row == 0{
+            self.segueNextName = "toSendPicture"
+            chooseTakingPictureMode()
+        }
+    }
 }
+
+
+
+
+
+
+

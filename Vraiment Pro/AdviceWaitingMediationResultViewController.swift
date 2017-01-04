@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdviceWaitingMediationResultViewController: UIViewController {
+class AdviceWaitingMediationResultViewController: MainViewController {
 
     @IBOutlet weak var resultLabel : UILabel!
     
@@ -30,6 +30,10 @@ class AdviceWaitingMediationResultViewController: UIViewController {
     
     @IBAction func closeController(_ sender: AnyObject) {
         _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func toogleSidebar(_ sender: AnyObject) {
+        self.displaySidebar()
     }
     
     func closeNavController() {

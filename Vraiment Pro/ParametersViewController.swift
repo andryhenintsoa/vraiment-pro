@@ -8,11 +8,52 @@
 
 import UIKit
 
-class ParametersViewController: UIViewController {
+class ParametersViewController: MainViewController {
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var mailLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let userDefaults = UserDefaults.standard
+        
+        var nameToDisplay = ""
+        var addressToDisplay = ""
+        var mailToDisplay = ""
+        var phoneToDisplay = ""
+        
+        let firstName = userDefaults.string(forKey: prefKey.userFirstName.rawValue)
+        let surName = userDefaults.string(forKey: prefKey.userSurName.rawValue)
+        let address = userDefaults.string(forKey: prefKey.userAddress.rawValue)
+        let mail = userDefaults.string(forKey: prefKey.userMail.rawValue)
+        let phone = userDefaults.string(forKey: prefKey.userPhone.rawValue)
+        
+        if firstName != nil{
+            nameToDisplay += firstName!
+        }
+        if surName != nil{
+            if nameToDisplay != ""{
+                nameToDisplay += " "
+            }
+            nameToDisplay += surName!
+        }
+        if address != nil{
+            addressToDisplay = address!
+        }
+        if mail != nil{
+            mailToDisplay = mail!
+        }
+        if phone != nil{
+            phoneToDisplay = phone!
+        }
+        
+        nameLabel.text = nameToDisplay
+        addressLabel.text = addressToDisplay
+        phoneLabel.text = phoneToDisplay
+        mailLabel.text = mailToDisplay
+        
         // Do any additional setup after loading the view.
     }
 
@@ -23,6 +64,10 @@ class ParametersViewController: UIViewController {
     
     @IBAction func closeController(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func toogleSidebar(_ sender: AnyObject) {
+        self.displaySidebar()
     }
 
     /*

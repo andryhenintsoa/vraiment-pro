@@ -19,6 +19,11 @@ class Home2ViewController: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let userDefaults = UserDefaults.standard
+        
+        Utils.userKey = userDefaults.string(forKey: prefKey.userKey.rawValue)!
+        Utils.userId = userDefaults.integer(forKey: prefKey.userId.rawValue)
+        
         menuCollectionView.dataSource = self
         menuCollectionView.delegate = self
 

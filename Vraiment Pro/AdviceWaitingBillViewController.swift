@@ -12,14 +12,16 @@ class AdviceWaitingBillViewController: ImagePickerViewController {
 
     @IBOutlet weak var waitingTableView: UITableView!
     
-    var waitingData : [Dictionary<String,String>] = []
+    var waitingData : [Dictionary<String,Any>] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createData()
+        //createData()
+        //waitingTableView.reloadData()
         waitingTableView.delegate = self
-        waitingTableView.reloadData()
+        
+        Webservice.adviceWaitingBill(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,6 +43,45 @@ class AdviceWaitingBillViewController: ImagePickerViewController {
         _ = navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func toogleSidebar(_ sender: AnyObject) {
+        self.displaySidebar()
+    }
+    
+    override func reloadMyView(_ wsData:Any? = nil) {
+        //spinnerLoad(false)
+        
+        var normalConnection = false
+        
+        if let data = wsData as? [String:Any]{
+            
+            let status = data["status"] as! Bool
+            
+            if !status{
+                alertUser(title: "Pas de données", message: nil)
+                normalConnection = true
+                return
+            }
+            
+            waitingData = data["data"] as! [[String:Any]]
+            
+            let dataCount = CGFloat(waitingData.count)
+            
+            if dataCount <= 4{
+                let headerHeight = (waitingTableView.frame.size.height - ( waitingTableView.rowHeight * dataCount )) / 2
+                
+                waitingTableView.contentInset = UIEdgeInsetsMake(headerHeight, 0, -headerHeight, 0)
+            }
+            
+            waitingTableView.reloadData()
+            
+            normalConnection = true
+        }
+        
+        if(!normalConnection){
+            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
+        }
+    }
+    
     
      // MARK: - Navigation
      
@@ -48,7 +89,7 @@ class AdviceWaitingBillViewController: ImagePickerViewController {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toResult"{
             let destination = segue.destination as? ResultViewController
-            destination?.textToDisplay = "La facture a été bien envoyé"
+            destination?.textToDisplay = "La facture a bien été envoyé"
         }
      }
     
@@ -62,8 +103,11 @@ extension AdviceWaitingBillViewController : UITableViewDataSource{
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "waitingItem", for: indexPath) as! AdviceWaitingBillTableViewCell
         let data = waitingData[indexPath.item]
-        
-        cell.contentLabel.text = data["name"]!
+    
+        //cell.contentLabel.text = data["prenom"]! + " " + data["nom"]!
+        cell.nameLabel.text = (data["prenom"] as! String) + " " + (data["nom"] as! String)
+        cell.dateLabel.text = data["date"] as? String
+        cell.contentLabel.text = data["msg_contenu"] as? String
         cell.contentLabel.sizeToFit()
         
         cell.contentView.layer.borderWidth = 1

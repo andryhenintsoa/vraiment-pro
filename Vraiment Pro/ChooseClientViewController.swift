@@ -9,7 +9,7 @@
 import UIKit
 import Contacts
 
-class ChooseClientViewController: UIViewController {
+class ChooseClientViewController: MainViewController {
 
     @IBOutlet weak var clientLabel: UITextField!
     @IBOutlet weak var clientTableView: UITableView!
@@ -27,6 +27,10 @@ class ChooseClientViewController: UIViewController {
         
         createData()
         clientTableView.reloadData()
+        
+        clientLabel.becomeFirstResponder()
+        
+        clientLabel.attributedPlaceholder = NSAttributedString(string: "Nom du client", attributes: [NSFontAttributeName: clientLabel.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1) ])
     }
     
     override func didReceiveMemoryWarning() {
@@ -91,6 +95,10 @@ class ChooseClientViewController: UIViewController {
     
     @IBAction func closeController(_ sender: AnyObject) {
         let _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func toogleSidebar(_ sender: AnyObject) {
+        self.displaySidebar()
     }
     
     @IBAction func acceptPick(_ sender: AnyObject) {
