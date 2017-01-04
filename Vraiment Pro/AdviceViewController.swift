@@ -102,6 +102,9 @@ extension AdviceViewController : UICollectionViewDelegate{
         else if(indexPath.row == 1){
             performSegue(withIdentifier: "toAdviceWaiting", sender: nil)
         }
+        else if(indexPath.row == 2){
+            performSegue(withIdentifier: "toAdviceSent", sender: nil)
+        }
     }
 
 }

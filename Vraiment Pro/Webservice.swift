@@ -204,6 +204,11 @@ class Webservice{
         load(req, controller: controller)
     }
     
+    class func adviceSent(_ controller: MainViewController){
+        let req = URL_API + "liste-avis-user" + header()
+        load(req, controller: controller)
+    }
+    
     class func adviceWaitingBill(_ controller: MainViewController){
         let req = URL_API + "avis-attente-facture" + header()
         load(req, controller: controller)
@@ -316,7 +321,7 @@ class Webservice{
         
     }
     
-    class func sendPicture(_ controller: MainViewController, data:[String:String], imageToSend:UIImage? = nil){
+    class func docsSendPic(_ controller: MainViewController, data:[String:String], imageToSend:UIImage? = nil){
         
         let req = URL_API + "photo-sur-mon-profil" + header()
         

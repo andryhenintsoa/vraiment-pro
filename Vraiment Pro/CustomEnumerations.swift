@@ -23,7 +23,7 @@ enum SendingProfileType:String{
     case partnersProfile = "Profil(s) de partenaire"
 }
 
-enum DocsType{
+enum DocsType:String{
     case samplePic
     case beforeAfterPic
     case doc

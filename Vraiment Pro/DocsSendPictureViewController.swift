@@ -9,22 +9,17 @@
 import UIKit
 
 class DocsSendPictureViewController: MainViewController {
-
-    @IBOutlet weak var resultLabel : UILabel!
-    var textToDisplay : String = ""
     
     var imageToSend:UIImage?
     
     var documentToSendType:DocsType!
     
     override func viewDidLoad() {
-        resultLabel.text = textToDisplay
         super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        let _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.closeNavController), userInfo: nil, repeats: false)
         
+        if documentToSendType == .samplePic{
+            sendSamplePic()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,8 +39,8 @@ class DocsSendPictureViewController: MainViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func sendAdvice(_ sender: Any) {
-        Webservice.adviceSendAdvice(self, data: data, imageToSend : imageToSend)
+    func sendSamplePic() {
+        Webservice.docsSendPic(self, data: [:], imageToSend : imageToSend)
     }
     
     // MARK: - Get result of WS
@@ -82,9 +77,7 @@ class DocsSendPictureViewController: MainViewController {
         if segue.identifier == "toResult"{
             let destination = segue.destination as? ResultViewController
             
-            let data = waitingData[(waitingTableView.indexPathForSelectedRow?.row)!]
-            
-            destination?.selectedAdviceMediation = data
+            destination?.textToDisplay = "Votre photo a bien été publiée\n sur votre profil"
         }
     }
 

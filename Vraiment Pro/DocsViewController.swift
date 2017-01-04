@@ -14,6 +14,8 @@ class DocsViewController: ImagePickerViewController {
 
     var menu : [Dictionary<String,String>] = []
     
+    var documentToSendType:DocsType?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,15 +46,17 @@ class DocsViewController: ImagePickerViewController {
         self.displaySidebar()
     }
 
-    /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toSendPicture"{
+            let destination = segue.destination as? DocsSendPictureViewController
+            
+            destination?.imageToSend = self.imageToSend
+            destination?.documentToSendType = self.documentToSendType
+        }
     }
-    */
 
 }
 
@@ -88,6 +92,7 @@ extension DocsViewController : UICollectionViewDelegateFlowLayout{
 extension DocsViewController : UICollectionViewDelegate{
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         if indexPath.row == 0{
+            documentToSendType = .samplePic
             self.segueNextName = "toSendPicture"
             chooseTakingPictureMode()
         }

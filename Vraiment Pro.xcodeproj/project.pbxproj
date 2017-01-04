@@ -69,6 +69,7 @@
 		F8B4114B1DFB2EE6008AE9D3 /* AdviceWaitingMediationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4114A1DFB2EE6008AE9D3 /* AdviceWaitingMediationResultViewController.swift */; };
 		F8B4114D1DFB34E5008AE9D3 /* AdviceRequestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4114C1DFB34E4008AE9D3 /* AdviceRequestResultViewController.swift */; };
 		F8CA82F41E1CCED800693C72 /* DocsSendPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA82F31E1CCED700693C72 /* DocsSendPictureViewController.swift */; };
+		F8CA82F61E1CE58500693C72 /* AdviceRequestSentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA82F51E1CE58500693C72 /* AdviceRequestSentViewController.swift */; };
 		F8D137171DFA82A3000B995E /* AdviceWaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D137161DFA82A3000B995E /* AdviceWaitingViewController.swift */; };
 		F8D137191DFA8906000B995E /* AdviceWaitingBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D137181DFA8906000B995E /* AdviceWaitingBillViewController.swift */; };
 		F8D1371B1DFA895B000B995E /* AdviceWaitingMediationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1371A1DFA895B000B995E /* AdviceWaitingMediationViewController.swift */; };
@@ -171,6 +172,7 @@
 		F8C7EEB21E0307AA0015F830 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		F8C7EEB31E0307AA0015F830 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F8CA82F31E1CCED700693C72 /* DocsSendPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocsSendPictureViewController.swift; sourceTree = "<group>"; };
+		F8CA82F51E1CE58500693C72 /* AdviceRequestSentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceRequestSentViewController.swift; sourceTree = "<group>"; };
 		F8D137161DFA82A3000B995E /* AdviceWaitingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingViewController.swift; sourceTree = "<group>"; };
 		F8D137181DFA8906000B995E /* AdviceWaitingBillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingBillViewController.swift; sourceTree = "<group>"; };
 		F8D1371A1DFA895B000B995E /* AdviceWaitingMediationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingMediationViewController.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				F8B4114A1DFB2EE6008AE9D3 /* AdviceWaitingMediationResultViewController.swift */,
 				F8B411461DFB26C5008AE9D3 /* AdviceWaitingMediationDetailViewController.swift */,
 				F8B411481DFB273D008AE9D3 /* AdviceWaitingMediationAnswerViewController.swift */,
+				F8CA82F51E1CE58500693C72 /* AdviceRequestSentViewController.swift */,
 			);
 			name = Advice;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 				F883DD0E1DF4713E00C8071B /* AppDelegate.swift in Sources */,
 				F85231421DF7D7B20046DDDB /* PaddingLabel.swift in Sources */,
 				F86A7FD61DF734B100019DC1 /* MessagesViewController.swift in Sources */,
+				F8CA82F61E1CE58500693C72 /* AdviceRequestSentViewController.swift in Sources */,
 				F82FBFB91E09A5F000EADA11 /* CustomActivityIndicator.swift in Sources */,
 				F87792F01DF92C560052E888 /* AdviceSummaryViewController.swift in Sources */,
 			);

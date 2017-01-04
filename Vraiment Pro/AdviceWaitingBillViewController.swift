@@ -105,9 +105,12 @@ extension AdviceWaitingBillViewController : UITableViewDataSource{
         let data = waitingData[indexPath.item]
     
         //cell.contentLabel.text = data["prenom"]! + " " + data["nom"]!
-        cell.nameLabel.text = (data["prenom"] as! String) + " " + (data["nom"] as! String)
-        cell.dateLabel.text = data["date"] as? String
-        cell.contentLabel.text = data["msg_contenu"] as? String
+//        cell.nameLabel.text = (data["prenom"] as! String) + " " + (data["nom"] as! String)
+        
+        
+        cell.nameLabel.text = (data["client_nom"] as! String)
+        cell.dateLabel.text = (data["mois_prest"] as! String) + "/" + (data["annee_prest"] as! String)
+        cell.contentLabel.text = data["nature_prest"] as? String
         cell.contentLabel.sizeToFit()
         
         cell.contentView.layer.borderWidth = 1

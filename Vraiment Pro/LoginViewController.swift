@@ -133,7 +133,7 @@ class LoginViewController: MainViewController {
         userDefaults.set(dataUser["prenom"], forKey: prefKey.userFirstName.rawValue)
         userDefaults.set(dataUser["nom"], forKey: prefKey.userSurName.rawValue)
         //userDefaults.set(dataUser["adresse"], forKey: prefKey.userAddress.rawValue)
-        userDefaults.set(dataUser["ville"], forKey: prefKey.userCity.rawValue)
+        //userDefaults.set(dataUser["ville"], forKey: prefKey.userCity.rawValue)
         userDefaults.set(dataUser["email"], forKey: prefKey.userMail.rawValue)
         userDefaults.set(dataUser["compte"], forKey: prefKey.userAccount.rawValue)
         userDefaults.set(dataUser["tel_mobile"], forKey: prefKey.userPhone.rawValue)
