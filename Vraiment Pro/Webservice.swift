@@ -122,18 +122,20 @@ class Webservice{
     
 // MARK : Method GET
 
-    class func load(_ url: String, controller: MainViewController) {
-        controller.spinnerLoad()
+    class func load(_ url: String, controller: MainViewController, withLoader:Bool = true) {
         
         print("Loading WS")
         print("url: \(url)")
         
         let requestURL: URL = URL(string: url)!
         
-        load(requestURL, controller: controller)
+        load(requestURL, controller: controller, withLoader:withLoader)
     }
     
-    class func load(_ url: URL, controller: MainViewController) {
+    class func load(_ url: URL, controller: MainViewController, withLoader:Bool = true) {
+        if(withLoader){
+            controller.spinnerLoad()
+        }
         
         let urlRequest: URLRequest = URLRequest(url: url)
         
@@ -142,7 +144,9 @@ class Webservice{
         let task = session.dataTask(with: urlRequest) {
             (data, response, error) -> Void in
             
-            controller.spinnerLoad(false)
+            if(withLoader){
+                controller.spinnerLoad(false)
+            }
             
             var normalConnection = false
             
@@ -199,6 +203,11 @@ class Webservice{
     class func authentification(_ controller: MainViewController, email:String, mdp:String){
         let req = URL_API + "connexion?email=\(email)&mdp=\(mdp)"
         load(req, controller: controller)
+    }
+    
+    class func numberNotifications(_ controller: MainViewController){
+        let req = URL_API + "avis-message-non-lu" + header()
+        load(req, controller: controller, withLoader: false)
     }
     
     class func partners(_ controller: MainViewController){

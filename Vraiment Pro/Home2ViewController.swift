@@ -13,23 +13,16 @@ class Home2ViewController: MainViewController {
     @IBOutlet weak var menuCollectionView: UICollectionView!
     
     var menu : [Dictionary<String,String>] = []
-    var adviceNumber:Int = 0
-    var messagesNumber:Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let userDefaults = UserDefaults.standard
-        
-        Utils.userKey = userDefaults.string(forKey: prefKey.userKey.rawValue)!
-        Utils.userId = userDefaults.integer(forKey: prefKey.userId.rawValue)
+        Webservice.numberNotifications(self)
         
         menuCollectionView.dataSource = self
         menuCollectionView.delegate = self
 
         createButtonsInfo()
-        adviceNumber = 38
-        messagesNumber = 12
         menuCollectionView.reloadData()
     }
 
@@ -55,6 +48,43 @@ class Home2ViewController: MainViewController {
     }
     
     
+    override func reloadMyView(_ wsData:Any? = nil) {
+        //spinnerLoad(false)
+        
+        var normalConnection = false
+        
+        if let data = wsData as? [String:Any]{
+            
+            let status = data["status"] as! Bool
+            
+            if !status{
+                alertUser(title: "Pas de données", message: nil)
+                normalConnection = true
+                return
+            }
+            
+            print("Innnnnnnnn")
+            print(data)
+            
+            if let notifData = data["data"] as? [String:Int]{
+                Utils.adviceWaitingBills = notifData["nbr_fact"]!
+                Utils.adviceWaitingMediation = notifData["avis_mediation"]!
+                Utils.messagesNumber = notifData["messages"]!
+            }
+            
+            else{
+                alertUser(title: "Erreur données", message: nil)
+            }
+            
+            menuCollectionView.reloadData()
+            
+            normalConnection = true
+        }
+        
+        if(!normalConnection){
+            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
+        }
+    }
     
     // MARK: - Navigation
 
@@ -82,16 +112,26 @@ extension Home2ViewController : UICollectionViewDataSource{
         let data = menu[indexPath.item]
         
         if(indexPath.row == 0){
+            let adviceNumber = Utils.adviceWaitingBills + Utils.adviceWaitingMediation
+            
+            print(adviceNumber)
+            
             if adviceNumber != 0{
                 cell.notification.text = String(adviceNumber)
-                
+                cell.displayNotification(true)
             }else{
                 cell.displayNotification(false)
             }
         }
+            
         else if(indexPath.row == 2){
+            let messagesNumber = Utils.messagesNumber
+            
+            print(messagesNumber)
+            
             if messagesNumber != 0{
                 cell.notification.text = String(messagesNumber)
+                cell.displayNotification(true)
             }else{
                 cell.displayNotification(false)
             }

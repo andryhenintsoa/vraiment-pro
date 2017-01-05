@@ -77,9 +77,9 @@ class MainViewController: UIViewController {
         }
         else{
             print("Spinner stop")
-            activityIndicator.isHidden = true
-            activityIndicator.removeFromSuperview()
             activityIndicator.stopAnimating()
+            //activityIndicator.isHidden = true
+            activityIndicator.removeFromSuperview()
             self.view.reloadInputViews()
         }
         

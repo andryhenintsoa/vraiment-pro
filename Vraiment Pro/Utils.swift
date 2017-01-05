@@ -24,4 +24,8 @@ enum prefKey:String {
 class Utils{
     static var userId:Int = 0
     static var userKey:String = ""
+    
+    static var adviceWaitingBills:Int = 0
+    static var adviceWaitingMediation:Int = 0
+    static var messagesNumber:Int = 0
 }

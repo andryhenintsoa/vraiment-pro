@@ -17,7 +17,6 @@ class AdviceRequestSentViewController: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         Webservice.adviceSent(self)
     }
 
@@ -91,9 +90,14 @@ extension AdviceRequestSentViewController : UITableViewDataSource{
         let data = adviceSent[indexPath.item]
         
         //cell.contentLabel.text = data["prenom"]! + " " + data["nom"]!
-        cell.nameLabel.text = (data["client_nom"] as! String)
+//        cell.nameLabel.text = (data["client_nom"] as! String)
+        
+        if let client_nom = data["client_nom"]! as? String{
+            cell.nameLabel.text = client_nom
+        }
+        
         cell.dateLabel.text = (data["mois_prest"] as! String) + "/" + (data["annee_prest"] as! String)
-        cell.contentLabel.text = ""
+        cell.contentLabel.text = data["nature_prest"] as? String
         cell.contentLabel.sizeToFit()
         
         cell.contentView.layer.borderWidth = 1

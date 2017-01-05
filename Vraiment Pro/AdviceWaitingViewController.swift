@@ -60,19 +60,27 @@ extension AdviceWaitingViewController : UICollectionViewDataSource{
         return menu.count
     }
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "adviceMenuItem", for: indexPath) as! AdviceMenuCollectionViewCell
+        var identifier = "adviceMenuItem"
+        
+        var notif = 0
+        
+        if(indexPath.row == 0){
+            notif = Utils.adviceWaitingBills
+        }
+        else if(indexPath.row == 1){
+            notif = Utils.adviceWaitingMediation
+        }
+        
+        if notif != 0{
+            identifier = "adviceMenuItemWithNotif"
+        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! AdviceMenuCollectionViewCell
+        
         let data = menu[indexPath.item]
         
         cell.label.text = data["name"]!
         
-        let notif = Int(data["notif"]!)
-        
-        if notif == 0{
-            cell.displayNotification(false)
-        }
-        else{
-            cell.notification.text = data["notif"]!
-        }
+        cell.notification.text = "\(notif)"
         
 //        cell.layer.borderWidth = 5
 //        cell.layer.borderColor = UIColor(red: 103, green: 181, blue: 45, alpha: 1).cgColor
@@ -93,6 +101,7 @@ extension AdviceWaitingViewController : UICollectionViewDelegateFlowLayout{
 // MARK: - UICollectionViewDelegate
 extension AdviceWaitingViewController : UICollectionViewDelegate{
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        collectionView.reloadData()
         if(indexPath.row == 0){
             performSegue(withIdentifier: "toAdviceWaitingBill", sender: nil)
         }

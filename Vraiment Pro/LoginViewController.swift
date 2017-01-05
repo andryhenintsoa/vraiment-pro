@@ -108,6 +108,11 @@ class LoginViewController: MainViewController {
                         //userDefaults.setValuesForKeys(dataUser)
                         
                         self.saveAccountPreferences(dataUser)
+                        
+                        let userDefaults = UserDefaults.standard
+                        
+                        Utils.userKey = userDefaults.string(forKey: prefKey.userKey.rawValue)!
+                        Utils.userId = userDefaults.integer(forKey: prefKey.userId.rawValue)
                     }
                     
 

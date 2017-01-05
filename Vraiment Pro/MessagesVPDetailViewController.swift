@@ -29,6 +29,9 @@ class MessagesVPDetailViewController: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        messagesClientButton.setTitle("Contacts clients", for: .normal)
+        messagesVPButton.setTitle("Infos VraimentPro", for: .normal)
+        
         messageType.text = message.title
         messageContent.text = message.content
         
