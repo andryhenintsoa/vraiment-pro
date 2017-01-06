@@ -14,8 +14,14 @@ class AdviceViewController: MainViewController {
     
     var menu : [Dictionary<String,String>] = []
 
+    deinit{
+        Utils.getInstance().removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Utils.getInstance().addObserver(self)
 
         createButtonsInfo()
         menuCollectionView.reloadData()
@@ -45,6 +51,10 @@ class AdviceViewController: MainViewController {
         self.displaySidebar()
     }
 
+    override func reloadFromNotification(){
+        menuCollectionView.reloadData()
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -71,9 +81,9 @@ extension AdviceViewController : UICollectionViewDataSource{
         if(indexPath.row == 1){
             notif = Utils.adviceWaitingBills + Utils.adviceWaitingMediation
             
-            if notif != 0{
+            //if notif != 0{
                 identifier = "adviceMenuItemWithNotif"
-            }
+            //}
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! AdviceMenuCollectionViewCell

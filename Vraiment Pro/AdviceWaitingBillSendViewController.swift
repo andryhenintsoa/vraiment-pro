@@ -1,25 +1,23 @@
 //
-//  DocsSendPictureViewController.swift
+//  AdviceWaitingBillSendViewController.swift
 //  Vraiment Pro
 //
-//  Created by Andry Henintsoa Razafindramanana on 04/01/2017.
+//  Created by Andry Henintsoa Razafindramanana on 05/01/2017.
 //  Copyright © 2017 Sparks MG. All rights reserved.
 //
 
 import UIKit
 
-class DocsSendPictureViewController: MainViewController {
-    
+class AdviceWaitingBillSendViewController: MainViewController {
+
     var imageToSend:UIImage?
     
-    var documentToSendType:DocsType!
+    var data:Dictionary<String,Any>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if documentToSendType == .samplePic{
-            sendSamplePic()
-        }
+        Webservice.adviceSendBills(self, data: data, imageToSend : imageToSend)
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,10 +37,6 @@ class DocsSendPictureViewController: MainViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func sendSamplePic() {
-        Webservice.docsSendPic(self, data: [:], imageToSend : imageToSend)
-    }
-    
     // MARK: - Get result of WS
     override func reloadMyView(_ wsData:Any? = nil, param:[String:Any]=[:]) {
         //spinnerLoad(false)
@@ -52,6 +46,9 @@ class DocsSendPictureViewController: MainViewController {
         if let data = wsData as? [String:Any]{
             if let dataStatus = data["status"] as? Bool{
                 if dataStatus{
+                    Utils.adviceWaitingBills -= 1
+                    Utils.getInstance().notifyAll()
+                    
                     performSegue(withIdentifier: "toResult", sender: self)
                 }
                 else{
@@ -82,8 +79,7 @@ class DocsSendPictureViewController: MainViewController {
         if segue.identifier == "toResult"{
             let destination = segue.destination as? ResultViewController
             
-            destination?.textToDisplay = "Votre photo a bien été publiée\n sur votre profil"
+            destination?.textToDisplay = "La facture a bien été envoyée"
         }
     }
-
 }

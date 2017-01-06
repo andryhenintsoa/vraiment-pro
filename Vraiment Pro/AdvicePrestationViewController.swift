@@ -123,7 +123,7 @@ extension AdvicePrestationViewController : UIPickerViewDelegate{
             monthLabel.backgroundColor = UIColor.clear
             monthLabel.text = mois[row]
             monthLabel.textAlignment = NSTextAlignment.center
-            monthLabel.font = UIFont(name: "Raleway", size: 17)
+            monthLabel.font = UIFont(name: "Rubik", size: 17)
             return monthLabel
         }
         else{
@@ -132,7 +132,7 @@ extension AdvicePrestationViewController : UIPickerViewDelegate{
             yearLabel.backgroundColor = UIColor.clear
             yearLabel.text = annee[row]
             yearLabel.textAlignment = NSTextAlignment.center
-            yearLabel.font = UIFont(name: "Raleway", size: 17)
+            yearLabel.font = UIFont(name: "Rubik", size: 17)
             return yearLabel
         }
     }

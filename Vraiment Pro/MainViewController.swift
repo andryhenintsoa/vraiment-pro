@@ -65,7 +65,9 @@ class MainViewController: UIViewController {
 // MARK: - Functions for the loading spinner
     func spinnerLoad(_ loading:Bool = true) {
         if(loading){
-            activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0,y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
+            
+//            activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0,y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
+            activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0,y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
             activityIndicator.center = self.view.center
             activityIndicator.hidesWhenStopped = true
             activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
@@ -117,11 +119,16 @@ class MainViewController: UIViewController {
     }
     
 // MARK : Functions taking the result of webservices
-    func reloadMyView(_ wsData:Any? = nil) {
+    func reloadMyView(_ wsData:Any? = nil, param:[String:Any]=[:]) {
     }
     
     func reloadMyViewWithError() {
         alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
+    }
+    
+// MARK : Functions for the notifications
+    func reloadFromNotification(){
+        
     }
     
     /*

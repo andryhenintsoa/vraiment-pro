@@ -14,6 +14,7 @@ class AdviceRequestViewController: MainViewController, UITextFieldDelegate {
     @IBOutlet weak var mailLabel: UITextField!
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var ouLabel: UILabel!
     
     var activeField: UITextField?
     
@@ -22,6 +23,8 @@ class AdviceRequestViewController: MainViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ouLabel.text = "ou"
         
         phoneLabel.delegate = self
         mailLabel.delegate = self
@@ -73,7 +76,7 @@ class AdviceRequestViewController: MainViewController, UITextFieldDelegate {
             else if(sender.currentTitle == "Mail"){
                 print("Mail")
                 if mailLabel.text == ""{
-                    self.alertUser(title: "Erreur", message: "Vous devez renseigner l'adresse email du client")
+                    self.alertUser(title: "Erreur", message: "Vous devez renseigner l'adresse mail du client")
                 }
                 else{
                     sendingType = .mail
@@ -116,13 +119,11 @@ class AdviceRequestViewController: MainViewController, UITextFieldDelegate {
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         
-        var aRect : CGRect = self.view.frame
-        aRect.size.height -= keyboardSize!.height
-        if let activeField = self.activeField {
-            if (!aRect.contains(activeField.frame.origin)){
-                self.scrollView.scrollRectToVisible(activeField.superview!.frame, animated: true)
-            }
-        }
+//        self.scrollView.scrollRectToVisible(mailLabel.superview!.frame, animated: true)
+        
+        self.scrollView.scrollRectToVisible(mailLabel.frame, animated: true)
+        
+        self.scrollView.isScrollEnabled = false
     }
     
     func keyboardWillBeHidden(notification: NSNotification){

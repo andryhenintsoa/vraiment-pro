@@ -11,7 +11,22 @@ import Foundation
 extension UIFont{
     func withTraits(traits: UIFontDescriptorSymbolicTraits...) -> UIFont{
         let descriptor = self.fontDescriptor.withSymbolicTraits(UIFontDescriptorSymbolicTraits(traits))
-        return UIFont(descriptor: descriptor!, size: 0)
+        
+//        for family: String in UIFont.familyNames{
+//            print("\(family)")
+//            for names:String in UIFont.fontNames(forFamilyName: family){
+//                print("==\(names)")
+//            }
+//        }
+//        
+//        
+//        if descriptor != nil{
+            return UIFont(descriptor: descriptor!, size: 0)
+//        }
+//        else{
+//            return UIFont(name: "Rubik-Bold", size: 17)!
+//        }
+        
     }
     
     func bold() -> UIFont{

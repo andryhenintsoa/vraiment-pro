@@ -64,12 +64,20 @@ class ProfilePartnerAddViewController: MainViewController {
     }
     
     // MARK: - Get result of WS
-    override func reloadMyView(_ wsData:Any? = nil) {
+    override func reloadMyView(_ wsData:Any? = nil, param:[String:Any]=[:]) {
         //spinnerLoad(false)
         
         var normalConnection = false
         
         if let data = wsData as? [String:Any]{
+            
+            let status = data["status"] as! Bool
+            
+            if !status{
+                alertUser(title: "Pas de données", message: nil)
+                normalConnection = true
+                return
+            }
             
             partnerData = data["data"] as! [[String:Any]]
             

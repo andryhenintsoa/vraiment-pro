@@ -10,9 +10,11 @@ import UIKit
 
 class PasswordForgottenViewController: UIViewController {
     @IBOutlet weak var emailLabel: UITextField!
+    @IBOutlet weak var titleLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLabel.text = "Veuillez saisir votre adresse mail"
     }
     
     override func viewDidLayoutSubviews(){

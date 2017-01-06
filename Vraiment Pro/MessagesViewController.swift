@@ -118,15 +118,19 @@ class MessagesViewController: MainViewController {
     }
     
     @IBAction func chooseMessageType(_ sender: UIButton) {
+        
+        
         if(sender == messagesClientButton){
-            selectedMessagesType = .client
-            setActive(sender, otherButton: messagesVPButton)
-            setNotificationTextToGreen(.client)
+//            selectedMessagesType = .client
+//            setActive(sender, otherButton: messagesVPButton)
+//            setNotificationTextToGreen(.client)
+            chooseMessageType(index: MessagesType.client.rawValue)
         }
         else if(sender == messagesVPButton){
-            selectedMessagesType = .vp
-            setActive(sender, otherButton: messagesClientButton)
-            setNotificationTextToGreen(.vp)
+//            selectedMessagesType = .vp
+//            setActive(sender, otherButton: messagesClientButton)
+//            setNotificationTextToGreen(.vp)
+            chooseMessageType(index: MessagesType.vp.rawValue)
         }
         messagesTableView.reloadData()
     }
@@ -136,11 +140,29 @@ class MessagesViewController: MainViewController {
             selectedMessagesType = .client
             setActive(messagesClientButton, otherButton: messagesVPButton)
             setNotificationTextToGreen(.client)
+            
+            let messagesCount = CGFloat(messages.count)
+            
+            if messagesCount <= 4{
+                let headerHeight = (messagesTableView.frame.size.height - ( messagesTableView.rowHeight * messagesCount )) / 2
+                
+                messagesTableView.contentInset = UIEdgeInsetsMake(headerHeight, 0, -headerHeight, 0)
+            }
+
         }
         else if(index == MessagesType.vp.rawValue){
             selectedMessagesType = .vp
             setActive(messagesVPButton, otherButton: messagesClientButton)
             setNotificationTextToGreen(.vp)
+            
+            let messagesCount = CGFloat(messagesInfo.count)
+            
+            if messagesCount <= 4{
+                let headerHeight = (messagesTableView.frame.size.height - ( messagesTableView.rowHeight * messagesCount )) / 2
+                
+                messagesTableView.contentInset = UIEdgeInsetsMake(headerHeight, 0, -headerHeight, 0)
+            }
+
         }
         messagesTableView.reloadData()
     }
@@ -174,35 +196,51 @@ class MessagesViewController: MainViewController {
     }
     
 // MARK: - Get result of WS
-    override func reloadMyView(_ wsData:Any? = nil) {
+    override func reloadMyView(_ wsData:Any? = nil, param:[String:Any]=[:]) {
         //spinnerLoad(false)
         
         var normalConnection = false
         
         if let data = wsData as? [String:Any]{
             
-            let listMessages = data["data"] as! [[String:Any]]
+            let status = data["status"] as! Bool
             
-            var messageTemp:Message?
-            for itemMessages in listMessages {
-                messageTemp = Message(data: itemMessages)
-                messages.append(messageTemp!)
-                if messageTemp?.state == "0"{
-                    notificationMessagesClientNumber += 1
+            if !status{
+                alertUser(title: "Pas de données", message: nil)
+                normalConnection = true
+                return
+            }
+            
+            print(param)
+            
+            if let dataKey = param["dataKey"] as? String{
+                
+                
+                if dataKey == "getData"{
+                    let listMessages = data["data"] as! [[String:Any]]
+                    
+                    var messageTemp:Message?
+                    for itemMessages in listMessages {
+                        messageTemp = Message(data: itemMessages)
+                        messages.append(messageTemp!)
+                        if messageTemp?.state == "0"{
+                            notificationMessagesClientNumber += 1
+                        }
+                    }
+                    
+                    reloadNotifications()
+                    
+                    let messagesCount = CGFloat(messages.count)
+                    
+                    if messagesCount <= 4{
+                        let headerHeight = (messagesTableView.frame.size.height - ( messagesTableView.rowHeight * messagesCount )) / 2
+                        
+                        messagesTableView.contentInset = UIEdgeInsetsMake(headerHeight, 0, -headerHeight, 0)
+                    }
+                    
+                    messagesTableView.reloadData()
                 }
             }
-            
-            reloadNotifications()
-            
-            let messagesCount = CGFloat(messages.count)
-            
-            if messagesCount <= 4{
-                let headerHeight = (messagesTableView.frame.size.height - ( messagesTableView.rowHeight * messagesCount )) / 2
-                
-                messagesTableView.contentInset = UIEdgeInsetsMake(headerHeight, 0, -headerHeight, 0)
-            }
-            
-            messagesTableView.reloadData()
             
             normalConnection = true
         }
@@ -224,6 +262,8 @@ class MessagesViewController: MainViewController {
                 data.state = "1"
                 notificationMessagesClientNumber -= 1
                 reloadNotifications()
+                
+                Webservice.messageRead(self, data:["id_msg":data.id])
             }
             
             destination?.notificationMessagesClientNumber = notificationMessagesClientNumber
@@ -269,7 +309,6 @@ extension MessagesViewController : UITableViewDataSource{
             let data = messages[indexPath.item]
             let state = data.state
             var cellIdentifier = ""
-            print(state)
             
             if(state == "1"){
                 cellIdentifier = "messagesItem"

@@ -16,8 +16,21 @@ class AdviceWaitingMediationDetailViewController: MainViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.rating.rating = Double(selectedAdviceMediation["note"] as! Int)
-        self.message.text = selectedAdviceMediation["commentaire"] as! String
+        
+        if let rating = selectedAdviceMediation["note"] as? Int{
+            self.rating.rating = Double(rating)
+        }
+        else{
+            self.rating.rating = 0
+        }
+        
+        if let com = selectedAdviceMediation["commentaire"] as? String{
+            self.message.text = com
+            message.scrollsToTop = true
+        }
+        else{
+            self.message.text = ""
+        }
         
     }
 
@@ -41,9 +54,38 @@ class AdviceWaitingMediationDetailViewController: MainViewController {
             data["notAnswer"] = "yes"
             print(data)
             //self.closeController(sender as AnyObject)
-            self.performSegue(withIdentifier: "notAnswerAdvice", sender: self)
+            Webservice.adviceWaitingMediationNotAnswer(self, data:data)
+            //self.performSegue(withIdentifier: "notAnswerAdvice", sender: self)
         }
     }
+    
+    // MARK: - Get result of WS
+    override func reloadMyView(_ wsData:Any? = nil, param:[String:Any]=[:]) {
+        //spinnerLoad(false)
+        
+        var normalConnection = false
+        
+        if let data = wsData as? [String:Any]{
+            if let dataStatus = data["status"] as? Bool{
+                if dataStatus{
+                    Utils.adviceWaitingMediation -= 1
+                    
+                    Utils.getInstance().notifyAll()
+                    
+                    self.performSegue(withIdentifier: "notAnswerAdvice", sender: self)
+                }
+                else{
+                    alertUser(title: "Erreur", message: "Echec de l'action")
+                }
+                normalConnection = true
+            }
+        }
+        
+        if(!normalConnection){
+            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
+        }
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

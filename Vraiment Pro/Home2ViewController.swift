@@ -13,9 +13,17 @@ class Home2ViewController: MainViewController {
     @IBOutlet weak var menuCollectionView: UICollectionView!
     
     var menu : [Dictionary<String,String>] = []
+    
+    deinit{
+        Utils.getInstance().removeObserver(self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addImageLogo()
+        
+        Utils.getInstance().addObserver(self)
         
         Webservice.numberNotifications(self)
         
@@ -47,8 +55,18 @@ class Home2ViewController: MainViewController {
                                   "id":"4"])
     }
     
+    func addImageLogo(){
+        let button = UIButton.init(type: .custom)
+        button.setImage(UIImage(named: "logo_vp"), for: .normal)
+        //button.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControlEvents#>)
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 90)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = barButton
+    }
     
-    override func reloadMyView(_ wsData:Any? = nil) {
+    
+    // MARK: - Get result of WS
+    override func reloadMyView(_ wsData:Any? = nil, param:[String:Any]=[:]) {
         //spinnerLoad(false)
         
         var normalConnection = false
@@ -86,6 +104,10 @@ class Home2ViewController: MainViewController {
         }
     }
     
+    override func reloadFromNotification(){
+        menuCollectionView.reloadData()
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -108,7 +130,14 @@ extension Home2ViewController : UICollectionViewDataSource{
         return menu.count
     }
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuItem", for: indexPath) as! MenuCollectionViewCell
+        
+        var identifier = "menuItem"
+        
+        if(indexPath.row == 3){
+            identifier = "menuItem2"
+        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! MenuCollectionViewCell
         let data = menu[indexPath.item]
         
         if(indexPath.row == 0){

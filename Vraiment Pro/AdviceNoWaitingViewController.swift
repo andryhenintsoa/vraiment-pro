@@ -1,26 +1,25 @@
 //
-//  AdviceRequestResultViewController.swift
+//  AdviceNoWaitingViewController.swift
 //  Vraiment Pro
 //
-//  Created by Andry Henintsoa Razafindramanana on 09/12/2016.
-//  Copyright © 2016 Sparks MG. All rights reserved.
+//  Created by Andry Henintsoa Razafindramanana on 06/01/2017.
+//  Copyright © 2017 Sparks MG. All rights reserved.
 //
 
 import UIKit
 
-class AdviceRequestResultViewController: MainViewController {
+class AdviceNoWaitingViewController: MainViewController {
 
     @IBOutlet weak var resultLabel : UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        resultLabel.text = "Votre demande d'avis\n a bien été envoyée"
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        let _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.closeNavController), userInfo: nil, repeats: false)
+        resultLabel.text = "Vous n'avez pas\n d'avis en attente"
         
+        resultLabel.sizeToFit()
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,9 +35,11 @@ class AdviceRequestResultViewController: MainViewController {
         self.displaySidebar()
     }
     
-    @IBAction func closeNavController(_ sender: AnyObject) {
+    func closeNavController() {
         self.dismiss(animated: true, completion: nil)
     }
+
+    
 
     /*
     // MARK: - Navigation

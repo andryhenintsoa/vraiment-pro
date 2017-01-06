@@ -33,7 +33,8 @@ class AdviceRequestSentViewController: MainViewController {
         self.displaySidebar()
     }
     
-    override func reloadMyView(_ wsData:Any? = nil) {
+    // MARK: - Get result of WS
+    override func reloadMyView(_ wsData:Any? = nil, param:[String:Any]=[:]) {
         //spinnerLoad(false)
         
         var normalConnection = false

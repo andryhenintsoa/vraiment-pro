@@ -90,7 +90,7 @@ class AdviceSummaryViewController: MainViewController {
     }
     
     // MARK: - Get result of WS
-    override func reloadMyView(_ wsData:Any? = nil) {
+    override func reloadMyView(_ wsData:Any? = nil, param:[String:Any]=[:]) {
         //spinnerLoad(false)
         
         var normalConnection = false

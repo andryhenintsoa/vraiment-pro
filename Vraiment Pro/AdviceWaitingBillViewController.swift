@@ -47,7 +47,8 @@ class AdviceWaitingBillViewController: ImagePickerViewController {
         self.displaySidebar()
     }
     
-    override func reloadMyView(_ wsData:Any? = nil) {
+    // MARK: - Get result of WS
+    override func reloadMyView(_ wsData:Any? = nil, param:[String:Any]=[:]) {
         //spinnerLoad(false)
         
         var normalConnection = false
@@ -57,8 +58,16 @@ class AdviceWaitingBillViewController: ImagePickerViewController {
             let status = data["status"] as! Bool
             
             if !status{
-                alertUser(title: "Pas de données", message: nil)
+                //alertUser(title: "Pas de données", message: nil)
                 normalConnection = true
+                
+                let n = self.navigationController?.viewControllers.count
+                let previousVC = self.navigationController?.viewControllers[n!-2] as! AdviceWaitingViewController
+                
+                _ = navigationController?.popViewController(animated: false)
+                
+                previousVC.performSegue(withIdentifier: "noData", sender: nil)
+                
                 return
             }
             
@@ -87,9 +96,15 @@ class AdviceWaitingBillViewController: ImagePickerViewController {
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toResult"{
-            let destination = segue.destination as? ResultViewController
-            destination?.textToDisplay = "La facture a bien été envoyé"
+        if segue.identifier == "toSendBills"{
+            let destination = segue.destination as? AdviceWaitingBillSendViewController
+            
+            let data = waitingData[(waitingTableView.indexPathForSelectedRow?.row)!]
+            print(data)
+            destination?.data = data
+            
+            destination?.imageToSend = self.imageToSend
+            
         }
      }
     
@@ -126,7 +141,7 @@ extension AdviceWaitingBillViewController : UITableViewDataSource{
 
 extension AdviceWaitingBillViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        self.segueNextName = "toResult"
+        self.segueNextName = "toSendBills"
         chooseTakingPictureMode()
     }
 }

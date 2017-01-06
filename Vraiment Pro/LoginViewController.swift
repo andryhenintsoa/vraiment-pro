@@ -94,8 +94,13 @@ class LoginViewController: MainViewController {
         Utils.userId = 0
     }
     
+    @IBAction func closeKeyboards(_ sender: AnyObject) {
+        emailLabel.resignFirstResponder()
+        pwdLabel.resignFirstResponder()
+    }
+    
 // MARK: - Get result of WS
-    override func reloadMyView(_ wsData:Any? = nil) {
+    override func reloadMyView(_ wsData:Any? = nil, param:[String:Any]=[:]) {
         //spinnerLoad(false)
         
         var normalConnection = false
@@ -119,7 +124,7 @@ class LoginViewController: MainViewController {
                     performSegue(withIdentifier: "toMenu", sender: self)
                 }
                 else{
-                    alertUser(title: "Erreur", message: "Email et/ou mot de passe erroné")
+                    alertUser(title: "Erreur", message: "E-mail et/ou mot de passe erroné")
                 }
                 normalConnection = true
             }

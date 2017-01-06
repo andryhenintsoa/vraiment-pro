@@ -28,4 +28,45 @@ class Utils{
     static var adviceWaitingBills:Int = 0
     static var adviceWaitingMediation:Int = 0
     static var messagesNumber:Int = 0
+    
+    var listObservers:[MainViewController]! = []
+    private static var instance:Utils?
+    
+    static func getInstance() -> Utils{
+        
+        if instance == nil{
+            instance = Utils()
+        }
+        return instance!
+    }
+    
+    private init(){
+        
+    }
+    
+    func addObserver(_ controller:MainViewController){
+        listObservers.append(controller)
+    }
+    
+    func removeObserver(_ controller:MainViewController){
+        
+        var counter = 0
+        
+        for observer in listObservers{
+            if observer == controller{
+                listObservers.remove(at: counter)
+                break
+            }
+            counter += 1
+        }
+        
+    }
+    
+    func notifyAll(){
+        for observer in listObservers{
+            observer.reloadFromNotification()
+        }
+    }
+    
+    
 }

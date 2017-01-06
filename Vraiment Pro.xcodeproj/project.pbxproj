@@ -21,6 +21,7 @@
 		F823C0DD1E15088E0004F7A9 /* MessagesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F823C0DC1E15088E0004F7A9 /* MessagesInfo.swift */; };
 		F827257D1E070DA100F4B0EC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F827257C1E070DA000F4B0EC /* ResultViewController.swift */; };
 		F82FBFB91E09A5F000EADA11 /* CustomActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82FBFB81E09A5F000EADA11 /* CustomActivityIndicator.swift */; };
+		F83630C71E1F6FAE00A03885 /* AdviceNoWaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83630C61E1F6FAE00A03885 /* AdviceNoWaitingViewController.swift */; };
 		F84169FE1DF6B4EE00664870 /* AdviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84169FD1DF6B4ED00664870 /* AdviceViewController.swift */; };
 		F8416A011DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8416A001DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift */; };
 		F8416A041DF6BF5000664870 /* DocsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8416A031DF6BF5000664870 /* DocsCollectionViewCell.swift */; };
@@ -49,6 +50,17 @@
 		F89210941DFD730900703CE1 /* ProfilePartnerAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89210931DFD730800703CE1 /* ProfilePartnerAddViewController.swift */; };
 		F89210961DFD737E00703CE1 /* ProfilePartnerAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89210951DFD737E00703CE1 /* ProfilePartnerAddTableViewCell.swift */; };
 		F892109B1DFD84CC00703CE1 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F892109A1DFD84CC00703CE1 /* DLRadioButton.m */; };
+		F89D89FA1E1EB21C004DDA65 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F89D89F01E1EB21C004DDA65 /* Rubik-Black.ttf */; };
+		F89D89FB1E1EB21C004DDA65 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F89D89F11E1EB21C004DDA65 /* Rubik-BlackItalic.ttf */; };
+		F89D89FC1E1EB21C004DDA65 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F89D89F21E1EB21C004DDA65 /* Rubik-Bold.ttf */; };
+		F89D89FD1E1EB21C004DDA65 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F89D89F31E1EB21C004DDA65 /* Rubik-BoldItalic.ttf */; };
+		F89D89FE1E1EB21C004DDA65 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F89D89F41E1EB21C004DDA65 /* Rubik-Italic.ttf */; };
+		F89D89FF1E1EB21C004DDA65 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F89D89F51E1EB21C004DDA65 /* Rubik-Light.ttf */; };
+		F89D8A001E1EB21C004DDA65 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F89D89F61E1EB21C004DDA65 /* Rubik-LightItalic.ttf */; };
+		F89D8A011E1EB21C004DDA65 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F89D89F71E1EB21C004DDA65 /* Rubik-Medium.ttf */; };
+		F89D8A021E1EB21C004DDA65 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F89D89F81E1EB21C004DDA65 /* Rubik-MediumItalic.ttf */; };
+		F89D8A031E1EB21C004DDA65 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F89D89F91E1EB21C004DDA65 /* Rubik-Regular.ttf */; };
+		F89D8A051E1ED10A004DDA65 /* AdviceWaitingBillSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89D8A041E1ED10A004DDA65 /* AdviceWaitingBillSendViewController.swift */; };
 		F8A6DF821DFFEB96009DAFE7 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF741DFFEB96009DAFE7 /* Raleway-Bold.ttf */; };
 		F8A6DF831DFFEB96009DAFE7 /* Raleway-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF751DFFEB96009DAFE7 /* Raleway-ExtraBold.ttf */; };
 		F8A6DF841DFFEB96009DAFE7 /* Raleway-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A6DF761DFFEB96009DAFE7 /* Raleway-ExtraLight.ttf */; };
@@ -114,6 +126,7 @@
 		F823C0DC1E15088E0004F7A9 /* MessagesInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesInfo.swift; sourceTree = "<group>"; };
 		F827257C1E070DA000F4B0EC /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		F82FBFB81E09A5F000EADA11 /* CustomActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicator.swift; sourceTree = "<group>"; };
+		F83630C61E1F6FAE00A03885 /* AdviceNoWaitingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceNoWaitingViewController.swift; sourceTree = "<group>"; };
 		F84169FD1DF6B4ED00664870 /* AdviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceViewController.swift; sourceTree = "<group>"; };
 		F8416A001DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8416A031DF6BF5000664870 /* DocsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -150,6 +163,17 @@
 		F89210981DFD84A800703CE1 /* DLRadioButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
 		F89210991DFD84CC00703CE1 /* Vraiment Pro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vraiment Pro-Bridging-Header.h"; sourceTree = "<group>"; };
 		F892109A1DFD84CC00703CE1 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
+		F89D89F01E1EB21C004DDA65 /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
+		F89D89F11E1EB21C004DDA65 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
+		F89D89F21E1EB21C004DDA65 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		F89D89F31E1EB21C004DDA65 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
+		F89D89F41E1EB21C004DDA65 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic.ttf"; sourceTree = "<group>"; };
+		F89D89F51E1EB21C004DDA65 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
+		F89D89F61E1EB21C004DDA65 /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
+		F89D89F71E1EB21C004DDA65 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		F89D89F81E1EB21C004DDA65 /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
+		F89D89F91E1EB21C004DDA65 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		F89D8A041E1ED10A004DDA65 /* AdviceWaitingBillSendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingBillSendViewController.swift; sourceTree = "<group>"; };
 		F8A6DF741DFFEB96009DAFE7 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		F8A6DF751DFFEB96009DAFE7 /* Raleway-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraBold.ttf"; sourceTree = "<group>"; };
 		F8A6DF761DFFEB96009DAFE7 /* Raleway-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -291,6 +315,8 @@
 				F8B411461DFB26C5008AE9D3 /* AdviceWaitingMediationDetailViewController.swift */,
 				F8B411481DFB273D008AE9D3 /* AdviceWaitingMediationAnswerViewController.swift */,
 				F8CA82F51E1CE58500693C72 /* AdviceRequestSentViewController.swift */,
+				F89D8A041E1ED10A004DDA65 /* AdviceWaitingBillSendViewController.swift */,
+				F83630C61E1F6FAE00A03885 /* AdviceNoWaitingViewController.swift */,
 			);
 			name = Advice;
 			sourceTree = "<group>";
@@ -403,6 +429,16 @@
 				F8A6DF751DFFEB96009DAFE7 /* Raleway-ExtraBold.ttf */,
 				F8A6DF761DFFEB96009DAFE7 /* Raleway-ExtraLight.ttf */,
 				F8A6DF771DFFEB96009DAFE7 /* Raleway-Heavy.ttf */,
+				F89D89F01E1EB21C004DDA65 /* Rubik-Black.ttf */,
+				F89D89F11E1EB21C004DDA65 /* Rubik-BlackItalic.ttf */,
+				F89D89F21E1EB21C004DDA65 /* Rubik-Bold.ttf */,
+				F89D89F31E1EB21C004DDA65 /* Rubik-BoldItalic.ttf */,
+				F89D89F41E1EB21C004DDA65 /* Rubik-Italic.ttf */,
+				F89D89F51E1EB21C004DDA65 /* Rubik-Light.ttf */,
+				F89D89F61E1EB21C004DDA65 /* Rubik-LightItalic.ttf */,
+				F89D89F71E1EB21C004DDA65 /* Rubik-Medium.ttf */,
+				F89D89F81E1EB21C004DDA65 /* Rubik-MediumItalic.ttf */,
+				F89D89F91E1EB21C004DDA65 /* Rubik-Regular.ttf */,
 				F8A6DF781DFFEB96009DAFE7 /* Raleway-Light.ttf */,
 				F8A6DF791DFFEB96009DAFE7 /* Raleway-Medium.ttf */,
 				F80C3D101E0BF6F00033DAF9 /* Raleway-BoldItalic.ttf */,
@@ -566,20 +602,30 @@
 				F8A6DF8C1DFFEB96009DAFE7 /* Teko-Light.ttf in Resources */,
 				F80C3D191E0BF6F00033DAF9 /* Raleway-SemiBoldItalic.ttf in Resources */,
 				F883DD1B1DF4713E00C8071B /* LaunchScreen.storyboard in Resources */,
+				F89D89FF1E1EB21C004DDA65 /* Rubik-Light.ttf in Resources */,
 				F8A6DF8D1DFFEB96009DAFE7 /* Teko-Medium.ttf in Resources */,
+				F89D89FA1E1EB21C004DDA65 /* Rubik-Black.ttf in Resources */,
+				F89D8A001E1EB21C004DDA65 /* Rubik-LightItalic.ttf in Resources */,
+				F89D8A031E1EB21C004DDA65 /* Rubik-Regular.ttf in Resources */,
+				F89D8A011E1EB21C004DDA65 /* Rubik-Medium.ttf in Resources */,
 				F8A6DF8B1DFFEB96009DAFE7 /* Teko-Bold.ttf in Resources */,
 				F8A6DF881DFFEB96009DAFE7 /* Raleway-Regular.ttf in Resources */,
 				F80C3D171E0BF6F00033DAF9 /* Raleway-LightItalic.ttf in Resources */,
 				F8A6DF851DFFEB96009DAFE7 /* Raleway-Heavy.ttf in Resources */,
+				F89D89FD1E1EB21C004DDA65 /* Rubik-BoldItalic.ttf in Resources */,
 				F80C3D181E0BF6F00033DAF9 /* Raleway-MediumItalic.ttf in Resources */,
 				F8A6DF831DFFEB96009DAFE7 /* Raleway-ExtraBold.ttf in Resources */,
 				F8A6DF841DFFEB96009DAFE7 /* Raleway-ExtraLight.ttf in Resources */,
+				F89D89FB1E1EB21C004DDA65 /* Rubik-BlackItalic.ttf in Resources */,
+				F89D8A021E1EB21C004DDA65 /* Rubik-MediumItalic.ttf in Resources */,
 				F8A6DF871DFFEB96009DAFE7 /* Raleway-Medium.ttf in Resources */,
 				F883DD181DF4713E00C8071B /* Assets.xcassets in Resources */,
 				F883DD131DF4713E00C8071B /* Main.storyboard in Resources */,
 				F8A6DF821DFFEB96009DAFE7 /* Raleway-Bold.ttf in Resources */,
+				F89D89FC1E1EB21C004DDA65 /* Rubik-Bold.ttf in Resources */,
 				F8A6DF8A1DFFEB96009DAFE7 /* Raleway-Thin.ttf in Resources */,
 				F8A6DF861DFFEB96009DAFE7 /* Raleway-Light.ttf in Resources */,
+				F89D89FE1E1EB21C004DDA65 /* Rubik-Italic.ttf in Resources */,
 				F80C3D151E0BF6F00033DAF9 /* Raleway-BoldItalic.ttf in Resources */,
 				F8A6DF8E1DFFEB96009DAFE7 /* Teko-Regular.ttf in Resources */,
 				F8A6DF891DFFEB96009DAFE7 /* Raleway-SemiBold.ttf in Resources */,
@@ -620,6 +666,7 @@
 				F843608B1DFDDCC400D3C9AC /* ParametersViewController.swift in Sources */,
 				F87792EE1DF92C360052E888 /* AdviceRequestViewController.swift in Sources */,
 				F8D137171DFA82A3000B995E /* AdviceWaitingViewController.swift in Sources */,
+				F89D8A051E1ED10A004DDA65 /* AdviceWaitingBillSendViewController.swift in Sources */,
 				F81574F61E0A4BF200AC215F /* Message.swift in Sources */,
 				F804B2B41E012508007C82BA /* CustomEnumerations.swift in Sources */,
 				F84360841DFDAD7900D3C9AC /* SidebarViewController.swift in Sources */,
@@ -653,6 +700,7 @@
 				F883DD0E1DF4713E00C8071B /* AppDelegate.swift in Sources */,
 				F85231421DF7D7B20046DDDB /* PaddingLabel.swift in Sources */,
 				F86A7FD61DF734B100019DC1 /* MessagesViewController.swift in Sources */,
+				F83630C71E1F6FAE00A03885 /* AdviceNoWaitingViewController.swift in Sources */,
 				F8CA82F61E1CE58500693C72 /* AdviceRequestSentViewController.swift in Sources */,
 				F82FBFB91E09A5F000EADA11 /* CustomActivityIndicator.swift in Sources */,
 				F87792F01DF92C560052E888 /* AdviceSummaryViewController.swift in Sources */,

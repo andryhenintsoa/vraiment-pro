@@ -57,19 +57,14 @@ class Webservice{
         
         let task = session.dataTask(with: request) { (data, response, error) -> Void in
             
-            controller.spinnerLoad(false)
+            DispatchQueue.main.async(execute: { () -> Void in
+                controller.spinnerLoad(false)
+            })
             
             if error != nil {
                 print("error=\(error)")
                 return
             }
-            
-            // You can print out response object
-            print("******* response = \(response)")
-            
-            // Print out reponse body
-            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-            print("****** response data = \(responseString!)")
             
             do {
                 let myData = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
@@ -82,7 +77,9 @@ class Webservice{
                 
             }
             catch{
+                
                 print(error)
+                controller.reloadMyViewWithError()
             }
 
         }
@@ -122,17 +119,17 @@ class Webservice{
     
 // MARK : Method GET
 
-    class func load(_ url: String, controller: MainViewController, withLoader:Bool = true) {
+    class func load(_ url: String, controller: MainViewController, withLoader:Bool = true, param:[String:Any] = [:]) {
         
         print("Loading WS")
         print("url: \(url)")
         
         let requestURL: URL = URL(string: url)!
         
-        load(requestURL, controller: controller, withLoader:withLoader)
+        load(requestURL, controller: controller, withLoader:withLoader, param:param)
     }
     
-    class func load(_ url: URL, controller: MainViewController, withLoader:Bool = true) {
+    class func load(_ url: URL, controller: MainViewController, withLoader:Bool = true, param:[String:Any] = [:]) {
         if(withLoader){
             controller.spinnerLoad()
         }
@@ -145,7 +142,9 @@ class Webservice{
             (data, response, error) -> Void in
             
             if(withLoader){
-                controller.spinnerLoad(false)
+                DispatchQueue.main.async(execute: { () -> Void in
+                    controller.spinnerLoad(false)
+                })
             }
             
             var normalConnection = false
@@ -160,7 +159,7 @@ class Webservice{
                         
                         normalConnection = true
                         DispatchQueue.main.async(execute: { () -> Void in
-                            controller.reloadMyView(myData)
+                            controller.reloadMyView(myData, param:param)
                         })
                         
                     }catch {
@@ -173,7 +172,7 @@ class Webservice{
                         let myData = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
                         
                         normalConnection = true
-                        controller.reloadMyView(myData)
+                        controller.reloadMyView(myData, param:param)
                         return
                         
                         
@@ -217,6 +216,11 @@ class Webservice{
    
     class func messages(_ controller: MainViewController){
         let req = URL_API_WEB + "mes-messages" + header()
+        load(req, controller: controller, withLoader:true, param:["dataKey":"getData"])
+    }
+    
+    class func messageRead(_ controller: MainViewController, data:[String:Any]){
+        let req = URL_API_WEB + "lu-ou-non" + "?message_id=\(data["id_msg"]!)"
         load(req, controller: controller)
     }
     
@@ -230,8 +234,21 @@ class Webservice{
         load(req, controller: controller)
     }
     
+    class func adviceSendBills(_ controller: MainViewController, data:[String:Any], imageToSend:UIImage? = nil){
+        
+        let req = URL_API + "avis-send-attente-facture" + header() + "&avis_id=\(data["avis_id"]!)"
+        
+        imageUpload(req, controller: controller, imageToSend: imageToSend!)
+        
+    }
+    
     class func adviceWaitingMediation(_ controller: MainViewController){
         let req = URL_API + "avis-attente-moderation" + header()
+        load(req, controller: controller)
+    }
+    
+    class func adviceWaitingMediationNotAnswer(_ controller: MainViewController, data:[String:Any]){
+        let req = URL_API + "avis-ne-pas-repondre-moderation" + header() + "&avis_id=\(data["avis_id"]!)"
         load(req, controller: controller)
     }
     
@@ -275,7 +292,9 @@ class Webservice{
     }
     
     class func adviceMediationAnswer(_ controller: MainViewController, data:[String:Any]){
-        let req = URL_API + "avis-repondre-moderation" + header() + "&client_id=\(data["client_id"]!)&avis_id=\(data["avis_id"]!)&contenu=\(data["answerText"]!)"
+//        let req = URL_API + "avis-repondre-moderation" + header() + "&client_id=\(data["client_id"]!)&avis_id=\(data["avis_id"]!)&contenu=\(data["answerText"]!)"
+        
+        let req = URL_API + "avis-repondre-moderation" + header() + "&avis_id=\(data["avis_id"]!)&contenu=\(data["answerText"]!)"
         
         if let encoded = req.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
             let url = URL(string: encoded){

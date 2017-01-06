@@ -14,14 +14,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Raleway-Bold.ttf">
-            <string>Raleway-Bold</string>
+        <array key="Rubik-Medium.ttf">
+            <string>Rubik-Medium</string>
         </array>
-        <array key="Raleway-Regular.ttf">
-            <string>Raleway</string>
-        </array>
-        <array key="Raleway-SemiBold.ttf">
-            <string>Raleway-SemiBold</string>
+        <array key="Rubik-Regular.ttf">
+            <string>Rubik-Regular</string>
         </array>
         <array key="Teko-Regular.ttf">
             <string>Teko-Regular</string>
@@ -46,9 +43,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVL-GR-TYg">
                                 <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvh-eL-EGW">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                                        <connections>
+                                            <action selector="closeKeyboards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bSu-FJ-1Od"/>
+                                        </connections>
+                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGJ-W7-zxe">
                                         <rect key="frame" x="0.0" y="135" width="414" height="446"/>
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EM-05-OlJ">
+                                                <rect key="frame" x="317.66666666666669" y="0.0" width="95.666666666666629" height="446"/>
+                                                <connections>
+                                                    <action selector="closeKeyboards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="77L-EI-dzt"/>
+                                                </connections>
+                                            </button>
                                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vLM-0o-Ia9">
                                                 <rect key="frame" x="30" y="118" width="260" height="50"/>
                                                 <subviews>
@@ -64,7 +73,7 @@
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="tintColor" red="0.4039215686" green="0.70980392160000005" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                                         <connections>
                                                             <action selector="emailEndEdit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="s6G-A0-jQE"/>
@@ -96,7 +105,7 @@
                                                         <rect key="frame" x="46" y="8" width="206" height="34"/>
                                                         <color key="tintColor" red="0.4039215686" green="0.70980392160000005" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="textColor" red="0.33725490196078434" green="0.3529411764705882" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <connections>
                                                             <action selector="pwdEndEdit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="1U4-in-1Jp"/>
@@ -120,7 +129,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="0WW-cW-Bug"/>
                                                     <constraint firstAttribute="width" constant="260" id="OK0-Xs-nZN"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
                                                 <state key="normal" title="Mot de passe oublié ?">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -142,7 +151,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="p1v-YJ-i3b"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Teko-Regular" family="Teko" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Teko-Regular" family="Teko" pointSize="21"/>
                                                 <state key="normal" title="Se connecter">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -160,6 +169,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="c8c-E1-X67" secondAttribute="trailing" constant="57.5" id="92F-Aw-DVF"/>
                                             <constraint firstAttribute="trailing" secondItem="hZd-in-VoG" secondAttribute="trailing" constant="57.5" id="9CK-ex-HQx"/>
+                                            <constraint firstAttribute="trailing" secondItem="3EM-05-OlJ" secondAttribute="trailing" id="Ado-rn-bF8"/>
                                             <constraint firstItem="vLM-0o-Ia9" firstAttribute="leading" secondItem="FGJ-W7-zxe" secondAttribute="leading" constant="57.5" id="DwC-Lw-4Zq"/>
                                             <constraint firstItem="vLM-0o-Ia9" firstAttribute="top" secondItem="nAK-pY-GEe" secondAttribute="bottom" constant="8" id="FSs-VA-UDt"/>
                                             <constraint firstAttribute="width" secondItem="FGJ-W7-zxe" secondAttribute="height" multiplier="40:43" id="FZm-t3-mrp"/>
@@ -167,17 +177,20 @@
                                             <constraint firstItem="t3w-FR-vI7" firstAttribute="leading" secondItem="hZd-in-VoG" secondAttribute="leading" id="HTG-Z4-Z8n"/>
                                             <constraint firstItem="vLM-0o-Ia9" firstAttribute="trailing" secondItem="c8c-E1-X67" secondAttribute="trailing" id="K9x-TH-tzF"/>
                                             <constraint firstItem="nAK-pY-GEe" firstAttribute="top" secondItem="FGJ-W7-zxe" secondAttribute="top" id="NYl-8V-iqL"/>
+                                            <constraint firstItem="3EM-05-OlJ" firstAttribute="top" secondItem="FGJ-W7-zxe" secondAttribute="top" id="RkC-7y-kIf"/>
                                             <constraint firstItem="nAK-pY-GEe" firstAttribute="centerX" secondItem="vLM-0o-Ia9" secondAttribute="centerX" id="X1b-IC-7Xd"/>
                                             <constraint firstItem="nAK-pY-GEe" firstAttribute="centerX" secondItem="FGJ-W7-zxe" secondAttribute="centerX" id="YDK-Y0-WZF"/>
                                             <constraint firstItem="c8c-E1-X67" firstAttribute="top" secondItem="hZd-in-VoG" secondAttribute="bottom" constant="24" id="aHu-CM-7eM"/>
                                             <constraint firstItem="t3w-FR-vI7" firstAttribute="trailing" secondItem="hZd-in-VoG" secondAttribute="trailing" id="aNe-8h-5M4"/>
                                             <constraint firstItem="t3w-FR-vI7" firstAttribute="leading" secondItem="FGJ-W7-zxe" secondAttribute="leading" constant="57.5" id="bOe-iE-i4I"/>
+                                            <constraint firstItem="3EM-05-OlJ" firstAttribute="leading" secondItem="hZd-in-VoG" secondAttribute="trailing" id="bP7-aK-FCz"/>
                                             <constraint firstItem="nAK-pY-GEe" firstAttribute="leading" secondItem="FGJ-W7-zxe" secondAttribute="leading" constant="32" id="cKz-aC-6Jn"/>
                                             <constraint firstAttribute="trailing" secondItem="nAK-pY-GEe" secondAttribute="trailing" constant="32" id="crX-Gw-NdM"/>
                                             <constraint firstAttribute="trailing" secondItem="vLM-0o-Ia9" secondAttribute="trailing" constant="57.5" id="hcF-69-8eA"/>
                                             <constraint firstItem="hZd-in-VoG" firstAttribute="centerX" secondItem="c8c-E1-X67" secondAttribute="centerX" id="jdX-an-Zcy"/>
                                             <constraint firstItem="nAK-pY-GEe" firstAttribute="top" secondItem="FGJ-W7-zxe" secondAttribute="top" id="nZH-r5-EYR"/>
                                             <constraint firstAttribute="trailing" secondItem="t3w-FR-vI7" secondAttribute="trailing" constant="57.5" id="rgC-Q3-qVf"/>
+                                            <constraint firstAttribute="bottom" secondItem="3EM-05-OlJ" secondAttribute="bottom" id="rt4-qk-Wd4"/>
                                             <constraint firstItem="hZd-in-VoG" firstAttribute="top" secondItem="t3w-FR-vI7" secondAttribute="bottom" constant="16" id="v9U-as-zaB"/>
                                             <constraint firstItem="t3w-FR-vI7" firstAttribute="top" secondItem="vLM-0o-Ia9" secondAttribute="bottom" constant="16" id="v9y-AH-4Hj"/>
                                             <constraint firstItem="c8c-E1-X67" firstAttribute="leading" secondItem="FGJ-W7-zxe" secondAttribute="leading" constant="57.5" id="yey-DU-Jmg"/>
@@ -189,7 +202,11 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69697131849315064" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="FGJ-W7-zxe" secondAttribute="trailing" id="BTK-eo-fOp"/>
+                                    <constraint firstItem="lvh-eL-EGW" firstAttribute="top" secondItem="dVL-GR-TYg" secondAttribute="top" id="D6V-gA-cXa"/>
+                                    <constraint firstAttribute="trailing" secondItem="lvh-eL-EGW" secondAttribute="trailing" id="NzH-9Z-MSP"/>
                                     <constraint firstItem="FGJ-W7-zxe" firstAttribute="centerY" secondItem="dVL-GR-TYg" secondAttribute="centerY" id="R1r-yx-DnU"/>
+                                    <constraint firstAttribute="bottom" secondItem="lvh-eL-EGW" secondAttribute="bottom" id="bez-FL-57m"/>
+                                    <constraint firstItem="lvh-eL-EGW" firstAttribute="leading" secondItem="dVL-GR-TYg" secondAttribute="leading" id="eYK-E4-7ZA"/>
                                     <constraint firstItem="FGJ-W7-zxe" firstAttribute="leading" secondItem="dVL-GR-TYg" secondAttribute="leading" id="fPm-7w-lYq"/>
                                 </constraints>
                             </view>
@@ -217,7 +234,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="OFt-Ku-8Nh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="135" y="135.21126760563379"/>
+            <point key="canvasLocation" x="134.78260869565219" y="134.5108695652174"/>
         </scene>
         <!--Photos et Documents-->
         <scene sceneID="gj2-Ia-2Po">
@@ -453,7 +470,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQD-wW-UBk">
                                                                     <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="12"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -514,7 +531,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oU6-IN-MHM">
                                                                     <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="12"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -732,7 +749,7 @@
                                                                     <constraint firstAttribute="width" constant="239" id="n7Q-ZR-Abv"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                                                 <connections>
                                                                     <action selector="selectClient:" destination="LUt-Pi-6Ag" eventType="editingDidBegin" id="CJn-yL-SeB"/>
@@ -779,8 +796,8 @@
                                                                     <constraint firstAttribute="width" constant="158" id="hU9-kd-jlj"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -833,7 +850,7 @@
                                                                     <constraint firstAttribute="width" constant="157" id="Jar-n4-K5x"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                                             </textField>
                                                         </subviews>
@@ -962,6 +979,7 @@
                     <connections>
                         <outlet property="mailLabel" destination="7F9-ol-DuN" id="QRa-ua-Nsf"/>
                         <outlet property="nameLabel" destination="FSw-nv-4IB" id="Qzu-t4-B1L"/>
+                        <outlet property="ouLabel" destination="ryX-Lh-f6P" id="zrY-nr-1WI"/>
                         <outlet property="phoneLabel" destination="NuH-CF-P3U" id="g5I-y4-fSC"/>
                         <outlet property="profilePartnerButton" destination="gX2-rQ-Mbe" id="J4U-Dj-NLP"/>
                         <outlet property="profileSelfButton" destination="0kH-fF-gtR" id="fas-BZ-5mv"/>
@@ -1037,7 +1055,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avis" translatesAutoresizingMaskIntoConstraints="NO" id="07y-IJ-X64">
-                                                                    <rect key="frame" x="83" y="83" width="39" height="39"/>
+                                                                    <rect key="frame" x="70" y="70" width="52" height="52"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="07y-IJ-X64" secondAttribute="height" multiplier="1:1" id="vW4-is-tuY"/>
                                                                     </constraints>
@@ -1048,7 +1066,7 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLr-bP-Xc7">
                                                                             <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                            <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="12"/>
+                                                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="12"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -1072,7 +1090,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="trailingMargin" secondItem="4Na-Mc-roc" secondAttribute="trailing" constant="9" id="702-rF-H7M"/>
                                                             <constraint firstItem="07y-IJ-X64" firstAttribute="trailing" secondItem="w0F-0c-1dr" secondAttribute="trailingMargin" id="8Ca-K9-LD5"/>
-                                                            <constraint firstItem="07y-IJ-X64" firstAttribute="width" secondItem="w0F-0c-1dr" secondAttribute="width" multiplier="0.3" id="Boj-VG-w6b"/>
+                                                            <constraint firstItem="07y-IJ-X64" firstAttribute="width" secondItem="w0F-0c-1dr" secondAttribute="width" multiplier="0.4" id="Boj-VG-w6b"/>
                                                             <constraint firstItem="07y-IJ-X64" firstAttribute="bottom" secondItem="w0F-0c-1dr" secondAttribute="bottomMargin" id="DlB-YH-OA3"/>
                                                             <constraint firstItem="4Na-Mc-roc" firstAttribute="leading" secondItem="w0F-0c-1dr" secondAttribute="leadingMargin" constant="7" id="FX1-Yw-zHq"/>
                                                             <constraint firstItem="jzb-ts-501" firstAttribute="top" secondItem="w0F-0c-1dr" secondAttribute="top" constant="-3" id="Ijb-Zv-Huo"/>
@@ -1086,6 +1104,70 @@
                                                             <outlet property="notificationContainer" destination="jzb-ts-501" id="rTp-P8-gIx"/>
                                                             <outlet property="titre" destination="4Na-Mc-roc" id="zgJ-2e-4Bk"/>
                                                             <segue destination="LsF-R8-f3K" kind="show" identifier="toDetail2" id="h9C-go-Rdc"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="menuItem2" id="aNO-um-mB5" customClass="MenuCollectionViewCell" customModule="Vraiment_Pro" customModuleProvider="target">
+                                                        <rect key="frame" x="264" y="20" width="130" height="130"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avis" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3f6-os-mZG">
+                                                                    <rect key="frame" x="15" y="25" width="98" height="26"/>
+                                                                    <fontDescription key="fontDescription" name="Teko-Regular" family="Teko" pointSize="26"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avis" translatesAutoresizingMaskIntoConstraints="NO" id="oPO-xg-h3v">
+                                                                    <rect key="frame" x="83" y="83" width="39" height="39"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="oPO-xg-h3v" secondAttribute="height" multiplier="1:1" id="0G9-bQ-srT"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atl-oO-0Pu">
+                                                                    <rect key="frame" x="107" y="-3" width="26" height="26"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01U-2F-Tbn">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
+                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="12"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" red="0.4039215686" green="0.70980392160000005" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="01U-2F-Tbn" firstAttribute="centerY" secondItem="atl-oO-0Pu" secondAttribute="centerY" id="Pke-6R-cZI"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="01U-2F-Tbn" secondAttribute="trailing" id="QCE-ys-5Lx"/>
+                                                                        <constraint firstItem="01U-2F-Tbn" firstAttribute="top" secondItem="atl-oO-0Pu" secondAttribute="top" id="RMY-TY-OBa"/>
+                                                                        <constraint firstAttribute="width" secondItem="atl-oO-0Pu" secondAttribute="height" multiplier="1:1" id="bVs-3Z-p6p"/>
+                                                                        <constraint firstItem="01U-2F-Tbn" firstAttribute="leading" secondItem="atl-oO-0Pu" secondAttribute="leading" id="guF-Cz-vQW"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="3"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                            </subviews>
+                                                        </view>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="tintColor" red="0.4039215686" green="0.70980392160000005" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="oPO-xg-h3v" firstAttribute="trailing" secondItem="aNO-um-mB5" secondAttribute="trailingMargin" id="4iN-su-CVx"/>
+                                                            <constraint firstItem="3f6-os-mZG" firstAttribute="leading" secondItem="aNO-um-mB5" secondAttribute="leadingMargin" constant="7" id="DOg-E7-IOC"/>
+                                                            <constraint firstItem="3f6-os-mZG" firstAttribute="top" secondItem="aNO-um-mB5" secondAttribute="topMargin" constant="17" id="RaR-TH-afG"/>
+                                                            <constraint firstItem="atl-oO-0Pu" firstAttribute="width" secondItem="aNO-um-mB5" secondAttribute="width" multiplier="0.2" id="Voz-7a-m3m"/>
+                                                            <constraint firstItem="oPO-xg-h3v" firstAttribute="bottom" secondItem="aNO-um-mB5" secondAttribute="bottomMargin" id="Wsw-tO-moY"/>
+                                                            <constraint firstItem="oPO-xg-h3v" firstAttribute="width" secondItem="aNO-um-mB5" secondAttribute="width" multiplier="0.3" id="Xdm-WL-Mgz"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="3f6-os-mZG" secondAttribute="trailing" constant="9" id="YeP-8j-11h"/>
+                                                            <constraint firstAttribute="trailing" secondItem="atl-oO-0Pu" secondAttribute="trailing" constant="-3" id="gHx-kp-agv"/>
+                                                            <constraint firstItem="atl-oO-0Pu" firstAttribute="top" secondItem="aNO-um-mB5" secondAttribute="top" constant="-3" id="iCu-vN-vgS"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="image" destination="oPO-xg-h3v" id="G1Y-HC-MPe"/>
+                                                            <outlet property="notification" destination="01U-2F-Tbn" id="azl-nJ-lH6"/>
+                                                            <outlet property="notificationContainer" destination="atl-oO-0Pu" id="iep-3X-65V"/>
+                                                            <outlet property="titre" destination="3f6-os-mZG" id="tY6-rH-L7Q"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -1113,11 +1195,20 @@
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_vp" translatesAutoresizingMaskIntoConstraints="NO" id="cTL-y6-slP">
+                                        <rect key="frame" x="8" y="4" width="105" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="jUN-wd-0MG"/>
+                                            <constraint firstAttribute="width" constant="105" id="jhF-dO-M3q"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69697131850000005" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="GbP-Ut-1wL" firstAttribute="leading" secondItem="dW5-dh-4b1" secondAttribute="leading" id="6NU-ze-Y8Y"/>
+                                    <constraint firstItem="cTL-y6-slP" firstAttribute="top" secondItem="dW5-dh-4b1" secondAttribute="top" constant="4" id="AcM-pR-dBn"/>
                                     <constraint firstItem="VpE-Cr-7ve" firstAttribute="top" secondItem="dW5-dh-4b1" secondAttribute="top" id="CQr-cp-P40"/>
+                                    <constraint firstItem="cTL-y6-slP" firstAttribute="leading" secondItem="dW5-dh-4b1" secondAttribute="leading" constant="8" id="FYx-b1-eSR"/>
                                     <constraint firstItem="VpE-Cr-7ve" firstAttribute="leading" secondItem="GbP-Ut-1wL" secondAttribute="leading" id="KeA-gR-xoC"/>
                                     <constraint firstItem="GbP-Ut-1wL" firstAttribute="centerY" secondItem="dW5-dh-4b1" secondAttribute="centerY" id="Wze-Jq-YTV"/>
                                     <constraint firstItem="VpE-Cr-7ve" firstAttribute="trailing" secondItem="GbP-Ut-1wL" secondAttribute="trailing" id="dG4-g6-dco"/>
@@ -1143,7 +1234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzg-dC-XEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="965.625" y="135"/>
+            <point key="canvasLocation" x="965.21739130434787" y="134.5108695652174"/>
         </scene>
         <!--Password Forgotten View Controller-->
         <scene sceneID="UJW-ak-uD2">
@@ -1166,7 +1257,7 @@
                                     <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEB-pg-LWP">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                         <textAttributes key="titleTextAttributes">
-                                            <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                         </textAttributes>
                                         <items>
                                             <navigationItem title="Mot de passe oublié" id="cwL-o3-6p0">
@@ -1183,8 +1274,8 @@
                                         <rect key="frame" x="67" y="248" width="280" height="220"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veuillez saisir votre adresse mail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dI-1j-uUq">
-                                                <rect key="frame" x="8" y="66" width="254" height="21"/>
-                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                <rect key="frame" x="8" y="66" width="253" height="21"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1226,10 +1317,10 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bWD-05-CXo">
-                                        <rect key="frame" x="113" y="348" width="281" height="20"/>
+                                        <rect key="frame" x="113" y="347" width="281" height="21"/>
                                         <color key="tintColor" red="0.4039215686" green="0.70980392160000005" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                     </textField>
                                 </subviews>
@@ -1262,6 +1353,7 @@
                     </view>
                     <connections>
                         <outlet property="emailLabel" destination="bWD-05-CXo" id="BO7-yl-BGY"/>
+                        <outlet property="titleLabel" destination="9dI-1j-uUq" id="2jH-ra-gDo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ju5-Lg-aFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1309,54 +1401,54 @@
                                         <rect key="frame" x="0.0" y="253.66666666666669" width="414" height="209"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOm-eQ-d8V">
-                                                <rect key="frame" x="78" y="38" width="259" height="26"/>
+                                                <rect key="frame" x="78" y="10" width="259" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="26" id="fBu-VB-XxR"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="22"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adresse" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2W-A9-RU7">
-                                                <rect key="frame" x="78" y="79" width="259" height="21"/>
+                                                <rect key="frame" x="78" y="51" width="259" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="aTY-ce-7Bn"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06 12 34 56 78" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K76-1P-hmA">
-                                                <rect key="frame" x="98" y="108" width="239" height="34"/>
-                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                <rect key="frame" x="98" y="80" width="239" height="34"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_phone" translatesAutoresizingMaskIntoConstraints="NO" id="Lus-tg-Kt0">
-                                                <rect key="frame" x="70" y="115" width="20" height="20"/>
+                                                <rect key="frame" x="70" y="87" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="5o4-d2-nvY"/>
                                                     <constraint firstAttribute="height" constant="20" id="i4g-xU-AvS"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="garnier@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrY-mg-JEO">
-                                                <rect key="frame" x="98" y="150" width="239" height="20"/>
-                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                <rect key="frame" x="98" y="122" width="239" height="20"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_email_outline" translatesAutoresizingMaskIntoConstraints="NO" id="VvP-HG-NXv">
-                                                <rect key="frame" x="70" y="150" width="20" height="20"/>
+                                                <rect key="frame" x="70" y="122" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="j3R-VS-m6F"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdC-Oi-rUx">
-                                                <rect key="frame" x="97.666666666666686" y="185" width="220" height="25"/>
+                                                <rect key="frame" x="70" y="157" width="220" height="53"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="220" id="Jme-Qa-hn1"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                 <state key="normal" title="Modifier mon mot de passe">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -1372,10 +1464,10 @@
                                             <constraint firstItem="Lus-tg-Kt0" firstAttribute="leading" secondItem="VvP-HG-NXv" secondAttribute="leading" id="736-f9-GG8"/>
                                             <constraint firstItem="K76-1P-hmA" firstAttribute="trailing" secondItem="TrY-mg-JEO" secondAttribute="trailing" id="DMZ-6C-ybb"/>
                                             <constraint firstItem="Z2W-A9-RU7" firstAttribute="trailing" secondItem="K76-1P-hmA" secondAttribute="trailing" id="Deb-Dk-2rc"/>
-                                            <constraint firstItem="DdC-Oi-rUx" firstAttribute="centerX" secondItem="kg1-ad-uec" secondAttribute="centerX" id="Jdo-1j-Isd"/>
                                             <constraint firstItem="Lus-tg-Kt0" firstAttribute="centerY" secondItem="K76-1P-hmA" secondAttribute="centerY" id="JtD-Co-9Mb"/>
                                             <constraint firstItem="lOm-eQ-d8V" firstAttribute="leading" secondItem="kg1-ad-uec" secondAttribute="leading" constant="78" id="Lje-KD-oMa"/>
                                             <constraint firstItem="VvP-HG-NXv" firstAttribute="top" secondItem="Lus-tg-Kt0" secondAttribute="bottom" constant="15" id="M3W-NU-BCh"/>
+                                            <constraint firstItem="DdC-Oi-rUx" firstAttribute="leading" secondItem="VvP-HG-NXv" secondAttribute="leading" id="O0w-h8-vWQ"/>
                                             <constraint firstItem="K76-1P-hmA" firstAttribute="leading" secondItem="TrY-mg-JEO" secondAttribute="leading" id="PCl-Fc-nEH"/>
                                             <constraint firstItem="lOm-eQ-d8V" firstAttribute="trailing" secondItem="Z2W-A9-RU7" secondAttribute="trailing" id="a5b-VV-7Wu"/>
                                             <constraint firstItem="Lus-tg-Kt0" firstAttribute="top" secondItem="Z2W-A9-RU7" secondAttribute="bottom" constant="15" id="a85-eH-6Vt"/>
@@ -1387,7 +1479,7 @@
                                             <constraint firstAttribute="bottom" secondItem="DdC-Oi-rUx" secondAttribute="bottom" constant="-1" id="qrW-2I-BiX"/>
                                             <constraint firstItem="TrY-mg-JEO" firstAttribute="centerY" secondItem="VvP-HG-NXv" secondAttribute="centerY" id="uyn-Se-jop"/>
                                             <constraint firstItem="K76-1P-hmA" firstAttribute="top" secondItem="Z2W-A9-RU7" secondAttribute="bottom" constant="8" symbolic="YES" id="vci-Lw-r1U"/>
-                                            <constraint firstItem="lOm-eQ-d8V" firstAttribute="top" secondItem="kg1-ad-uec" secondAttribute="top" constant="38" id="wa0-ya-5Kq"/>
+                                            <constraint firstItem="lOm-eQ-d8V" firstAttribute="top" secondItem="kg1-ad-uec" secondAttribute="top" constant="10" id="wa0-ya-5Kq"/>
                                             <constraint firstItem="DdC-Oi-rUx" firstAttribute="top" secondItem="VvP-HG-NXv" secondAttribute="bottom" constant="15" id="xzC-Cc-E3w"/>
                                         </constraints>
                                     </view>
@@ -1475,7 +1567,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="LWG-5E-kD3"/>
                                                             <constraint firstAttribute="width" constant="220" id="msQ-l1-aBa"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="22"/>
+                                                        <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="22"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -1484,13 +1576,13 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="Q4u-WL-rbW"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06 12 34 56 78" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZX-bL-rEh">
                                                         <rect key="frame" x="98" y="74" width="219" height="34"/>
-                                                        <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -1503,7 +1595,7 @@
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="garnier@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuh-Kl-IYV">
                                                         <rect key="frame" x="98" y="113" width="219" height="26"/>
-                                                        <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -1532,7 +1624,7 @@
                                                                     <constraint firstAttribute="width" constant="200" id="WUo-ne-1Ag"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                                             </textField>
                                                         </subviews>
@@ -1566,7 +1658,7 @@
                                                                     <constraint firstAttribute="width" constant="200" id="iWk-lC-MZk"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                                             </textField>
                                                         </subviews>
@@ -1600,7 +1692,7 @@
                                                                     <constraint firstAttribute="width" constant="200" id="Qld-Dt-rfy"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                                             </textField>
                                                         </subviews>
@@ -1750,7 +1842,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Envoyer une demande d'avis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJV-gN-tFP">
-                                                        <rect key="frame" x="61" y="8" width="231" height="30"/>
+                                                        <rect key="frame" x="60.666666666666671" y="8" width="231" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="haC-Ux-8lD"/>
                                                         </constraints>
@@ -1759,10 +1851,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cqc-B7-tpT">
-                                                        <rect key="frame" x="61" y="46" width="293" height="50"/>
+                                                        <rect key="frame" x="60.666666666666657" y="46" width="293" height="50"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_account" translatesAutoresizingMaskIntoConstraints="NO" id="J8S-qn-Iks">
-                                                                <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                                                <rect key="frame" x="8.0000000000000071" y="10" width="30" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="J8S-qn-Iks" secondAttribute="height" multiplier="1:1" id="0Jn-vI-Ltf"/>
                                                                     <constraint firstAttribute="width" constant="30" id="dKd-XD-d3K"/>
@@ -1775,7 +1867,7 @@
                                                                     <constraint firstAttribute="width" constant="239" id="gqT-sb-C1T"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                                 <connections>
                                                                     <action selector="selectClient:" destination="cvR-Gk-wv9" eventType="editingDidBegin" id="tzk-ya-AcW"/>
@@ -1805,10 +1897,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QA7-a8-IY0">
-                                                        <rect key="frame" x="61" y="142" width="212" height="50"/>
+                                                        <rect key="frame" x="60.666666666666671" y="142" width="212" height="50"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cellphone_android" translatesAutoresizingMaskIntoConstraints="NO" id="cIt-H3-9TE">
-                                                                <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                                                <rect key="frame" x="8.0000000000000071" y="10" width="30" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="1hP-OZ-WVU"/>
                                                                     <constraint firstAttribute="width" secondItem="cIt-H3-9TE" secondAttribute="height" multiplier="1:1" id="oq4-qb-6Qe"/>
@@ -1821,7 +1913,7 @@
                                                                     <constraint firstAttribute="width" constant="158" id="y4B-5p-QP3"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad"/>
                                                             </textField>
                                                         </subviews>
@@ -1839,7 +1931,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ou" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Eq-DV-xqN">
-                                                        <rect key="frame" x="61" y="200" width="231" height="30"/>
+                                                        <rect key="frame" x="60.666666666666671" y="200" width="231" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="FZH-XN-xnX"/>
                                                         </constraints>
@@ -1848,10 +1940,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edH-EP-8jB">
-                                                        <rect key="frame" x="61" y="238" width="212" height="50"/>
+                                                        <rect key="frame" x="60.666666666666671" y="238" width="212" height="50"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_email_outline" translatesAutoresizingMaskIntoConstraints="NO" id="cPh-mj-0qA">
-                                                                <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                                                <rect key="frame" x="8.0000000000000071" y="10" width="30" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="39B-BT-M9O"/>
                                                                     <constraint firstAttribute="width" secondItem="cPh-mj-0qA" secondAttribute="height" multiplier="1:1" id="Mkc-gW-C95"/>
@@ -1864,7 +1956,7 @@
                                                                     <constraint firstAttribute="width" constant="157" id="7OY-Du-mk7"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                                                 <connections>
                                                                     <action selector="endEditing:" destination="cvR-Gk-wv9" eventType="editingDidEndOnExit" id="Z8d-DI-UCe"/>
@@ -1885,7 +1977,7 @@
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBF-qW-VmD">
-                                                        <rect key="frame" x="283" y="238" width="72" height="50"/>
+                                                        <rect key="frame" x="282.66666666666669" y="238" width="72" height="50"/>
                                                         <color key="backgroundColor" red="0.4039215686" green="0.70980392160000005" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="72" id="tF6-8H-q0L"/>
@@ -1905,7 +1997,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hG-hk-PZq">
-                                                        <rect key="frame" x="283" y="142" width="71" height="50"/>
+                                                        <rect key="frame" x="282.66666666666669" y="142" width="71" height="50"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="71" id="Ye8-YO-wqj"/>
@@ -1998,6 +2090,7 @@
                     <connections>
                         <outlet property="mailLabel" destination="ayJ-2v-dqH" id="Uoy-pf-S0q"/>
                         <outlet property="nameLabel" destination="dMC-oe-uKb" id="sH1-oO-TGg"/>
+                        <outlet property="ouLabel" destination="8Eq-DV-xqN" id="jYi-iH-q39"/>
                         <outlet property="phoneLabel" destination="tkN-8r-Y8b" id="SNP-0w-tbV"/>
                         <outlet property="scrollView" destination="JhY-Zl-iHF" id="0PC-Xg-CgH"/>
                         <segue destination="yIv-Kh-EuP" kind="show" identifier="toPrestation" id="laC-Mj-1oZ"/>
@@ -2143,7 +2236,7 @@
                                                             <constraint firstAttribute="width" constant="239" id="Hfg-O7-uck"/>
                                                         </constraints>
                                                         <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         <connections>
                                                             <action selector="closeKeyboard:" destination="yIv-Kh-EuP" eventType="editingDidEndOnExit" id="dAf-wF-PHu"/>
@@ -2265,7 +2358,7 @@
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Razafindramanana Andry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBk-M0-Uaf">
                                                                 <rect key="frame" x="46" y="10" width="264" height="20"/>
-                                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
+                                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -2295,7 +2388,7 @@
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="andryhenintsoa@outlook.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbm-TL-z2D">
                                                                 <rect key="frame" x="46" y="10" width="264" height="20"/>
-                                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
+                                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -2325,7 +2418,7 @@
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Décembre 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zug-03-kga">
                                                                 <rect key="frame" x="46" y="10" width="264" height="20"/>
-                                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
+                                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -2355,7 +2448,7 @@
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prestation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQT-Ca-STB">
                                                                 <rect key="frame" x="46" y="10" width="264" height="20"/>
-                                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
+                                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -2385,7 +2478,7 @@
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File.jpg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVG-Sv-YFB">
                                                                 <rect key="frame" x="46" y="10" width="264" height="20"/>
-                                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
+                                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -2557,7 +2650,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUg-lu-GuM">
                                                                     <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="12"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -2618,7 +2711,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diQ-Pw-n6t">
                                                                     <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="12"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -2704,6 +2797,7 @@
                         <outlet property="menuCollectionView" destination="g5u-A8-TuR" id="adv-1V-5sH"/>
                         <segue destination="tUA-lM-8Oh" kind="show" identifier="toAdviceWaitingBill" id="jpt-2F-0EZ"/>
                         <segue destination="zpf-iB-ekb" kind="show" identifier="toAdviceWaitingMediation" id="e9d-QT-oS1"/>
+                        <segue destination="S1g-Ol-4th" kind="show" identifier="noData" id="M8v-Jw-eL5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZgQ-vl-39t" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2757,13 +2851,13 @@
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYh-1I-Ksl">
                                                             <rect key="frame" x="30" y="8" width="375" height="19"/>
-                                                            <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="19"/>
+                                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="19"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Dt-gO-Ivr">
                                                             <rect key="frame" x="30" y="59" width="375" height="18"/>
-                                                            <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -2772,7 +2866,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="75" id="qfb-Ri-kDl"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="13"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -2851,7 +2945,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="waitingTableView" destination="8g0-Ze-a3T" id="oFt-nR-i37"/>
-                        <segue destination="cjZ-cp-pTM" kind="show" identifier="toResult" id="S0d-iv-UmX"/>
+                        <segue destination="yTp-x8-e62" kind="show" identifier="toSendBills" id="N2C-sf-NLe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6K-7H-GQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2901,26 +2995,26 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_account" translatesAutoresizingMaskIntoConstraints="NO" id="LNF-nZ-TxY">
-                                                            <rect key="frame" x="8" y="11.666666666666664" width="15" height="14.333333333333336"/>
+                                                            <rect key="frame" x="8" y="11" width="15" height="15"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRg-9P-boF">
-                                                            <rect key="frame" x="30" y="8.0000000000000018" width="375" height="21.666666666666671"/>
-                                                            <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="19"/>
+                                                            <rect key="frame" x="30" y="8" width="375" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="19"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7A-e0-gQg">
-                                                            <rect key="frame" x="30" y="61.666666666666657" width="48" height="15.333333333333343"/>
-                                                            <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="13"/>
+                                                            <rect key="frame" x="30" y="61" width="49" height="16"/>
+                                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31/12/2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hm-a0-fZk">
-                                                            <rect key="frame" x="30" y="37.666666666666664" width="75" height="16"/>
+                                                            <rect key="frame" x="30" y="37" width="75" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="75" id="aOf-AW-Dy5"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="13"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -2992,7 +3086,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ual-ag-hQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3206" y="2975"/>
+            <point key="canvasLocation" x="3205.7971014492755" y="2974.7282608695655"/>
         </scene>
         <!--Advice Waiting Mediation View Controller-->
         <scene sceneID="Adb-a4-i9o">
@@ -3048,13 +3142,13 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="23" id="fZL-bQ-8GC"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="19"/>
+                                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="19"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Nature de la prestation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mb-v7-JMS">
                                                             <rect key="frame" x="30" y="61" width="375" height="16"/>
-                                                            <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3064,7 +3158,7 @@
                                                                 <constraint firstAttribute="width" constant="75" id="dyT-Us-anf"/>
                                                                 <constraint firstAttribute="height" constant="14" id="gaI-dx-yMj"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="13"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3073,7 +3167,7 @@
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
                                                                     <color key="value" red="0.4039215686" green="0.70980392160000005" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
@@ -3085,7 +3179,7 @@
                                                                     <real key="value" value="1"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
-                                                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
                                                                     <integer key="value" value="1"/>
@@ -3202,7 +3296,7 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                        <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2b0-dc-pGo" customClass="CosmosView" customModule="Vraiment_Pro" customModuleProvider="target">
@@ -3210,7 +3304,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
-                                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
                                                                 <color key="value" red="0.4039215686" green="0.70980392160000005" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
@@ -3222,7 +3316,7 @@
                                                                 <real key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
-                                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
                                                                 <integer key="value" value="1"/>
@@ -3384,7 +3478,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.4039215686" green="0.70980392160000005" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
@@ -3484,14 +3578,14 @@
                                         <rect key="frame" x="40" y="145" width="334" height="334"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_vp" translatesAutoresizingMaskIntoConstraints="NO" id="F6v-tR-Jvc">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="115.66666666666669"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="115.33333333333331"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="F6v-tR-Jvc" secondAttribute="height" multiplier="240:83" id="h5N-ml-tr1"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votre réponse a bien été envoyée" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZV-kq-dAb">
-                                                <rect key="frame" x="8" y="123.66666666666669" width="318" height="24"/>
-                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
+                                                <rect key="frame" x="8" y="123.33333333333331" width="318" height="24"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -3574,9 +3668,9 @@
                                                     <constraint firstAttribute="width" secondItem="QGm-Qg-3rD" secondAttribute="height" multiplier="240:83" id="Pyj-rE-2jt"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votre demande d'avis a bien été envoyé" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2k-by-lHL">
-                                                <rect key="frame" x="8" y="123.33333333333334" width="318" height="24"/>
-                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votre demande d'avis a bien été envoyée" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2k-by-lHL">
+                                                <rect key="frame" x="8" y="123.33333333333334" width="318" height="47.666666666666686"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -3660,8 +3754,8 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votre demande d'avis a bien été envoyé" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hyt-ru-kXp">
-                                                <rect key="frame" x="8" y="123.33333333333334" width="318" height="47"/>
-                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
+                                                <rect key="frame" x="8" y="123.33333333333334" width="318" height="47.666666666666686"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -3750,7 +3844,7 @@
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" red="0.4039215686" green="0.70980392160000005" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                                                 <connections>
                                                     <action selector="doSearch:" destination="yCS-pI-PkO" eventType="editingChanged" id="AI4-lb-qE2"/>
@@ -3806,16 +3900,16 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RWS-uc-XrR">
-                                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                                            <rect key="frame" x="15" y="4" width="35" height="21"/>
                                                             <autoresizingMask key="autoresizingMask"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ymh-Ds-4hq">
-                                                            <rect key="frame" x="15" y="25" width="33" height="15"/>
+                                                            <rect key="frame" x="15" y="25" width="32" height="15"/>
                                                             <autoresizingMask key="autoresizingMask"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3976,7 +4070,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="25" id="cOl-30-lMA"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="13"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -3985,7 +4079,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="nkU-12-Bpj"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="13"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4202,7 +4296,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                         <color key="textColor" red="0.4039215686" green="0.70980392160000005" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -4225,7 +4319,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.4039215686" green="0.70980392160000005" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -4298,7 +4392,7 @@
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLy-at-xJj">
                                                                     <rect key="frame" x="31" y="8" width="256" height="20"/>
-                                                                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4308,7 +4402,7 @@
                                                                         <constraint firstAttribute="height" constant="26" id="Qp1-Hy-7jn"/>
                                                                         <constraint firstAttribute="width" constant="12" id="iPD-U6-qVH"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="22"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="22"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4317,7 +4411,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="47" id="B14-yb-fII"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4326,7 +4420,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="100" id="s46-ho-JVD"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="13"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4374,7 +4468,7 @@
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKU-O8-LEQ">
                                                                     <rect key="frame" x="31" y="8" width="256" height="20"/>
-                                                                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4384,7 +4478,7 @@
                                                                         <constraint firstAttribute="height" constant="26" id="Kad-xA-DxC"/>
                                                                         <constraint firstAttribute="width" constant="12" id="tCC-FT-pUp"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="22"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="22"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4393,7 +4487,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="47" id="qFD-i7-SxJ"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4402,7 +4496,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="100" id="omj-Ol-VHj"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="13"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4450,7 +4544,7 @@
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bda-IA-rLH">
                                                                     <rect key="frame" x="31" y="8" width="256" height="20"/>
-                                                                    <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="15"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="15"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4460,7 +4554,7 @@
                                                                         <constraint firstAttribute="height" constant="26" id="Fri-mP-9PS"/>
                                                                         <constraint firstAttribute="width" constant="12" id="yPc-8Y-4Q8"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="22"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="22"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4469,7 +4563,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="47" id="S3W-Md-c6f"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4478,7 +4572,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="100" id="8IP-PB-ddK"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="13"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4526,7 +4620,7 @@
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLm-qv-3Zv">
                                                                     <rect key="frame" x="31" y="8" width="256" height="20"/>
-                                                                    <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="15"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="15"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4536,7 +4630,7 @@
                                                                         <constraint firstAttribute="height" constant="26" id="5ap-Fh-VzF"/>
                                                                         <constraint firstAttribute="width" constant="12" id="wG6-Z6-jcx"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="22"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="22"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4545,7 +4639,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="47" id="kuB-2H-r14"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4554,7 +4648,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="100" id="7km-fa-enG"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="13"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -4674,13 +4768,13 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mr Garnier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0u-85-jGW">
                                                 <rect key="frame" x="20" y="8" width="297" height="24"/>
-                                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06 12 34 56 78" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTB-rX-m2e">
                                                 <rect key="frame" x="48" y="38" width="290" height="24"/>
-                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="13"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -4699,7 +4793,7 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="garnier@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97z-H5-YS0">
                                                 <rect key="frame" x="48" y="66" width="290" height="24"/>
-                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="13"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -4711,7 +4805,7 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZO-wQ-PRu">
                                                 <rect key="frame" x="15" y="110" width="349" height="20"/>
-                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -4776,7 +4870,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVu-tX-Jyz">
                                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                         <color key="textColor" red="0.4039215686" green="0.70980392160000005" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -4802,7 +4896,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbk-TE-zmv">
                                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                         <color key="backgroundColor" red="0.4039215686" green="0.70980392160000005" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -4916,14 +5010,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECp-Ok-cSi">
-                                        <rect key="frame" x="18" y="88" width="379" height="217"/>
+                                        <rect key="frame" x="18" y="88" width="379" height="217.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assurance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtP-TX-ZyB">
                                                 <rect key="frame" x="20" y="73" width="297" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="Jka-PA-hsQ"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -4935,9 +5029,9 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyH-zY-Fc4">
-                                                <rect key="frame" x="15" y="117" width="349" height="80"/>
+                                                <rect key="frame" x="15" y="117" width="349" height="80.666666666666686"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna al</string>
-                                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -4987,7 +5081,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1K-9H-swV">
                                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                         <color key="backgroundColor" red="0.4039215686" green="0.70980392160000005" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -5013,7 +5107,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPX-YY-A9c">
                                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                         <color key="textColor" red="0.4039215686" green="0.70980392160000005" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -5143,8 +5237,8 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4J-dI-VAU">
-                                            <rect key="frame" x="54" y="17" width="248.33333333333331" height="20"/>
-                                            <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="16"/>
+                                            <rect key="frame" x="54" y="17" width="248" height="20"/>
+                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -5176,7 +5270,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tsh-vz-rbM">
                                                     <rect key="frame" x="15" y="0.0" width="280.33333333333337" height="59"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -5256,7 +5350,140 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ADE-cf-R0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3201" y="903"/>
+            <point key="canvasLocation" x="3206" y="903"/>
+        </scene>
+        <!--Advice Waiting Bill Send View Controller-->
+        <scene sceneID="ppY-dh-DrC">
+            <objects>
+                <viewController id="yTp-x8-e62" customClass="AdviceWaitingBillSendViewController" customModule="Vraiment_Pro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1gZ-Wk-KY1"/>
+                        <viewControllerLayoutGuide type="bottom" id="WGB-SZ-t4K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hL8-32-2LV">
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="M5x-fk-L6o">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPB-Vh-G84">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69697131850000005" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nPB-Vh-G84" firstAttribute="bottom" secondItem="WGB-SZ-t4K" secondAttribute="top" id="2LS-lc-rd5"/>
+                            <constraint firstItem="nPB-Vh-G84" firstAttribute="top" secondItem="1gZ-Wk-KY1" secondAttribute="bottom" id="4Cu-KV-yAX"/>
+                            <constraint firstItem="nPB-Vh-G84" firstAttribute="leading" secondItem="hL8-32-2LV" secondAttribute="leading" id="4PX-hF-34x"/>
+                            <constraint firstAttribute="trailing" secondItem="M5x-fk-L6o" secondAttribute="trailing" id="7yo-ie-J41"/>
+                            <constraint firstAttribute="bottom" secondItem="M5x-fk-L6o" secondAttribute="bottom" id="J1E-RW-7jz"/>
+                            <constraint firstItem="M5x-fk-L6o" firstAttribute="trailing" secondItem="nPB-Vh-G84" secondAttribute="trailing" id="PGW-5x-rjx"/>
+                            <constraint firstItem="M5x-fk-L6o" firstAttribute="top" secondItem="nPB-Vh-G84" secondAttribute="top" id="jdY-mq-2lK"/>
+                            <constraint firstItem="M5x-fk-L6o" firstAttribute="leading" secondItem="nPB-Vh-G84" secondAttribute="leading" id="uX0-KV-c92"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4AG-dc-Bfo">
+                        <barButtonItem key="leftBarButtonItem" image="ic_chevron_left_white" style="done" id="LmZ-If-t2M">
+                            <connections>
+                                <action selector="closeController:" destination="yTp-x8-e62" id="WqJ-D8-Oio"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="ic_menu_white" id="pqD-yD-K8a"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="cjZ-cp-pTM" kind="show" identifier="toResult" id="M8Q-XW-oSG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e1N-hd-oTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3954" y="2975"/>
+        </scene>
+        <!--Advice No Waiting View Controller-->
+        <scene sceneID="PWP-Ke-Sqt">
+            <objects>
+                <viewController id="S1g-Ol-4th" customClass="AdviceNoWaitingViewController" customModule="Vraiment_Pro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zDQ-tP-csS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qpq-ks-Wfn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y5T-Hi-tF6">
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="u6v-HI-VAM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSy-LC-7W7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRl-fO-faV">
+                                        <rect key="frame" x="40" y="144.66666666666663" width="334" height="334"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_vp" translatesAutoresizingMaskIntoConstraints="NO" id="GS1-Vd-moF">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="115.66666666666666"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="GS1-Vd-moF" secondAttribute="height" multiplier="240:83" id="g6N-cZ-oy8"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vous n'avez pas d'avis en attente" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOm-Ea-n4T">
+                                                <rect key="frame" x="8" y="123.66666666666666" width="318" height="24"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="IOm-Ea-n4T" firstAttribute="leading" secondItem="GRl-fO-faV" secondAttribute="leading" constant="8" id="2yr-nZ-ub3"/>
+                                            <constraint firstItem="IOm-Ea-n4T" firstAttribute="top" secondItem="GS1-Vd-moF" secondAttribute="bottom" constant="8" symbolic="YES" id="6kj-WM-qaY"/>
+                                            <constraint firstAttribute="width" secondItem="GRl-fO-faV" secondAttribute="height" multiplier="1:1" id="Cve-xy-8XW"/>
+                                            <constraint firstItem="GS1-Vd-moF" firstAttribute="centerX" secondItem="IOm-Ea-n4T" secondAttribute="centerX" id="Vlf-oo-LLo"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="X2x-yz-4Mf"/>
+                                            <constraint firstAttribute="trailing" secondItem="IOm-Ea-n4T" secondAttribute="trailing" constant="8" id="ZBl-wf-2gK"/>
+                                            <constraint firstItem="GS1-Vd-moF" firstAttribute="top" secondItem="GRl-fO-faV" secondAttribute="top" id="jTN-aF-wVa"/>
+                                            <constraint firstItem="GS1-Vd-moF" firstAttribute="leading" secondItem="GRl-fO-faV" secondAttribute="leading" id="qGV-qy-Mkp"/>
+                                            <constraint firstAttribute="trailing" secondItem="GS1-Vd-moF" secondAttribute="trailing" id="yr9-7t-jLk"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69697131850000005" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="GRl-fO-faV" firstAttribute="centerY" secondItem="pSy-LC-7W7" secondAttribute="centerY" id="JxN-Q2-tfR"/>
+                                    <constraint firstItem="GRl-fO-faV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pSy-LC-7W7" secondAttribute="leading" constant="40" id="az4-ZM-g61"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GRl-fO-faV" secondAttribute="trailing" constant="40" id="msv-GY-y3H"/>
+                                    <constraint firstItem="GRl-fO-faV" firstAttribute="centerX" secondItem="pSy-LC-7W7" secondAttribute="centerX" id="r5h-Ae-JCI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="u6v-HI-VAM" firstAttribute="trailing" secondItem="pSy-LC-7W7" secondAttribute="trailing" id="1WP-AY-6fp"/>
+                            <constraint firstItem="pSy-LC-7W7" firstAttribute="top" secondItem="zDQ-tP-csS" secondAttribute="bottom" id="Dk4-Rc-FWF"/>
+                            <constraint firstItem="u6v-HI-VAM" firstAttribute="top" secondItem="pSy-LC-7W7" secondAttribute="top" id="IF1-LZ-ENl"/>
+                            <constraint firstAttribute="trailing" secondItem="u6v-HI-VAM" secondAttribute="trailing" id="Zbv-Yu-VeD"/>
+                            <constraint firstItem="pSy-LC-7W7" firstAttribute="leading" secondItem="y5T-Hi-tF6" secondAttribute="leading" id="fQy-Xn-fg5"/>
+                            <constraint firstItem="u6v-HI-VAM" firstAttribute="leading" secondItem="pSy-LC-7W7" secondAttribute="leading" id="n60-nz-mP3"/>
+                            <constraint firstAttribute="bottom" secondItem="u6v-HI-VAM" secondAttribute="bottom" id="vod-Ra-Fmr"/>
+                            <constraint firstItem="pSy-LC-7W7" firstAttribute="bottom" secondItem="Qpq-ks-Wfn" secondAttribute="top" id="wuo-wd-FHw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9pV-1Q-GMN">
+                        <barButtonItem key="leftBarButtonItem" image="ic_chevron_left_white" style="done" id="x3c-kB-2VT">
+                            <connections>
+                                <action selector="closeController:" destination="S1g-Ol-4th" id="0Ku-da-Q07"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="ic_menu_white" id="6Ve-Rg-KcV"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="resultLabel" destination="IOm-Ea-n4T" id="ef4-sw-VCr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WfR-iu-3Os" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4717" y="2975"/>
         </scene>
     </scenes>
     <resources>
@@ -5283,9 +5510,9 @@
         <image name="logo_vp" width="481" height="166"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1ks-pC-yW9"/>
-        <segue reference="S0d-iv-UmX"/>
-        <segue reference="DDf-t4-MDR"/>
+        <segue reference="mit-Jy-Vge"/>
+        <segue reference="M8Q-XW-oSG"/>
         <segue reference="WZT-mF-bGj"/>
+        <segue reference="DDf-t4-MDR"/>
     </inferredMetricsTieBreakers>
 </document>
