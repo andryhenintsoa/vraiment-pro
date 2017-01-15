@@ -43,7 +43,7 @@ class AdviceSummaryViewController: MainViewController {
             data["mail"] = selectedClient["mail"]
         } else {
             mailIcon.image = UIImage(named: "ic_cellphone_android")
-            mailLabel.text = selectedClient["phone"]
+            mailLabel.text = selectedClient["phoneToDisplay"]
             data["phone"] = selectedClient["phone"]
         }
 // Prestation date
@@ -120,6 +120,9 @@ class AdviceSummaryViewController: MainViewController {
             
             print(data)
             
+            let destination = segue.destination as? ResultViewController
+            
+            destination?.textToDisplay = "Votre demande d'avis\n a bien été envoyée"
         }
     }
     

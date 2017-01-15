@@ -57,6 +57,9 @@ class AdviceWaitingMediationAnswerViewController: MainViewController {
         if let data = wsData as? [String:Any]{
             if let dataStatus = data["status"] as? Bool{
                 if dataStatus{
+                    Utils.adviceWaitingMediation -= 1
+                    Utils.getInstance().notifyAll()
+                    
                     performSegue(withIdentifier: "toResultAnswerWaitingMediation", sender: self)
                 }
                 else{

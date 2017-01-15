@@ -21,6 +21,11 @@ enum prefKey:String {
     case userCivility = "userCivility"
 }
 
+enum docsCategory{
+    case documents
+    case qualifications
+}
+
 class Utils{
     static var userId:Int = 0
     static var userKey:String = ""
@@ -66,6 +71,88 @@ class Utils{
         for observer in listObservers{
             observer.reloadFromNotification()
         }
+    }
+    
+    static func getListDocsType(_ type:docsCategory) -> [String] {
+        
+        var list:[String] = []
+        
+        if type == .documents{
+            list = [
+                "K-BIS(non-publié)",
+                "Assurance RCPRO",
+                "Assurance Decennale"]
+        }
+        else if type == .qualifications{
+            list = [
+                "ADC Fluides",
+                "Artisan",
+                "Cequami Maison rénovée",
+                "Cequami Maison rénovée HQE",
+                "Certibat",
+                "Chauffage + RGE",
+                "Eco Artisan RGE",
+                "Handibat",
+                "Les PROS de l’accessibilité",
+                "Les PROS de la performance énergétique RGE",
+                "Maître Artisan",
+                "Professionnel du gaz (PG)",
+                "Professionnel maintenance Gaz (PMG)",
+                "Quali’Eau",
+                "Qualibat",
+                "Qualibat RGE",
+                "Qualibois RGE",
+                "QualiClima",
+                "Qualifelec",
+                "Qualifelec RGE",
+                "Qualifioul",
+                "Qualiforage RGE",
+                "QualiFroid",
+                "Qualipac RGE",
+                "Qualipaysage",
+                "Qualipropre",
+                "QualiPV RGE",
+                "Qualisav",
+                "Qualisol RGE"]
+        }
+        
+//        let list:[String] = [
+//            "DOCUMENTS",
+//            "K-Bis",
+//            "ASSURANCE RCPRO",
+//            "ASSURANCE DÉCENNALE",
+//            "QUALIFICATIONS / CERTIFICATIONS",
+//            "ADC Fluides",
+//            "Artisan",
+//            "Cequami Maison rénovée",
+//            "Cequami Maison rénovée HQE",
+//            "Certibat",
+//            "Chauffage + RGE",
+//            "Eco Artisan RGE",
+//            "Handibat",
+//            "Les PROS de l’accessibilité",
+//            "Les PROS de la performance énergétique RGE",
+//            "Maître Artisan",
+//            "Professionnel du gaz (PG)",
+//            "Professionnel maintenance Gaz (PMG)",
+//            "Quali’Eau",
+//            "Qualibat",
+//            "Qualibat RGE",
+//            "Qualibois RGE",
+//            "QualiClima",
+//            "Qualifelec",
+//            "Qualifelec RGE",
+//            "Qualifioul",
+//            "Qualiforage RGE",
+//            "QualiFroid",
+//            "Qualipac RGE",
+//            "Qualipaysage",
+//            "Qualipropre",
+//            "QualiPV RGE",
+//            "Qualisav",
+//            "Qualisol RGE",
+//            ]
+        return list
     }
     
     

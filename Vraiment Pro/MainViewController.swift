@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.edgesForExtendedLayout = []
         // Do any additional setup after loading the view.
     }
 
@@ -45,13 +46,25 @@ class MainViewController: UIViewController {
         if (leftViewController == nil) {
             leftViewController = UIStoryboard.sidebarViewController()
             
-            view.addSubview(leftViewController!.view!)
+            if self.navigationController != nil {
+                
+                self.navigationController?.view.addSubview(leftViewController!.view!)
+                leftViewController!.view.frame.origin.x = self.view.bounds.width
+                
+                leftViewController!.view.frame = CGRect(x: self.view.bounds.width, y: UIApplication.shared.statusBarFrame.height, width: self.view.bounds.width, height: self.view.bounds.height + 49)
+                self.navigationController?.addChildViewController(leftViewController!)
+            }
+            else{
+                view.addSubview(leftViewController!.view!)
+                
+                
+                leftViewController!.view.frame.origin.x = self.view.bounds.width
+                
+                addChildViewController(leftViewController!)
+            }
             
-//            leftViewController!.view.frame = CGRect(x: self.view.bounds.width, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
             
-            leftViewController!.view.frame.origin.x = self.view.bounds.width
             
-            addChildViewController(leftViewController!)
         }
     }
     
@@ -109,11 +122,17 @@ class MainViewController: UIViewController {
     }
     
     func alertConfirmUser(title:String?, message:String?, completion: ((UIAlertAction) -> Void)?) {
+        alertConfirmUser(title: title, message: message, customConfirmText: "Ok", completion: completion)
+    }
+    
+    func alertConfirmUser(title:String?, message:String?, customConfirmText:String, completion: ((UIAlertAction) -> Void)?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         
-        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: completion))
+        alertController.addAction(UIAlertAction(title: "\(customConfirmText)", style: .default, handler: completion))
         
         alertController.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
+        
+//        alertController.
         
         self.present(alertController, animated: true, completion: nil)
     }

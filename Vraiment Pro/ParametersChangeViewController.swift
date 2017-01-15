@@ -93,6 +93,11 @@ class ParametersChangeViewController: MainViewController, UITextFieldDelegate {
         self.displaySidebar()
     }
     
+    @IBAction func performChanges(_ sender: Any) {
+        Webservice.getPreviousPwd(self, data:["pwd":pwdOldLabel.text!])
+    }
+    
+    
     func registerForKeyboardNotifications(){
         //Adding notifies on keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -110,25 +115,23 @@ class ParametersChangeViewController: MainViewController, UITextFieldDelegate {
         self.scrollView.isScrollEnabled = true
         var info = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height + 50, 0.0)
         
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         
-        var aRect : CGRect = self.view.frame
-        aRect.size.height -= keyboardSize!.height
-        if let activeField = self.activeField {
-            if (!aRect.contains(activeField.frame.origin)){
-                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
-            }
-        }
+        self.scrollView.scrollRectToVisible(pwdNew2Label.superview!.frame, animated: true)
+        
+        //        self.scrollView.scrollRectToVisible(mailLabel.frame, animated: true)
+        
+        self.scrollView.isScrollEnabled = false
     }
     
     func keyboardWillBeHidden(notification: NSNotification){
         //Once keyboard disappears, restore original positions
         var info = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height - 50, 0.0)
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         self.view.endEditing(true)
@@ -162,6 +165,69 @@ class ParametersChangeViewController: MainViewController, UITextFieldDelegate {
         return true
     }
 
+    // MARK: - Get result of WS
+    override func reloadMyView(_ wsData:Any? = nil, param:[String:Any]=[:]) {
+        //spinnerLoad(false)
+        
+        var normalConnection = false
+        
+        if let data = wsData as? [String:Any]{
+            
+            print(param)
+            
+            let status = data["status"] as! Bool
+            
+            if !status{
+                
+                if let dataKey = param["dataKey"] as? String{
+                    if dataKey == "oldPwd"{
+                        alertUser(title: "Erreur", message: "Le mot de passe que vous avez écrit ne correspond pas au votre")
+                    }
+                    
+                    else if dataKey == "newPwd"{
+                        alertUser(title: "Erreur", message: "Le changement de mot de passe n'a pas été effectué")
+                    }
+                }
+                
+                normalConnection = true
+                return
+            }
+            
+            if let dataKey = param["dataKey"] as? String{
+                if dataKey == "oldPwd"{
+                    
+                    if pwdNew1Label.text == ""{
+                        alertUser(title: "Erreur", message: "Le nouveau mot de passe est vide")
+                    }
+                    
+                    else if pwdNew1Label.text != pwdNew2Label.text{
+                        alertUser(title: "Erreur", message: "Veuillez revérifier le nouveau mot de passe")
+                    }
+                    else{
+                        Webservice.changePwd(self, data: ["pwd":pwdNew1Label.text!])
+                    }
+                }
+                    
+                else if dataKey == "newPwd"{
+                    alertUser(title: "Succès", message: "Le mot de passe a été changé avec succès")
+                }
+            }
+            
+            else{
+                
+            }
+            
+            
+            
+            normalConnection = true
+        }
+        
+        if(!normalConnection){
+            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
+        }
+    }
+
+    
     /*
     // MARK: - Navigation
 

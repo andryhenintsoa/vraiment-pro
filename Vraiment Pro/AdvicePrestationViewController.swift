@@ -17,7 +17,7 @@ class AdvicePrestationViewController: ImagePickerViewController {
     var joiningBillOption:JoiningBillOption?
     
     let mois = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Décembre"]
-    let annee = ["2017","2016","2015","2014"]
+    var annee = ["2017","2016","2015"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,10 @@ class AdvicePrestationViewController: ImagePickerViewController {
         let calendar = Calendar.current
         let month = calendar.component(.month, from: date)
         let year = calendar.component(.year, from: date)
+        
+        annee = ["\(year)","\(year - 1)","\(year - 2)"]
+        
+        datePicker.reloadAllComponents()
         
         print("Current date : \(month) \(year)")
         
@@ -48,7 +52,7 @@ class AdvicePrestationViewController: ImagePickerViewController {
         self.displaySidebar()
     }
 
-    @IBAction func closeKeyboard(_ sender: UITextField?) {
+    @IBAction func closeKeyboard(_ sender: AnyObject?) {
         natureLabel.resignFirstResponder()
     }
     

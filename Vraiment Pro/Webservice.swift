@@ -19,18 +19,26 @@ class Webservice{
     static var URL_API_WEB:String = "https://vraimentpro.vobulator.com/ws/index.php/api/";
     
 // MARK : Upload image with POST
-    class func imageUpload(_ url: String, controller: MainViewController, imageToSend : UIImage){
+    
+    class func imageUpload(_ url: String, controller: MainViewController, imageToSend : UIImage) {
         
-        controller.spinnerLoad()
-
-        print("Uploading WS")
+        print("Loading WS")
         print("url: \(url)")
         
-        let requestURL: URL = URL(string: url)!
-        //let requestURL = URL(string: "http://www.swiftdeveloperblog.com/http-post-example-script/")!;
-        //let myUrl = NSURL(string: "http://www.boredwear.com/utils/postImage.php");
+        if let encoded = url.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
+            let requestURL = URL(string: encoded){
+            imageUpload(requestURL, controller: controller, imageToSend:imageToSend)
+        }
         
-        var request = URLRequest(url:requestURL);
+        
+        
+    }
+    
+    class func imageUpload(_ url: URL, controller: MainViewController, imageToSend : UIImage){
+        
+        controller.spinnerLoad()
+        
+        var request = URLRequest(url:url);
         request.httpMethod = "POST";
         
         let param = [
@@ -68,6 +76,7 @@ class Webservice{
             
             do {
                 let myData = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
+                print("Download JSON Done")
                 
                 print(myData)
                 
@@ -79,6 +88,7 @@ class Webservice{
             catch{
                 
                 print(error)
+                
                 controller.reloadMyViewWithError()
             }
 
@@ -124,9 +134,14 @@ class Webservice{
         print("Loading WS")
         print("url: \(url)")
         
-        let requestURL: URL = URL(string: url)!
+        if let encoded = url.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
+            let requestURL = URL(string: encoded){
+            print(requestURL)
+            
+            load(requestURL, controller: controller, withLoader:withLoader, param:param)
+        }
         
-        load(requestURL, controller: controller, withLoader:withLoader, param:param)
+        
     }
     
     class func load(_ url: URL, controller: MainViewController, withLoader:Bool = true, param:[String:Any] = [:]) {
@@ -167,7 +182,7 @@ class Webservice{
                     }
                 }
                 else if(statusCode == 401) {
-                    print("Download JSON Done with status code 401")
+                    print("Download JSON Done with status code 401 on the url : \(url)")
                     do{
                         let myData = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
                         
@@ -215,13 +230,23 @@ class Webservice{
     }
    
     class func messages(_ controller: MainViewController){
-        let req = URL_API_WEB + "mes-messages" + header()
+        let req = URL_API + "mes-messages" + header()
         load(req, controller: controller, withLoader:true, param:["dataKey":"getData"])
     }
     
     class func messageRead(_ controller: MainViewController, data:[String:Any]){
         let req = URL_API_WEB + "lu-ou-non" + "?message_id=\(data["id_msg"]!)"
         load(req, controller: controller)
+    }
+    
+    class func getPreviousPwd(_ controller: MainViewController, data:[String:String]){
+        let req = URL_API_WEB + "comparer-mot-de-passe" + header() + "&ancien_mdp=\(data["pwd"]!)"
+        load(req, controller: controller, withLoader:false, param:["dataKey":"oldPwd"])
+    }
+    
+    class func changePwd(_ controller: MainViewController, data:[String:String]){
+        let req = URL_API_WEB + "modifier-mot-de-passe" + header() + "&nouveau_mdp=\(data["pwd"]!)"
+        load(req, controller: controller, withLoader:false, param:["dataKey":"newPwd"])
     }
     
     class func adviceSent(_ controller: MainViewController){
@@ -273,28 +298,42 @@ class Webservice{
                 
                 let phoneSend = data["phone"]! as String
                 
+                
                 req = URL_API + "avis-envoie-demande-sms" + header() + "&num=\(phoneSend)&nom_de=\(data["name"]!)&mois=\(data["prestationMonth"]!)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
             }
             print("req : \(req)")
-            load(req, controller: controller)
+            if let encoded = req.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
+                let url = URL(string: encoded){
+                print(url)
+                
+                load(url, controller: controller)
+            }
+            
         }
         else{
             if data["sendingType"] == SendingType.mail.rawValue{
                 req = URL_API + "demande-avis-avec-facture-mail" + header() + "&to=\(data["mail"]!)&nom_de=\(data["name"]!)&mois=\(data["prestationMonth"]!)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
                 
-                imageUpload(req, controller: controller, imageToSend: imageToSend!)
+                //imageUpload(req, controller: controller, imageToSend: imageToSend!)
             }
             else if data["sendingType"] == SendingType.sms.rawValue{
                 req = URL_API + "demande-avis-avec-facture-sms" + header() + "&num=\(data["phone"]!)&nom_de=\(data["name"]!)&mois=\(data["prestationMonth"]!)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
-                imageUpload(req, controller: controller, imageToSend: imageToSend!)
+                //imageUpload(req, controller: controller, imageToSend: imageToSend!)
+            }
+            
+            if let encoded = req.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
+                let url = URL(string: encoded){
+                print(url)
+                
+                imageUpload(url, controller: controller, imageToSend: imageToSend!)
             }
         }
     }
     
     class func adviceMediationAnswer(_ controller: MainViewController, data:[String:Any]){
-//        let req = URL_API + "avis-repondre-moderation" + header() + "&client_id=\(data["client_id"]!)&avis_id=\(data["avis_id"]!)&contenu=\(data["answerText"]!)"
+        let req = URL_API + "avis-repondre-moderation" + header() + "&client_id=\(data["client_id"]!)&avis_id=\(data["avis_id"]!)&contenu=\(data["answerText"]!)"
         
-        let req = URL_API + "avis-repondre-moderation" + header() + "&avis_id=\(data["avis_id"]!)&contenu=\(data["answerText"]!)"
+//        let req = URL_API + "avis-repondre-moderation" + header() + "&avis_id=\(data["avis_id"]!)&contenu=\(data["answerText"]!)"
         
         if let encoded = req.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
             let url = URL(string: encoded){
@@ -327,6 +366,8 @@ class Webservice{
                 req = URL_API + "envoyer-mon-profil-sms" + header() + "&num=\(phoneSend)"
             }
             load(req, controller: controller)
+            
+        
         }
         else if data["sendingProfile"] as! String == SendingProfileType.partnersProfile.rawValue{
             
@@ -361,6 +402,24 @@ class Webservice{
         let req = URL_API + "photo-sur-mon-profil" + header()
         
         imageUpload(req, controller: controller, imageToSend: imageToSend!)
+        
+    }
+    
+    class func docsSendDoc(_ controller: MainViewController, data:[String:String], imageToSend:UIImage? = nil){
+        
+        //imageUpload(req, controller: controller, imageToSend: imageToSend!)
+        
+        let req = URL_API + "send-document-backoffice" + header() + "&nature_doc=\(data["type"]!)"
+        
+        if let encoded = req.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
+            let url = URL(string: encoded){
+            print(url)
+            
+            imageUpload(url, controller: controller, imageToSend: imageToSend!)
+        }
+        else{
+            controller.alertUser(title: "Erreur", message: "Il y a une erreur dans l'envoi de ce fichier")
+        }
         
     }
     

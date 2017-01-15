@@ -71,32 +71,38 @@ class Home2ViewController: MainViewController {
         
         var normalConnection = false
         
+        print(wsData)
+        
         if let data = wsData as? [String:Any]{
             
-            let status = data["status"] as! Bool
-            
-            if !status{
-                alertUser(title: "Pas de données", message: nil)
+            if let status = data["status"] as? Bool{
+                if !status{
+//                    alertUser(title: "Pas de données", message: nil)
+                    normalConnection = true
+                    return
+                }
+                
+                print(data)
+                
+                if let notifData = data["data"] as? [String:Int]{
+                    Utils.adviceWaitingBills = notifData["nbr_fact"]!
+                    Utils.adviceWaitingMediation = notifData["avis_mediation"]!
+                    Utils.messagesNumber = notifData["messages"]!
+                }
+                    
+                else{
+                    alertUser(title: "Erreur données", message: nil)
+                }
+                
+                menuCollectionView.reloadData()
+                
                 normalConnection = true
-                return
-            }
-            
-            print("Innnnnnnnn")
-            print(data)
-            
-            if let notifData = data["data"] as? [String:Int]{
-                Utils.adviceWaitingBills = notifData["nbr_fact"]!
-                Utils.adviceWaitingMediation = notifData["avis_mediation"]!
-                Utils.messagesNumber = notifData["messages"]!
             }
             
             else{
                 alertUser(title: "Erreur données", message: nil)
             }
             
-            menuCollectionView.reloadData()
-            
-            normalConnection = true
         }
         
         if(!normalConnection){

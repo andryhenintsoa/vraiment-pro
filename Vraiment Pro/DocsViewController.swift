@@ -16,6 +16,8 @@ class DocsViewController: ImagePickerViewController {
     
     var documentToSendType:DocsType?
     
+    var listDocsType:[String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +34,7 @@ class DocsViewController: ImagePickerViewController {
     func createButtonsInfo(){
         menu.append(["name":"Publier une photo","picture":"ic_camera_party_mode.png",
                      "id":"1"])
-        menu.append(["name":"Publier Avant / Après","picture":"ic_image_filter.png",
+        menu.append(["name":"Publier un avant/après","picture":"ic_image_filter.png",
                      "id":"2"])
         menu.append(["name":"Publier un document","picture":"ic_file_document.png",
                      "id":"3"])
@@ -55,6 +57,17 @@ class DocsViewController: ImagePickerViewController {
             
             destination?.imageToSend = self.imageToSend
             destination?.documentToSendType = self.documentToSendType
+            destination?.navigationItem.title = "Publier une photo"
+        }
+        else if segue.identifier == "toSendBAPicture"{
+            let destination = segue.destination as? DocsSendBAPictureViewController
+            
+            destination?.imageToSend1 = self.imageToSend
+        }
+        else if segue.identifier == "toSendDoc"{
+            let destination = segue.destination as? DocsSendDocViewController
+            
+            destination?.imageToSend = self.imageToSend
         }
     }
 
@@ -94,6 +107,16 @@ extension DocsViewController : UICollectionViewDelegate{
         if indexPath.row == 0{
             documentToSendType = .samplePic
             self.segueNextName = "toSendPicture"
+            chooseTakingPictureMode()
+        }
+            
+        else if indexPath.row == 1{
+            self.segueNextName = "toSendBAPicture"
+            chooseTakingPictureMode("Selectionnez photo \"avant\"", withCancelButton: true)
+        }
+        
+        else if indexPath.row == 2{
+            self.segueNextName = "toSendDoc"
             chooseTakingPictureMode()
         }
     }

@@ -15,6 +15,7 @@ class Message{
     var clientName : String = ""
     var clientMail : String = ""
     var clientNum : String = ""
+    var clientCivility : String = ""
     var state : String = ""
     
     init(data: [String:Any]) {
@@ -25,6 +26,7 @@ class Message{
         self.setDateCreation(data["created_at"] as! String)
         
         self.setClientName(data["client_nom"])
+        self.setClientCivility(data["civilite"])
         self.setClientMail(data["client_email"])
         self.setClientNum(data["client_num"])
         
@@ -53,6 +55,13 @@ class Message{
         //self.clientName = (clientName == nil) ? "" : clientName! as! String
         if let data = clientName as? String{
             self.clientName = data
+        }
+    }
+    
+    func setClientCivility(_ clientCivility : Any?) {
+        //self.clientName = (clientName == nil) ? "" : clientName! as! String
+        if let data = clientCivility as? String{
+            self.clientCivility = data
         }
     }
     

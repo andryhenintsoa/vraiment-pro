@@ -11,11 +11,14 @@ import UIKit
 class ProfilePartnerAddViewController: MainViewController {
     
     @IBOutlet weak var partnerTableView: UITableView!
+    @IBOutlet weak var validateButton: UIButton!
 
     var partnerData : [Dictionary<String,Any>] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        validateButton.setTitle("Valider", for: .normal)
         
         partnerTableView.delegate = self
         Webservice.partners(self)
@@ -136,6 +139,8 @@ extension ProfilePartnerAddViewController : UITableViewDataSource{
         let rate = (Double(arc4random()) / 0xFFFFFFFF) * 5
         cell.rate.rating = rate
         print("Rating = \(rate)")
+        
+        cell.function.text = "Metier"
         
         cell.checkBox.isMultipleSelectionEnabled = true
         

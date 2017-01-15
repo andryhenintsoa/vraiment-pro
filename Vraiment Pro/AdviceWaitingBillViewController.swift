@@ -17,8 +17,6 @@ class AdviceWaitingBillViewController: ImagePickerViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //createData()
-        //waitingTableView.reloadData()
         waitingTableView.delegate = self
         
         Webservice.adviceWaitingBill(self)
@@ -27,16 +25,6 @@ class AdviceWaitingBillViewController: ImagePickerViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    // Poser les informations de chaque menu
-    func createData(){
-        waitingData.append(["name":"Publier une photo","statut":"0",
-                         "id":"1"])
-        waitingData.append(["name":"Publier Avant / Après, roufr aar g zrg zeronfv. Odpvke g ngjnz tng fd,fgn zjtg jzht aevb dbdf hab gare. ahebjbhrf qbr fnq b rfha zr","statut":"0",
-                         "id":"2"])
-        waitingData.append(["name":"Publier un document","statut":"1",
-                         "id":"3"])
     }
     
     @IBAction func closeController(_ sender: AnyObject) {

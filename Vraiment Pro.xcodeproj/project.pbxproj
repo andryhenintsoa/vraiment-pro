@@ -20,6 +20,7 @@
 		F81E515B1DF696EC004F1BE4 /* Home2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81E515A1DF696EC004F1BE4 /* Home2ViewController.swift */; };
 		F823C0DD1E15088E0004F7A9 /* MessagesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F823C0DC1E15088E0004F7A9 /* MessagesInfo.swift */; };
 		F827257D1E070DA100F4B0EC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F827257C1E070DA000F4B0EC /* ResultViewController.swift */; };
+		F82EA4CA1E24D28F009C397A /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82EA4C91E24D28F009C397A /* ImagePreviewViewController.swift */; };
 		F82FBFB91E09A5F000EADA11 /* CustomActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82FBFB81E09A5F000EADA11 /* CustomActivityIndicator.swift */; };
 		F83630C71E1F6FAE00A03885 /* AdviceNoWaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83630C61E1F6FAE00A03885 /* AdviceNoWaitingViewController.swift */; };
 		F84169FE1DF6B4EE00664870 /* AdviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84169FD1DF6B4ED00664870 /* AdviceViewController.swift */; };
@@ -50,6 +51,7 @@
 		F89210941DFD730900703CE1 /* ProfilePartnerAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89210931DFD730800703CE1 /* ProfilePartnerAddViewController.swift */; };
 		F89210961DFD737E00703CE1 /* ProfilePartnerAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89210951DFD737E00703CE1 /* ProfilePartnerAddTableViewCell.swift */; };
 		F892109B1DFD84CC00703CE1 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F892109A1DFD84CC00703CE1 /* DLRadioButton.m */; };
+		F89A56B61E2B9E2800F12A6B /* String+subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89A56B51E2B9E2800F12A6B /* String+subscript.swift */; };
 		F89D89FA1E1EB21C004DDA65 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F89D89F01E1EB21C004DDA65 /* Rubik-Black.ttf */; };
 		F89D89FB1E1EB21C004DDA65 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F89D89F11E1EB21C004DDA65 /* Rubik-BlackItalic.ttf */; };
 		F89D89FC1E1EB21C004DDA65 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F89D89F21E1EB21C004DDA65 /* Rubik-Bold.ttf */; };
@@ -80,6 +82,10 @@
 		F8B411491DFB273D008AE9D3 /* AdviceWaitingMediationAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B411481DFB273D008AE9D3 /* AdviceWaitingMediationAnswerViewController.swift */; };
 		F8B4114B1DFB2EE6008AE9D3 /* AdviceWaitingMediationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4114A1DFB2EE6008AE9D3 /* AdviceWaitingMediationResultViewController.swift */; };
 		F8B4114D1DFB34E5008AE9D3 /* AdviceRequestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4114C1DFB34E4008AE9D3 /* AdviceRequestResultViewController.swift */; };
+		F8B564481E20BBBC00F28E62 /* DocsSendDocViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B564471E20BBBC00F28E62 /* DocsSendDocViewController.swift */; };
+		F8B5644A1E20BC4700F28E62 /* DocsTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B564491E20BC4700F28E62 /* DocsTypeTableViewCell.swift */; };
+		F8B5644E1E20C4C300F28E62 /* DocsSendBAPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B5644D1E20C4C300F28E62 /* DocsSendBAPictureViewController.swift */; };
+		F8B564501E20C71800F28E62 /* DOcsSendBAPictureMergerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B5644F1E20C71800F28E62 /* DOcsSendBAPictureMergerViewController.swift */; };
 		F8CA82F41E1CCED800693C72 /* DocsSendPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA82F31E1CCED700693C72 /* DocsSendPictureViewController.swift */; };
 		F8CA82F61E1CE58500693C72 /* AdviceRequestSentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA82F51E1CE58500693C72 /* AdviceRequestSentViewController.swift */; };
 		F8D137171DFA82A3000B995E /* AdviceWaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D137161DFA82A3000B995E /* AdviceWaitingViewController.swift */; };
@@ -88,6 +94,7 @@
 		F8D1371E1DFA8DAC000B995E /* AdviceWaitingBillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1371D1DFA8DAC000B995E /* AdviceWaitingBillTableViewCell.swift */; };
 		F8D137201DFA8DC4000B995E /* AdviceWaitingMediationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1371F1DFA8DC4000B995E /* AdviceWaitingMediationTableViewCell.swift */; };
 		F8D137221DFA9A67000B995E /* CosmosDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D137211DFA9A67000B995E /* CosmosDistrib.swift */; };
+		F8D3A5BF1E1FBC890061D4ED /* VSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3A5BE1E1FBC890061D4ED /* VSTextField.swift */; };
 		F8E19D9F1E05B28200CBA399 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E19D9E1E05B28200CBA399 /* ImagePickerViewController.swift */; };
 		F8EB757C1DF5F68300B19804 /* DocsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB757B1DF5F68300B19804 /* DocsViewController.swift */; };
 		F8EB757E1DF5FB7E00B19804 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB757D1DF5FB7E00B19804 /* LoginViewController.swift */; };
@@ -125,6 +132,7 @@
 		F81E515A1DF696EC004F1BE4 /* Home2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home2ViewController.swift; sourceTree = "<group>"; };
 		F823C0DC1E15088E0004F7A9 /* MessagesInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesInfo.swift; sourceTree = "<group>"; };
 		F827257C1E070DA000F4B0EC /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		F82EA4C91E24D28F009C397A /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		F82FBFB81E09A5F000EADA11 /* CustomActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicator.swift; sourceTree = "<group>"; };
 		F83630C61E1F6FAE00A03885 /* AdviceNoWaitingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceNoWaitingViewController.swift; sourceTree = "<group>"; };
 		F84169FD1DF6B4ED00664870 /* AdviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +171,7 @@
 		F89210981DFD84A800703CE1 /* DLRadioButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
 		F89210991DFD84CC00703CE1 /* Vraiment Pro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vraiment Pro-Bridging-Header.h"; sourceTree = "<group>"; };
 		F892109A1DFD84CC00703CE1 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
+		F89A56B51E2B9E2800F12A6B /* String+subscript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+subscript.swift"; sourceTree = "<group>"; };
 		F89D89F01E1EB21C004DDA65 /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
 		F89D89F11E1EB21C004DDA65 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
 		F89D89F21E1EB21C004DDA65 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
@@ -193,6 +202,10 @@
 		F8B411481DFB273D008AE9D3 /* AdviceWaitingMediationAnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingMediationAnswerViewController.swift; sourceTree = "<group>"; };
 		F8B4114A1DFB2EE6008AE9D3 /* AdviceWaitingMediationResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingMediationResultViewController.swift; sourceTree = "<group>"; };
 		F8B4114C1DFB34E4008AE9D3 /* AdviceRequestResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceRequestResultViewController.swift; sourceTree = "<group>"; };
+		F8B564471E20BBBC00F28E62 /* DocsSendDocViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocsSendDocViewController.swift; sourceTree = "<group>"; };
+		F8B564491E20BC4700F28E62 /* DocsTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocsTypeTableViewCell.swift; sourceTree = "<group>"; };
+		F8B5644D1E20C4C300F28E62 /* DocsSendBAPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocsSendBAPictureViewController.swift; sourceTree = "<group>"; };
+		F8B5644F1E20C71800F28E62 /* DOcsSendBAPictureMergerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOcsSendBAPictureMergerViewController.swift; sourceTree = "<group>"; };
 		F8C7EEB21E0307AA0015F830 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		F8C7EEB31E0307AA0015F830 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F8CA82F31E1CCED700693C72 /* DocsSendPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocsSendPictureViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +216,7 @@
 		F8D1371D1DFA8DAC000B995E /* AdviceWaitingBillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingBillTableViewCell.swift; sourceTree = "<group>"; };
 		F8D1371F1DFA8DC4000B995E /* AdviceWaitingMediationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceWaitingMediationTableViewCell.swift; sourceTree = "<group>"; };
 		F8D137211DFA9A67000B995E /* CosmosDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosDistrib.swift; sourceTree = "<group>"; };
+		F8D3A5BE1E1FBC890061D4ED /* VSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSTextField.swift; sourceTree = "<group>"; };
 		F8E19D9E1E05B28200CBA399 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		F8EB757B1DF5F68300B19804 /* DocsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocsViewController.swift; sourceTree = "<group>"; };
 		F8EB757D1DF5FB7E00B19804 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -234,12 +248,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F80C3D0D1E0BED530033DAF9 /* Utils */ = {
+		F80C3D0D1E0BED530033DAF9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				F80C3D0E1E0BEDDB0033DAF9 /* UIFont+withTraits.swift */,
+				F89A56B51E2B9E2800F12A6B /* String+subscript.swift */,
 			);
-			name = Utils;
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		F814FAA01E084820009FCD82 /* Utils */ = {
@@ -264,7 +279,6 @@
 		F84169FF1DF6B98200664870 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F814FAA01E084820009FCD82 /* Utils */,
 				F84360891DFDDCA400D3C9AC /* Parameters */,
 				F8AD0C0C1DFBD58E004729B2 /* Core */,
 				F87792F81DF92CBF0052E888 /* Profile */,
@@ -287,6 +301,7 @@
 				F892109A1DFD84CC00703CE1 /* DLRadioButton.m */,
 				F89210991DFD84CC00703CE1 /* Vraiment Pro-Bridging-Header.h */,
 				F82FBFB81E09A5F000EADA11 /* CustomActivityIndicator.swift */,
+				F8D3A5BE1E1FBC890061D4ED /* VSTextField.swift */,
 			);
 			name = "Custom views";
 			sourceTree = "<group>";
@@ -334,6 +349,9 @@
 			children = (
 				F8EB757B1DF5F68300B19804 /* DocsViewController.swift */,
 				F8CA82F31E1CCED700693C72 /* DocsSendPictureViewController.swift */,
+				F8B564471E20BBBC00F28E62 /* DocsSendDocViewController.swift */,
+				F8B5644D1E20C4C300F28E62 /* DocsSendBAPictureViewController.swift */,
+				F8B5644F1E20C71800F28E62 /* DOcsSendBAPictureMergerViewController.swift */,
 			);
 			name = Docs;
 			sourceTree = "<group>";
@@ -393,10 +411,11 @@
 				F883DD111DF4713E00C8071B /* Main.storyboard */,
 				F883DD191DF4713E00C8071B /* LaunchScreen.storyboard */,
 				F804B2B31E012507007C82BA /* CustomEnumerations.swift */,
+				F814FAA01E084820009FCD82 /* Utils */,
 				F84169FF1DF6B98200664870 /* Controllers */,
 				F81574F71E0A4F2600AC215F /* Model */,
 				F8416A021DF6BE7100664870 /* Custom views */,
-				F80C3D0D1E0BED530033DAF9 /* Utils */,
+				F80C3D0D1E0BED530033DAF9 /* Extensions */,
 				F8A6DF731DFFEB96009DAFE7 /* Fonts */,
 				F883DD1C1DF4713E00C8071B /* Info.plist */,
 				F883DD141DF4713E00C8071B /* Vraiment_Pro.xcdatamodeld */,
@@ -462,6 +481,7 @@
 		F8AD0C0C1DFBD58E004729B2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F82EA4C91E24D28F009C397A /* ImagePreviewViewController.swift */,
 				F8AD0C0A1DFBD52A004729B2 /* ChooseClientViewController.swift */,
 				F84360831DFDAD7900D3C9AC /* SidebarViewController.swift */,
 				F827257C1E070DA000F4B0EC /* ResultViewController.swift */,
@@ -482,6 +502,7 @@
 				F8D1371D1DFA8DAC000B995E /* AdviceWaitingBillTableViewCell.swift */,
 				F8D1371F1DFA8DC4000B995E /* AdviceWaitingMediationTableViewCell.swift */,
 				F89210951DFD737E00703CE1 /* ProfilePartnerAddTableViewCell.swift */,
+				F8B564491E20BC4700F28E62 /* DocsTypeTableViewCell.swift */,
 			);
 			name = "Custom cells";
 			sourceTree = "<group>";
@@ -656,12 +677,14 @@
 				F8416A011DF6BA2900664870 /* AdviceMenuCollectionViewCell.swift in Sources */,
 				F89210961DFD737E00703CE1 /* ProfilePartnerAddTableViewCell.swift in Sources */,
 				F827257D1E070DA100F4B0EC /* ResultViewController.swift in Sources */,
+				F8B5644E1E20C4C300F28E62 /* DocsSendBAPictureViewController.swift in Sources */,
 				F823C0DD1E15088E0004F7A9 /* MessagesInfo.swift in Sources */,
 				F8D1371B1DFA895B000B995E /* AdviceWaitingMediationViewController.swift in Sources */,
 				F8B4114D1DFB34E5008AE9D3 /* AdviceRequestResultViewController.swift in Sources */,
 				F86A7FD81DF734D800019DC1 /* MessagesTableViewCell.swift in Sources */,
 				F892109B1DFD84CC00703CE1 /* DLRadioButton.m in Sources */,
 				F84169FE1DF6B4EE00664870 /* AdviceViewController.swift in Sources */,
+				F82EA4CA1E24D28F009C397A /* ImagePreviewViewController.swift in Sources */,
 				F814FAA21E0848A9009FCD82 /* Webservice.swift in Sources */,
 				F843608B1DFDDCC400D3C9AC /* ParametersViewController.swift in Sources */,
 				F87792EE1DF92C360052E888 /* AdviceRequestViewController.swift in Sources */,
@@ -683,7 +706,9 @@
 				F8EC73321DF8807E007A1280 /* AdvicePrestationViewController.swift in Sources */,
 				F8D137191DFA8906000B995E /* AdviceWaitingBillViewController.swift in Sources */,
 				F8CA82F41E1CCED800693C72 /* DocsSendPictureViewController.swift in Sources */,
+				F8D3A5BF1E1FBC890061D4ED /* VSTextField.swift in Sources */,
 				F8AD0C0B1DFBD52B004729B2 /* ChooseClientViewController.swift in Sources */,
+				F89A56B61E2B9E2800F12A6B /* String+subscript.swift in Sources */,
 				F8B411491DFB273D008AE9D3 /* AdviceWaitingMediationAnswerViewController.swift in Sources */,
 				F87792F71DF92CB30052E888 /* ProfileViewController.swift in Sources */,
 				F84E93BF1E0926C0003F82AA /* Utils.swift in Sources */,
@@ -694,11 +719,14 @@
 				F8D137221DFA9A67000B995E /* CosmosDistrib.swift in Sources */,
 				F8D137201DFA8DC4000B995E /* AdviceWaitingMediationTableViewCell.swift in Sources */,
 				F8B4114B1DFB2EE6008AE9D3 /* AdviceWaitingMediationResultViewController.swift in Sources */,
+				F8B5644A1E20BC4700F28E62 /* DocsTypeTableViewCell.swift in Sources */,
 				F8EB757C1DF5F68300B19804 /* DocsViewController.swift in Sources */,
 				F80C3D0F1E0BEDDB0033DAF9 /* UIFont+withTraits.swift in Sources */,
 				F883DD161DF4713E00C8071B /* Vraiment_Pro.xcdatamodeld in Sources */,
 				F883DD0E1DF4713E00C8071B /* AppDelegate.swift in Sources */,
 				F85231421DF7D7B20046DDDB /* PaddingLabel.swift in Sources */,
+				F8B564501E20C71800F28E62 /* DOcsSendBAPictureMergerViewController.swift in Sources */,
+				F8B564481E20BBBC00F28E62 /* DocsSendDocViewController.swift in Sources */,
 				F86A7FD61DF734B100019DC1 /* MessagesViewController.swift in Sources */,
 				F83630C71E1F6FAE00A03885 /* AdviceNoWaitingViewController.swift in Sources */,
 				F8CA82F61E1CE58500693C72 /* AdviceRequestSentViewController.swift in Sources */,

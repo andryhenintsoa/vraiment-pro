@@ -69,7 +69,7 @@ class MessagesViewController: MainViewController {
     func createMessages(){
         messagesInfo.append(MessageInfo(data:["id_msg":69,"etat":"1","msg_titre":"Assurance","msg_contenu":"Votre assurance RCPRO arrive à écheance.","created_at":"15/12/2016","type":"1"]))
         messagesInfo.append(MessageInfo(data:["id_msg":69,"etat":"1","msg_titre":"Qualification","msg_contenu":"Hdiurehf najerkfnkjfb fdvb zekrhjvbzekrhfb aiurfh azekjfs kdqf","created_at":"24/12/2016","type":"1"]))
-        messagesInfo.append(MessageInfo(data:["id_msg":69,"etat":"0","msg_titre":"Info","msg_contenu":"Hdiurehf najerkfnkjfb fdvb zekrhjvbzekrhfb aiurfh azekjfs kdqfHdiurehf najerkfnkjfb fdvb zekrhjvbzekrhfb aiurfh azekjfs kdqfHdiurehf najerkfnkjfb fdvb zekrhjvbzekrhfb aiurfh azekjfs kdqfHdiurehf najerkfnkjfb fdvb zekrhjvbzekrhfb aiurfh azekjfs kdqfHdiurehf najerkfnkjfb fdvb zekrhjvbzekrhfb aiurfh azekjfs kdqf","created_at":"15/12/2016","type":"1"]))
+        messagesInfo.append(MessageInfo(data:["id_msg":69,"etat":"1","msg_titre":"Info","msg_contenu":"Hdiurehf najerkfnkjfb fdvb zekrhjvbzekrhfb aiurfh azekjfs kdqfHdiurehf najerkfnkjfb fdvb zekrhjvbzekrhfb aiurfh azekjfs kdqfHdiurehf najerkfnkjfb fdvb zekrhjvbzekrhfb aiurfh azekjfs kdqfHdiurehf najerkfnkjfb fdvb zekrhjvbzekrhfb aiurfh azekjfs kdqfHdiurehf najerkfnkjfb fdvb zekrhjvbzekrhfb aiurfh azekjfs kdqf","created_at":"15/12/2016","type":"1"]))
         
         for messageTemp in messagesInfo{
             if messageTemp.state == "0"{
@@ -319,7 +319,7 @@ extension MessagesViewController : UITableViewDataSource{
             
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MessagesTableViewCell
             
-            cell.nameLabel.text = data.clientName
+            cell.nameLabel.text = data.clientCivility + " " + data.clientName
             
             cell.contentLabel.text = data.content
             cell.contentLabel.sizeToFit()
@@ -349,6 +349,13 @@ extension MessagesViewController : UITableViewDataSource{
             
             cell.contentLabel.text = data.content
             cell.contentLabel.sizeToFit()
+            
+            if data.type == "0"{
+                cell.icon.image = UIImage(named:"ic_information_variant")
+            }
+            else if data.type == "1"{
+                cell.icon.image = UIImage(named:"ic_file_document")
+            }
             
             cell.dateLabel.text = data.dateCreation
             

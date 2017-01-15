@@ -13,11 +13,16 @@ class ProfileViewController: MainViewController {
     @IBOutlet weak var profilePartnerButton: UIButton!
     
     @IBOutlet weak var nameLabel: UITextField!
-    @IBOutlet weak var phoneLabel: UITextField!
+    @IBOutlet weak var phoneLabel: VSTextField!
     @IBOutlet weak var mailLabel: UITextField!
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var ouLabel: UILabel!
+    
+    //For custom textfield
+    var num:String = ""
+    var numNew:String = ""
+    var numDisplay:String = ""
     
     var activeField: UITextField?
     
@@ -30,6 +35,8 @@ class ProfileViewController: MainViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //phoneLabel.setFormatting("## ## ## ## ## ##", replacementChar : "#")
         
         ouLabel.text = "ou"
         
@@ -93,7 +100,7 @@ class ProfileViewController: MainViewController {
                 }
                 else{
                     //sendingType = .sms
-                    self.selectedClient?["phone"] = phoneLabel.text
+                    self.selectedClient?["phone"] = num
                     data = self.selectedClient!
                     data["sendingType"] = "SMS"
                     data["sendingProfile"] = sendingProfileType.rawValue
@@ -140,6 +147,203 @@ class ProfileViewController: MainViewController {
         nameLabel.resignFirstResponder()
         phoneLabel.resignFirstResponder()
         mailLabel.resignFirstResponder()
+    }
+    
+    @IBAction func editNum(_ sender: UITextField?) {
+        if sender != nil{
+            numDisplay = sender!.text!
+            
+            //            print()
+            //            print(numDisplay)
+            var cursorOffsetModified:Bool = false
+            var cursorOffset = 0
+            
+            numNew = numDisplay.replacingOccurrences(of: " ", with: "")
+            
+            let sizeNum = numNew.characters.count
+            let sizeNumBefore = num.characters.count
+            
+            
+            //            print(num)
+            //            print(numNew)
+            //            print("sizeNum : \(sizeNumBefore)")
+            //            print("sizeNewNum : \(sizeNum)")
+            
+            if sizeNum == 0{
+                numDisplay = numNew
+                num = numNew
+            }
+            else{
+                
+                let lastChar = numDisplay.characters.last
+                numDisplay = String(numDisplay.characters.dropLast())
+                
+                //            print("num")
+                //            print(numNew)
+                //            print(num.appending("\(lastChar)"))
+                //            print()
+                
+                //let lastChar = numDisplay.remove(at: numDisplay.endIndex)
+                
+                if (numNew == num.appending("\(lastChar!)")){
+                    //Add on last position
+                    print("Add on last position")
+                    
+                    num = numNew
+                    
+                    //If next char is in a even place so add a blank space
+                    //Else don't add a blank space
+                    numDisplay += (sizeNum % 2 != 0 && sizeNum != 1) ? " \(lastChar!)" : "\(lastChar!)"
+                    
+                }
+                else if sizeNum <= sizeNumBefore{
+                    //Suppress
+                    let lastCharData  = num.characters.last
+                    
+                    if (num == numNew.appending("\(lastCharData!)")){
+                        //Suppress on the last char
+                        print("Suppress on the last char")
+                        if lastChar! != " "{
+                            numDisplay.append("\(lastChar!)")
+                        }
+                        num = numNew
+                    }
+                    else{
+                        
+                        
+                        if sizeNum == sizeNumBefore{
+                            print("Suppress a space char")
+                            
+                            var cursorPosition = 0
+                            
+                            if let selectedRange = sender!.selectedTextRange {
+                                
+                                cursorPosition = sender!.offset(from: sender!.beginningOfDocument, to: selectedRange.start)
+                            }
+                            numDisplay.append(lastChar!)
+                            print(numDisplay)
+                            numDisplay.remove(at: numDisplay.index(numDisplay.startIndex, offsetBy: cursorPosition-1))
+                            print(numDisplay)
+                            
+                            numNew = numDisplay.replacingOccurrences(of: " ", with: "")
+                            
+                            let chars = numNew.characters
+                            var count = 0
+                            numDisplay = ""
+                            for char in chars{
+                                if count % 2 == 0 && count != 0{
+                                    numDisplay += " "
+                                }
+                                numDisplay += "\(char)"
+                                count += 1
+                            }
+                            
+                            cursorOffsetModified = true
+                            cursorOffset = cursorPosition - 1
+                            
+                            //                        let dataDisplay = numDisplay.components(separatedBy: " ")
+                            //                        var positionOfCharToDelete = 0
+                            //                        for itemData in dataDisplay{
+                            //                            positionOfCharToDelete += 2
+                            //                            if itemData.characters.count > 2{
+                            //                                break
+                            //                            }
+                            //                        }
+                            //                        positionOfCharToDelete -= 1
+                            //                        numNew.remove(at: numNew.index(numNew.startIndex, offsetBy: positionOfCharToDelete))
+                        }
+                        else{
+                            print("Suppress a non space char")
+                            var chars = numNew.characters
+                            var charsPrev = num.characters
+                            
+                            cursorOffset = 0
+                            
+                            for _ in 0 ... sizeNum{
+                                if chars.count == 0 {break}
+                                if(charsPrev.popFirst()! != chars.popFirst()!){
+                                    break
+                                }
+                                cursorOffset += 1
+                                if (cursorOffset % 3) % 2 == 0 {cursorOffset += 1}
+                            }
+                            
+                            cursorOffsetModified = true
+                        }
+                        
+                        var count = 0
+                        numDisplay = ""
+                        let charsNum = numNew.characters
+                        for char in charsNum{
+                            if count % 2 == 0 && count != 0{
+                                numDisplay += " "
+                            }
+                            numDisplay += "\(char)"
+                            count += 1
+                        }
+                        
+                        num = numNew
+                        
+                    }
+                }
+                else{
+                    //Add character not in the last position
+                    print("Add character not in the last position")
+                    num = numNew
+                    
+                    var cursorPosition = 0
+                    
+                    if let selectedRange = sender!.selectedTextRange {
+                        
+                        cursorPosition = sender!.offset(from: sender!.beginningOfDocument, to: selectedRange.start)
+                    }
+                    
+                    cursorOffsetModified = true
+                    cursorOffset = (cursorPosition  % 3 == 0) ? cursorPosition + 1 : cursorPosition
+                    
+                    let chars = numNew.characters
+                    var count = 0
+                    numDisplay = ""
+                    for char in chars{
+                        if count % 2 == 0 && count != 0{
+                            numDisplay += " "
+                        }
+                        numDisplay += "\(char)"
+                        count += 1
+                    }
+                }
+            }
+            
+            print("numDisplay = \(numDisplay)")
+            sender!.text = numDisplay
+            if (cursorOffsetModified){
+                
+                if let newPosition = sender!.position(from: sender!.beginningOfDocument, offset: cursorOffset) {
+                    
+                    sender!.selectedTextRange = sender!.textRange(from: newPosition, to: newPosition)
+                }
+            }
+        }
+            
+        else{
+            numDisplay = phoneLabel!.text!
+            
+            numNew = numDisplay.replacingOccurrences(of: " ", with: "")
+            
+            numDisplay = ""
+            let charsNum = numNew.characters
+            var count = 0
+            for char in charsNum{
+                if count % 2 == 0 && count != 0{
+                    numDisplay += " "
+                }
+                numDisplay += "\(char)"
+                count += 1
+            }
+            num = numNew
+            phoneLabel.text = numDisplay
+        }
+        
     }
     
     // MARK: - Get result of WS
@@ -199,20 +403,14 @@ class ProfileViewController: MainViewController {
         self.scrollView.isScrollEnabled = true
         var info = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height + 50, 0.0)
         
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         
-//        var aRect : CGRect = self.view.frame
-//        aRect.size.height -= keyboardSize!.height
-//        if let activeField = self.activeField {
-//            if (!aRect.contains(activeField.frame.origin)){
-//                self.scrollView.scrollRectToVisible(activeField.superview!.frame, animated: true)
-//            }
-//        }
-        
         self.scrollView.scrollRectToVisible(mailLabel.superview!.frame, animated: true)
+        
+        //        self.scrollView.scrollRectToVisible(mailLabel.frame, animated: true)
         
         self.scrollView.isScrollEnabled = false
     }
@@ -221,7 +419,7 @@ class ProfileViewController: MainViewController {
         //Once keyboard disappears, restore original positions
         var info = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height - 50, 0.0)
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         self.view.endEditing(true)

@@ -20,6 +20,9 @@ class DocsSendPictureViewController: MainViewController {
         if documentToSendType == .samplePic{
             sendSamplePic()
         }
+        else{
+            sendSamplePic()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -82,7 +85,13 @@ class DocsSendPictureViewController: MainViewController {
         if segue.identifier == "toResult"{
             let destination = segue.destination as? ResultViewController
             
-            destination?.textToDisplay = "Votre photo a bien été publiée\n sur votre profil"
+            if documentToSendType == .samplePic{
+                destination?.textToDisplay = "Votre photo a bien été publiée\n sur votre profil"
+            }
+            else if documentToSendType == .beforeAfterPic{
+                destination?.textToDisplay = "Votre avant/après a bien été publiée\n sur votre profil"
+            }
+            
         }
     }
 

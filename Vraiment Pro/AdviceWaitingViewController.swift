@@ -81,9 +81,9 @@ extension AdviceWaitingViewController : UICollectionViewDataSource{
             notif = Utils.adviceWaitingMediation
         }
         
-        //if notif != 0{
+        if notif != 0{
             identifier = "adviceMenuItemWithNotif"
-        //}
+        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! AdviceMenuCollectionViewCell
         
         let data = menu[indexPath.item]

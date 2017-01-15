@@ -101,7 +101,7 @@ class AdviceWaitingMediationDetailViewController: MainViewController {
             
             let destination = segue.destination as? ResultViewController
             
-            destination?.textToDisplay = "Cet aves sera publié sur votre profil\n" + "vous n'avez pour l'instant\n souhaité y répondre"
+            destination?.textToDisplay = "Cet avis sera publié sur votre profil\n" + "vous n'avez pour l'instant\n pas souhaité y répondre"
         }
     }
 

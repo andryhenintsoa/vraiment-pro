@@ -109,15 +109,26 @@ class ChooseClientViewController: MainViewController {
         //if selectedClient != nil{
             if let presentingVC = previousVC as? AdviceRequestViewController{
                 presentingVC.nameLabel.text = selectedClient?["name"]
-                presentingVC.phoneLabel.text = selectedClient?["phone"]
-                presentingVC.mailLabel.text = selectedClient?["mail"]
+                if selectedClient?["phone"] != ""{
+                    presentingVC.phoneLabel.text = selectedClient?["phone"]
+                    presentingVC.editNum(nil)
+                }
+                if selectedClient?["mail"] != ""{
+                    presentingVC.mailLabel.text = selectedClient?["mail"]
+                }
+                
                 
                 presentingVC.selectedClient = self.selectedClient
             }
             else if let presentingVC = previousVC as? ProfileViewController{
                 presentingVC.nameLabel.text = selectedClient?["name"]
-                presentingVC.phoneLabel.text = selectedClient?["phone"]
-                presentingVC.mailLabel.text = selectedClient?["mail"]
+                if selectedClient?["phone"] != ""{
+                    presentingVC.phoneLabel.text = selectedClient?["phone"]
+                    presentingVC.editNum(nil)
+                }
+                if selectedClient?["mail"] != ""{
+                    presentingVC.mailLabel.text = selectedClient?["mail"]
+                }
                 
                 presentingVC.selectedClient = self.selectedClient
             }
