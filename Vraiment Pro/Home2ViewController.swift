@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class Home2ViewController: MainViewController {
     
@@ -14,14 +15,15 @@ class Home2ViewController: MainViewController {
     
     var menu : [Dictionary<String,String>] = []
     
+    var test = 0
+    let categoryIdentifier = "blablabla"
+    
     deinit{
         Utils.getInstance().removeObserver(self)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        addImageLogo()
         
         Utils.getInstance().addObserver(self)
         
@@ -32,6 +34,10 @@ class Home2ViewController: MainViewController {
 
         createButtonsInfo()
         menuCollectionView.reloadData()
+        
+        //updateBadgeNumber()
+        
+//        let _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.updateBadgeNumber), userInfo: nil, repeats: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,15 +61,19 @@ class Home2ViewController: MainViewController {
                                   "id":"4"])
     }
     
-    func addImageLogo(){
-        let button = UIButton.init(type: .custom)
-        button.setImage(UIImage(named: "logo_vp"), for: .normal)
-        //button.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControlEvents#>)
-        button.frame = CGRect(x: 0, y: 0, width: 30, height: 90)
-        let barButton = UIBarButtonItem(customView: button)
-        self.navigationItem.leftBarButtonItem = barButton
+    func updateBadgeNumber() {
+//        print("test update")
+//        Utils.messagesNumber = 3
+        
+        let scheduledAlert: UILocalNotification = UILocalNotification()
+        UIApplication.shared.cancelAllLocalNotifications()
+        scheduledAlert.applicationIconBadgeNumber=1
+        scheduledAlert.fireDate=Date(timeIntervalSinceNow: 15)
+        scheduledAlert.timeZone = NSTimeZone.default
+        scheduledAlert.repeatInterval=NSCalendar.Unit.day
+        scheduledAlert.alertBody="Vous avez reçu une demande de contact"
+        UIApplication.shared.scheduleLocalNotification(scheduledAlert)
     }
-    
     
     // MARK: - Get result of WS
     override func reloadMyView(_ wsData:Any? = nil, param:[String:Any]=[:]) {
@@ -71,7 +81,7 @@ class Home2ViewController: MainViewController {
         
         var normalConnection = false
         
-        print(wsData)
+        //print(wsData)
         
         if let data = wsData as? [String:Any]{
             
@@ -106,7 +116,7 @@ class Home2ViewController: MainViewController {
         }
         
         if(!normalConnection){
-            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
+            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer\n plus tard")
         }
     }
     

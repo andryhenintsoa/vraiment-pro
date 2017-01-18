@@ -411,6 +411,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.40424031020000001" green="0.7113801837" blue="0.17510324720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="0.5" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" red="0.40424031020000001" green="0.7113801837" blue="0.17510324720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
@@ -3682,7 +3683,11 @@
                                 <action selector="closeController:" destination="4CY-4W-GN3" id="jVt-EH-7VS"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ic_menu_white" id="Z5e-bh-VDE"/>
+                        <barButtonItem key="rightBarButtonItem" image="ic_menu_white" id="Z5e-bh-VDE">
+                            <connections>
+                                <action selector="toogleSidebar:" destination="4CY-4W-GN3" id="26c-ni-CSq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="resultLabel" destination="WZV-kq-dAb" id="8yg-hN-wO7"/>
@@ -3768,7 +3773,11 @@
                                 <action selector="closeController:" destination="cjZ-cp-pTM" id="1tp-Dk-Dui"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ic_menu_white" id="iC1-4x-7ua"/>
+                        <barButtonItem key="rightBarButtonItem" image="ic_menu_white" id="iC1-4x-7ua">
+                            <connections>
+                                <action selector="toogleSidebar:" destination="cjZ-cp-pTM" id="5PY-od-moO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="resultLabel" destination="Hyt-ru-kXp" id="rSi-4V-PgI"/>
@@ -5332,7 +5341,11 @@
                                 <action selector="closeController:" destination="cDW-1e-6CR" id="DhS-cA-PUO"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ic_menu_white" id="2Di-2R-4C3"/>
+                        <barButtonItem key="rightBarButtonItem" image="ic_menu_white" id="2Di-2R-4C3">
+                            <connections>
+                                <action selector="toogleSidebar:" destination="cDW-1e-6CR" id="Zhl-Eo-FSR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="cjZ-cp-pTM" kind="show" identifier="toResult" id="Pl4-h5-AnT"/>
@@ -5380,7 +5393,11 @@
                                 <action selector="closeController:" destination="yTp-x8-e62" id="WqJ-D8-Oio"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ic_menu_white" id="pqD-yD-K8a"/>
+                        <barButtonItem key="rightBarButtonItem" image="ic_menu_white" id="pqD-yD-K8a">
+                            <connections>
+                                <action selector="toogleSidebar:" destination="yTp-x8-e62" id="dnp-Lw-YbW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="cjZ-cp-pTM" kind="show" identifier="toResult" id="M8Q-XW-oSG"/>
@@ -5465,7 +5482,11 @@
                                 <action selector="closeController:" destination="S1g-Ol-4th" id="0Ku-da-Q07"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ic_menu_white" id="6Ve-Rg-KcV"/>
+                        <barButtonItem key="rightBarButtonItem" image="ic_menu_white" id="6Ve-Rg-KcV">
+                            <connections>
+                                <action selector="toogleSidebar:" destination="S1g-Ol-4th" id="aPU-nk-W0J"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="resultLabel" destination="IOm-Ea-n4T" id="ef4-sw-VCr"/>
@@ -6014,10 +6035,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="DM6-ZU-ybg"/>
-        <segue reference="WZT-mF-bGj"/>
-        <segue reference="DDf-t4-MDR"/>
+        <segue reference="zIR-Fc-fec"/>
         <segue reference="1ks-pC-yW9"/>
         <segue reference="NPA-Jc-mtx"/>
-        <segue reference="zIR-Fc-fec"/>
+        <segue reference="DDf-t4-MDR"/>
+        <segue reference="WZT-mF-bGj"/>
     </inferredMetricsTieBreakers>
 </document>

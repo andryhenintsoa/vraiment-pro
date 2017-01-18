@@ -54,6 +54,9 @@ class LoginViewController: MainViewController {
 // When "Se connecter" is clicked
     @IBAction func connect(_ sender: AnyObject) {
         print("Connect")
+        
+        closeKeyboards(sender)
+        
         //spinnerLoad()
         
         let email = emailLabel.text
@@ -61,7 +64,7 @@ class LoginViewController: MainViewController {
         
         if(email == "" || mdp == ""){
             spinnerLoad(false)
-            alertUser(title: "Informations manquantes", message: "Vous devez fournir une adresse email et un mot de passe")
+            alertUser(title: "Informations manquantes", message: "Vous devez fournir\n une adresse email et un mot de passe")
         }
         else{
             Webservice.authentification(self, email: email!, mdp: mdp!)
@@ -90,8 +93,13 @@ class LoginViewController: MainViewController {
         
         self.clearAccountPreferences()
         
+        emailLabel.text = ""
+        pwdLabel.text = ""
+        
         Utils.userKey = ""
         Utils.userId = 0
+        
+        
     }
     
     @IBAction func closeKeyboards(_ sender: AnyObject) {
@@ -131,7 +139,7 @@ class LoginViewController: MainViewController {
         }
         
         if(!normalConnection){
-            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
+            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer\n plus tard")
         }
     }
     
@@ -167,6 +175,9 @@ class LoginViewController: MainViewController {
         userDefaults.removeObject(forKey: prefKey.userAccount.rawValue)
         userDefaults.removeObject(forKey: prefKey.userPhone.rawValue)
         userDefaults.removeObject(forKey: prefKey.userCivility.rawValue)
+        userDefaults.removeObject(forKey: prefKey.countWaitingBills.rawValue)
+        userDefaults.removeObject(forKey: prefKey.countWaitingMediation.rawValue)
+        userDefaults.removeObject(forKey: prefKey.countMessages.rawValue)
         
         userDefaults.synchronize()
     }

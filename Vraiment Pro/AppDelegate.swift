@@ -19,6 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        
+        let notificationTypes:UIUserNotificationType = [UIUserNotificationType.sound,
+                                                        UIUserNotificationType.badge,
+                                                        UIUserNotificationType.alert]
+             
+        
+        let notificationSettings = UIUserNotificationSettings(types: notificationTypes,
+                                       categories: nil)
+        UIApplication.shared.registerUserNotificationSettings(notificationSettings)
+        
         //setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red: 86/255.0, green: 90/255.0, blue: 91/255.0, alpha: 1)], for: UIControlState.normal)
         
         return true
@@ -46,6 +57,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
 //        self.saveContext()
+    }
+    
+// MARK: - Background fetching
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        completionHandler(UIBackgroundFetchResult.newData)
+        
+        //Utils.messagesNumber = 5
+        getDataNotifications()
+    }
+    
+    func getDataNotifications() {
+        
+        let req = Webservice.URL_API + "avis-message-non-lu" + Webservice.header()
+        
+        let urlRequest: URLRequest = URLRequest(url: URL(string: req)!)
+        
+        let session =  URLSession(configuration: .default) //URLSession.shared
+        
+        let task = session.dataTask(with: urlRequest) {
+            (data, response, error) -> Void in
+            
+            if let httpResponse = response as? HTTPURLResponse{
+                let statusCode = httpResponse.statusCode
+                
+                if (statusCode == 200 || statusCode == 401) {
+                    do{
+                        let myData = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
+                        DispatchQueue.main.async(execute: { () -> Void in
+                            if let data = myData as? [String:Any]{
+                                if let status = data["status"] as? Bool{
+                                    if let notifData = data["data"] as? [String:Int], status{
+                                        Utils.messagesNumber = notifData["messages"]!
+                                    }
+                                }
+                            }
+                        })
+                    }catch {
+                        print("Error with Json: \(error)")
+                    }
+                }
+            }
+            
+        }
+        
+        task.resume()
     }
 
 //    // MARK: - Core Data stack

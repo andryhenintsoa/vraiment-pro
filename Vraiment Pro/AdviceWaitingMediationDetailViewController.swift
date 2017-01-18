@@ -48,7 +48,7 @@ class AdviceWaitingMediationDetailViewController: MainViewController {
     }
 
     @IBAction func notAnswerWaitingMediation(_ sender: Any) {
-        alertConfirmUser(title: "Ne pas répondre", message: "Etes-vous sûr de ne pas vouloir répondre?") { (action) in
+        alertConfirmUser(title: "Ne pas répondre", message: "Etes-vous sûr\n de ne pas vouloir répondre ?") { (action) in
             var data:[String:Any] = [:]
             data = self.selectedAdviceMediation
             data["notAnswer"] = "yes"
@@ -82,7 +82,7 @@ class AdviceWaitingMediationDetailViewController: MainViewController {
         }
         
         if(!normalConnection){
-            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
+            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer\n plus tard")
         }
     }
     

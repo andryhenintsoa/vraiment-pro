@@ -68,12 +68,12 @@ class AdviceRequestViewController: MainViewController, UITextFieldDelegate {
     @IBAction func choosePrestation(_ sender: UIButton) {
         closeKeyboards(nil)
         if selectedClient == nil {
-            self.alertUser(title: "Erreur", message: "Vous devez renseigner le nom du client")
+            self.alertUser(title: "Erreur", message: "Vous devez renseigner\n le nom du client")
         } else {
             if(sender.currentTitle == "SMS"){
                 print("SMS")
                 if phoneLabel.text == ""{
-                    self.alertUser(title: "Erreur", message: "Vous devez renseigner le numéro du client")
+                    self.alertUser(title: "Erreur", message: "Vous devez renseigner\n le numéro du client")
                 }
                 else{
                     
@@ -103,7 +103,7 @@ class AdviceRequestViewController: MainViewController, UITextFieldDelegate {
             else if(sender.currentTitle == "Mail"){
                 print("Mail")
                 if mailLabel.text == ""{
-                    self.alertUser(title: "Erreur", message: "Vous devez renseigner l'adresse mail du client")
+                    self.alertUser(title: "Erreur", message: "Vous devez renseigner\n l'adresse mail du client")
                 }
                 else{
                     sendingType = .mail

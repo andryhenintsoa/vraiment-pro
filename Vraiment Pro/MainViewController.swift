@@ -142,7 +142,7 @@ class MainViewController: UIViewController {
     }
     
     func reloadMyViewWithError() {
-        alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
+        alertUser(title: "Erreur de connexion", message: "Veuillez réessayer\n plus tard")
     }
     
 // MARK : Functions for the notifications

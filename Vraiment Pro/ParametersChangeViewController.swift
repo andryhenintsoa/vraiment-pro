@@ -181,11 +181,11 @@ class ParametersChangeViewController: MainViewController, UITextFieldDelegate {
                 
                 if let dataKey = param["dataKey"] as? String{
                     if dataKey == "oldPwd"{
-                        alertUser(title: "Erreur", message: "Le mot de passe que vous avez écrit ne correspond pas au votre")
+                        alertUser(title: "Erreur", message: "Le mot de passe que vous avez écrit\n ne correspond pas au votre")
                     }
                     
                     else if dataKey == "newPwd"{
-                        alertUser(title: "Erreur", message: "Le changement de mot de passe n'a pas été effectué")
+                        alertUser(title: "Erreur", message: "Le changement de mot de passe\n n'a pas été effectué")
                     }
                 }
                 
@@ -197,11 +197,11 @@ class ParametersChangeViewController: MainViewController, UITextFieldDelegate {
                 if dataKey == "oldPwd"{
                     
                     if pwdNew1Label.text == ""{
-                        alertUser(title: "Erreur", message: "Le nouveau mot de passe est vide")
+                        alertUser(title: "Erreur", message: "Le nouveau mot de passe\n est vide")
                     }
                     
                     else if pwdNew1Label.text != pwdNew2Label.text{
-                        alertUser(title: "Erreur", message: "Veuillez revérifier le nouveau mot de passe")
+                        alertUser(title: "Erreur", message: "Veuillez revérifier le nouveau\n mot de passe")
                     }
                     else{
                         Webservice.changePwd(self, data: ["pwd":pwdNew1Label.text!])
@@ -209,7 +209,7 @@ class ParametersChangeViewController: MainViewController, UITextFieldDelegate {
                 }
                     
                 else if dataKey == "newPwd"{
-                    alertUser(title: "Succès", message: "Le mot de passe a été changé avec succès")
+                    alertUser(title: "Succès", message: "Le mot de passe a été changé\n avec succès")
                 }
             }
             
@@ -223,7 +223,7 @@ class ParametersChangeViewController: MainViewController, UITextFieldDelegate {
         }
         
         if(!normalConnection){
-            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
+            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer\n plus tard")
         }
     }
 

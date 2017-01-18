@@ -77,7 +77,7 @@ class AdviceWaitingMediationViewController: MainViewController {
         }
         
         if(!normalConnection){
-            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
+            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer\n plus tard")
         }
     }
     

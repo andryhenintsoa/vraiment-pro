@@ -86,17 +86,17 @@ class ProfileViewController: MainViewController {
     @IBAction func chooseSendingType(_ sender: UIButton) {
         closeKeyboards(nil)
         if selectedClient == nil {
-            self.alertUser(title: "Erreur", message: "Vous devez renseigner le nom du client")
+            self.alertUser(title: "Erreur", message: "Vous devez renseigner\n le nom du client")
         }
         else if( sendingProfileType == .partnersProfile && selectedPartners.count == 0){
-            self.alertUser(title: "Erreur", message: "Vous devez selectionner les partenaires dont vous voulez envoyer le profil")
+            self.alertUser(title: "Erreur", message: "Vous devez selectionner\n les partenaires dont vous voulez\n envoyer le profil")
         }
         else{
             var data:[String:Any] = [:]
             if(sender.currentTitle == "SMS"){
                 print("SMS")
                 if phoneLabel.text == ""{
-                    self.alertUser(title: "Erreur", message: "Vous devez renseigner le numéro du client")
+                    self.alertUser(title: "Erreur", message: "Vous devez renseigner\n le numéro du client")
                 }
                 else{
                     //sendingType = .sms
@@ -119,7 +119,7 @@ class ProfileViewController: MainViewController {
             else if(sender.currentTitle == "Mail"){
                 print("Mail")
                 if mailLabel.text == ""{
-                    self.alertUser(title: "Erreur", message: "Vous devez renseigner l'adresse mail du client")
+                    self.alertUser(title: "Erreur", message: "Vous devez renseigner\n l'adresse mail du client")
                 }
                 else{
                     //sendingType = .mail
@@ -373,7 +373,7 @@ class ProfileViewController: MainViewController {
         }
         
         if(!normalConnection){
-            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
+            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer\n plus tard")
         }
     }
     

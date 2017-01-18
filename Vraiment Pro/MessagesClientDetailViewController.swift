@@ -172,7 +172,7 @@ class MessagesClientDetailViewController: MainViewController, MFMailComposeViewC
         ABAddressBookAddRecord(addressBookRef, userRecord, nil)
         saveAddressBookChanges()
         
-        self.alertUser(title: "\(message.clientName) a été ajouté dans vos contacts.", message: nil)
+        self.alertUser(title: "\(message.clientName) a été ajouté\n dans vos contacts.", message: nil)
     }
     
     func promptForAddressBookRequestAccess() {
@@ -182,7 +182,7 @@ class MessagesClientDetailViewController: MainViewController, MFMailComposeViewC
                 if !granted {
                     // 1
                     print("Just denied")
-                    self.alertUser(title: "Erreur", message: "Vous ne pouvez pas avoir accès à vos contacts")
+                    self.alertUser(title: "Erreur", message: "Vous ne pouvez pas avoir\n accès à vos contacts")
                 } else {
                     // 2
                     print("Just authorized")

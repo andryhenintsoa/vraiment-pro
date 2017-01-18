@@ -19,6 +19,9 @@ enum prefKey:String {
     case userAccount = "userAccount"
     case userPhone = "userPhone"
     case userCivility = "userCivility"
+    case countWaitingBills = "countWaitingBills"
+    case countWaitingMediation = "countWaitingMediation"
+    case countMessages = "countMessages"
 }
 
 enum docsCategory{
@@ -30,12 +33,98 @@ class Utils{
     static var userId:Int = 0
     static var userKey:String = ""
     
-    static var adviceWaitingBills:Int = 0
-    static var adviceWaitingMediation:Int = 0
-    static var messagesNumber:Int = 0
+//    static var adviceWaitingBillsCount:Int = 0
+//    static var adviceWaitingMediationCount:Int = 0
+//    static var messagesNumberCount:Int = 0
+    
+    static var adviceWaitingBills:Int {
+        get {
+            var count = 0
+            let key = prefKey.countWaitingBills.rawValue
+            let userDefaults: UserDefaults = UserDefaults.standard
+            if userDefaults.value(forKey: key) != nil{
+                count = userDefaults.integer(forKey: key)
+            }
+            return count
+        }
+        set {
+            let userDefaults: UserDefaults = UserDefaults.standard
+            userDefaults.set(newValue, forKey: prefKey.countWaitingBills.rawValue)
+            userDefaults.synchronize()
+        }
+    }
+    static var adviceWaitingMediation:Int {
+        get {
+            var count = 0
+            let key = prefKey.countWaitingMediation.rawValue
+            let userDefaults: UserDefaults = UserDefaults.standard
+            if userDefaults.value(forKey: key) != nil{
+                count = userDefaults.integer(forKey: key)
+            }
+            return count
+        }
+        set {
+            let userDefaults: UserDefaults = UserDefaults.standard
+            userDefaults.set(newValue, forKey: prefKey.countWaitingMediation.rawValue)
+            userDefaults.synchronize()
+        }
+    }
+    static var messagesNumber:Int {
+        get {
+            var count = 0
+            let key = prefKey.countMessages.rawValue
+            let userDefaults: UserDefaults = UserDefaults.standard
+            if userDefaults.value(forKey: key) != nil{
+                count = userDefaults.integer(forKey: key)
+            }
+            return count
+        }
+        set {
+            let key = prefKey.countMessages.rawValue
+            let userDefaults: UserDefaults = UserDefaults.standard
+            
+            //For test - Use setMessagesNumber(_) function instead
+            var previousValue = 0
+            if userDefaults.value(forKey: key) != nil{
+                previousValue = userDefaults.integer(forKey: key)
+            }
+            if previousValue < newValue{
+                let scheduledAlert: UILocalNotification = UILocalNotification()
+                UIApplication.shared.cancelAllLocalNotifications()
+                scheduledAlert.fireDate=Date(timeIntervalSinceNow: 5)
+                scheduledAlert.timeZone = NSTimeZone.default
+                scheduledAlert.alertBody="Vous avez reçu une demande de contact"
+                UIApplication.shared.scheduleLocalNotification(scheduledAlert)
+            }
+            
+            UIApplication.shared.applicationIconBadgeNumber = newValue
+            
+            userDefaults.set(newValue, forKey: key)
+            userDefaults.synchronize()
+        }
+    }
     
     var listObservers:[MainViewController]! = []
     private static var instance:Utils?
+    
+    class func setMessagesNumber(_ newValue:Int){
+        var previousValue = 0
+        let key = prefKey.countMessages.rawValue
+        let userDefaults: UserDefaults = UserDefaults.standard
+        if userDefaults.value(forKey: key) != nil{
+            previousValue = userDefaults.integer(forKey: key)
+        }
+        if previousValue < newValue{
+            let scheduledAlert: UILocalNotification = UILocalNotification()
+            UIApplication.shared.cancelAllLocalNotifications()
+            scheduledAlert.applicationIconBadgeNumber=newValue
+            scheduledAlert.fireDate=Date(timeIntervalSinceNow: 15)
+            scheduledAlert.timeZone = NSTimeZone.default
+            scheduledAlert.alertBody="Vous avez reçu une demande de contact"
+            UIApplication.shared.scheduleLocalNotification(scheduledAlert)
+        }
+        messagesNumber = newValue
+    }
     
     static func getInstance() -> Utils{
         
@@ -79,9 +168,9 @@ class Utils{
         
         if type == .documents{
             list = [
-                "K-BIS(non-publié)",
+                "K-BIS (non-publié)",
                 "Assurance RCPRO",
-                "Assurance Decennale"]
+                "Assurance Décennale"]
         }
         else if type == .qualifications{
             list = [

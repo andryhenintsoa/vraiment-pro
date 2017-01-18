@@ -74,31 +74,36 @@ class ProfilePartnerAddViewController: MainViewController {
         
         if let data = wsData as? [String:Any]{
             
-            let status = data["status"] as! Bool
+            if let status = data["status"] as? Bool{
             
-            if !status{
-                alertUser(title: "Pas de données", message: nil)
-                normalConnection = true
-                return
-            }
-            
-            partnerData = data["data"] as! [[String:Any]]
-            
-            let partnersCount = CGFloat(partnerData.count)
-            
-            if partnersCount <= 4{
-                let headerHeight = (partnerTableView.frame.size.height - ( partnerTableView.rowHeight * partnersCount )) / 2
+                if !status{
+                    //alertUser(title: "Pas de données", message: nil)
+                    normalConnection = true
+                    return
+                }
                 
-                partnerTableView.contentInset = UIEdgeInsetsMake(headerHeight, 0, -headerHeight, 0)
+                partnerData = data["data"] as! [[String:Any]]
+                
+                let partnersCount = CGFloat(partnerData.count)
+                
+                if partnersCount <= 4{
+                    let headerHeight = (partnerTableView.frame.size.height - ( partnerTableView.rowHeight * partnersCount )) / 2
+                    
+                    partnerTableView.contentInset = UIEdgeInsetsMake(headerHeight, 0, -headerHeight, 0)
+                }
+                
+                partnerTableView.reloadData()
+                
+                normalConnection = true
             }
-            
-            partnerTableView.reloadData()
-            
-            normalConnection = true
+            else{
+                normalConnection = true
+                alertUser(title: "Pas de données", message: nil)
+            }
         }
         
         if(!normalConnection){
-            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard")
+            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer\n plus tard")
         }
     }
     

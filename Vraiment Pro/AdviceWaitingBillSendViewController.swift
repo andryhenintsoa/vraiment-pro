@@ -61,14 +61,14 @@ class AdviceWaitingBillSendViewController: MainViewController {
         }
         
         if(!normalConnection){
-            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer plus tard", completion: { (action) in
+            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer\n plus tard", completion: { (action) in
                 self.closeController(action)
             })
         }
     }
     
     override func reloadMyViewWithError() {
-        alertUser(title: "Erreur d'upload", message: "Veuillez réessayer plus tard")
+        alertUser(title: "Erreur d'upload", message: "Veuillez réessayer\n plus tard")
         closeController(self)
     }
     

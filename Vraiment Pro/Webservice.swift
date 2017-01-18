@@ -55,7 +55,7 @@ class Webservice{
         let imageData = UIImageJPEGRepresentation(imageToSend, 1)
         
         if(imageData==nil)  {
-            controller.alertUser(title:"Erreur", message:"Une erreur s'est produite dans le traitement de l'image")
+            controller.alertUser(title:"Erreur", message:"Une erreur s'est produite\n dans le traitement de l'image")
             return
         }
         
@@ -110,11 +110,12 @@ class Webservice{
 //        }
 //        
         let filename = "user-profile.jpg"
-        let mimetype = "image/jpg"
+        let mimetype = "image/jpeg"
         
         body.appendString("--\(boundary)\r\n")
         body.appendString("Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\"\(filename)\"\r\n")
         body.appendString("Content-Type: \(mimetype)\r\n\r\n")
+//        body.appendString("Type: \(mimetype)\r\n\r\n")
         body.append(imageDataKey)
         body.appendString("\r\n")
         
@@ -210,7 +211,7 @@ class Webservice{
         task.resume()
     }
     
-    private class func header() -> String{
+    class func header() -> String{
         return "?key=\(Utils.userKey)&user_id=\(Utils.userId)"
     }
     
@@ -342,7 +343,7 @@ class Webservice{
             load(url, controller: controller)
         }
         else{
-            controller.alertUser(title: "Erreur", message: "Il y a une erreur dans l'envoi de ce message")
+            controller.alertUser(title: "Erreur", message: "Il y a une erreur \ndans l'envoi de ce message")
         }
         
         
@@ -418,7 +419,7 @@ class Webservice{
             imageUpload(url, controller: controller, imageToSend: imageToSend!)
         }
         else{
-            controller.alertUser(title: "Erreur", message: "Il y a une erreur dans l'envoi de ce fichier")
+            controller.alertUser(title: "Erreur", message: "Il y a une erreur\n dans l'envoi de ce fichier")
         }
         
     }

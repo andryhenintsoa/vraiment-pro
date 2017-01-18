@@ -16,7 +16,7 @@ class AdvicePrestationViewController: ImagePickerViewController {
     var sendingType:SendingType!
     var joiningBillOption:JoiningBillOption?
     
-    let mois = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Décembre"]
+    let mois = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"]
     var annee = ["2017","2016","2015"]
     
     override func viewDidLoad() {
@@ -60,7 +60,7 @@ class AdvicePrestationViewController: ImagePickerViewController {
         closeKeyboard(nil)
         
         if natureLabel.text == "" {
-            self.alertUser(title: "Erreur", message: "Vous devez préciser la nature de la prestation")
+            self.alertUser(title: "Erreur", message: "Vous devez préciser\n la nature de la prestation")
         } else {
             if(sender.currentTitle == "Plus tard"){
                 print("Plus tard")
