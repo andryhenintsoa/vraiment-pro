@@ -9,6 +9,7 @@
 import UIKit
 import AddressBook
 import MessageUI
+import Contacts
 
 class MessagesClientDetailViewController: MainViewController, MFMailComposeViewControllerDelegate {
     
@@ -136,6 +137,45 @@ class MessagesClientDetailViewController: MainViewController, MFMailComposeViewC
     }
     
     @IBAction func addContact(_ sender: UIButton) {
+        
+        self.alertConfirmUser(title: "Ajout de contact", message: "Voulez-vous ajouter\n cet utilisateur à votre carnet d'adresse?") { (action) in
+            
+            if #available(iOS 9.0, *) {
+                let snidely = CNMutableContact()
+                snidely.givenName = self.message.clientName
+                snidely.familyName = ""
+                
+                let mailData:NSString = self.message.clientMail as NSString
+                
+                let email = CNLabeledValue(label: CNLabelHome, value: mailData)
+                snidely.emailAddresses.append(email)
+                
+                let phone = CNLabeledValue(label: CNLabelHome, value: CNPhoneNumber(stringValue: self.message.clientNum))
+                snidely.phoneNumbers.append(phone)
+                
+                let save = CNSaveRequest()
+                save.add(snidely, toContainerWithIdentifier: nil)
+                CNContactStore().requestAccess(for: .contacts) {
+                    ok, error in
+                    guard ok else {
+                        self.alertUser(title: "Erreur", message: "Vous ne pouvez pas avoir\n accès à vos contacts")
+                        return }
+                    do {
+                        try CNContactStore().execute(save)
+                        self.alertUser(title: "Succès", message: "\(self.message.clientName) a été\n ajouté(e) à vos contacts")
+                    } catch {
+                        print(error)
+                        self.alertUser(title: "Erreur", message: nil)
+                    }
+                }
+            } else {
+                // Fallback on earlier versions
+            }
+
+        }
+        
+        
+
         
 //        let authorizationStatus = ABAddressBookGetAuthorizationStatus()
 //        

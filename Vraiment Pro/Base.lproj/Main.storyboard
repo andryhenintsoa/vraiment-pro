@@ -236,12 +236,12 @@
             </objects>
             <point key="canvasLocation" x="134.78260869565219" y="134.5108695652174"/>
         </scene>
-        <!--Photos et Documents-->
+        <!--Photos & Documents-->
         <scene sceneID="gj2-Ia-2Po">
             <objects>
                 <navigationController id="vuM-v0-yRo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Photos et Documents" image="ict_camera_n" selectedImage="ict_camera" id="GkN-Fv-PCG"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="NaZ-bF-Q0h">
+                    <tabBarItem key="tabBarItem" title="Photos &amp; Documents" image="ict_camera_n" selectedImage="ict_camera" id="GkN-Fv-PCG"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="NaZ-bF-Q0h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -264,7 +264,7 @@
             <objects>
                 <navigationController id="DWD-OK-Vs0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Avis" image="ict_avis_n" selectedImage="ict_avis" id="Rcl-ZD-UQ2"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="uZi-zb-rpZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="uZi-zb-rpZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -635,7 +635,7 @@
             <objects>
                 <navigationController id="dXJ-Gv-x1A" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profil" image="ict_account_n" selectedImage="ict_account" id="cyg-Ui-ROS"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="W1K-Gg-35K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="W1K-Gg-35K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1005,7 +1005,7 @@
             <objects>
                 <navigationController id="dTg-27-mh4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Messages" image="ict_messages_n" selectedImage="ict_messages" id="Kn1-rS-PgX"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="W02-US-vx1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="W02-US-vx1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1635,7 +1635,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1669,7 +1669,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1703,7 +1703,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.33725490200000002" green="0.35294117650000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3334,13 +3334,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfi-lS-wCF">
-                                        <rect key="frame" x="0.0" y="40" width="414" height="543"/>
+                                        <rect key="frame" x="0.0" y="60" width="414" height="503"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efi-J4-KNG">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="483"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="443"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixg-jK-Uk2">
-                                                        <rect key="frame" x="8" y="33" width="398" height="450"/>
+                                                        <rect key="frame" x="8" y="38" width="398" height="405"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -3348,7 +3348,7 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2b0-dc-pGo" customClass="CosmosView" customModule="Vraiment_Pro" customModuleProvider="target">
-                                                        <rect key="frame" x="151" y="8" width="111" height="25"/>
+                                                        <rect key="frame" x="151" y="13" width="111" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="111" id="Ikl-OW-QU5"/>
@@ -3392,12 +3392,12 @@
                                                     <constraint firstAttribute="bottom" secondItem="Ixg-jK-Uk2" secondAttribute="bottom" id="lxR-dp-MKu"/>
                                                     <constraint firstItem="Ixg-jK-Uk2" firstAttribute="top" secondItem="2b0-dc-pGo" secondAttribute="bottom" id="sNs-ZP-Vhn"/>
                                                     <constraint firstItem="Ixg-jK-Uk2" firstAttribute="leading" secondItem="Efi-J4-KNG" secondAttribute="leading" constant="8" id="v7R-oY-mQP"/>
-                                                    <constraint firstItem="2b0-dc-pGo" firstAttribute="top" secondItem="Efi-J4-KNG" secondAttribute="topMargin" id="vVd-yn-KsY"/>
+                                                    <constraint firstItem="2b0-dc-pGo" firstAttribute="top" secondItem="Efi-J4-KNG" secondAttribute="topMargin" constant="5" id="vVd-yn-KsY"/>
                                                     <constraint firstItem="2b0-dc-pGo" firstAttribute="centerX" secondItem="Efi-J4-KNG" secondAttribute="centerX" id="zoq-hK-vqK"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0AS-gr-b8z">
-                                                <rect key="frame" x="57" y="503" width="300" height="40"/>
+                                                <rect key="frame" x="57" y="463" width="300" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZD-7X-FpL">
                                                         <rect key="frame" x="0.0" y="0.0" width="140" height="40"/>
@@ -3406,7 +3406,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="8Zt-F0-RHQ"/>
                                                             <constraint firstAttribute="width" constant="140" id="Lau-KX-IcC"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Teko-Regular" family="Teko" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" name="Teko-Regular" family="Teko" pointSize="20"/>
                                                         <inset key="contentEdgeInsets" minX="8" minY="8" maxX="5" maxY="5"/>
                                                         <state key="normal" title="Ne pas répondre">
                                                             <color key="titleColor" red="0.40424031020000001" green="0.7113801837" blue="0.17510324720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3422,9 +3422,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A86-Sf-0yz">
-                                                        <rect key="frame" x="160" y="0.0" width="140" height="40"/>
+                                                        <rect key="frame" x="160" y="0.33333333333337123" width="140" height="40"/>
                                                         <color key="backgroundColor" red="0.40424031020000001" green="0.7113801837" blue="0.17510324720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="Teko-Regular" family="Teko" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" name="Teko-Regular" family="Teko" pointSize="20"/>
                                                         <inset key="contentEdgeInsets" minX="8" minY="8" maxX="5" maxY="5"/>
                                                         <state key="normal" title="Répondre à cet avis">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3465,9 +3465,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69697131850000005" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Pfi-lS-wCF" secondAttribute="bottom" constant="40" id="1IZ-vT-yem"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pfi-lS-wCF" secondAttribute="bottom" constant="60" id="1IZ-vT-yem"/>
                                     <constraint firstItem="Pfi-lS-wCF" firstAttribute="leading" secondItem="caW-4q-5D2" secondAttribute="leading" id="AhY-Qu-hdg"/>
-                                    <constraint firstItem="Pfi-lS-wCF" firstAttribute="top" secondItem="caW-4q-5D2" secondAttribute="top" constant="40" id="eHx-HG-Kcq"/>
+                                    <constraint firstItem="Pfi-lS-wCF" firstAttribute="top" secondItem="caW-4q-5D2" secondAttribute="top" constant="60" id="eHx-HG-Kcq"/>
                                     <constraint firstAttribute="trailing" secondItem="Pfi-lS-wCF" secondAttribute="trailing" id="f6s-7z-zc5"/>
                                 </constraints>
                             </view>
@@ -3602,6 +3602,7 @@
                     <connections>
                         <outlet property="answerTextView" destination="gca-ar-hPm" id="Za9-t3-nKd"/>
                         <segue destination="4CY-4W-GN3" kind="show" identifier="toResultAnswerWaitingMediation" id="EMY-H8-xwx"/>
+                        <segue destination="cjZ-cp-pTM" kind="show" identifier="toResult" id="kaF-WV-RYc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7D-Oh-LiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3872,18 +3873,18 @@
                                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ax-uC-PlW" id="T7E-sa-5BO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RWS-uc-XrR">
-                                                            <rect key="frame" x="15.000000000000004" y="5" width="34.333333333333336" height="20.333333333333332"/>
+                                                            <rect key="frame" x="15" y="4" width="35" height="21"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ymh-Ds-4hq">
-                                                            <rect key="frame" x="15" y="25.333333333333332" width="32" height="14.333333333333334"/>
+                                                            <rect key="frame" x="15" y="25" width="32" height="15"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="12"/>
                                                             <nil key="textColor"/>
@@ -5263,11 +5264,11 @@
                                         <rect key="frame" x="0.0" y="82" width="310" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000001192092896" contentMode="center" tableViewCell="A2w-ka-RMy" id="NRO-qn-SkE">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="59.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tsh-vz-rbM">
-                                                    <rect key="frame" x="15" y="0.0" width="280" height="59.666666666666664"/>
+                                                    <rect key="frame" x="15" y="0.0" width="280" height="59"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -5549,7 +5550,7 @@
                                                 <rect key="frame" x="0.0" y="88" width="300" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dkB-jP-lJc" id="RoR-6v-hRc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="39"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oun-u1-2Ph">
@@ -5574,7 +5575,7 @@
                                                 <rect key="frame" x="0.0" y="128" width="300" height="71"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dbt-61-tzC" id="mPN-0e-WHN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="71"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hb-uF-hUF">
@@ -5631,7 +5632,7 @@
                                                 <rect key="frame" x="0.0" y="88" width="300" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KLF-QW-vdL" id="aNp-5z-ICq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="39"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJl-HY-ejB">
@@ -5656,7 +5657,7 @@
                                                 <rect key="frame" x="0.0" y="128" width="300" height="71"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fX2-3k-C6r" id="AcO-Qc-Civ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="71"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvT-7N-OAT">
@@ -6035,10 +6036,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="DM6-ZU-ybg"/>
-        <segue reference="zIR-Fc-fec"/>
-        <segue reference="1ks-pC-yW9"/>
-        <segue reference="NPA-Jc-mtx"/>
         <segue reference="DDf-t4-MDR"/>
         <segue reference="WZT-mF-bGj"/>
+        <segue reference="1ks-pC-yW9"/>
+        <segue reference="zIR-Fc-fec"/>
+        <segue reference="RlZ-Tw-NOD"/>
     </inferredMetricsTieBreakers>
 </document>

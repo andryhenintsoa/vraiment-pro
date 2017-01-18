@@ -18,6 +18,30 @@ class DocsSendDocViewController: MainViewController {
     var docsTypeList:[String] = []
     var docsTypeList2:[String] = []
     
+    private var dataSelectedIndexTable1:Int = -1
+    private var dataSelectedIndexTable2:Int = -1
+    
+    var selectedIndexTable1:Int{
+        set{
+            dataSelectedIndexTable1 = newValue
+            //dataSelectedIndexTable2 = -1
+        }
+        get{
+            return dataSelectedIndexTable1
+        }
+    }
+    
+    var selectedIndexTable2:Int{
+        set{
+            dataSelectedIndexTable2 = newValue
+            //dataSelectedIndexTable1 = -1
+        }
+        get{
+            return dataSelectedIndexTable2
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -148,9 +172,23 @@ extension DocsSendDocViewController : UITableViewDelegate{
         
         if tableView == docsTypeTableView{
             data = docsTypeList[indexPath.item]
+            
+            self.selectedIndexTable1 = indexPath.item
+            if docsTypeTableView2.indexPathForSelectedRow != nil{
+                let indexSelectedRow = docsTypeTableView2.indexPathForSelectedRow!
+                docsTypeTableView2.deselectRow(at: indexSelectedRow, animated: true)
+            }
+            
         }
         else if tableView == docsTypeTableView2{
             data = docsTypeList2[indexPath.item]
+            
+            self.selectedIndexTable2 = indexPath.item
+            if docsTypeTableView.indexPathForSelectedRow != nil {
+                let indexSelectedRow = docsTypeTableView.indexPathForSelectedRow!
+                docsTypeTableView.deselectRow(at: indexSelectedRow, animated: true)
+            }
+            
         }
         
         //sendDoc(withType: data)

@@ -110,7 +110,7 @@ class Home2ViewController: MainViewController {
             }
             
             else{
-                alertUser(title: "Erreur données", message: nil)
+                //alertUser(title: "Erreur données", message: nil)
             }
             
         }

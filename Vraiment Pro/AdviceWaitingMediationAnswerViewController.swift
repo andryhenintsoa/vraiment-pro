@@ -60,7 +60,8 @@ class AdviceWaitingMediationAnswerViewController: MainViewController {
                     Utils.adviceWaitingMediation -= 1
                     Utils.getInstance().notifyAll()
                     
-                    performSegue(withIdentifier: "toResultAnswerWaitingMediation", sender: self)
+//                    performSegue(withIdentifier: "toResultAnswerWaitingMediation", sender: self)
+                    performSegue(withIdentifier: "toResult", sender: self)
                 }
                 else{
                     alertUser(title: "Erreur", message: "Echec de l'envoi")
@@ -81,6 +82,13 @@ class AdviceWaitingMediationAnswerViewController: MainViewController {
         if segue.identifier == "toResultAnswerWaitingMediation"{
             
         }
+        else if segue.identifier == "toResult"{
+            
+            let destination = segue.destination as? ResultViewController
+            
+            destination?.textToDisplay = "Votre réponse\n a bien été envoyée"
+        }
+        
     }
     
 

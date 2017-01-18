@@ -77,7 +77,7 @@ class ProfilePartnerAddViewController: MainViewController {
             if let status = data["status"] as? Bool{
             
                 if !status{
-                    //alertUser(title: "Pas de données", message: nil)
+                    alertUser(title: "Pas de données", message: nil)
                     normalConnection = true
                     return
                 }

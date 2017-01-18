@@ -216,6 +216,11 @@ class MessagesViewController: MainViewController {
             if let dataKey = param["dataKey"] as? String{
                 
                 
+                if dataKey == "readMsg"{
+                    Utils.messagesNumber -= 1
+                    Utils.getInstance().notifyAll()
+                }
+                
                 if dataKey == "getData"{
                     let listMessages = data["data"] as! [[String:Any]]
                     
@@ -227,6 +232,9 @@ class MessagesViewController: MainViewController {
                             notificationMessagesClientNumber += 1
                         }
                     }
+                    
+                    Utils.messagesNumber = notificationMessagesClientNumber
+                    Utils.getInstance().notifyAll()
                     
                     reloadNotifications()
                     

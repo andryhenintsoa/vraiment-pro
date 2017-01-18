@@ -20,7 +20,7 @@ class ParametersViewController: MainViewController {
         let userDefaults = UserDefaults.standard
         
         var nameToDisplay = ""
-        var addressToDisplay = ""
+        var addressToDisplay = "Adresse"
         var mailToDisplay = ""
         var phoneToDisplay = ""
         
@@ -46,7 +46,17 @@ class ParametersViewController: MainViewController {
             mailToDisplay = mail!
         }
         if phone != nil{
-            phoneToDisplay = phone!
+            var tempData = ""
+            var count = 0
+            for char in phone!.characters{
+                if count % 2 == 0 && count != 0{
+                    tempData.append(" ")
+                }
+                tempData.append(char)
+                count += 1
+            }
+            
+            phoneToDisplay = tempData
         }
         
         nameLabel.text = nameToDisplay

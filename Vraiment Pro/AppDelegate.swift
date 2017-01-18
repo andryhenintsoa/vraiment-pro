@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        UIApplication.shared.setMinimumBackgroundFetchInterval(2.00)
         
         let notificationTypes:UIUserNotificationType = [UIUserNotificationType.sound,
                                                         UIUserNotificationType.badge,
@@ -62,6 +62,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // MARK: - Background fetching
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
+        print("Fetching data")
+        
         completionHandler(UIBackgroundFetchResult.newData)
         
         //Utils.messagesNumber = 5
@@ -72,37 +74,93 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let req = Webservice.URL_API + "avis-message-non-lu" + Webservice.header()
         
-        let urlRequest: URLRequest = URLRequest(url: URL(string: req)!)
+//        let urlRequest: URLRequest = URLRequest(url: URL(string: req)!)
+//        
+//        let session =  URLSession(configuration: .default) //URLSession.shared
         
-        let session =  URLSession(configuration: .default) //URLSession.shared
+        let data: NSData = NSData(contentsOf: URL(string: req)!)!
         
-        let task = session.dataTask(with: urlRequest) {
-            (data, response, error) -> Void in
-            
-            if let httpResponse = response as? HTTPURLResponse{
-                let statusCode = httpResponse.statusCode
-                
-                if (statusCode == 200 || statusCode == 401) {
-                    do{
-                        let myData = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
-                        DispatchQueue.main.async(execute: { () -> Void in
-                            if let data = myData as? [String:Any]{
-                                if let status = data["status"] as? Bool{
-                                    if let notifData = data["data"] as? [String:Int], status{
-                                        Utils.messagesNumber = notifData["messages"]!
-                                    }
-                                }
-                            }
-                        })
-                    }catch {
-                        print("Error with Json: \(error)")
+        do{
+            let myData = try JSONSerialization.jsonObject(with: data as Data, options:.allowFragments)
+            if let data = myData as? [String:Any]{
+                if let status = data["status"] as? Bool{
+                    if let notifData = data["data"] as? [String:Int], status{
+                        Utils.messagesNumber = notifData["messages"]!
                     }
                 }
             }
-            
+        }catch {
+            print("Error with Json: \(error)")
         }
         
-        task.resume()
+//        return
+//        
+//        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: OperationQueue.current!) { (response, data, error) in
+//            
+//            print("In")
+//            
+//            var newValue = 15
+//            
+//            if Utils.messagesNumber < newValue{
+//                let scheduledAlert: UILocalNotification = UILocalNotification()
+//                UIApplication.shared.cancelAllLocalNotifications()
+//                scheduledAlert.fireDate=Date(timeIntervalSinceNow: 5)
+//                scheduledAlert.timeZone = NSTimeZone.default
+//                scheduledAlert.alertBody="Vous avez reçu une demande de contact"
+//                UIApplication.shared.scheduleLocalNotification(scheduledAlert)
+//            }
+//            
+//            UIApplication.shared.applicationIconBadgeNumber = newValue
+//        }
+//        
+//        return
+//        
+//        let task = session.dataTask(with: urlRequest) {
+//            (data, response, error) -> Void in
+//            
+//            //Utils.messagesNumber = 10
+//            var newValue = 10
+//            
+//            if Utils.messagesNumber < newValue{
+//                let scheduledAlert: UILocalNotification = UILocalNotification()
+//                UIApplication.shared.cancelAllLocalNotifications()
+//                scheduledAlert.fireDate=Date(timeIntervalSinceNow: 5)
+//                scheduledAlert.timeZone = NSTimeZone.default
+//                scheduledAlert.alertBody="Vous avez reçu une demande de contact"
+//                UIApplication.shared.scheduleLocalNotification(scheduledAlert)
+//            }
+//            
+//            UIApplication.shared.applicationIconBadgeNumber = newValue
+//            
+//            
+//            
+//            return
+//            
+//            if let httpResponse = response as? HTTPURLResponse{
+//                let statusCode = httpResponse.statusCode
+//                
+//                if (statusCode == 200 || statusCode == 401) {
+//                    do{
+//                        let myData = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
+//                        DispatchQueue.main.async(execute: { () -> Void in
+//                            if let data = myData as? [String:Any]{
+//                                if let status = data["status"] as? Bool{
+//                                    if let notifData = data["data"] as? [String:Int], status{
+//                                        Utils.messagesNumber = notifData["messages"]!
+//                                    }
+//                                }
+//                            }
+//                        })
+//                    }catch {
+//                        print("Error with Json: \(error)")
+//                    }
+//                }
+//            }
+//            
+//        }
+//        
+//        task.resume()
+        
     }
 
 //    // MARK: - Core Data stack

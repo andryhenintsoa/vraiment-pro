@@ -237,7 +237,8 @@ class Webservice{
     
     class func messageRead(_ controller: MainViewController, data:[String:Any]){
         let req = URL_API_WEB + "lu-ou-non" + "?message_id=\(data["id_msg"]!)"
-        load(req, controller: controller)
+        
+        load(req, controller: controller, withLoader:false, param:["dataKey":"readMsg"])
     }
     
     class func getPreviousPwd(_ controller: MainViewController, data:[String:String]){
