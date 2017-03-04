@@ -64,7 +64,7 @@ class AdviceSummaryViewController: MainViewController {
             data["fileName"] = imageName
         } else {
             data["withFile"] = "no"
-            fileLabel.text = "Plus tard"
+            fileLabel.text = "Facture en attente"
             fileLabel.textColor = UIColor.red
             fileIcon.image = UIImage(named: "ic_warning")
         }
@@ -98,6 +98,10 @@ class AdviceSummaryViewController: MainViewController {
         if let data = wsData as? [String:Any]{
             if let dataStatus = data["status"] as? Bool{
                 if dataStatus{
+                    if let noFile = param["noFile"] as? Bool, noFile{
+                        Utils.adviceWaitingBills += 1
+                        Utils.getInstance().notifyAll()
+                    }
                     performSegue(withIdentifier: "toSendingAdviceRequest", sender: self)
                 }
                 else{

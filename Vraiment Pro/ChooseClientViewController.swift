@@ -30,7 +30,7 @@ class ChooseClientViewController: MainViewController {
         
         clientLabel.becomeFirstResponder()
         
-        clientLabel.attributedPlaceholder = NSAttributedString(string: "Nom du client", attributes: [NSFontAttributeName: clientLabel.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1) ])
+        clientLabel.attributedPlaceholder = NSAttributedString(string: "Nom du client", attributes: [NSFontAttributeName: clientLabel.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1) ])
     }
     
     override func didReceiveMemoryWarning() {
@@ -84,13 +84,6 @@ class ChooseClientViewController: MainViewController {
             // Fallback on earlier versions
         }
         
-        
-//        clients.append(["name":"test","mail":"test1@xyz.xy",
-//                         "phone":"748930298920"])
-//        clients.append(["name":"essai","mail":"test12@xyz.xy",
-//                         "phone":"472830010038"])
-//        clients.append(["name":"andry","mail":"test03@xyz.xy",
-//                         "phone":"483029837203"])
     }
     
     @IBAction func closeController(_ sender: AnyObject) {
@@ -110,7 +103,7 @@ class ChooseClientViewController: MainViewController {
             if let presentingVC = previousVC as? AdviceRequestViewController{
                 presentingVC.nameLabel.text = selectedClient?["name"]
                 if selectedClient?["phone"] != ""{
-                    presentingVC.phoneLabel.text = selectedClient?["phone"]
+                    presentingVC.phoneLabel.text = NumberFormatter.format((selectedClient?["phone"])!, withSpace: false)
                     presentingVC.editNum(nil)
                 }
                 if selectedClient?["mail"] != ""{
@@ -123,7 +116,8 @@ class ChooseClientViewController: MainViewController {
             else if let presentingVC = previousVC as? ProfileViewController{
                 presentingVC.nameLabel.text = selectedClient?["name"]
                 if selectedClient?["phone"] != ""{
-                    presentingVC.phoneLabel.text = selectedClient?["phone"]
+                    presentingVC.phoneLabel.text = NumberFormatter.format((selectedClient?["phone"])!, withSpace: false)
+                    
                     presentingVC.editNum(nil)
                 }
                 if selectedClient?["mail"] != ""{

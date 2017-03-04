@@ -20,9 +20,11 @@ class LoginViewController: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        emailLabel.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes: [NSFontAttributeName: emailLabel.font!.italic() ,NSForegroundColorAttributeName: UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1) ])
+        
+        
+        emailLabel.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes: [NSFontAttributeName: emailLabel.font!.italic() ,NSForegroundColorAttributeName: UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1) ])
             
-        pwdLabel.attributedPlaceholder = NSAttributedString(string: "Mot de passe", attributes: [NSFontAttributeName: pwdLabel.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1) ])
+        pwdLabel.attributedPlaceholder = NSAttributedString(string: "Mot de passe", attributes: [NSFontAttributeName: pwdLabel.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1) ])
         
         let userDefaults: UserDefaults = UserDefaults.standard
 
@@ -44,6 +46,7 @@ class LoginViewController: MainViewController {
         if(Utils.userKey != "" && Utils.userId != 0){
             performSegue(withIdentifier: "toMenu", sender: self)
         }
+        //performSegue(withIdentifier: "toMenu", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -146,20 +149,52 @@ class LoginViewController: MainViewController {
     private func saveAccountPreferences(_ dataUser:[String:Any]) {
         let userDefaults: UserDefaults = UserDefaults.standard
         
-        userDefaults.set(dataUser["id"], forKey: prefKey.userId.rawValue)
-        userDefaults.set(dataUser["key"], forKey: prefKey.userKey.rawValue)
-        userDefaults.set(dataUser["prenom"], forKey: prefKey.userFirstName.rawValue)
-        userDefaults.set(dataUser["nom"], forKey: prefKey.userSurName.rawValue)
-        //userDefaults.set(dataUser["adresse"], forKey: prefKey.userAddress.rawValue)
-        //userDefaults.set(dataUser["ville"], forKey: prefKey.userCity.rawValue)
-        userDefaults.set(dataUser["email"], forKey: prefKey.userMail.rawValue)
-        userDefaults.set(dataUser["compte"], forKey: prefKey.userAccount.rawValue)
-        userDefaults.set(dataUser["tel_mobile"], forKey: prefKey.userPhone.rawValue)
-        //userDefaults.set(dataUser["civilite"], forKey: prefKey.userCivility.rawValue)
+        addAccountPreferences(userDefaults, data: dataUser, dataKey: "id", prefKeyForData: .userId)
+        addAccountPreferences(userDefaults, data: dataUser, dataKey: "key", prefKeyForData: .userKey)
+        addAccountPreferences(userDefaults, data: dataUser, dataKey: "prenom", prefKeyForData: .userFirstName)
+        addAccountPreferences(userDefaults, data: dataUser, dataKey: "nom", prefKeyForData: .userSurName)
+        addAccountPreferences(userDefaults, data: dataUser, dataKey: "adresse", prefKeyForData: .userAddress)
+        addAccountPreferences(userDefaults, data: dataUser, dataKey: "ville", prefKeyForData: .userCity)
+        addAccountPreferences(userDefaults, data: dataUser, dataKey: "cp", prefKeyForData: .userPostalCode)
+        addAccountPreferences(userDefaults, data: dataUser, dataKey: "email", prefKeyForData: .userMail)
+        addAccountPreferences(userDefaults, data: dataUser, dataKey: "compte", prefKeyForData: .userAccount)
+        addAccountPreferences(userDefaults, data: dataUser, dataKey: "tel_mobile", prefKeyForData: .userPhone)
+        addAccountPreferences(userDefaults, data: dataUser, dataKey: "civilite", prefKeyForData: .userCivility)
+        addAccountPreferences(userDefaults, data: dataUser, dataKey: "rs", prefKeyForData: .userBusiness)
         
         
+//        userDefaults.set(dataUser["id"], forKey: prefKey.userId.rawValue)
+//        userDefaults.set(dataUser["key"], forKey: prefKey.userKey.rawValue)
+//        userDefaults.set(dataUser["prenom"], forKey: prefKey.userFirstName.rawValue)
+//        userDefaults.set(dataUser["nom"], forKey: prefKey.userSurName.rawValue)
+//        //userDefaults.set(dataUser["adresse"], forKey: prefKey.userAddress.rawValue)
+//        //userDefaults.set(dataUser["ville"], forKey: prefKey.userCity.rawValue)
+//        userDefaults.set(dataUser["email"], forKey: prefKey.userMail.rawValue)
+//        userDefaults.set(dataUser["compte"], forKey: prefKey.userAccount.rawValue)
+//        userDefaults.set(dataUser["tel_mobile"], forKey: prefKey.userPhone.rawValue)
+//        //userDefaults.set(dataUser["civilite"], forKey: prefKey.userCivility.rawValue)
         
         userDefaults.synchronize()
+    }
+    
+    private func addAccountPreferences(_ userDefaults: UserDefaults, data:[String:Any] ,dataKey: String, prefKeyForData: prefKey){
+        if data[dataKey] != nil{
+            print("\(prefKeyForData.rawValue) > \(data[dataKey]) ")
+            
+            if let _ = data[dataKey] as? Int{
+                userDefaults.set(data[dataKey], forKey: prefKeyForData.rawValue)
+                return
+            }
+            if let _ = data[dataKey] as? Bool{
+                userDefaults.set(data[dataKey], forKey: prefKeyForData.rawValue)
+                return
+            }
+            if let _ = data[dataKey] as? String{
+                userDefaults.set(data[dataKey], forKey: prefKeyForData.rawValue)
+                return
+            }
+        }
+       
     }
     
     func clearAccountPreferences() {
@@ -171,6 +206,8 @@ class LoginViewController: MainViewController {
         userDefaults.removeObject(forKey: prefKey.userSurName.rawValue)
         userDefaults.removeObject(forKey: prefKey.userAddress.rawValue)
         userDefaults.removeObject(forKey: prefKey.userCity.rawValue)
+        userDefaults.removeObject(forKey: prefKey.userPostalCode.rawValue)
+        userDefaults.removeObject(forKey: prefKey.userBusiness.rawValue)
         userDefaults.removeObject(forKey: prefKey.userMail.rawValue)
         userDefaults.removeObject(forKey: prefKey.userAccount.rawValue)
         userDefaults.removeObject(forKey: prefKey.userPhone.rawValue)

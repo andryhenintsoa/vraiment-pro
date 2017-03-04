@@ -22,7 +22,7 @@ class AdvicePrestationViewController: ImagePickerViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        natureLabel.attributedPlaceholder = NSAttributedString(string: "Ex : Pose de lavabo", attributes: [NSFontAttributeName: natureLabel.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1) ])
+        natureLabel.attributedPlaceholder = NSAttributedString(string: "Ex : Pose de lavabo", attributes: [NSFontAttributeName: natureLabel.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1) ])
         
         let date = Date()
         let calendar = Calendar.current
@@ -32,8 +32,6 @@ class AdvicePrestationViewController: ImagePickerViewController {
         annee = ["\(year)","\(year - 1)","\(year - 2)"]
         
         datePicker.reloadAllComponents()
-        
-        print("Current date : \(month) \(year)")
         
         datePicker.selectRow(month-1, inComponent: 0, animated:true)
         datePicker.selectRow(annee.index(of: "\(year)")!, inComponent: 1, animated:true)
@@ -63,12 +61,10 @@ class AdvicePrestationViewController: ImagePickerViewController {
             self.alertUser(title: "Erreur", message: "Vous devez préciser\n la nature de la prestation")
         } else {
             if(sender.currentTitle == "Plus tard"){
-                print("Plus tard")
                 joiningBillOption = .later
                 performSegue(withIdentifier: "toSummary", sender: sender)
             }
             else if(sender.currentTitle == "Maintenant"){
-                print("Maintenant")
                 joiningBillOption = .now
                 
                 self.segueNextName = "toSummary"

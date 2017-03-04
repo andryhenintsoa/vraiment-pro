@@ -43,7 +43,8 @@ class DocsSendPictureViewController: MainViewController {
     }
     
     func sendSamplePic() {
-        Webservice.docsSendPic(self, data: [:], imageToSend : imageToSend)
+        //Webservice.docsSendPic(self, data: [:], imageToSend : imageToSend)
+        Webservice.docsSendBAPic(self, data: [:], imageToSend : imageToSend)
     }
     
     // MARK: - Get result of WS

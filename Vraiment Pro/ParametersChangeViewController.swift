@@ -39,39 +39,65 @@ class ParametersChangeViewController: MainViewController, UITextFieldDelegate {
         var mailToDisplay = ""
         var phoneToDisplay = ""
         
-        let firstName = userDefaults.string(forKey: prefKey.userFirstName.rawValue)
-        let surName = userDefaults.string(forKey: prefKey.userSurName.rawValue)
+        let userBusiness = userDefaults.string(forKey: prefKey.userBusiness.rawValue)
+        //        let firstName = userDefaults.string(forKey: prefKey.userFirstName.rawValue)
+        //        let surName = userDefaults.string(forKey: prefKey.userSurName.rawValue)
         let address = userDefaults.string(forKey: prefKey.userAddress.rawValue)
+        let city = userDefaults.string(forKey: prefKey.userCity.rawValue)
         let mail = userDefaults.string(forKey: prefKey.userMail.rawValue)
         let phone = userDefaults.string(forKey: prefKey.userPhone.rawValue)
         
-        if firstName != nil{
-            nameToDisplay += firstName!
-        }
-        if surName != nil{
-            if nameToDisplay != ""{
-                nameToDisplay += " "
-            }
-            nameToDisplay += surName!
+        //        if firstName != nil{
+        //            nameToDisplay += firstName!
+        //        }
+        //        if surName != nil{
+        //            if nameToDisplay != ""{
+        //                nameToDisplay += " "
+        //            }
+        //            nameToDisplay += surName!
+        //        }
+        
+        if userBusiness != nil{
+            nameToDisplay += userBusiness!
         }
         if address != nil{
             addressToDisplay = address!
         }
+        if city != nil{
+            if addressToDisplay != ""{
+                addressToDisplay += "\n"
+            }
+            addressToDisplay += city!
+        }
+        
         if mail != nil{
             mailToDisplay = mail!
         }
         if phone != nil{
-            phoneToDisplay = phone!
+            
+            phoneToDisplay = NumberFormatter.format(phone!, withSpace: true)
+            
+            //            var tempData = ""
+            //            var count = 0
+            //            for char in phone!.characters{
+            //                if count % 2 == 0 && count != 0{
+            //                    tempData.append(" ")
+            //                }
+            //                tempData.append(char)
+            //                count += 1
+            //            }
+            //
+            //            phoneToDisplay = tempData
         }
         
-        nameLabel.text = nameToDisplay
-        addressLabel.text = addressToDisplay
+        nameLabel.text = (nameToDisplay == "") ? "Nom de l'entreprise" : nameToDisplay
+        addressLabel.text = (addressToDisplay == "") ? "Adresse postale\nde l'utilisateur" : addressToDisplay
         phoneLabel.text = phoneToDisplay
         mailLabel.text = mailToDisplay
         
-        pwdOldLabel.attributedPlaceholder = NSAttributedString(string: "Ancien mot de passe", attributes: [NSFontAttributeName: pwdOldLabel.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1) ])
-        pwdNew1Label.attributedPlaceholder = NSAttributedString(string: "Nouveau mot de passe", attributes: [NSFontAttributeName: pwdNew1Label.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1) ])
-        pwdNew2Label.attributedPlaceholder = NSAttributedString(string: "Confirmer le nouveau mot de passe", attributes: [NSFontAttributeName: pwdNew2Label.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1) ])
+        pwdOldLabel.attributedPlaceholder = NSAttributedString(string: "Ancien mot de passe", attributes: [NSFontAttributeName: pwdOldLabel.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1) ])
+        pwdNew1Label.attributedPlaceholder = NSAttributedString(string: "Nouveau mot de passe", attributes: [NSFontAttributeName: pwdNew1Label.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1) ])
+        pwdNew2Label.attributedPlaceholder = NSAttributedString(string: "Confirmer le nouveau mot de passe", attributes: [NSFontAttributeName: pwdNew2Label.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1) ])
         
         // Do any additional setup after loading the view.
     }
@@ -86,7 +112,7 @@ class ParametersChangeViewController: MainViewController, UITextFieldDelegate {
     }
     
     @IBAction func closeController(_ sender: AnyObject) {
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func toogleSidebar(_ sender: AnyObject) {
@@ -115,14 +141,15 @@ class ParametersChangeViewController: MainViewController, UITextFieldDelegate {
         self.scrollView.isScrollEnabled = true
         var info = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height + 50, 0.0)
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
         
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         
-        self.scrollView.scrollRectToVisible(pwdNew2Label.superview!.frame, animated: true)
+        var toFocus = pwdNew2Label.superview!.frame
+        toFocus.origin.y += pwdNew2Label.superview!.superview!.frame.origin.y
         
-        //        self.scrollView.scrollRectToVisible(mailLabel.frame, animated: true)
+        self.scrollView.scrollRectToVisible(toFocus, animated: true)
         
         self.scrollView.isScrollEnabled = false
     }
@@ -131,7 +158,7 @@ class ParametersChangeViewController: MainViewController, UITextFieldDelegate {
         //Once keyboard disappears, restore original positions
         var info = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height - 50, 0.0)
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         self.view.endEditing(true)
@@ -173,9 +200,12 @@ class ParametersChangeViewController: MainViewController, UITextFieldDelegate {
         
         if let data = wsData as? [String:Any]{
             
-            print(param)
+            print("param \(param)")
+            print("data \(data)")
             
             let status = data["status"] as! Bool
+            
+            print(status)
             
             if !status{
                 
@@ -209,7 +239,9 @@ class ParametersChangeViewController: MainViewController, UITextFieldDelegate {
                 }
                     
                 else if dataKey == "newPwd"{
-                    alertUser(title: "Succès", message: "Le mot de passe a été changé\n avec succès")
+                    alertUser(title: "Succès", message: "Le mot de passe a été changé\n avec succès", completion: { (_) in
+                            self.performSegue(withIdentifier: "toHome", sender: nil)
+                        })
                 }
             }
             

@@ -94,7 +94,7 @@ extension AdviceViewController : UICollectionViewDataSource{
         cell.notification.text = "\(notif)"
         
 //        cell.layer.borderWidth = 0.5
-//        cell.layer.borderColor = UIColor(red: 103, green: 181, blue: 45, alpha: 1).cgColor
+//        cell.layer.borderColor = UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1).cgColor
         //cell.layer.cornerRadius = 5
         
         return cell

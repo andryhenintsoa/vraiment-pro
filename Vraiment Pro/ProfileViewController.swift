@@ -42,9 +42,9 @@ class ProfileViewController: MainViewController {
         
         registerForKeyboardNotifications()
 
-        nameLabel.attributedPlaceholder = NSAttributedString(string: "Nom du client", attributes: [NSFontAttributeName: nameLabel.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1) ])
-        phoneLabel.attributedPlaceholder = NSAttributedString(string: "N° de portable", attributes: [NSFontAttributeName: phoneLabel.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1) ])
-        mailLabel.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes: [NSFontAttributeName: mailLabel.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1) ])
+        nameLabel.attributedPlaceholder = NSAttributedString(string: "Nom du client", attributes: [NSFontAttributeName: nameLabel.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1) ])
+        phoneLabel.attributedPlaceholder = NSAttributedString(string: "N° de portable", attributes: [NSFontAttributeName: phoneLabel.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1) ])
+        mailLabel.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes: [NSFontAttributeName: mailLabel.font!.italic(), NSForegroundColorAttributeName: UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1) ])
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,7 +85,7 @@ class ProfileViewController: MainViewController {
     
     @IBAction func chooseSendingType(_ sender: UIButton) {
         closeKeyboards(nil)
-        if selectedClient == nil {
+        if selectedClient == nil || nameLabel.text == "" {
             self.alertUser(title: "Erreur", message: "Vous devez renseigner\n le nom du client")
         }
         else if( sendingProfileType == .partnersProfile && selectedPartners.count == 0){
@@ -169,6 +169,7 @@ class ProfileViewController: MainViewController {
             //            print("sizeNum : \(sizeNumBefore)")
             //            print("sizeNewNum : \(sizeNum)")
             
+            
             if sizeNum == 0{
                 numDisplay = numNew
                 num = numNew
@@ -178,22 +179,22 @@ class ProfileViewController: MainViewController {
                 let lastChar = numDisplay.characters.last
                 numDisplay = String(numDisplay.characters.dropLast())
                 
-                //            print("num")
-                //            print(numNew)
-                //            print(num.appending("\(lastChar)"))
-                //            print()
-                
-                //let lastChar = numDisplay.remove(at: numDisplay.endIndex)
-                
                 if (numNew == num.appending("\(lastChar!)")){
                     //Add on last position
                     print("Add on last position")
                     
-                    num = numNew
+                    if sizeNum == 11{
+                        numNew = String(numNew.characters.dropLast())
+                        num = numNew
+                    }
+                    else{
+                        num = numNew
+                        
+                        //If next char is in a even place so add a blank space
+                        //Else don't add a blank space
+                        numDisplay += (sizeNum % 2 != 0 && sizeNum != 1) ? " \(lastChar!)" : "\(lastChar!)"
+                    }
                     
-                    //If next char is in a even place so add a blank space
-                    //Else don't add a blank space
-                    numDisplay += (sizeNum % 2 != 0 && sizeNum != 1) ? " \(lastChar!)" : "\(lastChar!)"
                     
                 }
                 else if sizeNum <= sizeNumBefore{
@@ -240,17 +241,6 @@ class ProfileViewController: MainViewController {
                             
                             cursorOffsetModified = true
                             cursorOffset = cursorPosition - 1
-                            
-                            //                        let dataDisplay = numDisplay.components(separatedBy: " ")
-                            //                        var positionOfCharToDelete = 0
-                            //                        for itemData in dataDisplay{
-                            //                            positionOfCharToDelete += 2
-                            //                            if itemData.characters.count > 2{
-                            //                                break
-                            //                            }
-                            //                        }
-                            //                        positionOfCharToDelete -= 1
-                            //                        numNew.remove(at: numNew.index(numNew.startIndex, offsetBy: positionOfCharToDelete))
                         }
                         else{
                             print("Suppress a non space char")
@@ -310,7 +300,12 @@ class ProfileViewController: MainViewController {
                         }
                         numDisplay += "\(char)"
                         count += 1
+                        if count == 10{
+                            break
+                        }
                     }
+                    numNew = numDisplay.replacingOccurrences(of: " ", with: "")
+                    num = numNew
                 }
             }
             
@@ -378,11 +373,11 @@ class ProfileViewController: MainViewController {
     }
     
     func setActive(_ button: UIButton, otherButton: UIButton? = nil){
-        button.backgroundColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1)
+        button.backgroundColor = UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1)
         button.setTitleColor(UIColor.white, for: .normal)
         
         otherButton?.backgroundColor = UIColor.white
-        otherButton?.setTitleColor(UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1), for: .normal)
+        otherButton?.setTitleColor(UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1), for: .normal)
     }
 
     
@@ -403,14 +398,15 @@ class ProfileViewController: MainViewController {
         self.scrollView.isScrollEnabled = true
         var info = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height + 50, 0.0)
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
         
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         
-        self.scrollView.scrollRectToVisible(mailLabel.superview!.frame, animated: true)
+        var toFocus = mailLabel.superview!.frame
+        toFocus.origin.y += mailLabel.superview!.superview!.frame.origin.y
         
-        //        self.scrollView.scrollRectToVisible(mailLabel.frame, animated: true)
+        self.scrollView.scrollRectToVisible(toFocus, animated: true)
         
         self.scrollView.isScrollEnabled = false
     }
@@ -419,7 +415,7 @@ class ProfileViewController: MainViewController {
         //Once keyboard disappears, restore original positions
         var info = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height - 50, 0.0)
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         self.view.endEditing(true)

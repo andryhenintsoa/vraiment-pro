@@ -14,6 +14,8 @@ class AdviceWaitingBillViewController: ImagePickerViewController {
     
     var waitingData : [Dictionary<String,Any>] = []
     
+    var noDataViewController:ResultViewController? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +37,23 @@ class AdviceWaitingBillViewController: ImagePickerViewController {
         self.displaySidebar()
     }
     
+    func displayNoDataViewController(){
+        if (noDataViewController == nil) {
+            noDataViewController = UIStoryboard.resultViewController()
+            
+            noDataViewController?.textToDisplay = "Vous n'avez pas \n d'avis en attente"
+            
+            noDataViewController?.autoHide = false
+            
+            view.addSubview(noDataViewController!.view!)
+            
+            noDataViewController!.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+            
+            addChildViewController(noDataViewController!)
+            
+        }
+    }
+    
     // MARK: - Get result of WS
     override func reloadMyView(_ wsData:Any? = nil, param:[String:Any]=[:]) {
         //spinnerLoad(false)
@@ -48,13 +67,13 @@ class AdviceWaitingBillViewController: ImagePickerViewController {
             if !status{
                 //alertUser(title: "Pas de données", message: nil)
                 normalConnection = true
-                
-                let n = self.navigationController?.viewControllers.count
-                let previousVC = self.navigationController?.viewControllers[n!-2] as! AdviceWaitingViewController
-                
-                _ = navigationController?.popViewController(animated: false)
-                
-                previousVC.performSegue(withIdentifier: "noData", sender: nil)
+//                    let n = self.navigationController?.viewControllers.count
+//                    let previousVC = self.navigationController?.viewControllers[n!-2] as! AdviceWaitingViewController
+//                    
+//                    _ = self.navigationController?.popViewController(animated: false)
+//                    
+//                    previousVC.performSegue(withIdentifier: "noData", sender: nil)
+                    displayNoDataViewController()
                 
                 return
             }
@@ -68,7 +87,7 @@ class AdviceWaitingBillViewController: ImagePickerViewController {
                 
                 waitingTableView.contentInset = UIEdgeInsetsMake(headerHeight, 0, -headerHeight, 0)
             }
-            
+            //waitingData.reverse()
             waitingTableView.reloadData()
             
             normalConnection = true
@@ -111,17 +130,19 @@ extension AdviceWaitingBillViewController : UITableViewDataSource{
         
 //        cell.nameLabel.text = (data["prenom"] as! String) + " " + (data["nom"] as! String)
         
-        
         if let client_nom = data["client_nom"]! as? String{
             cell.nameLabel.text = client_nom
         }
         
-        cell.dateLabel.text = (data["mois_prest"] as! String) + "/" + (data["annee_prest"] as! String)
+        var mois = data["mois_prest"] as! String
+        mois = (mois.characters.count < 2) ? "0\(mois)" : mois
+        
+        cell.dateLabel.text = mois + "/" + (data["annee_prest"] as! String)
         cell.contentLabel.text = data["nature_prest"] as? String
         cell.contentLabel.sizeToFit()
         
         cell.contentView.layer.borderWidth = 1
-        cell.contentView.layer.borderColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1).cgColor
+        cell.contentView.layer.borderColor = UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1).cgColor
         
         return cell
     }

@@ -41,7 +41,7 @@ class MessagesClientDetailViewController: MainViewController, MFMailComposeViewC
         messagesVPButton.setTitle("Infos VraimentPro", for: .normal)
         
         senderName.text = message.clientCivility + " " + message.clientName
-        senderPhone.setTitle(message.clientNum, for: .normal)
+        senderPhone.setTitle( NumberFormatter.format(message.clientNum, withSpace: true) , for: .normal)
         senderPhone.sizeToFit()
         senderMail.setTitle(message.clientMail, for: .normal)
         senderMail.sizeToFit()
@@ -138,7 +138,7 @@ class MessagesClientDetailViewController: MainViewController, MFMailComposeViewC
     
     @IBAction func addContact(_ sender: UIButton) {
         
-        self.alertConfirmUser(title: "Ajout de contact", message: "Voulez-vous ajouter\n cet utilisateur à votre carnet d'adresse?") { (action) in
+        self.alertConfirmUser(title: "Nouveau contact", message: "Voulez-vous ajouter\n cette fiche à vos contacts?") { (_) in
             
             if #available(iOS 9.0, *) {
                 let snidely = CNMutableContact()

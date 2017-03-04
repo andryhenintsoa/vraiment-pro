@@ -12,6 +12,7 @@ class ResultViewController: MainViewController {
 
     @IBOutlet weak var resultLabel : UILabel!
     var textToDisplay : String = ""
+    var autoHide:Bool = true
     
     override func viewDidLoad() {
         resultLabel.text = textToDisplay
@@ -19,7 +20,10 @@ class ResultViewController: MainViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.closeNavController), userInfo: nil, repeats: false)
+        if autoHide{
+            let _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.closeNavController), userInfo: nil, repeats: false)
+        }
+        
         
     }
     

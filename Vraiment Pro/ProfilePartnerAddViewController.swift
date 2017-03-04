@@ -60,10 +60,15 @@ class ProfilePartnerAddViewController: MainViewController {
             }
         }
         previousVC.selectedPartners = selectedPartners
-        
         print(previousVC.selectedPartners)
         
-        closeController(sender)
+        if previousVC.selectedPartners.count == 0{
+            self.alertUser(title: "Erreur", message: "Veuillez sélectionner\n un partenaire ou plus")
+        }
+        else{
+            closeController(sender)
+        }
+        
     }
     
     // MARK: - Get result of WS
@@ -77,7 +82,9 @@ class ProfilePartnerAddViewController: MainViewController {
             if let status = data["status"] as? Bool{
             
                 if !status{
-                    alertUser(title: "Pas de données", message: nil)
+                    alertUser(title: "Erreur", message: "Vous n'avez pas\n de partenaires", completion:{ (_) in
+                        self.closeController(self)
+                    })
                     normalConnection = true
                     return
                 }
@@ -129,28 +136,38 @@ extension ProfilePartnerAddViewController : UITableViewDataSource{
         let data = partnerData[indexPath.item]
         
         var nameToDisplay = ""
-        if let firstName = data["prenom"] as? String{
+//        if let firstName = data["prenom"] as? String{
+//            nameToDisplay += firstName
+//        }
+//        if let surName = data["nom"] as? String{
+//            if nameToDisplay != ""{
+//                nameToDisplay += " "
+//            }
+//            nameToDisplay += surName
+//        }
+        if let firstName = data["rs"] as? String{
             nameToDisplay += firstName
-        }
-        if let surName = data["nom"] as? String{
-            if nameToDisplay != ""{
-                nameToDisplay += " "
-            }
-            nameToDisplay += surName
         }
         
         cell.name.text = nameToDisplay
         
-        let rate = (Double(arc4random()) / 0xFFFFFFFF) * 5
-        cell.rate.rating = rate
-        print("Rating = \(rate)")
+        var rateToDisplay:Double = 0
+        if let rate = data["note"] as? Double{
+            rateToDisplay = rate
+        }
         
-        cell.function.text = "Metier"
+        cell.rate.rating = rateToDisplay
+        
+        var functionToDisplay = "Metier"
+        if let function = data["metiers"] as? String{
+            functionToDisplay = function
+        }
+        cell.function.text = functionToDisplay
         
         cell.checkBox.isMultipleSelectionEnabled = true
         
         cell.contentView.layer.borderWidth = 1
-        cell.contentView.layer.borderColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1).cgColor
+        cell.contentView.layer.borderColor = UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1).cgColor
         
         return cell
     }

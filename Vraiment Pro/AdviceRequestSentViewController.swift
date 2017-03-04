@@ -10,7 +10,7 @@ import UIKit
 
 class AdviceRequestSentViewController: MainViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var dataTableView: UITableView!
     
     var adviceSent : [Dictionary<String,Any>] = []
     
@@ -35,7 +35,6 @@ class AdviceRequestSentViewController: MainViewController {
     
     // MARK: - Get result of WS
     override func reloadMyView(_ wsData:Any? = nil, param:[String:Any]=[:]) {
-        //spinnerLoad(false)
         
         var normalConnection = false
         
@@ -50,16 +49,17 @@ class AdviceRequestSentViewController: MainViewController {
             }
             
             adviceSent = data["data"] as! [[String:Any]]
+            //adviceSent.reverse()
             
             let dataCount = CGFloat(adviceSent.count)
             
             if dataCount <= 4{
-                let headerHeight = (tableView.frame.size.height - ( tableView.rowHeight * dataCount )) / 2
+                let headerHeight = (dataTableView.frame.size.height - ( dataTableView.rowHeight * dataCount )) / 2
                 
-                tableView.contentInset = UIEdgeInsetsMake(headerHeight, 0, -headerHeight, 0)
+                dataTableView.contentInset = UIEdgeInsetsMake(headerHeight, 0, -headerHeight, 0)
             }
             
-            tableView.reloadData()
+            dataTableView.reloadData()
             
             normalConnection = true
         }
@@ -97,12 +97,15 @@ extension AdviceRequestSentViewController : UITableViewDataSource{
             cell.nameLabel.text = client_nom
         }
         
-        cell.dateLabel.text = (data["mois_prest"] as! String) + "/" + (data["annee_prest"] as! String)
+        var mois = data["mois_prest"] as! String
+        mois = (mois.characters.count < 2) ? "0\(mois)" : mois
+        
+        cell.dateLabel.text = mois + "/" + (data["annee_prest"] as! String)
         cell.contentLabel.text = data["nature_prest"] as? String
         cell.contentLabel.sizeToFit()
         
         cell.contentView.layer.borderWidth = 1
-        cell.contentView.layer.borderColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1).cgColor
+        cell.contentView.layer.borderColor = UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1).cgColor
         
         return cell
     }

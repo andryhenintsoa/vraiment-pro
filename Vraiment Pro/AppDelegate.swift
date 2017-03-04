@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                        categories: nil)
         UIApplication.shared.registerUserNotificationSettings(notificationSettings)
         
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red: 86/255.0, green: 90/255.0, blue: 91/255.0, alpha: 1)], for:.normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1)], for:.selected)
+        
         //setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red: 86/255.0, green: 90/255.0, blue: 91/255.0, alpha: 1)], for: UIControlState.normal)
         
         return true
@@ -74,10 +78,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let req = Webservice.URL_API + "avis-message-non-lu" + Webservice.header()
         
-//        let urlRequest: URLRequest = URLRequest(url: URL(string: req)!)
-//        
-//        let session =  URLSession(configuration: .default) //URLSession.shared
-        
         let data: NSData = NSData(contentsOf: URL(string: req)!)!
         
         do{
@@ -92,74 +92,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }catch {
             print("Error with Json: \(error)")
         }
-        
-//        return
-//        
-//        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: OperationQueue.current!) { (response, data, error) in
-//            
-//            print("In")
-//            
-//            var newValue = 15
-//            
-//            if Utils.messagesNumber < newValue{
-//                let scheduledAlert: UILocalNotification = UILocalNotification()
-//                UIApplication.shared.cancelAllLocalNotifications()
-//                scheduledAlert.fireDate=Date(timeIntervalSinceNow: 5)
-//                scheduledAlert.timeZone = NSTimeZone.default
-//                scheduledAlert.alertBody="Vous avez reçu une demande de contact"
-//                UIApplication.shared.scheduleLocalNotification(scheduledAlert)
-//            }
-//            
-//            UIApplication.shared.applicationIconBadgeNumber = newValue
-//        }
-//        
-//        return
-//        
-//        let task = session.dataTask(with: urlRequest) {
-//            (data, response, error) -> Void in
-//            
-//            //Utils.messagesNumber = 10
-//            var newValue = 10
-//            
-//            if Utils.messagesNumber < newValue{
-//                let scheduledAlert: UILocalNotification = UILocalNotification()
-//                UIApplication.shared.cancelAllLocalNotifications()
-//                scheduledAlert.fireDate=Date(timeIntervalSinceNow: 5)
-//                scheduledAlert.timeZone = NSTimeZone.default
-//                scheduledAlert.alertBody="Vous avez reçu une demande de contact"
-//                UIApplication.shared.scheduleLocalNotification(scheduledAlert)
-//            }
-//            
-//            UIApplication.shared.applicationIconBadgeNumber = newValue
-//            
-//            
-//            
-//            return
-//            
-//            if let httpResponse = response as? HTTPURLResponse{
-//                let statusCode = httpResponse.statusCode
-//                
-//                if (statusCode == 200 || statusCode == 401) {
-//                    do{
-//                        let myData = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
-//                        DispatchQueue.main.async(execute: { () -> Void in
-//                            if let data = myData as? [String:Any]{
-//                                if let status = data["status"] as? Bool{
-//                                    if let notifData = data["data"] as? [String:Int], status{
-//                                        Utils.messagesNumber = notifData["messages"]!
-//                                    }
-//                                }
-//                            }
-//                        })
-//                    }catch {
-//                        print("Error with Json: \(error)")
-//                    }
-//                }
-//            }
-//            
-//        }
-//        
-//        task.resume()
         
     }
 

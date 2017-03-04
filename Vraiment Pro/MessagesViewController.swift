@@ -25,6 +25,9 @@ class MessagesViewController: MainViewController {
     @IBOutlet weak var notificationMessagesVP: UILabel!
     @IBOutlet weak var notificationMessagesVPContainer: UIView!
     
+    @IBOutlet weak var messageView: UIView!
+    @IBOutlet weak var displayMessage: UILabel!
+    
     var messages : [Message] = []
     var messagesInfo : [MessageInfo] = []
     
@@ -32,6 +35,8 @@ class MessagesViewController: MainViewController {
     var notificationMessagesVPNumber = 0
     
     var selectedMessagesType:MessagesType = .client
+    
+    var noDataViewController:ResultViewController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +44,14 @@ class MessagesViewController: MainViewController {
         messagesClientButton.setTitle("Contacts clients", for: .normal)
         messagesVPButton.setTitle("Infos VraimentPro", for: .normal)
         
+        displayMessage.text = "Vous n'avez pas reçu\n de demande de contact"
+        
         reloadNotifications()
         
         messagesTableView.delegate = self
         
         createMessages()
+        //displaydisplayNoDataViewController()
         Webservice.messages(self)
     }
     
@@ -121,15 +129,9 @@ class MessagesViewController: MainViewController {
         
         
         if(sender == messagesClientButton){
-//            selectedMessagesType = .client
-//            setActive(sender, otherButton: messagesVPButton)
-//            setNotificationTextToGreen(.client)
             chooseMessageType(index: MessagesType.client.rawValue)
         }
         else if(sender == messagesVPButton){
-//            selectedMessagesType = .vp
-//            setActive(sender, otherButton: messagesClientButton)
-//            setNotificationTextToGreen(.vp)
             chooseMessageType(index: MessagesType.vp.rawValue)
         }
         messagesTableView.reloadData()
@@ -143,10 +145,19 @@ class MessagesViewController: MainViewController {
             
             let messagesCount = CGFloat(messages.count)
             
+            if messagesCount == 0{
+                displayNoData()
+            }else{
+                displayNoData(false)
+            }
+            
             if messagesCount <= 4{
                 let headerHeight = (messagesTableView.frame.size.height - ( messagesTableView.rowHeight * messagesCount )) / 2
                 
                 messagesTableView.contentInset = UIEdgeInsetsMake(headerHeight, 0, -headerHeight, 0)
+            }
+            else{
+                messagesTableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
             }
 
         }
@@ -157,10 +168,19 @@ class MessagesViewController: MainViewController {
             
             let messagesCount = CGFloat(messagesInfo.count)
             
+            
+            if messagesCount == 0{
+                displayNoData()
+            }else{
+                displayNoData(false)
+            }
             if messagesCount <= 4{
                 let headerHeight = (messagesTableView.frame.size.height - ( messagesTableView.rowHeight * messagesCount )) / 2
                 
                 messagesTableView.contentInset = UIEdgeInsetsMake(headerHeight, 0, -headerHeight, 0)
+            }
+            else{
+                messagesTableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
             }
 
         }
@@ -168,31 +188,59 @@ class MessagesViewController: MainViewController {
     }
     
     func setActive(_ button: UIButton, otherButton: UIButton? = nil){
-        button.backgroundColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1)
+        button.backgroundColor = UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1)
         button.setTitleColor(UIColor.white, for: .normal)
         
         otherButton?.backgroundColor = UIColor.white
-        otherButton?.setTitleColor(UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1), for: .normal)
+        otherButton?.setTitleColor(UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1), for: .normal)
     }
     
     func setNotificationTextToGreen(_ messageType:MessagesType){
         if messageType == .client{
             
-            notificationMessagesClient.textColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1)
+            notificationMessagesClient.textColor = UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1)
             notificationMessagesClient.backgroundColor = UIColor.white
             
             notificationMessagesVP.textColor = UIColor.white
-            notificationMessagesVP.backgroundColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1)
+            notificationMessagesVP.backgroundColor = UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1)
         }
         
         else{
-            notificationMessagesVP.textColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1)
+            notificationMessagesVP.textColor = UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1)
             notificationMessagesVP.backgroundColor = UIColor.white
             
             notificationMessagesClient.textColor = UIColor.white
-            notificationMessagesClient.backgroundColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1)
+            notificationMessagesClient.backgroundColor = UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1)
         }
         
+    }
+    
+    func displayNoDataViewController(){
+        if (noDataViewController == nil) {
+            noDataViewController = UIStoryboard.resultViewController()
+            
+            noDataViewController?.textToDisplay = "Vous n'avez pas reçu\n de demande de contact"
+            
+            noDataViewController?.autoHide = false
+            
+            view.addSubview(noDataViewController!.view!)
+            
+            noDataViewController!.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+            
+            addChildViewController(noDataViewController!)
+            
+        }
+    }
+    
+    func displayNoData(_ show:Bool = true){
+        if(show){
+            messageView.alpha = 1
+            messagesTableView.alpha = 0
+        }
+        else{
+            messageView.alpha = 0
+            messagesTableView.alpha = 1
+        }
     }
     
 // MARK: - Get result of WS
@@ -223,6 +271,12 @@ class MessagesViewController: MainViewController {
                 
                 if dataKey == "getData"{
                     let listMessages = data["data"] as! [[String:Any]]
+                    
+                    if listMessages.count == 0{
+                        //displayNoDataViewController()
+                        displayNoData()
+                        return
+                    }
                     
                     var messageTemp:Message?
                     for itemMessages in listMessages {
@@ -335,7 +389,7 @@ extension MessagesViewController : UITableViewDataSource{
             cell.dateLabel.text = data.dateCreation
             
             cell.contentView.layer.borderWidth = 1
-            cell.contentView.layer.borderColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1).cgColor
+            cell.contentView.layer.borderColor = UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1).cgColor
             
             return cell
         }
@@ -368,7 +422,7 @@ extension MessagesViewController : UITableViewDataSource{
             cell.dateLabel.text = data.dateCreation
             
             cell.contentView.layer.borderWidth = 1
-            cell.contentView.layer.borderColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1).cgColor
+            cell.contentView.layer.borderColor = UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1).cgColor
             
             return cell
         }
@@ -384,3 +438,5 @@ extension MessagesViewController : UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
+
+

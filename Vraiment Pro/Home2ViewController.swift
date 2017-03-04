@@ -17,6 +17,7 @@ class Home2ViewController: MainViewController {
     
     var test = 0
     let categoryIdentifier = "blablabla"
+    var updateBadgeTimer:Timer!
     
     deinit{
         Utils.getInstance().removeObserver(self)
@@ -37,7 +38,7 @@ class Home2ViewController: MainViewController {
         
         //updateBadgeNumber()
         
-//        let _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.updateBadgeNumber), userInfo: nil, repeats: false)
+        updateBadgeTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.updateBadgeNumber), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,17 +63,22 @@ class Home2ViewController: MainViewController {
     }
     
     func updateBadgeNumber() {
+        if Utils.userId == 0{
+            updateBadgeTimer.invalidate()
+        }
+        Webservice.numberNotifications(self)
+        
 //        print("test update")
 //        Utils.messagesNumber = 3
         
-        let scheduledAlert: UILocalNotification = UILocalNotification()
-        UIApplication.shared.cancelAllLocalNotifications()
-        scheduledAlert.applicationIconBadgeNumber=1
-        scheduledAlert.fireDate=Date(timeIntervalSinceNow: 15)
-        scheduledAlert.timeZone = NSTimeZone.default
-        scheduledAlert.repeatInterval=NSCalendar.Unit.day
-        scheduledAlert.alertBody="Vous avez reçu une demande de contact"
-        UIApplication.shared.scheduleLocalNotification(scheduledAlert)
+//        let scheduledAlert: UILocalNotification = UILocalNotification()
+//        UIApplication.shared.cancelAllLocalNotifications()
+//        scheduledAlert.applicationIconBadgeNumber=1
+//        scheduledAlert.fireDate=Date(timeIntervalSinceNow: 15)
+//        scheduledAlert.timeZone = NSTimeZone.default
+//        scheduledAlert.repeatInterval=NSCalendar.Unit.day
+//        scheduledAlert.alertBody="Vous avez reçu une demande de contact"
+//        UIApplication.shared.scheduleLocalNotification(scheduledAlert)
     }
     
     // MARK: - Get result of WS
@@ -81,30 +87,24 @@ class Home2ViewController: MainViewController {
         
         var normalConnection = false
         
-        //print(wsData)
-        
         if let data = wsData as? [String:Any]{
             
             if let status = data["status"] as? Bool{
                 if !status{
-//                    alertUser(title: "Pas de données", message: nil)
                     normalConnection = true
                     return
                 }
                 
-                print(data)
+                //print(data)
                 
                 if let notifData = data["data"] as? [String:Int]{
                     Utils.adviceWaitingBills = notifData["nbr_fact"]!
                     Utils.adviceWaitingMediation = notifData["avis_mediation"]!
                     Utils.messagesNumber = notifData["messages"]!
                 }
-                    
-                else{
-                    alertUser(title: "Erreur données", message: nil)
-                }
                 
-                menuCollectionView.reloadData()
+                Utils.getInstance().notifyAll()
+                //menuCollectionView.reloadData()
                 
                 normalConnection = true
             }
@@ -116,7 +116,7 @@ class Home2ViewController: MainViewController {
         }
         
         if(!normalConnection){
-            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer\n plus tard")
+//            alertUser(title: "Erreur de connexion", message: "Veuillez réessayer\n plus tard")
         }
     }
     
@@ -125,6 +125,10 @@ class Home2ViewController: MainViewController {
     }
     
     // MARK: - Navigation
+    
+    @IBAction func toHome(sender: UIStoryboardSegue) {
+    
+    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -132,8 +136,22 @@ class Home2ViewController: MainViewController {
             let cell = sender as! UICollectionViewCell
             let indexPath = self.menuCollectionView.indexPath(for: cell)
             let destinationController = segue.destination as! UITabBarController
+            
+            destinationController.tabBar.items?[3].title = "Photos & Documents"
+            
+            if #available(iOS 10.0, *) {
+                destinationController.tabBar.unselectedItemTintColor = UIColor(red: 86/255.0, green: 90/255.0, blue: 91/255.0, alpha: 1)
+            } else {
+                for item in destinationController.tabBar.items! as [UITabBarItem] {
+                    if let image = item.image {
+                        item.image = image.withRenderingMode(.alwaysOriginal)
+                    }
+                }
+            }
+            
+            destinationController.tabBar.tintColor = UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1)
+            
             destinationController.selectedIndex = (indexPath?.row)!
-            //self.present(destinationController, animated: true, completion:nil)
         }
     }
     
@@ -159,7 +177,7 @@ extension Home2ViewController : UICollectionViewDataSource{
         if(indexPath.row == 0){
             let adviceNumber = Utils.adviceWaitingBills + Utils.adviceWaitingMediation
             
-            print(adviceNumber)
+            //print(adviceNumber)
             
             if adviceNumber != 0{
                 cell.notification.text = String(adviceNumber)
@@ -172,7 +190,7 @@ extension Home2ViewController : UICollectionViewDataSource{
         else if(indexPath.row == 2){
             let messagesNumber = Utils.messagesNumber
             
-            print(messagesNumber)
+            //print(messagesNumber)
             
             if messagesNumber != 0{
                 cell.notification.text = String(messagesNumber)

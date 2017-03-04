@@ -30,14 +30,16 @@ class MainViewController: UIViewController {
 // MARK: - Functions for the sidebar
     func displaySidebar(_ position:CGFloat = 0, close:Bool = false) {
         
-        if leftViewController != nil{
-            animateSidebarXPosition(self.view.frame.width)
-            leftViewController?.closeSideBar(nil)
+        if close == true{
+            //animateSidebarXPosition(position)
             leftViewController = nil
             return
         }
         
-        addSidebarViewController()
+        if leftViewController == nil{
+            addSidebarViewController()
+        }
+        
         animateSidebarXPosition(position)
         
     }
@@ -72,7 +74,7 @@ class MainViewController: UIViewController {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
             
             self.leftViewController!.view.frame.origin.x = targetPosition
-            }, completion: completion)
+            }, completion: nil)
     }
 
 // MARK: - Functions for the loading spinner
@@ -164,12 +166,15 @@ class MainViewController: UIViewController {
 
 
 
-private extension UIStoryboard {
+extension UIStoryboard {
     class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: Bundle.main) }
     
     class func sidebarViewController() -> SidebarViewController? {
         return mainStoryboard().instantiateViewController(withIdentifier: "SidebarViewController") as? SidebarViewController
     }
     
+    class func resultViewController() -> ResultViewController? {
+        return mainStoryboard().instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController
+    }
 }
 

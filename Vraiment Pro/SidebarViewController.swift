@@ -34,6 +34,10 @@ class SidebarViewController: UIViewController {
             nameToDisplay += surName!
         }
         
+        let userBusiness = userDefaults.string(forKey: prefKey.userBusiness.rawValue)
+        if userBusiness != nil{
+            nameToDisplay = userBusiness!
+        }
         userNameLabel.text = nameToDisplay
         
         self.contentSidebarView.delegate = self
@@ -46,9 +50,15 @@ class SidebarViewController: UIViewController {
     }
     
     @IBAction func closeSideBar(_ sender: AnyObject?) {
+        
+        
+        
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
             self.view.frame.origin.x = self.view.bounds.width
-            }, completion: nil)
+        }, completion: {(_) in
+            let presentingController = self.presentingViewController as! MainViewController
+            presentingController.displaySidebar(self.view.frame.width, close: true)
+        })
     }
     
     

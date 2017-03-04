@@ -14,6 +14,8 @@ class AdviceWaitingMediationViewController: MainViewController {
     
     var waitingData : [Dictionary<String,Any>] = []
     
+    var noDataViewController:ResultViewController? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +47,23 @@ class AdviceWaitingMediationViewController: MainViewController {
         self.displaySidebar()
     }
     
+    func displayNoDataViewController(){
+        if (noDataViewController == nil) {
+            noDataViewController = UIStoryboard.resultViewController()
+            
+            noDataViewController?.textToDisplay = "Vous n'avez pas \n d'avis en attente"
+            
+            noDataViewController?.autoHide = false
+            
+            view.addSubview(noDataViewController!.view!)
+            
+            noDataViewController!.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+            
+            addChildViewController(noDataViewController!)
+            
+        }
+    }
+    
     // MARK: - Get result of WS
     override func reloadMyView(_ wsData:Any? = nil, param:[String:Any]=[:]) {
         //spinnerLoad(false)
@@ -55,9 +74,24 @@ class AdviceWaitingMediationViewController: MainViewController {
             
             let status = data["status"] as! Bool
             
+//            if !status{
+//                alertUser(title: "Pas de données", message: nil)
+//                normalConnection = true
+//                return
+//            }
+            
             if !status{
-                alertUser(title: "Pas de données", message: nil)
+                //alertUser(title: "Pas de données", message: nil)
                 normalConnection = true
+                
+                //let n = self.navigationController?.viewControllers.count
+                //let previousVC = self.navigationController?.viewControllers[n!-2] as! AdviceWaitingViewController
+                
+                //_ = navigationController?.popViewController(animated: false)
+                
+                //previousVC.performSegue(withIdentifier: "noData", sender: nil)
+                
+                displayNoDataViewController()
                 return
             }
             
@@ -71,6 +105,7 @@ class AdviceWaitingMediationViewController: MainViewController {
                 waitingTableView.contentInset = UIEdgeInsetsMake(headerHeight, 0, -headerHeight, 0)
             }
             
+            //waitingData.reverse()
             waitingTableView.reloadData()
             
             normalConnection = true
@@ -114,7 +149,11 @@ extension AdviceWaitingMediationViewController : UITableViewDataSource{
         }
         
         cell.contentLabel.text = data["nature_prest"] as? String
-        data["date"] = (data["mois_prest"]! as? String)! + "/" + (data["annee_prest"]! as? String)!
+        
+        var mois = data["mois_prest"] as! String
+        mois = (mois.characters.count < 2) ? "0\(mois)" : mois
+        
+        data["date"] = mois + "/" + (data["annee_prest"]! as? String)!
         cell.dateLabel.text = data["date"]! as? String
         
         if let note = data["note"] as? Int{
@@ -127,7 +166,7 @@ extension AdviceWaitingMediationViewController : UITableViewDataSource{
         
         
         cell.contentView.layer.borderWidth = 1
-        cell.contentView.layer.borderColor = UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1).cgColor
+        cell.contentView.layer.borderColor = UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1).cgColor
         
         return cell
     }

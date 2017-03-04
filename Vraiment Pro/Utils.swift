@@ -15,10 +15,12 @@ enum prefKey:String {
     case userSurName = "userSurName"
     case userAddress = "userAdress"
     case userCity = "userCity"
+    case userPostalCode = "userPostalCode"
     case userMail = "userMail"
     case userAccount = "userAccount"
     case userPhone = "userPhone"
     case userCivility = "userCivility"
+    case userBusiness = "userBusiness"
     case countWaitingBills = "countWaitingBills"
     case countWaitingMediation = "countWaitingMediation"
     case countMessages = "countMessages"
@@ -93,7 +95,7 @@ class Utils{
                 UIApplication.shared.cancelAllLocalNotifications()
                 scheduledAlert.fireDate=Date(timeIntervalSinceNow: 5)
                 scheduledAlert.timeZone = NSTimeZone.default
-                scheduledAlert.alertBody="Vous avez reçu une demande de contact"
+                scheduledAlert.alertBody="Vous avez reçu\n une demande de contact"
                 UIApplication.shared.scheduleLocalNotification(scheduledAlert)
             }
             

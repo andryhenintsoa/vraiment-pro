@@ -23,7 +23,7 @@ class DocsTypeTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
         if (selected) {
-            self.content.textColor =  UIColor(red: 103/255.0, green: 181/255.0, blue: 45/255.0, alpha: 1)
+            self.content.textColor =  UIColor(red: 68/255.0, green: 161/255.0, blue: 43/255.0, alpha: 1)
         } else {
             self.content.textColor = UIColor.black
         }

@@ -16,6 +16,9 @@ class ImagePickerViewController: MainViewController, UIImagePickerControllerDele
     var imageSource:UIImagePickerControllerSourceType!
     var imagePreviewVC:ImagePreviewViewController? = nil
     
+    var timer:Timer!
+    var countTimer:Int = 0
+    
     func chooseTakingPictureMode(_ title:String? = nil, withCancelButton:Bool = true) {
         let alertController = UIAlertController(title: title,
                                                 message: nil,
@@ -91,12 +94,6 @@ class ImagePickerViewController: MainViewController, UIImagePickerControllerDele
     }
     
     func performNext(_ goNext:Bool = true){
-        let currentWindow = UIApplication.shared.keyWindow
-        if imagePreviewVC != nil{
-            currentWindow?.sendSubview(toBack: imagePreviewVC!.view!)
-            imagePreviewVC?.view.bounds.origin.x = self.view.bounds.width
-            imagePreviewVC = nil
-        }
         
         
         if goNext{
@@ -105,6 +102,48 @@ class ImagePickerViewController: MainViewController, UIImagePickerControllerDele
         else{
             self.takePicture(with: .photoLibrary)
         }
+        
+        
+        if imagePreviewVC != nil{
+            timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.hidePreview), userInfo: nil, repeats: false)
+        }
+        
+    }
+    
+    func hidePreview(){
+        
+//        if countTimer == 0{
+        
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+                //self.imagePreviewVC?.view.bounds.origin.x = self.view.bounds.width
+                self.imagePreviewVC?.view.alpha = 0
+            }, completion: { (_) in
+                let currentWindow = UIApplication.shared.keyWindow
+                let imagePreviewView = self.imagePreviewVC!.view!
+                currentWindow?.sendSubview(toBack: imagePreviewView)
+                self.imagePreviewVC = nil
+            })
+            
+//            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {})
+//                
+//                
+//                
+//            UIView.animate(withDuration: 0.5, animations: {
+//                self.imagePreviewVC?.view.bounds.origin.x = self.view.bounds.width
+//                self.countTimer += 1
+//            })
+//        }
+//        else{
+//            let currentWindow = UIApplication.shared.keyWindow
+//            currentWindow?.sendSubview(toBack: self.imagePreviewVC!.view!)
+//            self.imagePreviewVC = nil
+//            self.timer.invalidate()
+//        }
+        
+        
+        
+        
+        
     }
     
     func displayPreview(){
@@ -131,14 +170,80 @@ class ImagePickerViewController: MainViewController, UIImagePickerControllerDele
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+    func hidePicker(){
         dismiss(animated: true, completion: nil)
+    }
+    
+    func radians (_ degrees:Double) -> Double {return degrees * M_PI/180;}
+    
+    func rotateImageFromCamera(_ theImage:UIImage) ->  UIImage{
         
-        self.imageToSend = info[UIImagePickerControllerOriginalImage] as! UIImage!
+        print("Orientation image: \(theImage.imageOrientation.rawValue)")
+        
+        if (theImage.imageOrientation == .up || theImage.imageOrientation == .down){
+            return theImage
+        }
+        
+        UIGraphicsBeginImageContext(theImage.size)
+        
+        let context:CGContext = UIGraphicsGetCurrentContext()!
+        
+        context.rotate(by: CGFloat(radians(0)))
+        
+        theImage.draw(at: CGPoint(x: 0, y: 0))
+        
+//        let areaSize = CGRect(x: 0, y: 0, width: theImage.size.width, height: theImage.size.height)
+//        theImage.draw(in: areaSize)
+        
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return newImage
+        
+//        let oldImage:UIImage = theImage
+//        let degrees:CGFloat = 90.0
+//        
+//        
+//        
+//        let rotatedViewBox: UIView = UIView(frame: CGRect(x:0, y:0, width:oldImage.size.width, height:oldImage.size.height))
+////        let t: CGAffineTransform = CGAffineTransform(rotationAngle: degrees * CGFloat(M_PI / 180))
+////        
+////        rotatedViewBox.transform = t
+//        
+//        print("width \(rotatedViewBox.frame.size.width)")
+//        print("height \(rotatedViewBox.frame.size.height)")
+//        
+////        let rotatedSize: CGSize = rotatedViewBox.frame.size
+//        let rotatedSize: CGSize = oldImage.size
+//        //Create the bitmap context
+//        UIGraphicsBeginImageContext(rotatedSize)
+//        let bitmap: CGContext = UIGraphicsGetCurrentContext()!
+//        //Move the origin to the middle of the image so we will rotate and scale around the center.
+//        bitmap.translateBy(x: rotatedSize.width / 2, y: rotatedSize.height / 2)
+//        //Rotate the image context
+//        bitmap.rotate(by: (degrees * CGFloat(M_PI / 180)))
+//        //Now, draw the rotated/scaled image into the context
+//        //bitmap.scaleBy(x: 1.0, y: -1.0)
+//        bitmap.draw(oldImage.cgImage!, in: CGRect(x:-oldImage.size.width / 2, y:-oldImage.size.height / 2, width:oldImage.size.width, height:oldImage.size.height))
+//        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+//        UIGraphicsEndImageContext()
+//        return newImage
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+        //dismiss(animated: true, completion: nil)
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.hidePicker), userInfo: nil, repeats: false)
         
         if imageSource == .camera {
+            
+            let theImage = rotateImageFromCamera(info[UIImagePickerControllerOriginalImage] as! UIImage!)
+            
+            self.imageToSend = theImage
             performNext()
+            //displayPreview()
+            
         } else if imageSource == .photoLibrary{
+            self.imageToSend = info[UIImagePickerControllerOriginalImage] as! UIImage!
             displayPreview()
         }
     }
@@ -150,7 +255,6 @@ class ImagePickerViewController: MainViewController, UIImagePickerControllerDele
 
 
 private extension UIStoryboard {
-    class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: Bundle.main) }
     
     class func imagePreviewViewController() -> ImagePreviewViewController? {
         return mainStoryboard().instantiateViewController(withIdentifier: "imagePreview") as? ImagePreviewViewController

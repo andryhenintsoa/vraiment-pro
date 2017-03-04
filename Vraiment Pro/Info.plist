@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.14</string>
+	<string>1.0.30</string>
 	<key>CFBundleVersion</key>
-	<string>15</string>
+	<string>31</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>tel</string>
@@ -41,7 +41,7 @@
 	<key>NSContactsUsageDescription</key>
 	<string>Donner accès à votre liste de contacts</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Donner accès à votre gallerie</string>
+	<string>Donner accès à votre galerie photo</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Raleway-Bold.ttf</string>

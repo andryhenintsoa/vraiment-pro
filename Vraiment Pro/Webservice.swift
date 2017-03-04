@@ -137,7 +137,6 @@ class Webservice{
         
         if let encoded = url.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
             let requestURL = URL(string: encoded){
-            print(requestURL)
             
             load(requestURL, controller: controller, withLoader:withLoader, param:param)
         }
@@ -188,7 +187,12 @@ class Webservice{
                         let myData = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
                         
                         normalConnection = true
-                        controller.reloadMyView(myData, param:param)
+                        
+                        DispatchQueue.main.async(execute: { () -> Void in
+                            controller.reloadMyView(myData, param:param)
+                        })
+                        
+    
                         return
                         
                         
@@ -202,7 +206,10 @@ class Webservice{
             }
             
             if(!normalConnection){
-                controller.reloadMyViewWithError()
+                DispatchQueue.main.async(execute: { () -> Void in
+                    controller.reloadMyViewWithError()
+                })
+                
                 return
             }
             
@@ -243,12 +250,12 @@ class Webservice{
     
     class func getPreviousPwd(_ controller: MainViewController, data:[String:String]){
         let req = URL_API_WEB + "comparer-mot-de-passe" + header() + "&ancien_mdp=\(data["pwd"]!)"
-        load(req, controller: controller, withLoader:false, param:["dataKey":"oldPwd"])
+        load(req, controller: controller, withLoader:true, param:["dataKey":"oldPwd"])
     }
     
     class func changePwd(_ controller: MainViewController, data:[String:String]){
         let req = URL_API_WEB + "modifier-mot-de-passe" + header() + "&nouveau_mdp=\(data["pwd"]!)"
-        load(req, controller: controller, withLoader:false, param:["dataKey":"newPwd"])
+        load(req, controller: controller, withLoader:true, param:["dataKey":"newPwd"])
     }
     
     class func adviceSent(_ controller: MainViewController){
@@ -291,42 +298,67 @@ class Webservice{
         if data["withFile"] == "no"{
             
             if data["sendingType"]! == SendingType.mail.rawValue{
-                req = URL_API + "avis-envoie-demande-mail" + header() + "&to=\(data["mail"]!)&nom_de=\(data["name"]!)&mois=\(data["prestationMonth"]!)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
+                
+                var prestationMonth = "\(data["prestationMonth"]!)"
+                
+                if (prestationMonth.characters.count < 2){
+                    prestationMonth = " " + prestationMonth
+                }
+                
+                req = URL_API + "avis-envoie-demande-mail" + header() + "&to=\(data["mail"]!)&nom_de=\(data["name"]!)&mois=\(prestationMonth)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
             }
             else if data["sendingType"]! == SendingType.sms.rawValue{
                 
 //                let phoneTemp = Int(data["phone"] as! String)
 //                let phoneSend = "33\(phoneTemp)"
                 
-                let phoneSend = data["phone"]! as String
+                let phoneSend = NumberFormatter.format((data["phone"]! as String), withPrefix: "33")
                 
+                var prestationMonth = "\(data["prestationMonth"]!)"
                 
-                req = URL_API + "avis-envoie-demande-sms" + header() + "&num=\(phoneSend)&nom_de=\(data["name"]!)&mois=\(data["prestationMonth"]!)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
+                if (prestationMonth.characters.count < 2){
+                    prestationMonth = " " + prestationMonth
+                }
+                
+                req = URL_API + "avis-envoie-demande-sms" + header() + "&num=\(phoneSend)&nom_de=\(data["name"]!)&mois=\(prestationMonth)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
             }
             print("req : \(req)")
             if let encoded = req.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
                 let url = URL(string: encoded){
-                print(url)
                 
-                load(url, controller: controller)
+                load(url, controller: controller, withLoader:true, param:["noFile":true])
             }
             
         }
         else{
             if data["sendingType"] == SendingType.mail.rawValue{
-                req = URL_API + "demande-avis-avec-facture-mail" + header() + "&to=\(data["mail"]!)&nom_de=\(data["name"]!)&mois=\(data["prestationMonth"]!)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
+                
+                var prestationMonth = "\(data["prestationMonth"]!)"
+                
+                if (prestationMonth.characters.count < 2){
+                    prestationMonth = " " + prestationMonth
+                }
+                
+                req = URL_API + "demande-avis-avec-facture-mail" + header() + "&to=\(data["mail"]!)&nom_de=\(data["name"]!)&mois=\(prestationMonth)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
                 
                 //imageUpload(req, controller: controller, imageToSend: imageToSend!)
             }
             else if data["sendingType"] == SendingType.sms.rawValue{
-                req = URL_API + "demande-avis-avec-facture-sms" + header() + "&num=\(data["phone"]!)&nom_de=\(data["name"]!)&mois=\(data["prestationMonth"]!)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
+                
+                let phoneSend = NumberFormatter.format((data["phone"]! as String), withPrefix: "33")
+                
+                var prestationMonth = "\(data["prestationMonth"]!)"
+                
+                if (prestationMonth.characters.count < 2){
+                    prestationMonth = " " + prestationMonth
+                }
+                
+                req = URL_API + "demande-avis-avec-facture-sms" + header() + "&num=\(phoneSend)&nom_de=\(data["name"]!)&mois=\(prestationMonth)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
                 //imageUpload(req, controller: controller, imageToSend: imageToSend!)
             }
             
             if let encoded = req.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
                 let url = URL(string: encoded){
-                print(url)
-                
                 imageUpload(url, controller: controller, imageToSend: imageToSend!)
             }
         }
@@ -339,7 +371,6 @@ class Webservice{
         
         if let encoded = req.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
             let url = URL(string: encoded){
-            print(url)
             
             load(url, controller: controller)
         }
@@ -363,7 +394,7 @@ class Webservice{
 //                let phoneTemp = Int(data["phone"] as! String)
 //                let phoneSend = "33\(phoneTemp)"
                 
-                let phoneSend = data["phone"] as! String
+                let phoneSend = NumberFormatter.format((data["phone"]! as! String), withPrefix: "33")
                 
                 req = URL_API + "envoyer-mon-profil-sms" + header() + "&num=\(phoneSend)"
             }
@@ -407,6 +438,14 @@ class Webservice{
         
     }
     
+    class func docsSendBAPic(_ controller: MainViewController, data:[String:String], imageToSend:UIImage? = nil){
+        
+        let req = URL_API + "photo-avant-apres" + header()
+        
+        imageUpload(req, controller: controller, imageToSend: imageToSend!)
+        
+    }
+    
     class func docsSendDoc(_ controller: MainViewController, data:[String:String], imageToSend:UIImage? = nil){
         
         //imageUpload(req, controller: controller, imageToSend: imageToSend!)
@@ -415,7 +454,6 @@ class Webservice{
         
         if let encoded = req.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
             let url = URL(string: encoded){
-            print(url)
             
             imageUpload(url, controller: controller, imageToSend: imageToSend!)
         }
@@ -425,7 +463,20 @@ class Webservice{
         
     }
     
+    class func pwdForgottenGetCode(_ controller: MainViewController, data:[String:Any]){
+        let req = URL_API_WEB + "verify-email?email=\(data["mail"]!)"
+        load(req, controller: controller)
+    }
     
+    class func pwdForgottenConfirmCode(_ controller: MainViewController, data:[String:Any]){
+        let req = URL_API_WEB + "verify-code?code=\(data["code"]!)&id=\(data["idUser"]!)"
+        load(req, controller: controller)
+    }
+    
+    class func pwdForgottenChange(_ controller: MainViewController, data:[String:Any]){
+        let req = URL_API_WEB + "changer-mdp?mdp=\(data["pwd"]!)&id=\(data["idUser"]!)"
+        load(req, controller: controller)
+    }
     
 }
 
