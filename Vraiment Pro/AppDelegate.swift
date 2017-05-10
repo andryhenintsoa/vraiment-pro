@@ -14,21 +14,14 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var timerAutoLoad:Timer?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        UIApplication.shared.setMinimumBackgroundFetchInterval(2.00)
+        registerForPushNotifications(application)
         
-        let notificationTypes:UIUserNotificationType = [UIUserNotificationType.sound,
-                                                        UIUserNotificationType.badge,
-                                                        UIUserNotificationType.alert]
-             
-        
-        let notificationSettings = UIUserNotificationSettings(types: notificationTypes,
-                                       categories: nil)
-        UIApplication.shared.registerUserNotificationSettings(notificationSettings)
+        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         
         
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red: 86/255.0, green: 90/255.0, blue: 91/255.0, alpha: 1)], for:.normal)
@@ -71,74 +64,121 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         completionHandler(UIBackgroundFetchResult.newData)
         
         //Utils.messagesNumber = 5
-        getDataNotifications()
+        getData()
+    }
+    
+    func getData() {
+        
+        timerAutoLoad = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(self.getDataNotifications), userInfo: nil, repeats: true)
+        
     }
     
     func getDataNotifications() {
+        print("Fetching data : \(Date())")
+        print("Fetching data : in searching data")
         
-        let req = Webservice.URL_API + "avis-message-non-lu" + Webservice.header()
+        if(Utils.userKey == "" && Utils.userId == 0){
+            timerAutoLoad?.invalidate()
+            return
+        }
         
-        let data: NSData = NSData(contentsOf: URL(string: req)!)!
+        let req = Utils.wsDomain + Webservice.URL_API + "avis-message-non-lu" + Webservice.header()
         
-        do{
-            let myData = try JSONSerialization.jsonObject(with: data as Data, options:.allowFragments)
-            if let data = myData as? [String:Any]{
-                if let status = data["status"] as? Bool{
-                    if let notifData = data["data"] as? [String:Int], status{
-                        Utils.messagesNumber = notifData["messages"]!
+        let data = NSData(contentsOf: URL(string: req)!)
+        
+        if let data = data as? Data{
+            do{
+                let myData = try JSONSerialization.jsonObject(with: data, options:.allowFragments)
+                if let data = myData as? [String:Any]{
+                    if let status = data["status"] as? Bool{
+                        if let notifData = data["data"] as? [String:Int], status{
+                            print("Fetching data : in changing data")
+                            Utils.messagesNumber = notifData["messages"]!
+                        }
                     }
                 }
+            }catch {
+                print("Error with Json: \(error)")
             }
-        }catch {
-            print("Error with Json: \(error)")
         }
+        
+        
+    }
+    
+    func registerForPushNotifications(_ application: UIApplication) {
+        let notificationTypes:UIUserNotificationType = [UIUserNotificationType.sound,
+                                                        UIUserNotificationType.badge,
+                                                        UIUserNotificationType.alert]
+        
+        
+        let notificationSettings = UIUserNotificationSettings(types: notificationTypes, categories: nil)
+        UIApplication.shared.registerUserNotificationSettings(notificationSettings)
+        
+        
         
     }
 
-//    // MARK: - Core Data stack
-//
-//    lazy var persistentContainer: NSPersistentContainer = {
-//        /*
-//         The persistent container for the application. This implementation
-//         creates and returns a container, having loaded the store for the
-//         application to it. This property is optional since there are legitimate
-//         error conditions that could cause the creation of the store to fail.
-//        */
-//        let container = NSPersistentContainer(name: "Vraiment_Pro")
-//        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-//            if let error = error as NSError? {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                 
-//                /*
-//                 Typical reasons for an error here include:
-//                 * The parent directory does not exist, cannot be created, or disallows writing.
-//                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-//                 * The device is out of space.
-//                 * The store could not be migrated to the current model version.
-//                 Check the error message to determine what the actual problem was.
-//                 */
-//                fatalError("Unresolved error \(error), \(error.userInfo)")
+    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+        if notificationSettings.types != .none {
+            application.registerForRemoteNotifications()
+        }
+    }
+
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        //let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        
+        var deviceTokenString = ""
+        for i in 0..<deviceToken.count {
+            deviceTokenString = deviceTokenString + String(format: "%02.2hhx", arguments: [deviceToken[i]])
+        }
+        print("deviceTokenString : " + deviceTokenString)
+        Utils.deviceToken = deviceTokenString
+        
+        
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error){
+        print("Failed to register:", error)
+    }
+    
+//    private func custom(_ toSend:String){
+//        
+//        if(Utils.userKey == "" && Utils.userId == 0){
+//            return
+//        }
+//        
+//        let req = Utils.wsDomain + Webservice.URL_API + "avis-envoie-demande-sms" + Webservice.header() + "&num=261336421487&nom_de=Test&mois=01&annee=2017&pretention=\(toSend)"
+//        
+//        print("req : \(req)")
+//        if let encoded = req.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
+//            let url = URL(string: encoded){
+//            
+//            let urlRequest: URLRequest = URLRequest(url: url)
+//            
+//            let session =  URLSession(configuration: .default)
+//            
+//            let task = session.dataTask(with: urlRequest) {
+//                (data, response, error) -> Void in
+//                
+//                if let httpResponse = response as? HTTPURLResponse{
+//                    let statusCode = httpResponse.statusCode
+//                    
+//                    if (statusCode == 200) {
+//                        print("ok")
+//                    }
+//                    else if(statusCode == 401) {
+//                        print("ok 401")
+//                    }
+//                    else{
+//                        print("Status code = \(statusCode)")
+//                    }
+//                }
 //            }
-//        })
-//        return container
-//    }()
-//
-//    // MARK: - Core Data Saving support
-//
-//    func saveContext () {
-//        let context = persistentContainer.viewContext
-//        if context.hasChanges {
-//            do {
-//                try context.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nserror = error as NSError
-//                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-//            }
+//            
+//            task.resume()
+//            
 //        }
 //    }
-
+    
 }
 

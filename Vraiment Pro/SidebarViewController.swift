@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SidebarViewController: UIViewController {
+class SidebarViewController: MainViewController {
     @IBOutlet weak var contentSidebarView: UITableView!
     @IBOutlet weak var userNameLabel: UILabel!
     
@@ -61,16 +61,45 @@ class SidebarViewController: UIViewController {
         })
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    override func reloadMyView(_ wsData:Any? = nil, param:[String:Any]=[:]) {
+        //spinnerLoad(false)
+        
+        var normalConnection = false
+        
+        if let dataKey = param["dataKey"] as? String{
+            
+            
+            if dataKey == "signOutPhoneForNotification"{
+                if let data = wsData as? [String:Any]{
+                    
+//                    if let status = data["status"] as? Bool{
+//                        if !status{
+//                            normalConnection = true
+//                            return
+//                        }
+                    
+                        let userDefaults: UserDefaults = UserDefaults.standard
+                        userDefaults.set(true, forKey: prefKey.phoneRegistered.rawValue)
+                        
+                        Utils.phoneRegistered = true
+                        
+                        performSegue(withIdentifier: "logOut", sender: nil)
+                        
+                        normalConnection = true
+//                    }
+//                    
+//                    else{
+//                        //alertUser(title: "Erreur données", message: nil)
+//                    }
+                    
+                }
+            }
+            
+        }
+        
+        if(!normalConnection){
+        }
+    }
     
 }
 
@@ -106,7 +135,8 @@ extension SidebarViewController: UITableViewDelegate{
             UIApplication.shared.openURL(URL(string: "https://vraimentpro.vobulator.com/#/")!)
             break
         case 3:
-            performSegue(withIdentifier: "logOut", sender: nil)
+            Webservice.signOutPhoneForNotification(self)
+//            performSegue(withIdentifier: "logOut", sender: nil)
             break
         default:
             break

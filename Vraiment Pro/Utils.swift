@@ -24,20 +24,42 @@ enum prefKey:String {
     case countWaitingBills = "countWaitingBills"
     case countWaitingMediation = "countWaitingMediation"
     case countMessages = "countMessages"
+    case wsDomain = "wsDomain"
+    case phoneRegistered = "phoneRegistered"
 }
 
 enum docsCategory{
     case documents
     case qualifications
+    case webservice
 }
 
 class Utils{
     static var userId:Int = 0
     static var userKey:String = ""
+    static var phoneRegistered:Bool = false
+    static var deviceToken:String = ""
     
 //    static var adviceWaitingBillsCount:Int = 0
 //    static var adviceWaitingMediationCount:Int = 0
 //    static var messagesNumberCount:Int = 0
+    
+    static var wsDomain:String{
+        get {
+            let key = prefKey.wsDomain.rawValue
+            let userDefaults: UserDefaults = UserDefaults.standard
+            var domain = "https://vraimentpro.com"
+            if userDefaults.value(forKey: key) != nil{
+                domain = userDefaults.string(forKey: key)!
+            }
+            return domain
+        }
+        set {
+            let userDefaults: UserDefaults = UserDefaults.standard
+            userDefaults.set(newValue, forKey: prefKey.wsDomain.rawValue)
+            userDefaults.synchronize()
+        }
+    }
     
     static var adviceWaitingBills:Int {
         get {
@@ -90,14 +112,15 @@ class Utils{
             if userDefaults.value(forKey: key) != nil{
                 previousValue = userDefaults.integer(forKey: key)
             }
-            if previousValue < newValue{
-                let scheduledAlert: UILocalNotification = UILocalNotification()
-                UIApplication.shared.cancelAllLocalNotifications()
-                scheduledAlert.fireDate=Date(timeIntervalSinceNow: 5)
-                scheduledAlert.timeZone = NSTimeZone.default
-                scheduledAlert.alertBody="Vous avez reçu\n une demande de contact"
-                UIApplication.shared.scheduleLocalNotification(scheduledAlert)
-            }
+            
+//            if previousValue < newValue{
+//                let scheduledAlert: UILocalNotification = UILocalNotification()
+//                UIApplication.shared.cancelAllLocalNotifications()
+//                scheduledAlert.fireDate=Date(timeIntervalSinceNow: 5)
+//                scheduledAlert.timeZone = NSTimeZone.default
+//                scheduledAlert.alertBody="Vous avez reçu\n une demande de contact"
+//                UIApplication.shared.scheduleLocalNotification(scheduledAlert)
+//            }
             
             UIApplication.shared.applicationIconBadgeNumber = newValue
             
@@ -116,15 +139,15 @@ class Utils{
         if userDefaults.value(forKey: key) != nil{
             previousValue = userDefaults.integer(forKey: key)
         }
-        if previousValue < newValue{
-            let scheduledAlert: UILocalNotification = UILocalNotification()
-            UIApplication.shared.cancelAllLocalNotifications()
-            scheduledAlert.applicationIconBadgeNumber=newValue
-            scheduledAlert.fireDate=Date(timeIntervalSinceNow: 15)
-            scheduledAlert.timeZone = NSTimeZone.default
-            scheduledAlert.alertBody="Vous avez reçu une demande de contact"
-            UIApplication.shared.scheduleLocalNotification(scheduledAlert)
-        }
+//        if previousValue < newValue{
+//            let scheduledAlert: UILocalNotification = UILocalNotification()
+//            UIApplication.shared.cancelAllLocalNotifications()
+//            scheduledAlert.applicationIconBadgeNumber=newValue
+//            scheduledAlert.fireDate=Date(timeIntervalSinceNow: 15)
+//            scheduledAlert.timeZone = NSTimeZone.default
+//            scheduledAlert.alertBody="Vous avez reçu une demande de contact"
+//            UIApplication.shared.scheduleLocalNotification(scheduledAlert)
+//        }
         messagesNumber = newValue
     }
     
@@ -206,43 +229,13 @@ class Utils{
                 "Qualisav",
                 "Qualisol RGE"]
         }
-        
-//        let list:[String] = [
-//            "DOCUMENTS",
-//            "K-Bis",
-//            "ASSURANCE RCPRO",
-//            "ASSURANCE DÉCENNALE",
-//            "QUALIFICATIONS / CERTIFICATIONS",
-//            "ADC Fluides",
-//            "Artisan",
-//            "Cequami Maison rénovée",
-//            "Cequami Maison rénovée HQE",
-//            "Certibat",
-//            "Chauffage + RGE",
-//            "Eco Artisan RGE",
-//            "Handibat",
-//            "Les PROS de l’accessibilité",
-//            "Les PROS de la performance énergétique RGE",
-//            "Maître Artisan",
-//            "Professionnel du gaz (PG)",
-//            "Professionnel maintenance Gaz (PMG)",
-//            "Quali’Eau",
-//            "Qualibat",
-//            "Qualibat RGE",
-//            "Qualibois RGE",
-//            "QualiClima",
-//            "Qualifelec",
-//            "Qualifelec RGE",
-//            "Qualifioul",
-//            "Qualiforage RGE",
-//            "QualiFroid",
-//            "Qualipac RGE",
-//            "Qualipaysage",
-//            "Qualipropre",
-//            "QualiPV RGE",
-//            "Qualisav",
-//            "Qualisol RGE",
-//            ]
+        else if type == .webservice{
+            list = [
+                "https://vraimentpro.com",
+                "https://pre.vobulator.com",
+                "https://dev.vobulator.com"
+                ]
+        }
         return list
     }
     

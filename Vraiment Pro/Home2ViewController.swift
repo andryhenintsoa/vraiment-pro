@@ -36,9 +36,13 @@ class Home2ViewController: MainViewController {
         createButtonsInfo()
         menuCollectionView.reloadData()
         
-        //updateBadgeNumber()
-        
         updateBadgeTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.updateBadgeNumber), userInfo: nil, repeats: true)
+        
+        if let notificationType = UIApplication.shared.currentUserNotificationSettings?.types{
+            if notificationType  != .none && Utils.phoneRegistered == false{
+                Webservice.signPhoneForNotification(self)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,30 +91,64 @@ class Home2ViewController: MainViewController {
         
         var normalConnection = false
         
-        if let data = wsData as? [String:Any]{
+        if let dataKey = param["dataKey"] as? String{
             
-            if let status = data["status"] as? Bool{
-                if !status{
-                    normalConnection = true
-                    return
+            
+            if dataKey == "getNumberNotifications"{
+                if let data = wsData as? [String:Any]{
+                    
+                    if let status = data["status"] as? Bool{
+                        if !status{
+                            normalConnection = true
+                            return
+                        }
+                        
+                        //print(data)
+                        
+                        if let notifData = data["data"] as? [String:Int]{
+                            Utils.adviceWaitingBills = notifData["nbr_fact"]!
+                            Utils.adviceWaitingMediation = notifData["avis_mediation"]!
+                            Utils.messagesNumber = notifData["messages"]!
+                        }
+                        
+                        Utils.getInstance().notifyAll()
+                        //menuCollectionView.reloadData()
+                        
+                        normalConnection = true
+                    }
+                        
+                    else{
+                        //alertUser(title: "Erreur données", message: nil)
+                    }
+                    
                 }
-                
-                //print(data)
-                
-                if let notifData = data["data"] as? [String:Int]{
-                    Utils.adviceWaitingBills = notifData["nbr_fact"]!
-                    Utils.adviceWaitingMediation = notifData["avis_mediation"]!
-                    Utils.messagesNumber = notifData["messages"]!
-                }
-                
-                Utils.getInstance().notifyAll()
-                //menuCollectionView.reloadData()
-                
-                normalConnection = true
             }
             
-            else{
-                //alertUser(title: "Erreur données", message: nil)
+            else if dataKey == "signPhoneForNotification"{
+                if let data = wsData as? [String:Any]{
+                    
+                    print(data)
+                    
+                    if let status = data["status"] as? Bool{
+                        if !status{
+                            normalConnection = true
+                            return
+                        }
+                        
+                        let userDefaults: UserDefaults = UserDefaults.standard
+                        userDefaults.set(true, forKey: prefKey.phoneRegistered.rawValue)
+                        
+                        Utils.phoneRegistered = true
+                        
+                        normalConnection = true
+                    }
+                        
+                    else{
+                        Webservice.signPhoneForNotification(self)
+                        //alertUser(title: "Erreur données", message: nil)
+                    }
+                    
+                }
             }
             
         }

@@ -15,8 +15,12 @@ class Webservice{
 //    static var URL_API_WEB:String = "http://41.188.46.56:6922/vp-ws/api/";
 
 // URL for deployement
-    static var URL_API:String = "https://vraimentpro.vobulator.com/ws/index.php/mobile/";
-    static var URL_API_WEB:String = "https://vraimentpro.vobulator.com/ws/index.php/api/";
+//    static var URL_API:String = "https://vraimentpro.vobulator.com/ws/index.php/mobile/";
+//    static var URL_API_WEB:String = "https://vraimentpro.vobulator.com/ws/index.php/api/";
+    
+// URL for dev
+    static var URL_API:String = "/ws/index.php/mobile/";
+    static var URL_API_WEB:String = "/ws/index.php/api/";
     
 // MARK : Upload image with POST
     
@@ -29,9 +33,6 @@ class Webservice{
             let requestURL = URL(string: encoded){
             imageUpload(requestURL, controller: controller, imageToSend:imageToSend)
         }
-        
-        
-        
     }
     
     class func imageUpload(_ url: URL, controller: MainViewController, imageToSend : UIImage){
@@ -223,71 +224,92 @@ class Webservice{
     }
     
     class func authentification(_ controller: MainViewController, email:String, mdp:String){
-        let req = URL_API + "connexion?email=\(email)&mdp=\(mdp)"
+        let req = Utils.wsDomain + URL_API + "connexion?email=\(email)&mdp=\(mdp)"
         load(req, controller: controller)
     }
     
     class func numberNotifications(_ controller: MainViewController){
-        let req = URL_API + "avis-message-non-lu" + header()
-        load(req, controller: controller, withLoader: false)
+        let req = Utils.wsDomain + URL_API + "avis-message-non-lu" + header()
+        load(req, controller: controller, withLoader: false, param:["dataKey":"getNumberNotifications"])
+    }
+    
+    class func signPhoneForNotification(_ controller: MainViewController){
+        let req = Utils.wsDomain + URL_API + "add-notif-ios?user_id=\(Utils.userId)&key_phone=\(Utils.deviceToken)"
+        load(req, controller: controller, withLoader: false, param:["dataKey":"signPhoneForNotification"])
+    }
+    
+    class func signOutPhoneForNotification(_ controller: MainViewController){
+        let req = Utils.wsDomain + URL_API + "delete-notif-ios?key_phone=\(Utils.deviceToken)"
+        load(req, controller: controller, withLoader: true, param:["dataKey":"signOutPhoneForNotification"])
     }
     
     class func partners(_ controller: MainViewController){
-        let req = URL_API + "mes-partenaires" + header()
+        let req = Utils.wsDomain + URL_API + "mes-partenaires" + header()
         load(req, controller: controller)
     }
    
     class func messages(_ controller: MainViewController){
-        let req = URL_API + "mes-messages" + header()
+        let req = Utils.wsDomain + URL_API + "mes-messages" + header()
         load(req, controller: controller, withLoader:true, param:["dataKey":"getData"])
     }
     
+    class func messagesVP(_ controller: MainViewController){
+        let req = Utils.wsDomain + URL_API + "mes-messages-vp" + header()
+        load(req, controller: controller, withLoader:false, param:["dataKey":"getDataVP"])
+    }
+    
     class func messageRead(_ controller: MainViewController, data:[String:Any]){
-        let req = URL_API_WEB + "lu-ou-non" + "?message_id=\(data["id_msg"]!)"
+        let req = Utils.wsDomain + URL_API_WEB + "lu-ou-non" + "?message_id=\(data["id_msg"]!)"
         
         load(req, controller: controller, withLoader:false, param:["dataKey":"readMsg"])
     }
     
+    class func messageVPRead(_ controller: MainViewController, data:[String:Any]){
+        let req = Utils.wsDomain + URL_API + "lu-msg-vp" + header() + "&message_id=\(data["id_msg"]!)"
+        
+        load(req, controller: controller, withLoader:false, param:["dataKey":"readVpMsg"])
+    }
+    
     class func getPreviousPwd(_ controller: MainViewController, data:[String:String]){
-        let req = URL_API_WEB + "comparer-mot-de-passe" + header() + "&ancien_mdp=\(data["pwd"]!)"
+        let req = Utils.wsDomain + URL_API_WEB + "comparer-mot-de-passe" + header() + "&ancien_mdp=\(data["pwd"]!)"
         load(req, controller: controller, withLoader:true, param:["dataKey":"oldPwd"])
     }
     
     class func changePwd(_ controller: MainViewController, data:[String:String]){
-        let req = URL_API_WEB + "modifier-mot-de-passe" + header() + "&nouveau_mdp=\(data["pwd"]!)"
+        let req = Utils.wsDomain + URL_API_WEB + "modifier-mot-de-passe" + header() + "&nouveau_mdp=\(data["pwd"]!)"
         load(req, controller: controller, withLoader:true, param:["dataKey":"newPwd"])
     }
     
     class func adviceSent(_ controller: MainViewController){
-        let req = URL_API + "liste-avis-user" + header()
+        let req = Utils.wsDomain + URL_API + "liste-avis-user" + header()
         load(req, controller: controller)
     }
     
     class func adviceWaitingBill(_ controller: MainViewController){
-        let req = URL_API + "avis-attente-facture" + header()
+        let req = Utils.wsDomain + URL_API + "avis-attente-facture" + header()
         load(req, controller: controller)
     }
     
     class func adviceSendBills(_ controller: MainViewController, data:[String:Any], imageToSend:UIImage? = nil){
         
-        let req = URL_API + "avis-send-attente-facture" + header() + "&avis_id=\(data["avis_id"]!)"
+        let req = Utils.wsDomain + URL_API + "avis-send-attente-facture" + header() + "&avis_id=\(data["avis_id"]!)"
         
         imageUpload(req, controller: controller, imageToSend: imageToSend!)
         
     }
     
     class func adviceWaitingMediation(_ controller: MainViewController){
-        let req = URL_API + "avis-attente-moderation" + header()
+        let req = Utils.wsDomain + URL_API + "avis-attente-moderation" + header()
         load(req, controller: controller)
     }
     
     class func adviceWaitingMediationNotAnswer(_ controller: MainViewController, data:[String:Any]){
-        let req = URL_API + "avis-ne-pas-repondre-moderation" + header() + "&avis_id=\(data["avis_id"]!)"
+        let req = Utils.wsDomain + URL_API + "avis-ne-pas-repondre-moderation" + header() + "&avis_id=\(data["avis_id"]!)"
         load(req, controller: controller)
     }
     
     class func adviceSendAdviceByMail(_ controller: MainViewController, data:[String:String]){
-        let req = URL_API + "avis-envoie-demande-mail" + header() + "&to=\(data["mail"]!)&nom_de=\(data["name"])&mois=\(data["prestationMonth"])&annee=\(data["prestationYear"])&pretention=\(data["prestationYear"])"
+        let req = Utils.wsDomain + URL_API + "avis-envoie-demande-mail" + header() + "&to=\(data["mail"]!)&nom_de=\(data["name"])&mois=\(data["prestationMonth"])&annee=\(data["prestationYear"])&pretention=\(data["prestationYear"])"
         load(req, controller: controller)
     }
     
@@ -302,10 +324,10 @@ class Webservice{
                 var prestationMonth = "\(data["prestationMonth"]!)"
                 
                 if (prestationMonth.characters.count < 2){
-                    prestationMonth = " " + prestationMonth
+                    prestationMonth = "0" + prestationMonth
                 }
                 
-                req = URL_API + "avis-envoie-demande-mail" + header() + "&to=\(data["mail"]!)&nom_de=\(data["name"]!)&mois=\(prestationMonth)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
+                req = Utils.wsDomain + URL_API + "avis-envoie-demande-mail" + header() + "&to=\(data["mail"]!)&nom_de=\(data["name"]!)&mois=\(prestationMonth)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
             }
             else if data["sendingType"]! == SendingType.sms.rawValue{
                 
@@ -317,10 +339,10 @@ class Webservice{
                 var prestationMonth = "\(data["prestationMonth"]!)"
                 
                 if (prestationMonth.characters.count < 2){
-                    prestationMonth = " " + prestationMonth
+                    prestationMonth = "0" + prestationMonth
                 }
                 
-                req = URL_API + "avis-envoie-demande-sms" + header() + "&num=\(phoneSend)&nom_de=\(data["name"]!)&mois=\(prestationMonth)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
+                req = Utils.wsDomain + URL_API + "avis-envoie-demande-sms" + header() + "&num=\(phoneSend)&nom_de=\(data["name"]!)&mois=\(prestationMonth)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
             }
             print("req : \(req)")
             if let encoded = req.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
@@ -336,10 +358,10 @@ class Webservice{
                 var prestationMonth = "\(data["prestationMonth"]!)"
                 
                 if (prestationMonth.characters.count < 2){
-                    prestationMonth = " " + prestationMonth
+                    prestationMonth = "0" + prestationMonth
                 }
                 
-                req = URL_API + "demande-avis-avec-facture-mail" + header() + "&to=\(data["mail"]!)&nom_de=\(data["name"]!)&mois=\(prestationMonth)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
+                req = Utils.wsDomain + URL_API + "demande-avis-avec-facture-mail" + header() + "&to=\(data["mail"]!)&nom_de=\(data["name"]!)&mois=\(prestationMonth)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
                 
                 //imageUpload(req, controller: controller, imageToSend: imageToSend!)
             }
@@ -350,10 +372,10 @@ class Webservice{
                 var prestationMonth = "\(data["prestationMonth"]!)"
                 
                 if (prestationMonth.characters.count < 2){
-                    prestationMonth = " " + prestationMonth
+                    prestationMonth = "0" + prestationMonth
                 }
                 
-                req = URL_API + "demande-avis-avec-facture-sms" + header() + "&num=\(phoneSend)&nom_de=\(data["name"]!)&mois=\(prestationMonth)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
+                req = Utils.wsDomain + URL_API + "demande-avis-avec-facture-sms" + header() + "&num=\(phoneSend)&nom_de=\(data["name"]!)&mois=\(prestationMonth)&annee=\(data["prestationYear"]!)&pretention=\(data["prestation"]!)"
                 //imageUpload(req, controller: controller, imageToSend: imageToSend!)
             }
             
@@ -365,9 +387,9 @@ class Webservice{
     }
     
     class func adviceMediationAnswer(_ controller: MainViewController, data:[String:Any]){
-        let req = URL_API + "avis-repondre-moderation" + header() + "&client_id=\(data["client_id"]!)&avis_id=\(data["avis_id"]!)&contenu=\(data["answerText"]!)"
+        let req = Utils.wsDomain + URL_API + "avis-repondre-moderation" + header() + "&client_id=\(data["client_id"]!)&avis_id=\(data["avis_id"]!)&contenu=\(data["answerText"]!)"
         
-//        let req = URL_API + "avis-repondre-moderation" + header() + "&avis_id=\(data["avis_id"]!)&contenu=\(data["answerText"]!)"
+//        let req = Utils.wsDomain + URL_API + "avis-repondre-moderation" + header() + "&avis_id=\(data["avis_id"]!)&contenu=\(data["answerText"]!)"
         
         if let encoded = req.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
             let url = URL(string: encoded){
@@ -387,7 +409,7 @@ class Webservice{
         
         if data["sendingProfile"] as! String == SendingProfileType.selfProfile.rawValue{
             if data["sendingType"] as! String == SendingType.mail.rawValue{
-                req = URL_API + "envoyer-mon-profil-mail" + header() + "&to=\(data["mail"]!)"
+                req = Utils.wsDomain + URL_API + "envoyer-mon-profil-mail" + header() + "&to=\(data["mail"]!)"
             }
             else if data["sendingType"] as! String == SendingType.sms.rawValue{
                 
@@ -396,7 +418,7 @@ class Webservice{
                 
                 let phoneSend = NumberFormatter.format((data["phone"]! as! String), withPrefix: "33")
                 
-                req = URL_API + "envoyer-mon-profil-sms" + header() + "&num=\(phoneSend)"
+                req = Utils.wsDomain + URL_API + "envoyer-mon-profil-sms" + header() + "&num=\(phoneSend)"
             }
             load(req, controller: controller)
             
@@ -409,7 +431,7 @@ class Webservice{
             if data["sendingType"] as! String == SendingType.mail.rawValue{
                 
                 for user in users{
-                    req = URL_API + "envoyer-profil-partenaire-mail" + header() + "&to=\(data["mail"]!)&partenaire_id=\(user["id"]!)"
+                    req = Utils.wsDomain + URL_API + "envoyer-profil-partenaire-mail" + header() + "&to=\(data["mail"]!)&partenaire_id=\(user["id"]!)"
                     load(req, controller: controller)
                 }
             }
@@ -421,7 +443,7 @@ class Webservice{
                 let phoneSend = data["phone"] as! String
                 
                 for user in users{
-                    req = URL_API + "envoyer-profil-partenaire-sms" + header() + "&num=\(phoneSend)&partenaire_id=\(user["id"]!)"
+                    req = Utils.wsDomain + URL_API + "envoyer-profil-partenaire-sms" + header() + "&num=\(phoneSend)&partenaire_id=\(user["id"]!)"
                     load(req, controller: controller)
                 }
             }
@@ -432,7 +454,7 @@ class Webservice{
     
     class func docsSendPic(_ controller: MainViewController, data:[String:String], imageToSend:UIImage? = nil){
         
-        let req = URL_API + "photo-sur-mon-profil" + header()
+        let req = Utils.wsDomain + URL_API + "photo-sur-mon-profil" + header()
         
         imageUpload(req, controller: controller, imageToSend: imageToSend!)
         
@@ -440,7 +462,7 @@ class Webservice{
     
     class func docsSendBAPic(_ controller: MainViewController, data:[String:String], imageToSend:UIImage? = nil){
         
-        let req = URL_API + "photo-avant-apres" + header()
+        let req = Utils.wsDomain + URL_API + "photo-avant-apres" + header()
         
         imageUpload(req, controller: controller, imageToSend: imageToSend!)
         
@@ -450,7 +472,7 @@ class Webservice{
         
         //imageUpload(req, controller: controller, imageToSend: imageToSend!)
         
-        let req = URL_API + "send-document-backoffice" + header() + "&nature_doc=\(data["type"]!)"
+        let req = Utils.wsDomain + URL_API + "send-document-backoffice" + header() + "&nature_doc=\(data["type"]!)"
         
         if let encoded = req.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
             let url = URL(string: encoded){
@@ -464,19 +486,20 @@ class Webservice{
     }
     
     class func pwdForgottenGetCode(_ controller: MainViewController, data:[String:Any]){
-        let req = URL_API_WEB + "verify-email?email=\(data["mail"]!)"
+        let req = Utils.wsDomain + URL_API_WEB + "verify-email?email=\(data["mail"]!)"
         load(req, controller: controller)
     }
     
     class func pwdForgottenConfirmCode(_ controller: MainViewController, data:[String:Any]){
-        let req = URL_API_WEB + "verify-code?code=\(data["code"]!)&id=\(data["idUser"]!)"
+        let req = Utils.wsDomain + URL_API_WEB + "verify-code?code=\(data["code"]!)&id=\(data["idUser"]!)"
         load(req, controller: controller)
     }
     
     class func pwdForgottenChange(_ controller: MainViewController, data:[String:Any]){
-        let req = URL_API_WEB + "changer-mdp?mdp=\(data["pwd"]!)&id=\(data["idUser"]!)"
+        let req = Utils.wsDomain + URL_API_WEB + "changer-mdp?mdp=\(data["pwd"]!)&id=\(data["idUser"]!)"
         load(req, controller: controller)
     }
+    
     
 }
 

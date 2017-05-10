@@ -50,9 +50,10 @@ class MessagesViewController: MainViewController {
         
         messagesTableView.delegate = self
         
-        createMessages()
+        //createMessages()
         //displaydisplayNoDataViewController()
         Webservice.messages(self)
+        Webservice.messagesVP(self)
     }
     
     override func viewWillAppear(_ animated:Bool){
@@ -168,7 +169,6 @@ class MessagesViewController: MainViewController {
             
             let messagesCount = CGFloat(messagesInfo.count)
             
-            
             if messagesCount == 0{
                 displayNoData()
             }else{
@@ -269,6 +269,29 @@ class MessagesViewController: MainViewController {
                     Utils.getInstance().notifyAll()
                 }
                 
+                if dataKey == "getDataVP"{
+                    let listMessages = data["data"] as! [[String:Any]]
+                    
+                    var messageTemp:MessageInfo?
+                    for itemMessages in listMessages {
+                        messageTemp = MessageInfo(data: itemMessages)
+                        messagesInfo.append(messageTemp!)
+                        if messageTemp?.state == "0"{
+                            notificationMessagesVPNumber += 1
+                        }
+                        
+                        reloadNotifications()
+                    }
+                    
+                    messagesInfo.sort(by: { (element1, element2) -> Bool in
+                        let date1 = element1.dateCreation.components(separatedBy: "/")
+                        
+                        let date2 = element2.dateCreation.components(separatedBy: "/")
+                        
+                        return (date1[1]+date1[0]) < (date2[1]+date2[0])
+                    })
+                }
+                
                 if dataKey == "getData"{
                     let listMessages = data["data"] as! [[String:Any]]
                     
@@ -286,6 +309,14 @@ class MessagesViewController: MainViewController {
                             notificationMessagesClientNumber += 1
                         }
                     }
+                    
+                    messages.sort(by: { (element1, element2) -> Bool in
+                        let date1 = element1.dateCreation.components(separatedBy: "/")
+                        
+                        let date2 = element2.dateCreation.components(separatedBy: "/")
+                        
+                        return (date1[1]+date1[0]) < (date2[1]+date2[0])
+                    })
                     
                     Utils.messagesNumber = notificationMessagesClientNumber
                     Utils.getInstance().notifyAll()
@@ -344,6 +375,8 @@ class MessagesViewController: MainViewController {
                 data.state = "1"
                 notificationMessagesVPNumber -= 1
                 reloadNotifications()
+                
+                Webservice.messageVPRead(self, data:["id_msg":data.id])
             }
             
             destination?.notificationMessagesClientNumber = notificationMessagesClientNumber

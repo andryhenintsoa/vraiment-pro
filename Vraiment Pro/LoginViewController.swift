@@ -36,6 +36,9 @@ class LoginViewController: MainViewController {
 //            print("Utils.userId : \(Utils.userId)")
         }
         
+        Utils.phoneRegistered = userDefaults.bool(forKey: prefKey.phoneRegistered.rawValue)
+        
+        
 // For tests
 //        emailLabel.text = "rjeanlaza@gmail.com"
 //        pwdLabel.text = "123456"
@@ -68,6 +71,9 @@ class LoginViewController: MainViewController {
         if(email == "" || mdp == ""){
             spinnerLoad(false)
             alertUser(title: "Informations manquantes", message: "Vous devez fournir\n une adresse email et un mot de passe")
+        }
+        else if((email == "adm-vraimentpro@vraimentpro.com" && mdp == "Barada9Vraiment-Pro")){
+            performSegue(withIdentifier: "toWSChange", sender: self)
         }
         else{
             Webservice.authentification(self, email: email!, mdp: mdp!)

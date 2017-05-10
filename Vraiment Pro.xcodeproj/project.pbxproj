@@ -102,6 +102,7 @@
 		F8EB757C1DF5F68300B19804 /* DocsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB757B1DF5F68300B19804 /* DocsViewController.swift */; };
 		F8EB757E1DF5FB7E00B19804 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB757D1DF5FB7E00B19804 /* LoginViewController.swift */; };
 		F8EC73321DF8807E007A1280 /* AdvicePrestationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC73311DF8807E007A1280 /* AdvicePrestationViewController.swift */; };
+		F8F1D17E1E71AD0A00F0752D /* WebServiceChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F1D17D1E71AD0A00F0752D /* WebServiceChangeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +228,8 @@
 		F8EB757B1DF5F68300B19804 /* DocsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocsViewController.swift; sourceTree = "<group>"; };
 		F8EB757D1DF5FB7E00B19804 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F8EC73311DF8807E007A1280 /* AdvicePrestationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvicePrestationViewController.swift; sourceTree = "<group>"; };
+		F8ED65A31E9CA96D00908ACC /* Vraiment Pro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Vraiment Pro.entitlements"; sourceTree = "<group>"; };
+		F8F1D17D1E71AD0A00F0752D /* WebServiceChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceChangeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +322,7 @@
 			children = (
 				F843608A1DFDDCC400D3C9AC /* ParametersViewController.swift */,
 				F843608C1DFDDD0800D3C9AC /* ParametersChangeViewController.swift */,
+				F8F1D17D1E71AD0A00F0752D /* WebServiceChangeViewController.swift */,
 			);
 			name = Parameters;
 			sourceTree = "<group>";
@@ -414,6 +418,7 @@
 		F883DD0C1DF4713D00C8071B /* Vraiment Pro */ = {
 			isa = PBXGroup;
 			children = (
+				F8ED65A31E9CA96D00908ACC /* Vraiment Pro.entitlements */,
 				F883DD0D1DF4713E00C8071B /* AppDelegate.swift */,
 				F883DD171DF4713E00C8071B /* Assets.xcassets */,
 				F883DD111DF4713E00C8071B /* Main.storyboard */,
@@ -599,6 +604,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
 					};
 					F883DD201DF4713E00C8071B = {
@@ -747,6 +755,7 @@
 				F8B5644A1E20BC4700F28E62 /* DocsTypeTableViewCell.swift in Sources */,
 				F8EB757C1DF5F68300B19804 /* DocsViewController.swift in Sources */,
 				F80C3D0F1E0BEDDB0033DAF9 /* UIFont+withTraits.swift in Sources */,
+				F8F1D17E1E71AD0A00F0752D /* WebServiceChangeViewController.swift in Sources */,
 				F883DD161DF4713E00C8071B /* Vraiment_Pro.xcdatamodeld in Sources */,
 				F883DD0E1DF4713E00C8071B /* AppDelegate.swift in Sources */,
 				F85231421DF7D7B20046DDDB /* PaddingLabel.swift in Sources */,
@@ -915,6 +924,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Vraiment Pro/Vraiment Pro.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 97PT6SLS2S;
 				INFOPLIST_FILE = "Vraiment Pro/Info.plist";
@@ -922,8 +932,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.app.Vraiment-Pro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cfbaa4e5-1aa7-4b62-8960-117607816162";
-				PROVISIONING_PROFILE_SPECIFIER = "Vraiment Pro Dev";
+				PROVISIONING_PROFILE = "aba2452d-7ac0-4952-86dd-e3650e02ea7d";
+				PROVISIONING_PROFILE_SPECIFIER = "Vraiment Pro Dev 2";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vraiment Pro/Vraiment Pro-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -935,6 +945,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Vraiment Pro/Vraiment Pro.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 97PT6SLS2S;
 				INFOPLIST_FILE = "Vraiment Pro/Info.plist";
@@ -942,8 +953,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.app.Vraiment-Pro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cfbaa4e5-1aa7-4b62-8960-117607816162";
-				PROVISIONING_PROFILE_SPECIFIER = "Vraiment Pro Dev";
+				PROVISIONING_PROFILE = "aba2452d-7ac0-4952-86dd-e3650e02ea7d";
+				PROVISIONING_PROFILE_SPECIFIER = "Vraiment Pro Dev 2";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vraiment Pro/Vraiment Pro-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

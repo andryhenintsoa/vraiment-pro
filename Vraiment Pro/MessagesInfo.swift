@@ -32,11 +32,11 @@ class MessageInfo{
             self.setContent(contenu)
         }
         
-        self.setTitle(data["msg_titre"] as! String)
+        self.setTitle(data["info_titre"] as! String)
         self.setDateCreation(data["created_at"] as! String)
         
-        self.setState(data["etat"] as! String)
-        self.setType(data["type"] as! String)
+        self.setState("\(data["etat"]!)")
+        //self.setType(data["type"] as! String)
     }
     
     func setId(_ id : Int) {

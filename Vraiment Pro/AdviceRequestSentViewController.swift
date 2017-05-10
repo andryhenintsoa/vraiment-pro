@@ -98,6 +98,7 @@ extension AdviceRequestSentViewController : UITableViewDataSource{
         }
         
         var mois = data["mois_prest"] as! String
+        mois = mois.replacingOccurrences(of: " ", with: "")
         mois = (mois.characters.count < 2) ? "0\(mois)" : mois
         
         cell.dateLabel.text = mois + "/" + (data["annee_prest"] as! String)

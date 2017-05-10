@@ -174,7 +174,7 @@ class ImagePickerViewController: MainViewController, UIImagePickerControllerDele
         dismiss(animated: true, completion: nil)
     }
     
-    func radians (_ degrees:Double) -> Double {return degrees * M_PI/180;}
+    func radians (_ degrees:Double) -> Double {return degrees * Double.pi/180;}
     
     func rotateImageFromCamera(_ theImage:UIImage) ->  UIImage{
         
@@ -237,6 +237,19 @@ class ImagePickerViewController: MainViewController, UIImagePickerControllerDele
         if imageSource == .camera {
             
             let theImage = rotateImageFromCamera(info[UIImagePickerControllerOriginalImage] as! UIImage!)
+            
+            if let data = UIImageJPEGRepresentation(theImage, 1){
+                let paths = FileManager.default.urls(for: .picturesDirectory, in: .userDomainMask)
+                let documentsDirectory = paths[0]
+                
+                let date = Date()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                
+                let filename = documentsDirectory.appendingPathComponent("VraimentPro", isDirectory: true).appendingPathComponent("VP-\(dateFormatter.string(from: date)).jpeg")
+                
+                try? data.write(to: filename)
+            }
             
             self.imageToSend = theImage
             performNext()

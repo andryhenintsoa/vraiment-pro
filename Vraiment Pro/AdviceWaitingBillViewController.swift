@@ -80,6 +80,23 @@ class AdviceWaitingBillViewController: ImagePickerViewController {
             
             waitingData = data["data"] as! [[String:Any]]
             
+            waitingData.sort(by: { (element1, element2) -> Bool in
+                var mois  = ""
+                mois = element1["mois_prest"] as! String
+                mois = mois.replacingOccurrences(of: " ", with: "")
+                mois = (mois.characters.count < 2) ? "0\(mois)" : mois
+                
+                let date1 = (element1["annee_prest"]! as? String)! + mois
+                
+                mois = element2["mois_prest"] as! String
+                mois = mois.replacingOccurrences(of: " ", with: "")
+                mois = (mois.characters.count < 2) ? "0\(mois)" : mois
+                
+                let date2 = (element2["annee_prest"]! as? String)! + mois
+                
+                return date1 < date2
+            })
+            
             let dataCount = CGFloat(waitingData.count)
             
             if dataCount <= 4{
@@ -135,6 +152,7 @@ extension AdviceWaitingBillViewController : UITableViewDataSource{
         }
         
         var mois = data["mois_prest"] as! String
+        mois = mois.replacingOccurrences(of: " ", with: "")
         mois = (mois.characters.count < 2) ? "0\(mois)" : mois
         
         cell.dateLabel.text = mois + "/" + (data["annee_prest"] as! String)
